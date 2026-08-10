@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/styles.css">
+<script src="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;text-wrap:pretty}
+a{color:var(--color-accent-700)}
+a:hover{color:var(--color-accent)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.nav{padding-inline:max(24px, calc((100% - 1200px)/2 + 24px));position:sticky;top:0;background:var(--color-bg);z-index:20}
+.crumb{padding:24px 0 0;font-size:13px}
+.detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:44px;align-items:start;padding:24px 0 56px}
+.kicker{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 10px}
+.detail h1{font-size:36px;margin:0}
+.meta-row{display:flex;gap:8px;margin:16px 0 0}
+.summary{font-size:16px;line-height:1.6;margin:20px 0 0;max-width:56ch;color:color-mix(in srgb, var(--color-text) 82%, transparent)}
+.benefits{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.benefits li{display:flex;gap:10px;font-size:15px;align-items:flex-start}
+.benefits li::before{content:"";width:8px;height:8px;margin-top:7px;border-radius:50%;background:var(--color-accent);flex:none}
+.cta-row{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.detail-figure{border-radius:calc(var(--radius-lg)*1.3);overflow:hidden;aspect-ratio:4/5}
+.other-block{padding:8px 0 56px}
+.other-title{font-size:22px;margin:0 0 18px}
+.other-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+footer{padding:40px 0 32px;border-top:1px solid var(--color-divider);margin-top:24px;font-size:13px;color:color-mix(in srgb, var(--color-text) 60%, transparent)}
+@media (max-width:900px){.detail{grid-template-columns:1fr}.detail-figure{order:-1}.other-grid{grid-template-columns:1fr}}
+</style>
+</helmet>
+<nav class="nav">
+  <span class="nav-brand">d'reena beauty</span>
+  <a href="Home.dc.html">Home</a>
+  <a href="Treatments.dc.html" aria-current="page">Treatments</a>
+  <a href="SkinAnalysis.dc.html">Skin Analysis</a>
+  <a href="About.dc.html">About</a>
+  <a href="Pricing.dc.html">Pricing</a>
+  <a href="Contact.dc.html">Contact</a>
+  <a class="btn btn-primary" href="https://wa.me/60123456789" target="_blank" rel="noopener">WhatsApp Us</a>
+</nav>
+<div class="wrap">
+  <p class="crumb"><a href="Treatments.dc.html">← All treatments</a></p>
+  <sc-if value="{{ hasTreatment }}" hint-placeholder-val="{{ true }}">
+    <section class="detail">
+      <div>
+        <span class="kicker">{{ treatment.category }}</span>
+        <h1>{{ treatment.name }}</h1>
+        <div class="meta-row">
+          <span class="tag tag-neutral">{{ treatment.duration }}</span>
+          <span class="tag tag-accent">RM {{ treatment.priceLabel }}</span>
+          <sc-if value="{{ treatment.newCustomerPrice }}">
+            <span class="tag tag-accent-2">New customer: RM {{ treatment.newCustomerPrice }}</span>
+          </sc-if>
+        </div>
+        <p class="summary">{{ treatment.summary }}</p>
+        <ul class="benefits">
+          <sc-for list="{{ treatment.benefits }}" as="b" hint-placeholder-count="3">
+            <li>{{ b }}</li>
+          </sc-for>
+        </ul>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://wa.me/60123456789" target="_blank" rel="noopener">Book This Treatment</a>
+          <a class="btn btn-ghost" href="SkinAnalysis.dc.html">Not sure? Take the Skin Analysis</a>
+        </div>
+      </div>
+      <figure class="detail-figure washed" style="margin:0">
+        <image-slot id="{{ treatment.slug }}-photo" shape="rect" placeholder="{{ treatment.name }} in progress" src="{{ treatment.photo }}" credit="{{ treatment.photoCredit }}" credit-href="{{ treatment.photoCreditHref }}"></image-slot>
+      </figure>
+    </section>
+  </sc-if>
+
+  <section class="other-block">
+    <h2 class="other-title">You may also like</h2>
+    <div class="other-grid">
+      <sc-for list="{{ others }}" as="item" hint-placeholder-count="3">
+        <div class="card">
+          <div class="card-kicker">{{ item.category }}</div>
+          <div class="card-title">{{ item.name }}</div>
+          <p class="card-body">{{ item.summary }}</p>
+          <a href="{{ item.href }}" style="font-size:13px;font-weight:600">View treatment →</a>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+</div>
+<footer><div class="wrap">© 2026 d'reena beauty. All rights reserved.</div></footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { treatment: null, others: [] };
+
+  componentDidMount() {
+    import('./treatments-data.js').then((m) => {
+      const slug = new URLSearchParams(location.search).get('t');
+      const treatment = m.TREATMENTS.find((t) => t.slug === slug) || m.TREATMENTS[0];
+      const photoInfo = m.CATEGORY_PHOTOS[treatment.category] || {};
+      const others = m.TREATMENTS
+        .filter((t) => t.slug !== treatment.slug && t.category === treatment.category)
+        .slice(0, 3)
+        .map((t) => ({ ...t, href: 'TreatmentDetail.dc.html?t=' + t.slug }));
+      const filled = others.length ? others : m.TREATMENTS
+        .filter((t) => t.slug !== treatment.slug).slice(0, 3)
+        .map((t) => ({ ...t, href: 'TreatmentDetail.dc.html?t=' + t.slug }));
+      this.setState({ treatment: { ...treatment, priceLabel: treatment.price, ...photoInfo }, others: filled });
+    });
+  }
+
+  renderVals() {
+    return { treatment: this.state.treatment, hasTreatment: !!this.state.treatment, others: this.state.others };
+  }
+}
+
+</script>
+</body>
+</html>

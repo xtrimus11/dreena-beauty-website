@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/styles.css">
+<script src="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/_ds_bundle.js"></script>
+<style>
+body{margin:0;text-wrap:pretty}
+a{color:var(--color-accent-700)}
+a:hover{color:var(--color-accent)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.nav{padding-inline:max(24px, calc((100% - 1200px)/2 + 24px));position:sticky;top:0;background:var(--color-bg);z-index:20}
+.kicker{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 10px}
+.page-head{padding:56px 0 8px;max-width:64ch}
+.page-head h1{font-size:40px;margin:0}
+.page-sub{font-size:16px;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:12px 0 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:36px 0 56px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.field label{font-size:13px;font-weight:600}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:0 0 56px}
+.loc-card{padding:4px}
+.loc-card h3{font-size:18px;margin:0 0 4px}
+.loc-card p{font-size:14px;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:0 0 12px}
+footer{padding:40px 0 32px;border-top:1px solid var(--color-divider);margin-top:0;font-size:13px;color:color-mix(in srgb, var(--color-text) 60%, transparent)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}.loc-grid{grid-template-columns:1fr}}
+</style>
+</helmet>
+<nav class="nav">
+  <span class="nav-brand">d'reena beauty</span>
+  <a href="Home.dc.html">Home</a>
+  <a href="Treatments.dc.html">Treatments</a>
+  <a href="SkinAnalysis.dc.html">Skin Analysis</a>
+  <a href="About.dc.html">About</a>
+  <a href="Pricing.dc.html">Pricing</a>
+  <a href="Contact.dc.html" aria-current="page">Contact</a>
+  <a class="btn btn-primary" href="https://wa.me/60123456789" target="_blank" rel="noopener">WhatsApp Us</a>
+</nav>
+<div class="wrap">
+  <div class="page-head">
+    <span class="kicker">Book a Visit</span>
+    <h1>Let's get your skin sorted</h1>
+    <p class="page-sub">Message us on WhatsApp for the fastest reply, or send an enquiry below and we'll get back to you within a day.</p>
+  </div>
+
+  <div class="grid">
+    <form class="card" style="padding:28px" onsubmit="event.preventDefault()">
+      <div class="field"><label for="c-name">Name</label><input class="input" id="c-name" placeholder="Your name" /></div>
+      <div class="field"><label for="c-phone">Phone / WhatsApp</label><input class="input" id="c-phone" placeholder="e.g. 012-345 6789" /></div>
+      <div class="field"><label for="c-treat">Interested in</label><input class="input" id="c-treat" placeholder="e.g. Skin Boost Treatment" /></div>
+      <div class="field"><label for="c-msg">Message</label><textarea class="input" id="c-msg" rows="3" placeholder="Tell us about your skin or preferred date"></textarea></div>
+      <button type="submit" class="btn btn-primary btn-block">Send Enquiry</button>
+    </form>
+    <div class="card" style="padding:28px;background:var(--color-accent-2-100)">
+      <div class="card-kicker">Prefer to chat?</div>
+      <div class="card-title" style="margin-bottom:10px">WhatsApp is fastest</div>
+      <p class="card-body">Our team usually replies within minutes during opening hours.</p>
+      <a class="btn btn-primary" href="https://wa.me/60123456789" target="_blank" rel="noopener" style="margin-top:8px">Chat on WhatsApp</a>
+      <p class="card-body" style="margin-top:20px">Opening Hours<br>Tue – Sun, 10am – 7pm · Closed Mondays</p>
+    </div>
+  </div>
+
+  <div class="loc-grid">
+    <div class="card loc-card">
+      <h3>d'reena beauty house</h3>
+      <p>Uptown Avenue, Seremban 2, Negeri Sembilan</p>
+      <a class="btn btn-secondary" href="https://wa.me/60123456789" target="_blank" rel="noopener">WhatsApp This Branch</a>
+    </div>
+    <div class="card loc-card">
+      <h3>d'sensations beauty</h3>
+      <p>Taipan 2, Senawang, Negeri Sembilan</p>
+      <a class="btn btn-secondary" href="https://wa.me/60123456789" target="_blank" rel="noopener">WhatsApp This Branch</a>
+    </div>
+  </div>
+</div>
+<footer><div class="wrap">© 2026 d'reena beauty. All rights reserved.</div></footer>
+
+</x-dc>
+</body>
+</html>

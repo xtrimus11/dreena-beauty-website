@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/styles.css">
+<script src="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<style>
+body{margin:0;text-wrap:pretty}
+a{color:var(--color-accent-700)}
+a:hover{color:var(--color-accent)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.nav{padding-inline:max(24px, calc((100% - 1200px)/2 + 24px));position:sticky;top:0;background:var(--color-bg);z-index:20}
+.kicker{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 10px}
+.quiz-wrap{max-width:640px;margin:0 auto;padding:48px 0 80px}
+.quiz-card{background:var(--color-surface);border-radius:calc(var(--radius-lg)*1.2);padding:40px clamp(24px,5vw,48px)}
+.intro-photo{width:180px;height:180px;margin:0 auto 24px}
+.intro-fields{text-align:left;max-width:360px;margin:22px auto 0;display:flex;flex-direction:column;gap:14px}
+.consent-note{font-size:12px;line-height:1.5;color:color-mix(in srgb, var(--color-text) 58%, transparent);max-width:44ch;margin:18px auto 0}
+.progress{font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 14px}
+.progress-track{height:6px;border-radius:999px;background:var(--color-accent-100);overflow:hidden;margin-bottom:22px}
+.progress-bar{height:100%;background:var(--color-accent);border-radius:999px}
+.q-title{font-size:24px;margin:0 0 20px}
+.opt-list{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:var(--radius-md);background:var(--color-bg);cursor:pointer;border:1px solid transparent}
+.opt:hover{border-color:var(--color-accent-300)}
+.opt.selected{background:var(--color-accent-100);border-color:var(--color-accent)}
+.opt input{accent-color:var(--color-accent)}
+.opt span{font-size:15px}
+.nav-row{display:flex;justify-content:space-between;gap:12px;margin-top:28px}
+.result-type{display:inline-block;background:var(--color-accent-100);color:var(--color-accent-700);border-radius:999px;padding:6px 16px;font-weight:600;font-size:14px;margin-bottom:14px}
+.result-summary{font-size:15.5px;line-height:1.6;color:color-mix(in srgb, var(--color-text) 82%, transparent);margin:0 0 8px}
+.concern-tags{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 28px}
+.rec-title{font-size:18px;margin:24px 0 14px}
+.rec-grid{display:flex;flex-direction:column;gap:14px}
+.rec-card{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--color-bg);border-radius:var(--radius-md);padding:16px 18px}
+.rec-card .name{font-family:var(--font-heading);font-size:16px}
+.rec-card .desc{font-size:13px;color:color-mix(in srgb, var(--color-text) 72%, transparent);margin-top:2px;max-width:40ch}
+.disclaimer{font-size:12px;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-top:24px}
+footer{padding:40px 0 32px;border-top:1px solid var(--color-divider);font-size:13px;color:color-mix(in srgb, var(--color-text) 60%, transparent)}
+</style>
+</helmet>
+<nav class="nav">
+  <span class="nav-brand">d'reena beauty</span>
+  <a href="Home.dc.html">Home</a>
+  <a href="Treatments.dc.html">Treatments</a>
+  <a href="SkinAnalysis.dc.html" aria-current="page">Skin Analysis</a>
+  <a href="About.dc.html">About</a>
+  <a href="Pricing.dc.html">Pricing</a>
+  <a href="Contact.dc.html">Contact</a>
+  <a class="btn btn-primary" href="https://wa.me/60123456789" target="_blank" rel="noopener">WhatsApp Us</a>
+</nav>
+
+<div class="quiz-wrap">
+  <sc-if value="{{ isIntro }}" hint-placeholder-val="{{ true }}">
+    <div class="quiz-card" style="text-align:center">
+      <span class="kicker">Skin Analysis</span>
+      <h1 class="q-title">Find your skin type &amp; treatment</h1>
+      <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);max-width:46ch;margin:0 auto 24px">Upload a clear, makeup-free photo (optional) and answer 6 quick questions. We'll give you a simple skin summary and our top treatment picks.</p>
+      <image-slot id="analysis-photo" class="intro-photo" shape="circle" placeholder="Drop a selfie (optional)"></image-slot>
+      <div class="intro-fields">
+        <div class="field">
+          <label for="a-name">Your name</label>
+          <input class="input" id="a-name" placeholder="e.g. Mei Ling" value="{{ customerName }}" onInput="{{ onNameChange }}" />
+        </div>
+        <div class="field">
+          <label for="a-contact">Phone / WhatsApp (optional)</label>
+          <input class="input" id="a-contact" placeholder="e.g. 012-345 6789" value="{{ customerContact }}" onInput="{{ onContactChange }}" />
+        </div>
+      </div>
+      <div style="margin-top:22px">
+        <button type="button" class="btn btn-primary" disabled="{{ startDisabled }}" onClick="{{ start }}">Start the Analysis</button>
+      </div>
+      <p class="consent-note">By continuing, you agree d'reena beauty may keep your photo, name and answers on file to give you this recommendation and follow up about your visit.</p>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isQuestion }}" hint-placeholder-val="{{ false }}">
+    <div class="quiz-card">
+      <p class="progress">Question {{ stepNum }} of {{ total }}</p>
+      <div class="progress-track"><div class="progress-bar" style="{{ progressStyle }}"></div></div>
+      <h2 class="q-title">{{ question.title }}</h2>
+      <div class="opt-list">
+        <sc-for list="{{ options }}" as="opt" hint-placeholder-count="4">
+          <label class="opt {{ opt.selectedClass }}">
+            <input type="radio" name="{{ question.key }}" checked="{{ opt.selected }}" onChange="{{ opt.onSelect }}" />
+            <span>{{ opt.label }}</span>
+          </label>
+        </sc-for>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-ghost" onClick="{{ back }}">Back</button>
+        <button type="button" class="btn btn-primary" disabled="{{ nextDisabled }}" onClick="{{ next }}">{{ nextLabel }}</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isResult }}" hint-placeholder-val="{{ false }}">
+    <div class="quiz-card">
+      <span class="kicker">Your Skin Summary</span>
+      <span class="result-type">{{ result.skinType }} Skin</span>
+      <p class="result-summary">{{ result.blurb }}</p>
+      <div class="concern-tags">
+        <sc-for list="{{ result.tags }}" as="tag" hint-placeholder-count="2">
+          <span class="tag tag-accent-2">{{ tag }}</span>
+        </sc-for>
+      </div>
+      <h3 class="rec-title">Recommended treatments for you</h3>
+      <div class="rec-grid">
+        <sc-for list="{{ recommended }}" as="r" hint-placeholder-count="3">
+          <div class="rec-card">
+            <div>
+              <div class="name">{{ r.name }}</div>
+              <div class="desc">{{ r.summary }}</div>
+            </div>
+            <a class="btn btn-secondary" href="{{ r.href }}">View</a>
+          </div>
+        </sc-for>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-ghost" onClick="{{ restart }}">Retake Analysis</button>
+        <a class="btn btn-primary" href="https://wa.me/60123456789" target="_blank" rel="noopener">Book on WhatsApp</a>
+      </div>
+      <p class="disclaimer">This is a simple guide based on your answers, not a medical diagnosis. Your therapist will confirm the best plan at consultation.</p>
+    </div>
+  </sc-if>
+</div>
+<footer><div class="wrap">© 2026 d'reena beauty. All rights reserved.</div></footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const QUESTIONS = [
+  { key: 'feel', title: "How does your skin feel by midday?", options: [
+    { label: 'Tight or dry, sometimes flaky', value: 'dry' },
+    { label: 'Shiny all over', value: 'oily' },
+    { label: 'Shiny only around the T-zone', value: 'combo' },
+    { label: 'Comfortable and balanced', value: 'normal' },
+  ]},
+  { key: 'pores', title: "How would you describe your pores?", options: [
+    { label: 'Barely visible', value: 'fine' },
+    { label: 'Visible around the nose and chin', value: 'medium' },
+    { label: 'Visible all over my face', value: 'large' },
+  ]},
+  { key: 'breakouts', title: "Do you experience breakouts?", options: [
+    { label: 'Rarely', value: 'rare' },
+    { label: 'Occasionally', value: 'occasional' },
+    { label: 'Frequently', value: 'frequent' },
+  ]},
+  { key: 'tone', title: "Any dark spots, sun spots or uneven tone?", options: [
+    { label: 'None that I notice', value: 'none' },
+    { label: 'A few, here and there', value: 'some' },
+    { label: 'Yes, quite noticeable', value: 'noticeable' },
+  ]},
+  { key: 'lines', title: "How about fine lines or loss of firmness?", options: [
+    { label: 'None yet', value: 'none' },
+    { label: 'Just starting to notice', value: 'starting' },
+    { label: 'Visible to me', value: 'visible' },
+  ]},
+  { key: 'reactive', title: "Is your skin easily irritated or reactive?", options: [
+    { label: 'Rarely', value: 'rare' },
+    { label: 'Sometimes', value: 'sometimes' },
+    { label: 'Yes, often', value: 'often' },
+  ]},
+];
+
+const TYPE_MAP = { dry: 'Dry', oily: 'Oily', combo: 'Combination', normal: 'Normal' };
+const TYPE_BLURB = {
+  Dry: "Your skin tends to feel tight and can flake — it's craving deep, lasting hydration.",
+  Oily: "Your skin produces extra oil, especially through the day — balancing that is key.",
+  Combination: "Your T-zone runs oilier while cheeks stay drier — treatments should address both.",
+  Normal: "Your skin is fairly balanced day to day — the focus is on maintaining and boosting its glow.",
+};
+
+class Component extends DCLogic {
+  state = { step: 0, answers: {}, customerName: '', customerContact: '' };
+
+  componentDidMount() {
+    import('./treatments-data.js').then((m) => {
+      this._recommendFor = m.recommendFor;
+      this._treatments = m.TREATMENTS;
+      this.forceUpdate();
+    });
+    import('./analysis-store.js').then((m) => { this._store = m; });
+    import('./supabase-client.js').then((m) => { this._supa = m; });
+  }
+
+  select(key, value) {
+    this.setState((s) => ({ answers: { ...s.answers, [key]: value } }));
+  }
+  setName(v) { this.setState({ customerName: v }); }
+  setContact(v) { this.setState({ customerContact: v }); }
+  start() { if (this.state.customerName.trim()) this.setState({ step: 1 }); }
+  next() {
+    this.setState(
+      (s) => ({ step: Math.min(s.step + 1, QUESTIONS.length + 1) }),
+      () => { if (this.state.step === QUESTIONS.length + 1) this.submitAnalysis(); }
+    );
+  }
+  back() { this.setState((s) => ({ step: Math.max(s.step - 1, 0) })); }
+  restart() { this._submitted = false; this.setState({ step: 0, answers: {} }); }
+
+  computeResult() {
+    const a = this.state.answers;
+    const concerns = [];
+    const tags = [];
+    if (a.feel === 'dry') { concerns.push('dryness'); tags.push('Dryness'); }
+    if (a.feel === 'oily' || a.feel === 'combo' || a.pores === 'large') { concerns.push('oily'); tags.push('Oiliness'); }
+    if (a.breakouts === 'occasional' || a.breakouts === 'frequent') { concerns.push('acne'); tags.push('Breakouts'); }
+    if (a.tone === 'some' || a.tone === 'noticeable') { concerns.push('pigmentation'); tags.push('Uneven tone'); }
+    if (a.lines === 'starting' || a.lines === 'visible') { concerns.push('aging'); tags.push('Fine lines'); }
+    if (a.reactive === 'sometimes' || a.reactive === 'often') { concerns.push('sensitivity'); tags.push('Sensitivity'); }
+    if (!concerns.length) { concerns.push('dullness'); tags.push('Dullness'); }
+    const skinType = TYPE_MAP[a.feel] || 'Normal';
+    return { skinType, blurb: TYPE_BLURB[skinType], tags, concerns };
+  }
+
+  // Fires once, right as the customer lands on their results — by then we
+  // have their name/contact, every answer, their photo (if dropped), and
+  // the computed result, so this is the one moment a complete record
+  // exists to save. Saves to Supabase (the real, cross-device database);
+  // also mirrors into this browser's localStorage as an offline safety
+  // net in case the network call fails.
+  async submitAnalysis() {
+    if (this._submitted || !this._store) return;
+    this._submitted = true;
+    const result = this.computeResult();
+    const photo = this._store.getImageSlotDataUrl('analysis-photo');
+    const payload = {
+      customerName: this.state.customerName.trim(),
+      customerContact: this.state.customerContact.trim(),
+      answers: this.state.answers,
+      skinType: result.skinType,
+      concerns: result.concerns,
+      tags: result.tags,
+    };
+    this._store.saveSubmission({ ...payload, photo });
+    if (this._supa) {
+      try {
+        await this._supa.submitAnalysis({ ...payload, photoDataUrl: photo });
+      } catch (e) {
+        console.error('[dreena] could not save analysis to Supabase — kept locally only', e);
+      }
+    }
+  }
+
+  renderVals() {
+    const step = this.state.step;
+    const total = QUESTIONS.length;
+    const isIntro = step === 0;
+    const isQuestion = step >= 1 && step <= total;
+    const isResult = step === total + 1;
+    const answers = this.state.answers;
+
+    let question = null, options = [], nextDisabled = true;
+    if (isQuestion) {
+      question = QUESTIONS[step - 1];
+      options = question.options.map((o) => {
+        const selected = answers[question.key] === o.value;
+        return { ...o, selected, selectedClass: selected ? 'selected' : '', onSelect: () => this.select(question.key, o.value) };
+      });
+      nextDisabled = !answers[question.key];
+    }
+
+    let result = null, recommended = [];
+    if (isResult && this._treatments) {
+      result = this.computeResult();
+      recommended = this._recommendFor(result.concerns).map((t) => ({ ...t, href: 'TreatmentDetail.dc.html?t=' + t.slug }));
+    }
+
+    return {
+      isIntro, isQuestion, isResult,
+      stepNum: step, total,
+      progressStyle: 'width:' + Math.round((step / (total + 1)) * 100) + '%',
+      question, options, nextDisabled,
+      nextLabel: step === total ? 'See My Results' : 'Next',
+      result, recommended,
+      customerName: this.state.customerName,
+      customerContact: this.state.customerContact,
+      startDisabled: !this.state.customerName.trim(),
+      onNameChange: (e) => this.setName(e.target.value),
+      onContactChange: (e) => this.setContact(e.target.value),
+      start: () => this.start(), next: () => this.next(), back: () => this.back(), restart: () => this.restart(),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

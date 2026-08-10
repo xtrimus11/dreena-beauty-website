@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/styles.css">
+<script src="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/_ds_bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<style>
+body{margin:0;text-wrap:pretty}
+.wrap{max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.nav{padding-inline:max(24px, calc((100% - 1200px)/2 + 24px));position:sticky;top:0;background:var(--color-bg);z-index:20;display:flex;align-items:center;gap:var(--space-4);padding-block:var(--space-3)}
+.nav-brand{font-family:var(--font-heading);font-size:18px;margin-right:auto}
+.page-head{padding:40px 0 8px}
+.kicker{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 10px}
+.page-head h1{font-size:32px;margin:0}
+.page-sub{font-size:14.5px;color:color-mix(in srgb, var(--color-text) 70%, transparent);margin:10px 0 0;max-width:60ch;line-height:1.6}
+.login-wrap{max-width:380px;margin:56px auto;padding:36px;text-align:left}
+.login-wrap .field{margin-bottom:14px}
+.login-error{font-size:13px;color:#b3261e;margin:10px 0 0}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:24px 0;flex-wrap:wrap}
+.count{font-size:13px;color:color-mix(in srgb, var(--color-text) 65%, transparent)}
+.list{display:flex;flex-direction:column;gap:14px;padding-bottom:64px}
+.entry{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:start;padding:18px;border-radius:var(--radius-md)}
+.entry-photo{width:64px;height:64px;border-radius:50%;object-fit:cover;background:var(--color-bg);flex:none}
+.entry-photo-empty{width:64px;height:64px;border-radius:50%;background:var(--color-bg);display:flex;align-items:center;justify-content:center;font-size:11px;color:color-mix(in srgb, var(--color-text) 45%, transparent);text-align:center;flex:none}
+.entry-name{font-family:var(--font-heading);font-size:18px}
+.entry-contact{font-size:13px;color:color-mix(in srgb, var(--color-text) 70%, transparent);margin-top:2px}
+.entry-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.entry-answers{margin-top:12px;font-size:13px;color:color-mix(in srgb, var(--color-text) 75%, transparent)}
+.entry-answers summary{cursor:pointer;font-weight:600;color:var(--color-accent-700)}
+.entry-answers dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:10px 0 0;font-size:12.5px}
+.entry-answers dt{color:color-mix(in srgb, var(--color-text) 55%, transparent)}
+.entry-date{font-size:12px;color:color-mix(in srgb, var(--color-text) 55%, transparent);white-space:nowrap}
+.empty-state{padding:48px 24px;text-align:center;border-radius:var(--radius-lg);background:var(--color-surface);margin:24px 0}
+.empty-state p{font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent);max-width:48ch;margin:8px auto 0}
+</style>
+</helmet>
+<nav class="nav">
+  <span class="nav-brand">d'reena beauty — Submissions</span>
+  <a href="Home.dc.html">← Back to site</a>
+  <sc-if value="{{ isSignedIn }}">
+    <button type="button" class="btn btn-secondary" onClick="{{ signOut }}">Sign out</button>
+  </sc-if>
+</nav>
+<div class="wrap">
+
+  <sc-if value="{{ isCheckingAuth }}" hint-placeholder-val="{{ true }}">
+    <p class="page-sub" style="margin-top:40px">Checking your session…</p>
+  </sc-if>
+
+  <sc-if value="{{ isSignedOut }}" hint-placeholder-val="{{ false }}">
+    <div class="card login-wrap">
+      <div class="card-kicker">Owner login</div>
+      <div class="card-title" style="margin-bottom:14px">Sign in to view submissions</div>
+      <div class="field">
+        <label for="login-email">Email</label>
+        <input class="input" id="login-email" type="email" placeholder="you@dreenabeauty.com" value="{{ loginEmail }}" onInput="{{ onEmailChange }}" />
+      </div>
+      <div class="field">
+        <label for="login-password">Password</label>
+        <input class="input" id="login-password" type="password" placeholder="••••••••" value="{{ loginPassword }}" onInput="{{ onPasswordChange }}" />
+      </div>
+      <button type="button" class="btn btn-primary btn-block" disabled="{{ signInDisabled }}" onClick="{{ signIn }}">{{ signInLabel }}</button>
+      <sc-if value="{{ loginError }}">
+        <p class="login-error">{{ loginError }}</p>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isSignedIn }}" hint-placeholder-val="{{ false }}">
+    <div class="page-head">
+      <span class="kicker">Owner view · not for customers</span>
+      <h1>Skin Analysis submissions</h1>
+      <p class="page-sub">Every customer who completes the Skin Analysis is listed below — name, contact, photo (if they dropped one), and their answers, newest first.</p>
+    </div>
+
+    <div class="toolbar">
+      <span class="count">{{ countLabel }}</span>
+      <div style="display:flex;gap:10px">
+        <button type="button" class="btn btn-secondary" onClick="{{ refresh }}">Refresh</button>
+        <button type="button" class="btn btn-primary" disabled="{{ exportDisabled }}" onClick="{{ exportJson }}">Export as JSON</button>
+      </div>
+    </div>
+
+    <sc-if value="{{ loadError }}">
+      <p class="login-error">{{ loadError }}</p>
+    </sc-if>
+
+    <sc-if value="{{ hasEntries }}" hint-placeholder-val="{{ true }}">
+      <div class="list">
+        <sc-for list="{{ entries }}" as="entry" hint-placeholder-count="3">
+          <div class="card entry">
+            <sc-if value="{{ entry.photoUrl }}">
+              <img class="entry-photo" src="{{ entry.photoUrl }}" alt="" />
+            </sc-if>
+            <sc-if value="{{ entry.noPhoto }}">
+              <div class="entry-photo-empty">No photo</div>
+            </sc-if>
+            <div>
+              <div class="entry-name">{{ entry.displayName }}</div>
+              <div class="entry-contact">{{ entry.displayContact }}</div>
+              <div class="entry-meta">
+                <span class="tag tag-accent">{{ entry.skinTypeLabel }}</span>
+                <sc-for list="{{ entry.tags }}" as="tag" hint-placeholder-count="2">
+                  <span class="tag tag-accent-2">{{ tag }}</span>
+                </sc-for>
+              </div>
+              <details class="entry-answers">
+                <summary>View full questionnaire</summary>
+                <dl>
+                  <sc-for list="{{ entry.answerRows }}" as="row" hint-placeholder-count="6">
+                    <dt>{{ row.q }}</dt>
+                    <dd style="margin:0">{{ row.a }}</dd>
+                  </sc-for>
+                </dl>
+              </details>
+            </div>
+            <div class="entry-date">{{ entry.displayDate }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ noEntries }}" hint-placeholder-val="{{ false }}">
+      <div class="empty-state">
+        <div class="card-title">No submissions yet</div>
+        <p>Once a customer completes the Skin Analysis, their entry will show up here.</p>
+      </div>
+    </sc-if>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const QUESTION_LABELS = {
+  feel: "How does your skin feel by midday?",
+  pores: "How would you describe your pores?",
+  breakouts: "Do you experience breakouts?",
+  tone: "Any dark spots, sun spots or uneven tone?",
+  lines: "How about fine lines or loss of firmness?",
+  reactive: "Is your skin easily irritated or reactive?",
+};
+
+class Component extends DCLogic {
+  state = {
+    checkingAuth: true, session: null,
+    loginEmail: '', loginPassword: '', loginError: null, signingIn: false,
+    entries: [], loaded: false, loadError: null, photoUrls: {},
+  };
+
+  componentDidMount() {
+    import('./supabase-client.js').then(async (m) => {
+      this._supa = m;
+      this._authSub = m.onAuthChange((session) => {
+        this.setState({ session, checkingAuth: false });
+        if (session) this.refresh();
+      });
+      const session = await m.getSession();
+      this.setState({ session, checkingAuth: false });
+      if (session) this.refresh();
+    });
+  }
+
+  componentWillUnmount() {
+    if (this._authSub) this._authSub.unsubscribe();
+  }
+
+  setEmail(v) { this.setState({ loginEmail: v, loginError: null }); }
+  setPassword(v) { this.setState({ loginPassword: v, loginError: null }); }
+
+  async doSignIn() {
+    if (!this._supa || this.state.signingIn) return;
+    const email = this.state.loginEmail.trim();
+    const password = this.state.loginPassword;
+    if (!email || !password) return;
+    this.setState({ signingIn: true, loginError: null });
+    try {
+      await this._supa.signIn(email, password);
+      // onAuthChange fires the state update + refresh().
+    } catch (e) {
+      this.setState({ signingIn: false, loginError: e.message || 'Could not sign in.' });
+    }
+  }
+
+  async doSignOut() {
+    if (this._supa) await this._supa.signOut();
+    this.setState({ entries: [], loaded: false, photoUrls: {} });
+  }
+
+  async refresh() {
+    if (!this._supa) return;
+    this.setState({ loadError: null });
+    try {
+      const entries = await this._supa.fetchSubmissions();
+      this.setState({ entries, loaded: true });
+      entries.forEach((e) => {
+        if (!e.photo_url) return;
+        this._supa.getPhotoSignedUrl(e.photo_url).then((url) => {
+          if (!url) return;
+          this.setState((s) => ({ photoUrls: { ...s.photoUrls, [e.id]: url } }));
+        });
+      });
+    } catch (e) {
+      this.setState({ loaded: true, loadError: e.message || 'Could not load submissions.' });
+    }
+  }
+
+  exportJson() {
+    const data = JSON.stringify(this.state.entries, null, 2);
+    const blob = new Blob([data], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'dreena-skin-analysis-submissions.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  renderVals() {
+    const entries = this.state.entries.map((e) => ({
+      ...e,
+      displayName: e.customer_name || '(no name given)',
+      displayContact: e.customer_contact || 'No contact given',
+      displayDate: e.created_at ? new Date(e.created_at).toLocaleString() : '',
+      skinTypeLabel: (e.skin_type || 'Unknown') + ' Skin',
+      tags: e.tags || [],
+      noPhoto: !this.state.photoUrls[e.id],
+      photoUrl: this.state.photoUrls[e.id] || null,
+      answerRows: Object.keys(e.answers || {}).map((k) => ({ q: QUESTION_LABELS[k] || k, a: e.answers[k] })),
+    }));
+
+    return {
+      isCheckingAuth: this.state.checkingAuth,
+      isSignedOut: !this.state.checkingAuth && !this.state.session,
+      isSignedIn: !this.state.checkingAuth && !!this.state.session,
+      loginEmail: this.state.loginEmail,
+      loginPassword: this.state.loginPassword,
+      loginError: this.state.loginError,
+      signInDisabled: this.state.signingIn || !this.state.loginEmail.trim() || !this.state.loginPassword,
+      signInLabel: this.state.signingIn ? 'Signing in…' : 'Sign in',
+      onEmailChange: (e) => this.setEmail(e.target.value),
+      onPasswordChange: (e) => this.setPassword(e.target.value),
+      signIn: () => this.doSignIn(),
+      signOut: () => this.doSignOut(),
+      entries,
+      hasEntries: this.state.loaded && entries.length > 0,
+      noEntries: this.state.loaded && entries.length === 0,
+      loadError: this.state.loadError,
+      countLabel: this.state.loaded ? (entries.length + (entries.length === 1 ? ' submission' : ' submissions')) : 'Loading…',
+      exportDisabled: entries.length === 0,
+      refresh: () => this.refresh(),
+      exportJson: () => this.exportJson(),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

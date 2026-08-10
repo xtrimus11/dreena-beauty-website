@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/styles.css">
+<script src="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;text-wrap:pretty}
+a{color:var(--color-accent-700)}
+a:hover{color:var(--color-accent)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.nav{padding-inline:max(24px, calc((100% - 1200px)/2 + 24px));position:sticky;top:0;background:var(--color-bg);z-index:20}
+.kicker{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 10px}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:44px;align-items:center;padding:56px 0}
+.split h1{font-size:38px;margin:0}
+.split p{font-size:16px;line-height:1.6;margin:16px 0 0;max-width:54ch;color:color-mix(in srgb, var(--color-text) 82%, transparent)}
+.split-figure{border-radius:calc(var(--radius-lg)*1.4);overflow:hidden;aspect-ratio:4/5}
+.values{padding:16px 0 56px}
+.values h2{font-size:28px;margin:0 0 24px}
+.v-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:28px}
+.quote-card{background:var(--color-surface);border-radius:var(--radius-lg);padding:24px}
+.quote-card p{font-size:15px;margin:0 0 10px;color:color-mix(in srgb, var(--color-text) 85%, transparent)}
+.quote-card span{font-size:13px;font-weight:600;color:var(--color-accent-700)}
+.section{padding:16px 0 56px}
+.section h2{font-size:28px;margin:0 0 8px}
+footer{padding:40px 0 32px;border-top:1px solid var(--color-divider);margin-top:0;font-size:13px;color:color-mix(in srgb, var(--color-text) 60%, transparent)}
+@media (max-width:900px){.split{grid-template-columns:1fr}.split-figure{order:-1}.v-grid{grid-template-columns:1fr}.quote-grid{grid-template-columns:1fr}}
+</style>
+</helmet>
+<nav class="nav">
+  <span class="nav-brand">d'reena beauty</span>
+  <a href="Home.dc.html">Home</a>
+  <a href="Treatments.dc.html">Treatments</a>
+  <a href="SkinAnalysis.dc.html">Skin Analysis</a>
+  <a href="About.dc.html" aria-current="page">About</a>
+  <a href="Pricing.dc.html">Pricing</a>
+  <a href="Contact.dc.html">Contact</a>
+  <a class="btn btn-primary" href="https://wa.me/60123456789" target="_blank" rel="noopener">WhatsApp Us</a>
+</nav>
+<div class="wrap">
+  <section class="split">
+    <div>
+      <span class="kicker">Our Story</span>
+      <h1>Beauty care rooted in Seremban since 1987</h1>
+      <p>Our founder, Dareena Heng, has specialised in aesthetic beauty since 1987. Today d'reena beauty house in Uptown Avenue, Seremban 2, and d'sensations beauty in Taipan 2, Senawang, carry that same care forward — a safe haven to unwind, recharge and gain confidence in your own skin.</p>
+      <p>Your skin is unique, and so should your treatment be. We take the time to understand its true condition before recommending anything — never a one-size routine.</p>
+    </div>
+    <figure class="split-figure washed" style="margin:0">
+      <image-slot id="about-photo" shape="rect" placeholder="Founder or therapist portrait" src="https://images.unsplash.com/photo-1773899337978-b8d83bd9b783?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" credit="Photo by Phước Sang on Unsplash" credit-href="https://unsplash.com/@phuocsangvn"></image-slot>
+    </figure>
+  </section>
+
+  <section class="values">
+    <h2>What we stand for</h2>
+    <div class="v-grid">
+      <div class="card"><div class="card-kicker">Respect</div><div class="card-title">Body & skin positivity</div><p class="card-body">Every consultation starts with listening, not upselling.</p></div>
+      <div class="card"><div class="card-kicker">Expertise</div><div class="card-title">Dermalogica-certified care</div><p class="card-body">Trained therapists using trusted, results-driven technology.</p></div>
+      <div class="card"><div class="card-kicker">Results</div><div class="card-title">Care that's measured</div><p class="card-body">We track your skin's progress visit to visit, not just today.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <span class="kicker">Testimonials</span>
+    <h2>Trusted across Seremban</h2>
+    <div class="quote-grid">
+      <div class="quote-card"><p>"My skin has never felt this balanced. The therapist actually explained what was happening with my skin instead of just upselling me."</p><span>— Mei Ling, Seremban</span></div>
+      <div class="quote-card"><p>"Took the skin quiz before my first visit and the recommendation matched exactly what I needed. Great first impression."</p><span>— Farah A., Senawang</span></div>
+      <div class="quote-card"><p>"Been coming here for two years. Consistent results and they never push treatments I don't need."</p><span>— Angeline T.</span></div>
+      <div class="quote-card"><p>"The Hollywood Peel gave me an instant glow before my wedding — no downtime at all."</p><span>— Priya S.</span></div>
+    </div>
+  </section>
+</div>
+<footer><div class="wrap">© 2026 d'reena beauty. All rights reserved.</div></footer>
+
+</x-dc>
+</body>
+</html>
