@@ -11,11 +11,14 @@
 <link rel="stylesheet" href="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/styles.css">
 <script src="_ds/organic-df378c96-7955-4361-9bb7-72d0bc2d3f9a/_ds_bundle.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<link rel="stylesheet" href="./brand.css">
 <style>
 body{margin:0;text-wrap:pretty}
 .wrap{max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
 .nav{padding-inline:max(24px, calc((100% - 1200px)/2 + 24px));position:sticky;top:0;background:var(--color-bg);z-index:20;display:flex;align-items:center;gap:var(--space-4);padding-block:var(--space-3)}
-.nav-brand{font-family:var(--font-heading);font-size:18px;margin-right:auto}
+.nav-brand{display:flex;align-items:center;gap:10px;margin-right:auto;color:inherit;text-decoration:none}
+.nav-brand img{height:36px;width:auto;display:block}
+.nav-brand span{font-family:var(--font-heading);font-size:16px}
 .page-head{padding:40px 0 8px}
 .kicker{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 10px}
 .page-head h1{font-size:32px;margin:0}
@@ -42,7 +45,7 @@ body{margin:0;text-wrap:pretty}
 </style>
 </helmet>
 <nav class="nav">
-  <span class="nav-brand">d'reena beauty — Submissions</span>
+  <a class="nav-brand" href="Home.dc.html" aria-label="d'reena beauty home"><img src="assets/dreena-logo.png" alt="d'reena beauty"><span>Submissions</span></a>
   <a href="Home.dc.html">← Back to site</a>
   <sc-if value="{{ isSignedIn }}">
     <button type="button" class="btn btn-secondary" onClick="{{ signOut }}">Sign out</button>
