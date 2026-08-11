@@ -9,3 +9,9 @@
 07_quiz.jpg
 08_answers.jpg
 09_cta.jpg
+
+# Source logo file (flat white background) — the processed, transparent
+# version used by the site lives at assets/dreena-logo.png.
+logo dreena beauty.png
+
+.DS_Store
