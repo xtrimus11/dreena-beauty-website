@@ -1,0 +1,128 @@
+// d'reena Journal — blog post catalog. Each post ties back to real d'reena
+// treatments/ingredients rather than generic filler, per the brief: explain
+// what a treatment or ingredient actually does to skin.
+//
+// To publish a new post: add an entry here (newest first) and drop its
+// photo credit alongside it. Blog.dc.html and BlogPost.dc.html both read
+// from this one file — no other changes needed.
+
+export const BLOG_POSTS = [
+  {
+    slug: "acne-scarring-treatments",
+    title: "5 Ways We Treat Acne Scarring",
+    kicker: "Treatments Explained",
+    date: "2026-08-12",
+    cardStyle: "cream",
+    excerpt: "Not all acne scars are the same, so we don't treat them the same way — here's how we match the approach to the scar.",
+    heroPlaceholder: "Facial treatment addressing acne scarring",
+    image: "https://images.unsplash.com/photo-1761718210089-ba3bb5ccb54f?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by kimia kazemi on Unsplash",
+    imageCreditHref: "https://unsplash.com/@kimick",
+    body: [
+      "\"Acne scarring\" actually covers a few different things — sunken (atrophic) scars from lost collagen, raised scars from too much, and flat dark marks that aren't scars at all but post-inflammatory pigmentation fading on its own timeline. Treating all three the same way is why a lot of at-home routines stall out.",
+      "For genuine textural scarring, we lean on collagen-rebuilding treatments — our ACR Treatment (Absolute Cell Reversal) accelerates skin's own repair cycle, while ProClear Skin Treatment combines pore-softening extraction with actives that calm the inflammation that causes new scars to form in the first place.",
+      "For the flat, discoloured marks left behind after a breakout, Pico Laser with ProRestore is usually the faster route — it shatters pigment into fragments your lymphatic system clears naturally, without the heat damage of older laser types.",
+      "Deeper, longer-standing atrophic scarring sometimes needs a mechanical approach — microneedling or dermal fillers to physically rebuild lost volume — and topical retinoids to keep new collagen turning over between sessions.",
+      "The honest starting point is always a proper look at what type of scarring you actually have. That's exactly what a Skin Analysis is for — it's the fastest way to find out which of these five actually applies to you before you book anything.",
+    ],
+  },
+  {
+    slug: "vitamin-c-benefits",
+    title: "The Real Benefits of Vitamin C (And Why We Layer It Carefully)",
+    kicker: "Ingredients",
+    date: "2026-08-05",
+    cardStyle: "photo",
+    excerpt: "It's not just a brightening buzzword — here's what vitamin C is actually doing, and why timing matters more than concentration.",
+    heroPlaceholder: "Vitamin C serum and skincare products",
+    image: "https://images.unsplash.com/photo-1760862652442-e8ff7ebdd2f8?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Ela De Pure on Unsplash",
+    imageCreditHref: "https://unsplash.com/@eladepure",
+    body: [
+      "Vitamin C earns its reputation honestly — it's one of the few ingredients that does three separate jobs at once: it's an antioxidant that neutralises the free-radical damage from sun and pollution exposure, a cofactor your skin needs to actually synthesise new collagen, and a mild inhibitor of the enzyme (tyrosinase) responsible for excess pigment production.",
+      "That third mechanism is why it shows up so heavily in our PowerBright and ProBright treatments — it fades existing dark spots while helping prevent new ones from forming, which topical brightening alone often can't do.",
+      "Where most people go wrong is stability and layering, not the ingredient itself. Vitamin C oxidises easily — a serum that's turned brown or amber in the bottle has largely lost its potency. It's also most effective applied in the morning, underneath sunscreen, since UV exposure is exactly what it's there to help defend against.",
+      "If your skin is reactive or you're already using actives like retinol, layering matters — this is the kind of detail your therapist adjusts for your actual skin at consultation, rather than a one-size routine.",
+    ],
+  },
+  {
+    slug: "pico-laser-pigmentation",
+    title: "Pico Laser and Pigmentation: What's Really Happening Under Your Skin",
+    kicker: "Treatments Explained",
+    date: "2026-07-29",
+    cardStyle: "cream",
+    excerpt: "\"Laser\" sounds intense, but pico technology works by breaking pigment apart, not burning it off.",
+    heroPlaceholder: "Pico laser pigmentation treatment",
+    image: "https://images.unsplash.com/photo-1555820585-c5ae44394b79?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Sunny Ng on Unsplash",
+    imageCreditHref: "https://unsplash.com/@sunnysmng",
+    body: [
+      "Older pigmentation lasers work photothermally — they heat pigment until it breaks down, which also means heating the surrounding skin, with more redness and downtime as a result. Pico Laser is photomechanical: it delivers energy in pulses measured in picoseconds (a trillionth of a second), fast enough to physically shatter pigment clusters into fragments without generating much heat at all.",
+      "Once pigment is fragmented that small, your body's own lymphatic system clears it away gradually over the following weeks — which is why results build progressively across a course of sessions rather than appearing all at once.",
+      "Our Pico Laser with ProRestore treatment pairs this with a barrier-restoring serum immediately after, since even minimal heat exposure briefly stresses the skin barrier — the ProRestore step is what keeps the treatment from leaving skin dry or reactive afterward.",
+      "It's effective on pigmentation, chloasma (melasma), and acne scarring alike, and because the pulses are so short, it works on finer pores and firming at the same time — which is why it's often the treatment we recommend alongside a brightening course rather than instead of one.",
+    ],
+  },
+  {
+    slug: "how-hifu-tightens-skin",
+    title: "How HIFU Actually Tightens Your Skin",
+    kicker: "Treatments Explained",
+    date: "2026-07-22",
+    cardStyle: "photo",
+    excerpt: "High-Intensity Focused Ultrasound sounds intense because it is — here's what's really happening beneath the surface, with no surgery involved.",
+    heroPlaceholder: "HIFU ultrasound skin tightening treatment",
+    image: "https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Look Studio on Unsplash",
+    imageCreditHref: "https://unsplash.com/@lookphoto",
+    body: [
+      "HIFU stands for High Intensity Focused Ultrasound, and the key word is \"focused.\" Unlike surface treatments, HIFU energy passes harmlessly through the top layers of skin and converges at a single precise depth — typically the SMAS layer, the same structural layer surgeons lift during a facelift.",
+      "At that depth, the focused energy creates tiny points of heat that trigger a genuine wound-healing response: your body responds by producing new collagen around each treated point. That's the entire mechanism — there's no cutting, no surgery, and the surface of your skin is left untouched throughout.",
+      "Because it works by triggering your own collagen production rather than filling or freezing anything, results aren't immediate — they build gradually over roughly two to three months as new collagen forms, and the lifting effect continues to improve during that window.",
+      "It's why our HIFU - Ultratherapy treatment has no real downtime — you can go straight back to your day — but it also means it rewards patience over a quick fix. Most clients see the most noticeable change from the second month onward.",
+    ],
+  },
+  {
+    slug: "skin-barrier-ingredients",
+    title: "3 Ingredients Your Skin Barrier Actually Loves",
+    kicker: "Ingredients",
+    date: "2026-07-15",
+    cardStyle: "cream",
+    excerpt: "Ceramides, panthenol, and glycerin — the quiet trio behind every calming, barrier-repair treatment we do.",
+    heroPlaceholder: "Skincare cream texture on skin",
+    image: "https://images.unsplash.com/photo-1603401712778-ab0575182f12?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by xandro Vandewalle on Unsplash",
+    imageCreditHref: "https://unsplash.com/@xandrovandewalle",
+    body: [
+      "Your skin barrier — the outermost layer — is what keeps moisture in and irritants out. When it's compromised (from over-exfoliating, harsh weather, or just reactive skin), everything else gets harder: actives sting more, redness lingers, and dryness feels impossible to fix. Repairing the barrier first is usually what actually solves it.",
+      "Ceramides are lipids that physically fill the gaps between skin cells, the same way mortar holds bricks together — without enough of them, moisture escapes and irritants get in more easily.",
+      "Panthenol (pro-vitamin B5) converts into vitamin B5 once absorbed, and is one of the best-studied ingredients for calming visible redness and supporting the skin's own repair processes.",
+      "Glycerin is a humectant — it draws water into the skin's surface layer and holds it there, which is why it shows up in almost every hydrating formula regardless of skin type.",
+      "This is exactly the trio behind our Environmental Treatment and PRO Calm Treatment — both built for reactive, barrier-compromised skin rather than pushing actives it isn't ready for yet.",
+    ],
+  },
+  {
+    slug: "niacinamide-explained",
+    title: "Niacinamide, Explained",
+    kicker: "Ingredients",
+    date: "2026-07-08",
+    cardStyle: "photo",
+    excerpt: "Vitamin B3 shows up in more of our treatments than almost any other single ingredient — here's what it's actually doing to your skin.",
+    heroPlaceholder: "Niacinamide serum dropper skincare",
+    image: "https://images.unsplash.com/photo-1672062519629-abe610383152?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Denley Photography on Unsplash",
+    imageCreditHref: "https://unsplash.com/@denleyphotography",
+    body: [
+      "Niacinamide (vitamin B3) is one of the most well-tolerated active ingredients in skincare, which is exactly why it turns up throughout our Dermalogica-based treatment menu regardless of skin type.",
+      "Structurally, it supports the skin's own barrier by helping cells produce ceramides — so skin holds onto moisture better on its own, rather than depending entirely on what's applied topically.",
+      "It also regulates sebum (oil) production, which is why it helps with both an oily T-zone and the visible size of pores over consistent use, and it interrupts the transfer of pigment to skin cells — meaning it gradually fades post-inflammatory marks left behind by breakouts or irritation.",
+      "Because it's so gentle, it's one of the few actives that layers well with almost everything else — which is why you'll find it in our SkinBoost Treatment and woven through several of our brightening and calming programs rather than sold as a single stand-alone product.",
+    ],
+  },
+];
+
+export function getPost(slug) {
+  return BLOG_POSTS.find((p) => p.slug === slug) || null;
+}
+
+export function otherPosts(slug, count) {
+  return BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, count);
+}
