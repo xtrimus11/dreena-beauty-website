@@ -46,6 +46,14 @@ a:hover{color:var(--color-accent)}
 .patch{background:var(--color-accent-100);border-radius:calc(var(--radius-lg)*1.3);padding:40px clamp(24px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin:0 0 64px}
 .patch h3{font-size:24px;margin:0}
 .patch p{font-size:15px;max-width:46ch;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:8px 0 0}
+.new-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.new-card{display:flex;flex-direction:column;border-radius:calc(var(--radius-lg)*1.1);overflow:hidden;background:var(--color-surface)}
+.new-card-figure{aspect-ratio:4/5;overflow:hidden}
+.new-card-figure img{width:100%;height:100%;object-fit:cover;display:block}
+.new-card-body{padding:20px;display:flex;flex-direction:column;gap:6px}
+.new-card-sub{font-size:12.5px;font-weight:600;color:color-mix(in srgb, var(--color-text) 65%, transparent);margin:2px 0 0}
+.new-card-body p{font-size:13.5px;line-height:1.55;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:8px 0 0}
+@media (max-width:900px){.new-grid{grid-template-columns:1fr}}
 footer{padding:40px 0 32px;border-top:1px solid var(--color-divider);font-size:13px;color:color-mix(in srgb, var(--color-text) 60%, transparent)}
 @media (max-width:900px){.hero{grid-template-columns:1fr}.hero-figure{order:-1}.pillars{grid-template-columns:1fr}.ranges{grid-template-columns:1fr}.mapping{grid-template-columns:1fr}}
 </style>
@@ -76,6 +84,41 @@ footer{padding:40px 0 32px;border-top:1px solid var(--color-divider);font-size:1
     </div>
     <div class="hero-figure washed">
       <image-slot id="derm-hero" placeholder="Dermalogica product shelf or treatment room" src="https://images.unsplash.com/photo-1760862652442-e8ff7ebdd2f8?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" credit="Photo by Ela De Pure on Unsplash" credit-href="https://unsplash.com/@eladepure"></image-slot>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="kicker">New In</span>
+    <h2>Just landed at d'reena</h2>
+    <p class="section-sub">The newest additions to the professional range — ask your therapist to work these into your next treatment or home routine.</p>
+    <div class="new-grid">
+      <div class="new-card">
+        <div class="new-card-figure"><img src="assets/dermalogica/futurecode-booster.jpg" alt="FutureCode Booster serum"></div>
+        <div class="new-card-body">
+          <span class="tag tag-accent" style="align-self:flex-start">NEW</span>
+          <div class="card-title">FutureCode Booster</div>
+          <div class="new-card-sub">Damage correction + longevity serum</div>
+          <p>Inspired by biohacking principles — supports skin's longevity by enhancing natural repair and helping reduce visible signs of DNA-related damage: deepening lines, coarse texture and discolouration.</p>
+        </div>
+      </div>
+      <div class="new-card">
+        <div class="new-card-figure"><img src="assets/dermalogica/neurotouch.jpg" alt="NeuroTouch Symmetry Serum"></div>
+        <div class="new-card-body">
+          <span class="tag tag-accent" style="align-self:flex-start">NEW</span>
+          <div class="card-title">NeuroTouch Symmetry Serum</div>
+          <div class="new-card-sub">Neuroscience-powered sculpting oil</div>
+          <p>Facial sculpting skincare elevated by neuroscience — clinically shown to visibly restore facial symmetry for more sculpted-looking skin over an 8-week course.</p>
+        </div>
+      </div>
+      <div class="new-card">
+        <div class="new-card-figure"><img src="assets/dermalogica/water-cream.jpg" alt="Pro-Collagen Banking Water Cream"></div>
+        <div class="new-card-body">
+          <span class="tag tag-accent" style="align-self:flex-start">NEW</span>
+          <div class="card-title">Pro-Collagen Banking Water Cream</div>
+          <div class="new-card-sub">Plumping + preserving hydrator</div>
+          <p>Clinically proven to boost collagen by 44% and elastin by 56%, with visibly reduced fine lines and wrinkles in as little as 3 days.</p>
+        </div>
+      </div>
     </div>
   </section>
 

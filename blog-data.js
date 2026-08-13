@@ -8,6 +8,24 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "what-is-biohacking-for-skin",
+    title: "What \"Biohacking\" Actually Means for Your Skin",
+    kicker: "Ingredients",
+    date: "2026-08-13",
+    cardStyle: "photo",
+    excerpt: "It's not just a wellness buzzword — here's what biohacking principles actually mean applied to skin, and why deepening lines and coarse texture aren't simply \"getting older.\"",
+    heroPlaceholder: "FutureCode Booster, a damage-correction and longevity serum",
+    image: "assets/dermalogica/futurecode-booster.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
+    body: [
+      "Most of what shows up on skin as \"ageing\" isn't really about the passage of time — it's accumulated damage. Years of UV exposure, pollution, and everyday oxidative stress leave a kind of wear at the cellular level, and that's what actually shows up as deepening lines, coarse texture, and discolouration. Treat the damage, and you're treating the visible sign at its source rather than just the surface.",
+      "\"Biohacking\" as a skincare principle simply means working with that idea directly: supporting skin's own natural repair processes rather than only masking what's already visible. It's the same logic behind why a barrier-repair treatment outperforms a heavy moisturiser alone, just aimed at deeper, cumulative damage instead of daily dryness.",
+      "This is the thinking behind FutureCode Booster, the newest addition to the professional range we carry as an exclusive Dermalogica distributor — a damage-correction and longevity serum built to help skin stay resilient and balanced over time, rather than promising an overnight fix. Used consistently, morning or evening, either alone or mixed into your existing serum or moisturiser, it's designed to support repair at the level where the damage actually happened.",
+      "None of this replaces sun protection or a properly built routine — biohacking principles work alongside the fundamentals, not instead of them. If you're not sure where a product like this fits into what your skin actually needs, that's exactly what a consultation (or our Skin Analysis) is for.",
+    ],
+  },
+  {
     slug: "acne-scarring-treatments",
     title: "5 Ways We Treat Acne Scarring",
     kicker: "Treatments Explained",
