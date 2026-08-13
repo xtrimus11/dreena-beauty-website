@@ -21,15 +21,20 @@ a{color:var(--color-accent-700)}
 a:hover{color:var(--color-accent)}
 .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
 .nav{padding-inline:max(24px, calc((100% - 1200px)/2 + 24px));position:sticky;top:0;background:var(--color-bg);z-index:20}
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:48px;align-items:center;padding:64px 0 40px}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,520px);gap:56px;align-items:center;padding:64px 0 40px}
 .display{font-family:var(--font-heading);font-size:clamp(40px,5.5vw,64px);line-height:1.05;margin:0}
-.hero-sub{font-size:17px;line-height:1.6;max-width:52ch;color:color-mix(in srgb, var(--color-text) 80%, transparent);margin:20px 0 0}
+.hero-sub{font-family:var(--font-heading);font-style:italic;font-size:18px;line-height:1.55;max-width:46ch;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:20px 0 0}
 .hero-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.hero-trust{display:flex;align-items:center;gap:14px;margin-top:32px}
+.trust-badge{flex:none;width:52px;height:52px;border-radius:50%;background:var(--color-accent-700);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:600;letter-spacing:-.02em}
+.trust-text{font-size:14px;line-height:1.4;margin:0;color:color-mix(in srgb, var(--color-text) 82%, transparent)}
+.trust-text strong{display:block;color:var(--color-text)}
 .hero-figure{border-radius:calc(var(--radius-lg)*1.4);overflow:hidden;aspect-ratio:4/5}
-.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:8px 0 48px}
-.stat{background:var(--color-accent-100);border-radius:var(--radius-lg);padding:20px 18px;text-align:center}
-.stat-num{font-family:var(--font-heading);font-size:26px;margin:0;color:var(--color-accent-700)}
-.stat-label{font-size:12.5px;letter-spacing:.04em;color:color-mix(in srgb, var(--color-text) 75%, transparent);margin:6px 0 0}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:8px 0 48px}
+.stat{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:0 16px;border-left:1px solid var(--color-divider)}
+.stat:first-child{border-left:none}
+.stat-icon{font-size:24px;line-height:1}
+.stat-label{font-size:13px;font-weight:600;letter-spacing:.01em;color:var(--color-text);margin:0;max-width:20ch}
 .patch{background:var(--color-accent-2-100);border-radius:calc(var(--radius-lg)*1.3);padding:44px clamp(24px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin:8px 0 64px}
 .patch h3{font-size:26px;margin:0}
 .patch p{font-size:15px;max-width:44ch;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:8px 0 0}
@@ -60,7 +65,7 @@ footer{padding:40px 0 32px;border-top:1px solid var(--color-divider);margin-top:
 .foot-head{font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:600;color:color-mix(in srgb, var(--color-text) 60%, transparent);margin:0 0 12px}
 .foot-links{display:flex;flex-direction:column;gap:8px;font-size:14px}
 .foot-bottom{font-size:12.5px;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-top:32px}
-@media (max-width:900px){.hero{grid-template-columns:1fr}.hero-figure{order:-1}.stat-row{grid-template-columns:1fr}.t-grid{grid-template-columns:1fr}.feature{grid-template-columns:1fr}.quote-grid{grid-template-columns:1fr}.loc-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr;gap:24px}}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.hero-figure{order:-1}.stat-row{grid-template-columns:repeat(2,1fr);gap:20px 0}.stat{border-left:none;padding:0}.stat:nth-child(odd){border-right:1px solid var(--color-divider)}.t-grid{grid-template-columns:1fr}.feature{grid-template-columns:1fr}.quote-grid{grid-template-columns:1fr}.loc-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr;gap:24px}}
 </style>
 </helmet>
 <nav class="nav">
@@ -79,11 +84,15 @@ footer{padding:40px 0 32px;border-top:1px solid var(--color-divider);margin-top:
   <section class="hero">
     <div>
       <span class="kicker">Seremban's beauty house since 1987</span>
-      <h1 class="display">Your skin.<br>Our passion.</h1>
-      <p class="hero-sub">Professional, Dermalogica-certified facials and skin treatments — customised to your skin's true condition, not a one-size routine. Look better. Feel better. Be better.</p>
+      <h1 class="display">Real Skin Care.<br>Real Results.</h1>
+      <p class="hero-sub">Dermalogica-certified facials. Personalised to your skin's condition. Not a one-size routine — a plan built for you.</p>
       <div class="hero-row">
         <a class="btn btn-primary" href="SkinAnalysis.dc.html">Take the Skin Analysis</a>
         <a class="btn btn-ghost" href="Treatments.dc.html">Browse Treatments</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-badge">40yrs</div>
+        <p class="trust-text"><strong>40 Years Trusted</strong>Across Seremban &amp; Senawang</p>
       </div>
     </div>
     <figure class="hero-figure washed" style="margin:0">
@@ -91,10 +100,11 @@ footer{padding:40px 0 32px;border-top:1px solid var(--color-divider);margin-top:
     </figure>
   </section>
 
-  <section class="stat-row" aria-label="d'reena beauty at a glance">
-    <div class="stat"><p class="stat-num">23</p><p class="stat-label">Signature treatments</p></div>
-    <div class="stat"><p class="stat-num">2</p><p class="stat-label">Locations in Seremban &amp; Senawang</p></div>
-    <div class="stat"><p class="stat-num">1987</p><p class="stat-label">Serving skin since</p></div>
+  <section class="stat-row" aria-label="Why choose d'reena beauty">
+    <div class="stat"><span class="stat-icon">🌿</span><p class="stat-label">Dermalogica-Certified</p></div>
+    <div class="stat"><span class="stat-icon">🧴</span><p class="stat-label">Advanced Skin Treatment</p></div>
+    <div class="stat"><span class="stat-icon">📍</span><p class="stat-label">Largest Dermalogica in Seremban</p></div>
+    <div class="stat"><span class="stat-icon">✅</span><p class="stat-label">40 Years Trusted</p></div>
   </section>
 
   <section class="patch">
