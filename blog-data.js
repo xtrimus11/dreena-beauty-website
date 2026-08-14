@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "retinol-explained",
+    title: "Retinol, Explained",
+    kicker: "Ingredients",
+    date: "2026-08-14",
+    cardStyle: "cream",
+    excerpt: "It's the most studied anti-ageing ingredient in skincare — here's what retinol is actually doing at the cellular level, and why delivery matters as much as the ingredient itself.",
+    heroPlaceholder: "Facial treatment for mature, aging skin",
+    image: "https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Look Studio on Unsplash",
+    imageCreditHref: "https://unsplash.com/@lookphoto",
+    body: [
+      "Retinol is a derivative of vitamin A, and it's earned its reputation as skincare's most researched active for one reason: it's one of the only ingredients that actually changes how skin cells behave, rather than just sitting on the surface. Once it penetrates into the epidermis, it binds to retinoic acid receptors inside skin cells and effectively tells them to speed up their normal turnover cycle — shedding dulled, sun-damaged surface cells faster and replacing them with newer ones underneath.",
+      "That same receptor-binding action also signals fibroblasts, the cells responsible for producing collagen, to ramp up production — while simultaneously blocking the enzymes (matrix metalloproteinases, or MMPs) that break collagen down after UV exposure. It's this dual effect — more collagen being made, less being destroyed — that's behind retinol's long track record for softening fine lines and improving overall skin firmness.",
+      "One detail that trips people up: over-the-counter retinol isn't the active form your skin actually uses. It has to be converted inside the skin first — retinol to retinaldehyde, then retinaldehyde to retinoic acid — before those receptors can use it. That conversion step is exactly why it's gentler than prescription-strength tretinoin, but also why concentration and delivery matter so much. It's the reasoning behind our LumiLift Elite treatment, which pairs medical-grade retinol with Ionto delivery to drive it past the surface rather than relying on it to slowly work its way in on its own.",
+      "The trade-off with any retinoid is that it makes skin more sensitive to UV light while it's actively working, which is why it's a night-only ingredient and non-negotiable with daytime SPF. Most people also go through a short adjustment period — mild flaking or sensitivity — as turnover speeds up, which is normal and usually settles within a few weeks of consistent, gradual use.",
+      "Retinol isn't one-size-fits-all — concentration, frequency, and what else is in your routine all need to be matched to your actual skin, especially if you're already using other actives. That's what a proper consultation or Skin Analysis is for, before you start at home or book a treatment built around it.",
+    ],
+  },
+  {
     slug: "what-is-biohacking-for-skin",
     title: "What \"Biohacking\" Actually Means for Your Skin",
     kicker: "Ingredients",
