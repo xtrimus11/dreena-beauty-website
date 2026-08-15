@@ -1,11 +1,12 @@
+import Link from "next/link";
 import { LIVE_LINKS, WHATSAPP_URL } from "@/lib/site";
 
 const EXPLORE = [
-  { label: "Treatments", href: LIVE_LINKS.treatments },
-  { label: "Skin Analysis", href: LIVE_LINKS.skinAnalysis },
-  { label: "About Us", href: LIVE_LINKS.about },
-  { label: "Dermalogica", href: LIVE_LINKS.dermalogica },
-  { label: "Blog", href: LIVE_LINKS.blog },
+  { label: "Treatments", href: "/treatments", internal: true },
+  { label: "Skin Analysis", href: LIVE_LINKS.skinAnalysis, internal: false },
+  { label: "About Us", href: LIVE_LINKS.about, internal: false },
+  { label: "Dermalogica", href: LIVE_LINKS.dermalogica, internal: false },
+  { label: "Blog", href: LIVE_LINKS.blog, internal: false },
 ];
 
 const VISIT = [
@@ -29,17 +30,27 @@ export default function Footer() {
         <div>
           <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted">Explore</span>
           <div className="mt-4 flex flex-col gap-3">
-            {EXPLORE.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit text-sm text-foreground/80 transition-colors hover:text-foreground"
-              >
-                {l.label}
-              </a>
-            ))}
+            {EXPLORE.map((l) =>
+              l.internal ? (
+                <Link
+                  key={l.label}
+                  href={l.href}
+                  className="w-fit text-sm text-foreground/80 transition-colors hover:text-foreground"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-fit text-sm text-foreground/80 transition-colors hover:text-foreground"
+                >
+                  {l.label}
+                </a>
+              )
+            )}
           </div>
         </div>
 

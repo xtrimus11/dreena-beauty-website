@@ -7,12 +7,12 @@ import { Menu, X } from "lucide-react";
 import { LIVE_LINKS, WHATSAPP_URL } from "@/lib/site";
 
 const LINKS = [
-  { label: "Treatments", href: LIVE_LINKS.treatments },
-  { label: "Skin Analysis", href: LIVE_LINKS.skinAnalysis },
-  { label: "About", href: LIVE_LINKS.about },
-  { label: "Dermalogica", href: LIVE_LINKS.dermalogica },
-  { label: "Blog", href: LIVE_LINKS.blog },
-  { label: "Contact", href: LIVE_LINKS.contact },
+  { label: "Treatments", href: "/treatments", internal: true },
+  { label: "Skin Analysis", href: LIVE_LINKS.skinAnalysis, internal: false },
+  { label: "About", href: LIVE_LINKS.about, internal: false },
+  { label: "Dermalogica", href: LIVE_LINKS.dermalogica, internal: false },
+  { label: "Blog", href: LIVE_LINKS.blog, internal: false },
+  { label: "Contact", href: LIVE_LINKS.contact, internal: false },
 ];
 
 export default function Navbar() {
@@ -46,18 +46,29 @@ export default function Navbar() {
           </Link>
 
           <nav className="hidden items-center gap-9 md:flex">
-            {LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative text-xs font-medium uppercase tracking-[0.14em] text-foreground"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-foreground transition-transform duration-300 ease-out group-hover:scale-x-100" />
-              </a>
-            ))}
+            {LINKS.map((link) =>
+              link.internal ? (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="group relative text-xs font-medium uppercase tracking-[0.14em] text-foreground"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-foreground transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative text-xs font-medium uppercase tracking-[0.14em] text-foreground"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-foreground transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                </a>
+              )
+            )}
           </nav>
 
           <div className="flex items-center gap-4">
@@ -89,21 +100,38 @@ export default function Navbar() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-40 flex flex-col items-start justify-center gap-6 bg-background px-8 md:hidden"
           >
-            {LINKS.map((link, i) => (
-              <motion.a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.08 * i, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="text-4xl font-medium tracking-tight text-foreground"
-              >
-                {link.label}
-              </motion.a>
-            ))}
+            {LINKS.map((link, i) =>
+              link.internal ? (
+                <motion.div
+                  key={link.label}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.08 * i, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="text-4xl font-medium tracking-tight text-foreground"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ) : (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.08 * i, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="text-4xl font-medium tracking-tight text-foreground"
+                >
+                  {link.label}
+                </motion.a>
+              )
+            )}
             <motion.a
               href={WHATSAPP_URL}
               target="_blank"
