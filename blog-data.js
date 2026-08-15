@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "hyaluronic-acid-explained",
+    title: "Hyaluronic Acid, Explained",
+    kicker: "Ingredients",
+    date: "2026-08-15",
+    cardStyle: "photo",
+    excerpt: "It can hold up to a thousand times its own weight in water — but how much of that actually reaches your skin depends on molecular weight and layering, not just the ingredient itself.",
+    heroPlaceholder: "Hydrating facial treatment for smooth, plump skin",
+    image: "https://images.unsplash.com/photo-1647004692483-c5d942fe1137?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Soheil Kmp on Unsplash",
+    imageCreditHref: "https://unsplash.com/@soheilkmp",
+    body: [
+      "Hyaluronic acid isn't an exotic lab invention — it's a sugar molecule (a glycosaminoglycan) your body already makes and uses throughout your skin, joints, and eyes to keep tissue cushioned and hydrated. What makes it useful in skincare is a simple physical property: a single hyaluronic acid molecule can bind and hold up to roughly a thousand times its own weight in water, which is what makes it one of the most effective humectants available — it doesn't add oil or occlude skin, it pulls water in and holds it there.",
+      "The detail most routines get wrong is molecular weight. High-molecular-weight hyaluronic acid is too large to pass through the outer skin layer, so it sits on the surface and forms a breathable film that slows moisture loss — useful, but it isn't reaching living skin cells. Lower-molecular-weight, hydrolysed forms are small enough to actually penetrate into the epidermis, where they can support hydration at a deeper level. Well-formulated products often blend a few molecular weights for exactly this reason — surface hydration and deeper delivery at once.",
+      "Skin's own hyaluronic acid content also declines with age, alongside collagen and elastin — one of the reasons mature skin loses that springy, plump quality even before fine lines show up. It's part of why hydration-focused treatments matter as much as anti-ageing ones: our Oxygen Treatment is built around intense hydration for exactly this kind of moisture-depleted skin, and IONTO Stem Cell Treatment uses iontophoresis to drive hydrating actives past the surface rather than leaving it to a topical alone.",
+      "One genuine caution: in very dry, low-humidity air, a hyaluronic acid serum applied without anything to seal it in can occasionally pull moisture from deeper skin layers toward the surface, where it evaporates — the opposite of the intended effect. Layering it under a moisturiser avoids this, which is part of why product order matters more than most people assume.",
+      "Like most actives, how much of this actually shows up on your skin depends on formulation, concentration, and what else is in your routine — which is exactly what a proper Skin Analysis is for before you commit to a product or a course of treatments.",
+    ],
+  },
+  {
     slug: "retinol-explained",
     title: "Retinol, Explained",
     kicker: "Ingredients",
