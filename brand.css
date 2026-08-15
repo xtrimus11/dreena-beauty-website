@@ -1,12 +1,14 @@
-/* d'reena beauty — Dermalogica-informed palette laid over the Organic design system.
-   Clinical stone ground, graphite text, professional teal accent, slate second voice. */
+/* d'reena beauty — warm cream / taupe / champagne palette, matching the new
+   Next.js homepage (web/) at dreena-beauty-website.vercel.app. Bright cream
+   ground, near-black text, taupe-gold primary accent, softer taupe second
+   voice. Replaces the earlier teal/slate "clinical" palette. */
 :root {
-  --color-bg: #f4f2ee;
-  --color-surface: #e8e5df;
-  --color-text: #16171a;
-  --color-accent: #15626f;
-  --color-accent-2: #6e8b9f;
-  --color-divider: color-mix(in srgb, #16171a 14%, transparent);
+  --color-bg: #fbfaf7;
+  --color-surface: #f1efe9;
+  --color-text: #0a0a0a;
+  --color-accent: #8a6f4f;
+  --color-accent-2: #c9b499;
+  --color-divider: color-mix(in srgb, #0a0a0a 14%, transparent);
 
   --color-neutral-100: #faf9f7;
   --color-neutral-200: #f0eeea;
@@ -18,23 +20,23 @@
   --color-neutral-800: #45433e;
   --color-neutral-900: #2a2825;
 
-  --color-accent-100: #e8f4f6;
-  --color-accent-200: #c9e6eb;
-  --color-accent-300: #99cfd9;
-  --color-accent-400: #55aab9;
-  --color-accent-500: #1f7a89;
-  --color-accent-600: #15626f;
-  --color-accent-700: #104c57;
-  --color-accent-800: #0c3840;
-  --color-accent-900: #08262c;
+  --color-accent-100: #f7f0e4;
+  --color-accent-200: #eee0c9;
+  --color-accent-300: #ddc7a2;
+  --color-accent-400: #c8a878;
+  --color-accent-500: #a8875a;
+  --color-accent-600: #8a6f4f;
+  --color-accent-700: #6d5740;
+  --color-accent-800: #503f2e;
+  --color-accent-900: #33291d;
 
-  --color-accent-2-100: #eef2f5;
-  --color-accent-2-200: #dbe3ea;
-  --color-accent-2-300: #bccbd7;
-  --color-accent-2-400: #93aabc;
-  --color-accent-2-500: #6e8b9f;
-  --color-accent-2-600: #567185;
-  --color-accent-2-700: #42596b;
-  --color-accent-2-800: #2f4150;
-  --color-accent-2-900: #1f2c37;
+  --color-accent-2-100: #f8f2e8;
+  --color-accent-2-200: #f0e5d1;
+  --color-accent-2-300: #e3d0b0;
+  --color-accent-2-400: #d4bb92;
+  --color-accent-2-500: #c9b499;
+  --color-accent-2-600: #a9906f;
+  --color-accent-2-700: #8a7355;
+  --color-accent-2-800: #6a583f;
+  --color-accent-2-900: #453a2a;
 }
