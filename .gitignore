@@ -27,3 +27,11 @@ DERMALOGICA /
 # asset — the cropped version used on the Dermalogica page lives at
 # assets/dermalogica/futurecode-hero.jpg.
 /ExtraAsset01_9x16.jpg
+
+# Source copies of the new Next.js homepage's hero video — the version
+# actually used by web/ lives at web/public/video/hero.mp4.
+/home page video.mp4
+/homepagenewvideo.mp4
+
+# Local-machine Claude Code permission settings — not shared project config.
+.claude/settings.local.json

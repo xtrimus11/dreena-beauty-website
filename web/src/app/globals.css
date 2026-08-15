@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbfaf7;
+  --background-secondary: #f1efe9;
+  --foreground: #0a0a0a;
+  --muted: #8e8e8e;
+  --border: rgba(10, 10, 10, 0.1);
+  --border-strong: rgba(10, 10, 10, 0.16);
+
+  /* Warm cream / taupe / champagne accent palette */
+  --cream: #f7f1e7;
+  --champagne: #e9d9c1;
+  --taupe: #c9b499;
+  --taupe-dark: #8a6f4f;
+  --scrim: #2e2419;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-cream: var(--cream);
+  --color-champagne: var(--champagne);
+  --color-taupe: var(--taupe);
+  --color-taupe-dark: var(--taupe-dark);
+  --color-scrim: var(--scrim);
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-marquee-slow: marquee 60s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Persistent fractal-noise grain overlay, fixed across the whole site */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-repeat: repeat;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
