@@ -200,7 +200,7 @@ export default function DermalogicaPage() {
               Shop the range in-house
             </h3>
             <p className="mt-2 max-w-[46ch] text-sm text-muted">
-              As an exclusive distributor we stock the professional range at our Seremban house.
+              As an exclusive distributor we stock the professional range at our Seremban centre.
               Message us for availability, or ask your therapist to prescribe at your next visit.
             </p>
           </div>

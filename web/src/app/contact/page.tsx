@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const LOCATIONS = [
   {
-    name: "d'reena beauty house",
+    name: "d'reena beauty centre",
     address: "Uptown Avenue, Seremban 2, Negeri Sembilan",
     directionsHref: GOOGLE_MAPS_URL,
   },

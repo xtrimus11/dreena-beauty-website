@@ -72,7 +72,7 @@ export default function FounderHero() {
         {/* Right — bio, contact, social proof */}
         <div className="flex flex-col items-start lg:items-end lg:text-right">
           <p className="text-base text-foreground">
-            Hi! I&apos;m Dareena, founder of d&apos;reena beauty — Seremban&apos;s beauty house
+            Hi! I&apos;m Dareena, founder of d&apos;reena beauty — Seremban&apos;s beauty centre
             since 1987.
           </p>
           <a

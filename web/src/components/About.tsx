@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
 const MANIFESTO =
-  "We believe skin care should never be generic. Every treatment starts with understanding your skin's true condition — not a one-size routine, but a plan built around your specific concerns. For forty years that has meant real technology, real results, and real care, from Seremban's largest Dermalogica-certified clinic.";
+  "We believe skin care should never be generic. Every treatment starts with understanding your skin's true condition — not a one-size routine, but a plan built around your specific concerns. For forty years that has meant real technology, real results, and real care, from Seremban's largest Dermalogica-certified beauty centre.";
 
 export default function About() {
   const textRef = useRef<HTMLParagraphElement>(null);

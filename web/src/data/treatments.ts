@@ -1,7 +1,7 @@
 // Real d'reena Treatment Programs 2026 menu entries — one flagship per skin
 // category, mirroring the "Best Sellers" grid on the live site. Photos are
 // the same category photography already in use on dreena-beauty-website
-// (Unsplash, credited), except HIFU which uses the clinic's own treatment
+// (Unsplash, credited), except HIFU which uses the salon's own treatment
 // room photo.
 export interface Treatment {
   slug: string;

@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "d'reena beauty — Real Skin Care. Real Results.",
   description:
-    "Seremban's beauty house since 1987. Dermalogica-certified facials and skin treatments, personalised to your skin's true condition.",
+    "Seremban's beauty centre since 1987. Dermalogica-certified facials and skin treatments, personalised to your skin's true condition.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

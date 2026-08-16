@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "About — d'reena beauty",
   description:
-    "Meet Dareena, founder of d'reena beauty — Seremban's beauty house since 1987.",
+    "Meet Dareena, founder of d'reena beauty — Seremban's beauty centre since 1987.",
 };
 
 export default function AboutPage() {

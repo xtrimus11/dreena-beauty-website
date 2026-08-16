@@ -71,7 +71,7 @@ export default function Hero() {
 
       <div className="relative z-20 flex flex-col items-center px-6 text-center">
         <span className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-cream/75">
-          Seremban&apos;s Beauty House Since 1987
+          Seremban&apos;s Beauty Centre Since 1987
         </span>
 
         <h1 className="text-balance whitespace-nowrap text-[clamp(2.5rem,10vw,6.5rem)] font-medium leading-[0.95] tracking-tight text-cream">
