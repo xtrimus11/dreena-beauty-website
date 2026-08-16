@@ -12,7 +12,7 @@ const LINKS = [
   { label: "About", href: "/about", internal: true },
   { label: "Dermalogica", href: LIVE_LINKS.dermalogica, internal: false },
   { label: "Blog", href: LIVE_LINKS.blog, internal: false },
-  { label: "Contact", href: LIVE_LINKS.contact, internal: false },
+  { label: "Contact", href: "/contact", internal: true },
 ];
 
 export default function Navbar() {

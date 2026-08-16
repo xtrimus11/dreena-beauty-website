@@ -10,9 +10,9 @@ const EXPLORE = [
 ];
 
 const VISIT = [
-  { label: "Uptown Avenue, Seremban 2", href: LIVE_LINKS.contact },
-  { label: "Taipan 2, Senawang", href: LIVE_LINKS.contact },
-  { label: "WhatsApp: +60 12-345 6789", href: WHATSAPP_URL },
+  { label: "Uptown Avenue, Seremban 2", href: "/contact", internal: true },
+  { label: "Taipan 2, Senawang", href: "/contact", internal: true },
+  { label: "WhatsApp: +60 12-345 6789", href: WHATSAPP_URL, internal: false },
 ];
 
 export default function Footer() {
@@ -57,17 +57,27 @@ export default function Footer() {
         <div>
           <span className="text-xs font-medium uppercase tracking-[0.15em] text-muted">Visit</span>
           <div className="mt-4 flex flex-col gap-3">
-            {VISIT.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit text-sm text-foreground/80 transition-colors hover:text-foreground"
-              >
-                {l.label}
-              </a>
-            ))}
+            {VISIT.map((l) =>
+              l.internal ? (
+                <Link
+                  key={l.label}
+                  href={l.href}
+                  className="w-fit text-sm text-foreground/80 transition-colors hover:text-foreground"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-fit text-sm text-foreground/80 transition-colors hover:text-foreground"
+                >
+                  {l.label}
+                </a>
+              )
+            )}
           </div>
         </div>
       </div>
