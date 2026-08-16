@@ -252,20 +252,36 @@ export const CATEGORY_PHOTOS: Record<Category, Photo> = {
   },
 };
 
-// A few treatments already have a more specific photo elsewhere in this app
-// — reuse those instead of the shared category photo.
+// AI-generated photos, one per treatment where we have one — owned assets,
+// no attribution needed. Treatments without an entry here fall back to the
+// shared category photo below.
 const TREATMENT_PHOTO_OVERRIDES: Record<string, Photo> = {
   "acr-treatment": {
     src: "https://images.unsplash.com/photo-1761718210089-ba3bb5ccb54f?q=80&w=1200&auto=format&fit=crop",
     credit: "Photo by kimia kazemi on Unsplash",
     creditHref: "https://unsplash.com/@kimick",
   },
-  hifu: { src: "/images/hifu-clinic.jpg", credit: null, creditHref: null },
-  "pico-laser": {
-    src: "https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1200&auto=format&fit=crop",
-    credit: "Photo by Look Studio on Unsplash",
-    creditHref: "https://unsplash.com/@lookphoto",
+  "lumilift-elite": { src: "/images/treatments/lumilift-elite.jpg", credit: null, creditHref: null },
+  hifu: { src: "/images/treatments/hifu.jpg", credit: null, creditHref: null },
+  "pico-laser": { src: "/images/treatments/pico-laser.jpg", credit: null, creditHref: null },
+  "multivitamin-restore-rf": {
+    src: "/images/treatments/multivitamin-restore-rf.jpg",
+    credit: null,
+    creditHref: null,
   },
+  "pro-calm": { src: "/images/treatments/pro-calm.jpg", credit: null, creditHref: null },
+  oxygen: { src: "/images/treatments/oxygen.jpg", credit: null, creditHref: null },
+  "hollywood-peel": { src: "/images/treatments/hollywood-peel.jpg", credit: null, creditHref: null },
+  proclear: { src: "/images/treatments/proclear.jpg", credit: null, creditHref: null },
+  "revive-glow": { src: "/images/treatments/revive-glow.jpg", credit: null, creditHref: null },
+  probright: { src: "/images/treatments/probright.jpg", credit: null, creditHref: null },
+  "pro-lumin-fusion": { src: "/images/treatments/pro-lumin-fusion.jpg", credit: null, creditHref: null },
+  "ionto-stem-cell": { src: "/images/treatments/ionto-stem-cell.jpg", credit: null, creditHref: null },
+  "caviar-restore": { src: "/images/treatments/caviar-restore.jpg", credit: null, creditHref: null },
+  "skin-boost": { src: "/images/treatments/skin-boost.jpg", credit: null, creditHref: null },
+  environmental: { src: "/images/treatments/environmental.jpg", credit: null, creditHref: null },
+  whiteglow: { src: "/images/treatments/whiteglow.jpg", credit: null, creditHref: null },
+  "pico-plus": { src: "/images/treatments/pico-plus.jpg", credit: null, creditHref: null },
 };
 
 export function photoFor(t: TreatmentEntry): Photo {

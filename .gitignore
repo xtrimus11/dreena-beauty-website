@@ -33,5 +33,13 @@ DERMALOGICA /
 /home page video.mp4
 /homepagenewvideo.mp4
 
+# Raw AI-generated treatment photos — the renamed-by-slug copies actually
+# used by web/ live at web/public/images/treatments/.
+/treatment images/
+
+# Source copy of the About page founder portrait — the version used by
+# web/ lives at web/public/images/founder.jpg.
+/founder 2.jpeg
+
 # Local-machine Claude Code permission settings — not shared project config.
 .claude/settings.local.json
