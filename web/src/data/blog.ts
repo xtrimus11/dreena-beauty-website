@@ -7,6 +7,10 @@ export interface Post {
   title: string;
   kicker: string;
   date: string;
+  /** Alternating index-card treatment, matching the original design:
+   *  "photo" = full-bleed image with a dark scrim, title only, no excerpt.
+   *  "cream" = plain surface card, no image, title + excerpt. */
+  cardStyle: "photo" | "cream";
   excerpt: string;
   image: string;
   imageCredit: string | null;
@@ -20,6 +24,7 @@ export const POSTS: Post[] = [
     title: "What's Actually Happening During an Oxygen Facial",
     kicker: "Treatments Explained",
     date: "2026-08-16",
+    cardStyle: "cream",
     excerpt:
       "The oxygen itself isn't really the mechanism — pressure and hydration are doing most of the work, which is a very different (and more useful) thing to understand before you book one.",
     image:
@@ -39,6 +44,7 @@ export const POSTS: Post[] = [
     title: "Hyaluronic Acid, Explained",
     kicker: "Ingredients",
     date: "2026-08-15",
+    cardStyle: "photo",
     excerpt:
       "It can hold up to a thousand times its own weight in water — but how much of that actually reaches your skin depends on molecular weight and layering, not just the ingredient itself.",
     image: "/images/treatments/skin-boost.jpg",
@@ -57,6 +63,7 @@ export const POSTS: Post[] = [
     title: "Retinol, Explained",
     kicker: "Ingredients",
     date: "2026-08-14",
+    cardStyle: "cream",
     excerpt:
       "It's the most studied anti-ageing ingredient in skincare — here's what retinol is actually doing at the cellular level, and why delivery matters as much as the ingredient itself.",
     image:
@@ -76,6 +83,7 @@ export const POSTS: Post[] = [
     title: "What “Biohacking” Actually Means for Your Skin",
     kicker: "Ingredients",
     date: "2026-08-13",
+    cardStyle: "photo",
     excerpt:
       "It's not just a wellness buzzword — here's what biohacking principles actually mean applied to skin, and why deepening lines and coarse texture aren't simply \"getting older.\"",
     image: "/images/futurecode-booster.jpg",
@@ -93,6 +101,7 @@ export const POSTS: Post[] = [
     title: "5 Ways We Treat Acne Scarring",
     kicker: "Treatments Explained",
     date: "2026-08-12",
+    cardStyle: "cream",
     excerpt:
       "Not all acne scars are the same, so we don't treat them the same way — here's how we match the approach to the scar.",
     image:
@@ -112,6 +121,7 @@ export const POSTS: Post[] = [
     title: "The Real Benefits of Vitamin C (And Why We Layer It Carefully)",
     kicker: "Ingredients",
     date: "2026-08-05",
+    cardStyle: "photo",
     excerpt:
       "It's not just a brightening buzzword — here's what vitamin C is actually doing, and why timing matters more than concentration.",
     image:
@@ -130,6 +140,7 @@ export const POSTS: Post[] = [
     title: "Pico Laser and Pigmentation: What's Really Happening Under Your Skin",
     kicker: "Treatments Explained",
     date: "2026-07-29",
+    cardStyle: "cream",
     excerpt:
       "\"Laser\" sounds intense, but pico technology works by breaking pigment apart, not burning it off.",
     image:
@@ -148,6 +159,7 @@ export const POSTS: Post[] = [
     title: "How HIFU Actually Tightens Your Skin",
     kicker: "Treatments Explained",
     date: "2026-07-22",
+    cardStyle: "photo",
     excerpt:
       "High-Intensity Focused Ultrasound sounds intense because it is — here's what's really happening beneath the surface, with no surgery involved.",
     image: "/images/hifu-clinic.jpg",
@@ -165,6 +177,7 @@ export const POSTS: Post[] = [
     title: "3 Ingredients Your Skin Barrier Actually Loves",
     kicker: "Ingredients",
     date: "2026-07-15",
+    cardStyle: "cream",
     excerpt:
       "Ceramides, panthenol, and glycerin — the quiet trio behind every calming, barrier-repair treatment we do.",
     image:
@@ -184,6 +197,7 @@ export const POSTS: Post[] = [
     title: "Niacinamide, Explained",
     kicker: "Ingredients",
     date: "2026-07-08",
+    cardStyle: "photo",
     excerpt:
       "Vitamin B3 shows up in more of our treatments than almost any other single ingredient — here's what it's actually doing to your skin.",
     image:
