@@ -59,7 +59,7 @@ export default function FounderHero() {
         <div>
           <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
             <Image
-              src="/images/founder.png"
+              src="/images/founder.jpg"
               alt="Dareena, founder of d'reena beauty"
               fill
               sizes="(min-width: 1024px) 420px, 100vw"
