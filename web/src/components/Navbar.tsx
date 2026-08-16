@@ -9,7 +9,7 @@ import { LIVE_LINKS, WHATSAPP_URL } from "@/lib/site";
 const LINKS = [
   { label: "Treatments", href: "/treatments", internal: true },
   { label: "Skin Analysis", href: LIVE_LINKS.skinAnalysis, internal: false },
-  { label: "About", href: LIVE_LINKS.about, internal: false },
+  { label: "About", href: "/about", internal: true },
   { label: "Dermalogica", href: LIVE_LINKS.dermalogica, internal: false },
   { label: "Blog", href: LIVE_LINKS.blog, internal: false },
   { label: "Contact", href: LIVE_LINKS.contact, internal: false },

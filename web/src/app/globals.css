@@ -14,6 +14,10 @@
   --taupe: #c9b499;
   --taupe-dark: #8a6f4f;
   --scrim: #2e2419;
+
+  /* Sampled from the founder portrait's studio backdrop, so the About
+     hero's text and photo read as one continuous section. */
+  --portrait-bg: #a5988f;
 }
 
 @theme inline {
@@ -28,6 +32,7 @@
   --color-taupe: var(--taupe);
   --color-taupe-dark: var(--taupe-dark);
   --color-scrim: var(--scrim);
+  --color-portrait-bg: var(--portrait-bg);
   --font-sans: "Satoshi", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   --animate-marquee: marquee 32s linear infinite;
