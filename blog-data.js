@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "oxygen-facial-explained",
+    title: "What's Actually Happening During an Oxygen Facial",
+    kicker: "Treatments Explained",
+    date: "2026-08-16",
+    cardStyle: "cream",
+    excerpt: "The oxygen itself isn't really the mechanism — pressure and hydration are doing most of the work, which is a very different (and more useful) thing to understand before you book one.",
+    heroPlaceholder: "Hydrating oxygen facial treatment for sensitive, refreshed skin",
+    image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by engin akyurt on Unsplash",
+    imageCreditHref: "https://unsplash.com/@enginakyurt",
+    body: [
+      "\"Oxygen facial\" makes it sound like skin is inhaling something the way lungs do, but skin isn't built to metabolise applied oxygen that way — the outer layer (the stratum corneum) is dead, flattened cells whose job is to keep things out, not take gas in. So the oxygen itself isn't really the active ingredient people assume it is. What's actually doing the work is how it's delivered: a low-pressure, oxygen-rich mist that carries hydrating serums and actives onto skin with more force than a topical applied by hand, pushing them further into the upper layers than they'd get on their own.",
+      "That pressure-assisted delivery is the same underlying idea behind iontophoresis-based treatments we also offer, like IONTO Stem Cell Treatment — different mechanism, same principle: an active ingredient only helps as much as it actually reaches the skin, and passive application often falls short of that.",
+      "The other genuine effect is straightforward hydration. Skin cells plump almost immediately under that kind of intense moisture delivery, which is exactly why an oxygen facial gives such a noticeable, instant refreshed look — it's a real physical change, just not a lasting structural one. The misting and light massage involved also gives a temporary lift in surface circulation, bringing a brief flush of blood supply to the area, which is part of why it's a popular pre-event treatment rather than something aimed at long-term change.",
+      "This is exactly the thinking behind our own Oxygen Treatment — built around intense hydration and elasticity for reactive or moisture-depleted skin rather than promising resurfacing. Our Glo2 Facial Treatment uses oxygen technology differently, pairing it with resurfacing actives for a deeper renewal effect over a longer treatment window, which is the better fit if fine lines and dullness (not just dehydration) are the actual concern.",
+      "Because the two treatments solve different problems despite sharing a name-brand technology, it's worth knowing which one actually matches what your skin needs before booking — which is exactly what a Skin Analysis is for.",
+    ],
+  },
+  {
     slug: "hyaluronic-acid-explained",
     title: "Hyaluronic Acid, Explained",
     kicker: "Ingredients",
