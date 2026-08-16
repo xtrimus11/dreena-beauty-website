@@ -2,10 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ArrowUpRight } from "lucide-react";
 import { POSTS } from "@/data/blog";
-import { LIVE_LINKS } from "@/lib/site";
+
+const FEATURED = POSTS.slice(0, 6);
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-GB", {
@@ -30,7 +32,7 @@ export default function Insights() {
     });
   };
 
-  const active = POSTS.find((p) => p.slug === hovered) ?? null;
+  const active = FEATURED.find((p) => p.slug === hovered) ?? null;
 
   // Scale/opacity are driven by GSAP too (not a React style prop) — GSAP owns
   // the whole transform (x, y, scale) for this node, so a re-render from
@@ -47,10 +49,26 @@ export default function Insights() {
 
   return (
     <section className="border-t border-border bg-background px-6 py-28 md:px-10 md:py-40">
-      <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">Insights</span>
-      <h2 className="mt-4 max-w-2xl text-balance text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl">
-        The <span className="uppercase">d&apos;reena</span> Journal
-      </h2>
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
+            Insights
+          </span>
+          <h2 className="mt-4 max-w-2xl text-balance text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl">
+            The <span className="uppercase">d&apos;reena</span> Journal
+          </h2>
+        </div>
+        <Link
+          href="/blog"
+          className="group flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.14em] text-taupe-dark"
+        >
+          View all posts
+          <ArrowUpRight
+            size={14}
+            className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        </Link>
+      </div>
 
       <div
         ref={listRef}
@@ -58,12 +76,10 @@ export default function Insights() {
         onMouseLeave={() => setHovered(null)}
         className="mt-16 flex flex-col border-t border-border"
       >
-        {POSTS.map((post) => (
-          <a
+        {FEATURED.map((post) => (
+          <Link
             key={post.slug}
-            href={LIVE_LINKS.blogPost(post.slug)}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`/blog/${post.slug}`}
             onMouseEnter={() => setHovered(post.slug)}
             className="group grid grid-cols-[1fr_auto] items-center gap-6 border-b border-border py-6 md:grid-cols-[140px_1fr_140px_auto]"
           >
@@ -78,7 +94,7 @@ export default function Insights() {
               size={20}
               className="justify-self-end text-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
             />
-          </a>
+          </Link>
         ))}
       </div>
 

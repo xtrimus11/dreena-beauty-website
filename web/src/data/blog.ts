@@ -1,67 +1,208 @@
-// Mirrors the 6 most recent posts in blog-data.js on the live site — same
-// slugs, titles, dates, images and credits, so this list stays truthful to
-// what's actually published. Full posts still live on the static site; each
-// row links out via LIVE_LINKS.blogPost(slug).
+// d'reena Journal — mirrors blog-data.js at the repo root, which the
+// scheduled publishing routine writes to. When that routine adds a new
+// post there, port it here too so it shows up on /blog. Same slugs,
+// titles, dates, images, credits and body copy — nothing paraphrased.
 export interface Post {
   slug: string;
   title: string;
   kicker: string;
   date: string;
+  excerpt: string;
   image: string;
   imageCredit: string | null;
+  imageCreditHref: string | null;
+  body: string[];
 }
 
 export const POSTS: Post[] = [
+  {
+    slug: "oxygen-facial-explained",
+    title: "What's Actually Happening During an Oxygen Facial",
+    kicker: "Treatments Explained",
+    date: "2026-08-16",
+    excerpt:
+      "The oxygen itself isn't really the mechanism — pressure and hydration are doing most of the work, which is a very different (and more useful) thing to understand before you book one.",
+    image:
+      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by engin akyurt on Unsplash",
+    imageCreditHref: "https://unsplash.com/@enginakyurt",
+    body: [
+      "\"Oxygen facial\" makes it sound like skin is inhaling something the way lungs do, but skin isn't built to metabolise applied oxygen that way — the outer layer (the stratum corneum) is dead, flattened cells whose job is to keep things out, not take gas in. So the oxygen itself isn't really the active ingredient people assume it is. What's actually doing the work is how it's delivered: a low-pressure, oxygen-rich mist that carries hydrating serums and actives onto skin with more force than a topical applied by hand, pushing them further into the upper layers than they'd get on their own.",
+      "That pressure-assisted delivery is the same underlying idea behind iontophoresis-based treatments we also offer, like IONTO Stem Cell Treatment — different mechanism, same principle: an active ingredient only helps as much as it actually reaches the skin, and passive application often falls short of that.",
+      "The other genuine effect is straightforward hydration. Skin cells plump almost immediately under that kind of intense moisture delivery, which is exactly why an oxygen facial gives such a noticeable, instant refreshed look — it's a real physical change, just not a lasting structural one. The misting and light massage involved also gives a temporary lift in surface circulation, bringing a brief flush of blood supply to the area, which is part of why it's a popular pre-event treatment rather than something aimed at long-term change.",
+      "This is exactly the thinking behind our own Oxygen Treatment — built around intense hydration and elasticity for reactive or moisture-depleted skin rather than promising resurfacing. Our Glo2 Facial Treatment uses oxygen technology differently, pairing it with resurfacing actives for a deeper renewal effect over a longer treatment window, which is the better fit if fine lines and dullness (not just dehydration) are the actual concern.",
+      "Because the two treatments solve different problems despite sharing a name-brand technology, it's worth knowing which one actually matches what your skin needs before booking — which is exactly what a Skin Analysis is for.",
+    ],
+  },
+  {
+    slug: "hyaluronic-acid-explained",
+    title: "Hyaluronic Acid, Explained",
+    kicker: "Ingredients",
+    date: "2026-08-15",
+    excerpt:
+      "It can hold up to a thousand times its own weight in water — but how much of that actually reaches your skin depends on molecular weight and layering, not just the ingredient itself.",
+    image: "/images/treatments/skin-boost.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
+    body: [
+      "Hyaluronic acid isn't an exotic lab invention — it's a sugar molecule (a glycosaminoglycan) your body already makes and uses throughout your skin, joints, and eyes to keep tissue cushioned and hydrated. What makes it useful in skincare is a simple physical property: a single hyaluronic acid molecule can bind and hold up to roughly a thousand times its own weight in water, which is what makes it one of the most effective humectants available — it doesn't add oil or occlude skin, it pulls water in and holds it there.",
+      "The detail most routines get wrong is molecular weight. High-molecular-weight hyaluronic acid is too large to pass through the outer skin layer, so it sits on the surface and forms a breathable film that slows moisture loss — useful, but it isn't reaching living skin cells. Lower-molecular-weight, hydrolysed forms are small enough to actually penetrate into the epidermis, where they can support hydration at a deeper level. Well-formulated products often blend a few molecular weights for exactly this reason — surface hydration and deeper delivery at once.",
+      "Skin's own hyaluronic acid content also declines with age, alongside collagen and elastin — one of the reasons mature skin loses that springy, plump quality even before fine lines show up. It's part of why hydration-focused treatments matter as much as anti-ageing ones: our Oxygen Treatment is built around intense hydration for exactly this kind of moisture-depleted skin, and IONTO Stem Cell Treatment uses iontophoresis to drive hydrating actives past the surface rather than leaving it to a topical alone.",
+      "One genuine caution: in very dry, low-humidity air, a hyaluronic acid serum applied without anything to seal it in can occasionally pull moisture from deeper skin layers toward the surface, where it evaporates — the opposite of the intended effect. Layering it under a moisturiser avoids this, which is part of why product order matters more than most people assume.",
+      "Like most actives, how much of this actually shows up on your skin depends on formulation, concentration, and what else is in your routine — which is exactly what a proper Skin Analysis is for before you commit to a product or a course of treatments.",
+    ],
+  },
+  {
+    slug: "retinol-explained",
+    title: "Retinol, Explained",
+    kicker: "Ingredients",
+    date: "2026-08-14",
+    excerpt:
+      "It's the most studied anti-ageing ingredient in skincare — here's what retinol is actually doing at the cellular level, and why delivery matters as much as the ingredient itself.",
+    image:
+      "https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Look Studio on Unsplash",
+    imageCreditHref: "https://unsplash.com/@lookphoto",
+    body: [
+      "Retinol is a derivative of vitamin A, and it's earned its reputation as skincare's most researched active for one reason: it's one of the only ingredients that actually changes how skin cells behave, rather than just sitting on the surface. Once it penetrates into the epidermis, it binds to retinoic acid receptors inside skin cells and effectively tells them to speed up their normal turnover cycle — shedding dulled, sun-damaged surface cells faster and replacing them with newer ones underneath.",
+      "That same receptor-binding action also signals fibroblasts, the cells responsible for producing collagen, to ramp up production — while simultaneously blocking the enzymes (matrix metalloproteinases, or MMPs) that break collagen down after UV exposure. It's this dual effect — more collagen being made, less being destroyed — that's behind retinol's long track record for softening fine lines and improving overall skin firmness.",
+      "One detail that trips people up: over-the-counter retinol isn't the active form your skin actually uses. It has to be converted inside the skin first — retinol to retinaldehyde, then retinaldehyde to retinoic acid — before those receptors can use it. That conversion step is exactly why it's gentler than prescription-strength tretinoin, but also why concentration and delivery matter so much. It's the reasoning behind our LumiLift Elite treatment, which pairs medical-grade retinol with Ionto delivery to drive it past the surface rather than relying on it to slowly work its way in on its own.",
+      "The trade-off with any retinoid is that it makes skin more sensitive to UV light while it's actively working, which is why it's a night-only ingredient and non-negotiable with daytime SPF. Most people also go through a short adjustment period — mild flaking or sensitivity — as turnover speeds up, which is normal and usually settles within a few weeks of consistent, gradual use.",
+      "Retinol isn't one-size-fits-all — concentration, frequency, and what else is in your routine all need to be matched to your actual skin, especially if you're already using other actives. That's what a proper consultation or Skin Analysis is for, before you start at home or book a treatment built around it.",
+    ],
+  },
   {
     slug: "what-is-biohacking-for-skin",
     title: "What “Biohacking” Actually Means for Your Skin",
     kicker: "Ingredients",
     date: "2026-08-13",
+    excerpt:
+      "It's not just a wellness buzzword — here's what biohacking principles actually mean applied to skin, and why deepening lines and coarse texture aren't simply \"getting older.\"",
     image: "/images/futurecode-booster.jpg",
     imageCredit: null,
+    imageCreditHref: null,
+    body: [
+      "Most of what shows up on skin as \"ageing\" isn't really about the passage of time — it's accumulated damage. Years of UV exposure, pollution, and everyday oxidative stress leave a kind of wear at the cellular level, and that's what actually shows up as deepening lines, coarse texture, and discolouration. Treat the damage, and you're treating the visible sign at its source rather than just the surface.",
+      "\"Biohacking\" as a skincare principle simply means working with that idea directly: supporting skin's own natural repair processes rather than only masking what's already visible. It's the same logic behind why a barrier-repair treatment outperforms a heavy moisturiser alone, just aimed at deeper, cumulative damage instead of daily dryness.",
+      "This is the thinking behind FutureCode Booster, the newest addition to the professional range we carry as an exclusive Dermalogica distributor — a damage-correction and longevity serum built to help skin stay resilient and balanced over time, rather than promising an overnight fix. Used consistently, morning or evening, either alone or mixed into your existing serum or moisturiser, it's designed to support repair at the level where the damage actually happened.",
+      "None of this replaces sun protection or a properly built routine — biohacking principles work alongside the fundamentals, not instead of them. If you're not sure where a product like this fits into what your skin actually needs, that's exactly what a consultation (or our Skin Analysis) is for.",
+    ],
   },
   {
     slug: "acne-scarring-treatments",
     title: "5 Ways We Treat Acne Scarring",
     kicker: "Treatments Explained",
     date: "2026-08-12",
+    excerpt:
+      "Not all acne scars are the same, so we don't treat them the same way — here's how we match the approach to the scar.",
     image:
-      "https://images.unsplash.com/photo-1761718210089-ba3bb5ccb54f?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1761718210089-ba3bb5ccb54f?q=80&w=1400&auto=format&fit=crop",
     imageCredit: "Photo by kimia kazemi on Unsplash",
+    imageCreditHref: "https://unsplash.com/@kimick",
+    body: [
+      "\"Acne scarring\" actually covers a few different things — sunken (atrophic) scars from lost collagen, raised scars from too much, and flat dark marks that aren't scars at all but post-inflammatory pigmentation fading on its own timeline. Treating all three the same way is why a lot of at-home routines stall out.",
+      "For genuine textural scarring, we lean on collagen-rebuilding treatments — our ACR Treatment (Absolute Cell Reversal) accelerates skin's own repair cycle, while ProClear Skin Treatment combines pore-softening extraction with actives that calm the inflammation that causes new scars to form in the first place.",
+      "For the flat, discoloured marks left behind after a breakout, Pico Laser with ProRestore is usually the faster route — it shatters pigment into fragments your lymphatic system clears naturally, without the heat damage of older laser types.",
+      "Deeper, longer-standing atrophic scarring sometimes needs a mechanical approach — microneedling or dermal fillers to physically rebuild lost volume — and topical retinoids to keep new collagen turning over between sessions.",
+      "The honest starting point is always a proper look at what type of scarring you actually have. That's exactly what a Skin Analysis is for — it's the fastest way to find out which of these five actually applies to you before you book anything.",
+    ],
   },
   {
     slug: "vitamin-c-benefits",
     title: "The Real Benefits of Vitamin C (And Why We Layer It Carefully)",
     kicker: "Ingredients",
     date: "2026-08-05",
+    excerpt:
+      "It's not just a brightening buzzword — here's what vitamin C is actually doing, and why timing matters more than concentration.",
     image:
-      "https://images.unsplash.com/photo-1760862652442-e8ff7ebdd2f8?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1760862652442-e8ff7ebdd2f8?q=80&w=1400&auto=format&fit=crop",
     imageCredit: "Photo by Ela De Pure on Unsplash",
+    imageCreditHref: "https://unsplash.com/@eladepure",
+    body: [
+      "Vitamin C earns its reputation honestly — it's one of the few ingredients that does three separate jobs at once: it's an antioxidant that neutralises the free-radical damage from sun and pollution exposure, a cofactor your skin needs to actually synthesise new collagen, and a mild inhibitor of the enzyme (tyrosinase) responsible for excess pigment production.",
+      "That third mechanism is why it shows up so heavily in our PowerBright and ProBright treatments — it fades existing dark spots while helping prevent new ones from forming, which topical brightening alone often can't do.",
+      "Where most people go wrong is stability and layering, not the ingredient itself. Vitamin C oxidises easily — a serum that's turned brown or amber in the bottle has largely lost its potency. It's also most effective applied in the morning, underneath sunscreen, since UV exposure is exactly what it's there to help defend against.",
+      "If your skin is reactive or you're already using actives like retinol, layering matters — this is the kind of detail your therapist adjusts for your actual skin at consultation, rather than a one-size routine.",
+    ],
   },
   {
     slug: "pico-laser-pigmentation",
     title: "Pico Laser and Pigmentation: What's Really Happening Under Your Skin",
     kicker: "Treatments Explained",
     date: "2026-07-29",
+    excerpt:
+      "\"Laser\" sounds intense, but pico technology works by breaking pigment apart, not burning it off.",
     image:
-      "https://images.unsplash.com/photo-1555820585-c5ae44394b79?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1555820585-c5ae44394b79?q=80&w=1400&auto=format&fit=crop",
     imageCredit: "Photo by Sunny Ng on Unsplash",
+    imageCreditHref: "https://unsplash.com/@sunnysmng",
+    body: [
+      "Older pigmentation lasers work photothermally — they heat pigment until it breaks down, which also means heating the surrounding skin, with more redness and downtime as a result. Pico Laser is photomechanical: it delivers energy in pulses measured in picoseconds (a trillionth of a second), fast enough to physically shatter pigment clusters into fragments without generating much heat at all.",
+      "Once pigment is fragmented that small, your body's own lymphatic system clears it away gradually over the following weeks — which is why results build progressively across a course of sessions rather than appearing all at once.",
+      "Our Pico Laser with ProRestore treatment pairs this with a barrier-restoring serum immediately after, since even minimal heat exposure briefly stresses the skin barrier — the ProRestore step is what keeps the treatment from leaving skin dry or reactive afterward.",
+      "It's effective on pigmentation, chloasma (melasma), and acne scarring alike, and because the pulses are so short, it works on finer pores and firming at the same time — which is why it's often the treatment we recommend alongside a brightening course rather than instead of one.",
+    ],
   },
   {
     slug: "how-hifu-tightens-skin",
     title: "How HIFU Actually Tightens Your Skin",
     kicker: "Treatments Explained",
     date: "2026-07-22",
+    excerpt:
+      "High-Intensity Focused Ultrasound sounds intense because it is — here's what's really happening beneath the surface, with no surgery involved.",
     image: "/images/hifu-clinic.jpg",
     imageCredit: null,
+    imageCreditHref: null,
+    body: [
+      "HIFU stands for High Intensity Focused Ultrasound, and the key word is \"focused.\" Unlike surface treatments, HIFU energy passes harmlessly through the top layers of skin and converges at a single precise depth — typically the SMAS layer, the same structural layer surgeons lift during a facelift.",
+      "At that depth, the focused energy creates tiny points of heat that trigger a genuine wound-healing response: your body responds by producing new collagen around each treated point. That's the entire mechanism — there's no cutting, no surgery, and the surface of your skin is left untouched throughout.",
+      "Because it works by triggering your own collagen production rather than filling or freezing anything, results aren't immediate — they build gradually over roughly two to three months as new collagen forms, and the lifting effect continues to improve during that window.",
+      "It's why our HIFU - Ultratherapy treatment has no real downtime — you can go straight back to your day — but it also means it rewards patience over a quick fix. Most clients see the most noticeable change from the second month onward.",
+    ],
   },
   {
     slug: "skin-barrier-ingredients",
     title: "3 Ingredients Your Skin Barrier Actually Loves",
     kicker: "Ingredients",
     date: "2026-07-15",
+    excerpt:
+      "Ceramides, panthenol, and glycerin — the quiet trio behind every calming, barrier-repair treatment we do.",
     image:
-      "https://images.unsplash.com/photo-1603401712778-ab0575182f12?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1603401712778-ab0575182f12?q=80&w=1400&auto=format&fit=crop",
     imageCredit: "Photo by xandro Vandewalle on Unsplash",
+    imageCreditHref: "https://unsplash.com/@xandrovandewalle",
+    body: [
+      "Your skin barrier — the outermost layer — is what keeps moisture in and irritants out. When it's compromised (from over-exfoliating, harsh weather, or just reactive skin), everything else gets harder: actives sting more, redness lingers, and dryness feels impossible to fix. Repairing the barrier first is usually what actually solves it.",
+      "Ceramides are lipids that physically fill the gaps between skin cells, the same way mortar holds bricks together — without enough of them, moisture escapes and irritants get in more easily.",
+      "Panthenol (pro-vitamin B5) converts into vitamin B5 once absorbed, and is one of the best-studied ingredients for calming visible redness and supporting the skin's own repair processes.",
+      "Glycerin is a humectant — it draws water into the skin's surface layer and holds it there, which is why it shows up in almost every hydrating formula regardless of skin type.",
+      "This is exactly the trio behind our Environmental Treatment and PRO Calm Treatment — both built for reactive, barrier-compromised skin rather than pushing actives it isn't ready for yet.",
+    ],
+  },
+  {
+    slug: "niacinamide-explained",
+    title: "Niacinamide, Explained",
+    kicker: "Ingredients",
+    date: "2026-07-08",
+    excerpt:
+      "Vitamin B3 shows up in more of our treatments than almost any other single ingredient — here's what it's actually doing to your skin.",
+    image:
+      "https://images.unsplash.com/photo-1672062519629-abe610383152?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Denley Photography on Unsplash",
+    imageCreditHref: "https://unsplash.com/@denleyphotography",
+    body: [
+      "Niacinamide (vitamin B3) is one of the most well-tolerated active ingredients in skincare, which is exactly why it turns up throughout our Dermalogica-based treatment menu regardless of skin type.",
+      "Structurally, it supports the skin's own barrier by helping cells produce ceramides — so skin holds onto moisture better on its own, rather than depending entirely on what's applied topically.",
+      "It also regulates sebum (oil) production, which is why it helps with both an oily T-zone and the visible size of pores over consistent use, and it interrupts the transfer of pigment to skin cells — meaning it gradually fades post-inflammatory marks left behind by breakouts or irritation.",
+      "Because it's so gentle, it's one of the few actives that layers well with almost everything else — which is why you'll find it in our SkinBoost Treatment and woven through several of our brightening and calming programs rather than sold as a single stand-alone product.",
+    ],
   },
 ];
+
+export function getPost(slug: string): Post | null {
+  return POSTS.find((p) => p.slug === slug) ?? null;
+}
+
+export function otherPosts(slug: string, count: number): Post[] {
+  return POSTS.filter((p) => p.slug !== slug).slice(0, count);
+}
