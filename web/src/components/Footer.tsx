@@ -5,7 +5,7 @@ const EXPLORE = [
   { label: "Treatments", href: "/treatments", internal: true },
   { label: "Skin Analysis", href: LIVE_LINKS.skinAnalysis, internal: false },
   { label: "About Us", href: "/about", internal: true },
-  { label: "Dermalogica", href: LIVE_LINKS.dermalogica, internal: false },
+  { label: "Dermalogica", href: "/dermalogica", internal: true },
   { label: "Blog", href: LIVE_LINKS.blog, internal: false },
 ];
 
