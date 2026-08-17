@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { LIVE_LINKS, WHATSAPP_URL } from "@/lib/site";
+import { WHATSAPP_URL } from "@/lib/site";
 
 const LINKS = [
   { label: "Treatments", href: "/treatments", internal: true },
-  { label: "Skin Analysis", href: LIVE_LINKS.skinAnalysis, internal: false },
+  { label: "Skin Analysis", href: "/skin-analysis", internal: true },
   { label: "About", href: "/about", internal: true },
   { label: "Dermalogica", href: "/dermalogica", internal: true },
   { label: "Blog", href: "/blog", internal: true },

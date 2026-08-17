@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { LIVE_LINKS, WHATSAPP_URL } from "@/lib/site";
+import { WHATSAPP_URL } from "@/lib/site";
 
 const EXPLORE = [
   { label: "Treatments", href: "/treatments", internal: true },
-  { label: "Skin Analysis", href: LIVE_LINKS.skinAnalysis, internal: false },
+  { label: "Skin Analysis", href: "/skin-analysis", internal: true },
   { label: "About Us", href: "/about", internal: true },
   { label: "Dermalogica", href: "/dermalogica", internal: true },
   { label: "Blog", href: "/blog", internal: true },

@@ -22,10 +22,14 @@ export interface TreatmentEntry {
   duration: string;
   summary: string;
   benefits: string[];
+  /** Skin concerns this treatment addresses — same taxonomy as the live
+   *  site's treatments-data.js, used by the Skin Analysis recommender. */
+  concerns: string[];
 }
 
 export const TREATMENTS: TreatmentEntry[] = [
   {
+    concerns: ["acne", "oily"],
     slug: "teenskin",
     name: "TeenSkin Treatment",
     category: "All Skin Types",
@@ -34,6 +38,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Make-up removal + double cleanse", "Exfoliation with hot/cold steam", "High frequency & cold hammer finish"],
   },
   {
+    concerns: ["dryness", "dullness", "sensitivity"],
     slug: "skin-boost",
     name: "SkinBoost Treatment",
     category: "All Skin Types",
@@ -42,6 +47,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Choose Soothing, Purifying or Hydrating", "Great for weather or pollution stress", "Calms and refreshes on the spot"],
   },
   {
+    concerns: ["dryness", "aging"],
     slug: "multivitamin-restore-rf",
     name: "Multivitamin Restore with RF",
     category: "All Skin Types",
@@ -50,6 +56,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Maximum-strength exfoliation", "RF technology boosts penetration", "5x concentrated vitamin masque"],
   },
   {
+    concerns: ["dullness", "dryness"],
     slug: "revive-glow",
     name: "Revive Glow Treatment",
     category: "All Skin Types",
@@ -58,6 +65,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Superficial-depth peel", "Re-textures and smooths", "Boosts skin's natural glow"],
   },
   {
+    concerns: ["aging", "dullness", "acne"],
     slug: "bio-cell",
     name: "Bio Cell Treatment",
     category: "All Skin Types",
@@ -67,6 +75,7 @@ export const TREATMENTS: TreatmentEntry[] = [
   },
 
   {
+    concerns: ["oily", "acne"],
     slug: "clear-matt",
     name: "Clear-Matt Treatment",
     category: "Acne-Prone Skin",
@@ -75,6 +84,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Controls sebum production", "GlowFix solution + extraction", "Great for stage-1 acne"],
   },
   {
+    concerns: ["acne", "pigmentation", "oily"],
     slug: "pico-plus",
     name: "Pico Plus - Laser & Light Treatment",
     category: "Acne-Prone Skin",
@@ -83,6 +93,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Reduced pore size & fine lines", "Stimulates collagen growth", "Add Caviar ampoule + masque"],
   },
   {
+    concerns: ["acne", "oily", "aging"],
     slug: "acr-treatment",
     name: "ACR Treatment",
     category: "Acne-Prone Skin",
@@ -91,6 +102,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Reduces acne & acne scars", "Controls sebum production", "Firming & lifting effect"],
   },
   {
+    concerns: ["acne", "oily"],
     slug: "proclear",
     name: "ProClear Skin Treatment",
     category: "Acne-Prone Skin",
@@ -100,6 +112,7 @@ export const TREATMENTS: TreatmentEntry[] = [
   },
 
   {
+    concerns: ["aging", "dryness"],
     slug: "caviar-restore",
     name: "Caviar Restore Treatment",
     category: "Aging Skin",
@@ -108,6 +121,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Intensive firming effect", "Deep nourishment for mature skin", "Visibly smoother, denser feel"],
   },
   {
+    concerns: ["dullness", "dryness", "aging"],
     slug: "glo2-facial",
     name: "Glo2 Facial Treatment",
     category: "Aging Skin",
@@ -116,6 +130,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Skin plumping and hydrating", "Increased collagen", "Reduced appearance of wrinkles"],
   },
   {
+    concerns: ["aging", "sensitivity"],
     slug: "ionto-stem-cell",
     name: "IONTO Stem Cell Treatment",
     category: "Aging Skin",
@@ -124,6 +139,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Stimulates collagen & elastin", "Brightens and evens skin tone", "Deeply hydrates and smooths"],
   },
   {
+    concerns: ["aging"],
     slug: "hifu",
     name: "HIFU - Ultratherapy",
     category: "Aging Skin",
@@ -132,6 +148,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Lifts and tightens visibly", "Stimulates deep collagen production", "No downtime, no surgery"],
   },
   {
+    concerns: ["aging", "dullness"],
     slug: "lumilift-elite",
     name: "LumiLift Elite",
     category: "Aging Skin",
@@ -140,6 +157,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Structural rejuvenation", "Instant luminosity boost", "Long-term lifting results"],
   },
   {
+    concerns: ["aging", "dullness"],
     slug: "pro-lumin-fusion",
     name: "PRO Lumin Fusion",
     category: "Aging Skin",
@@ -149,6 +167,7 @@ export const TREATMENTS: TreatmentEntry[] = [
   },
 
   {
+    concerns: ["sensitivity", "dullness"],
     slug: "environmental",
     name: "Environmental Treatment",
     category: "Sensitive Skin",
@@ -157,6 +176,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Strengthens the skin barrier", "Soothes eczema-prone skin", "Calms reactive skin"],
   },
   {
+    concerns: ["dryness", "sensitivity", "dullness"],
     slug: "oxygen",
     name: "Oxygen Treatment",
     category: "Sensitive Skin",
@@ -165,6 +185,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Instant radiance boost", "Deeply hydrating", "Improves elasticity"],
   },
   {
+    concerns: ["sensitivity", "acne"],
     slug: "pro-calm",
     name: "PRO Calm Treatment",
     category: "Sensitive Skin",
@@ -174,6 +195,7 @@ export const TREATMENTS: TreatmentEntry[] = [
   },
 
   {
+    concerns: ["pigmentation", "dullness"],
     slug: "whiteglow",
     name: "WhiteGlow Treatment",
     category: "Pigmentation & Uneven Tone",
@@ -182,6 +204,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Instant skin lightening", "Brightening without dryness", "Luminous, glowing complexion"],
   },
   {
+    concerns: ["pigmentation", "dullness"],
     slug: "probright",
     name: "ProBright Skin Treatment with ProRestore",
     category: "Pigmentation & Uneven Tone",
@@ -190,6 +213,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Reduced dark spots", "Brighter, more even skin tone", "Restores skin barrier with ProRestore"],
   },
   {
+    concerns: ["pigmentation", "oily", "dullness"],
     slug: "hollywood-peel",
     name: "Hollywood Peel Treatment",
     category: "Pigmentation & Uneven Tone",
@@ -198,6 +222,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Improves tone, texture & elasticity", "Shrinks pores", "Reduces redness from acne"],
   },
   {
+    concerns: ["pigmentation", "aging"],
     slug: "pico-laser",
     name: "Pico Laser with ProRestore",
     category: "Pigmentation & Uneven Tone",
@@ -206,6 +231,7 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Lightens pigmentation & chloasma", "Improves acne scars", "Firms and lifts skin"],
   },
   {
+    concerns: ["pigmentation", "aging"],
     slug: "skin360",
     name: "Skin360 Photo Treatment",
     category: "Pigmentation & Uneven Tone",
@@ -286,4 +312,19 @@ const TREATMENT_PHOTO_OVERRIDES: Record<string, Photo> = {
 
 export function photoFor(t: TreatmentEntry): Photo {
   return TREATMENT_PHOTO_OVERRIDES[t.slug] ?? CATEGORY_PHOTOS[t.category];
+}
+
+// Same scoring the live site's Skin Analysis quiz uses: rank treatments by
+// how many of the quiz's computed concerns they address, take the top 3
+// with a nonzero score, and fall back to the first 3 overall if nothing
+// scored (shouldn't happen in practice — computeResult always emits at
+// least one concern).
+export function recommendFor(concerns: string[]): TreatmentEntry[] {
+  const scored = TREATMENTS.map((t) => ({
+    t,
+    score: t.concerns.filter((c) => concerns.includes(c)).length,
+  }));
+  scored.sort((a, b) => b.score - a.score);
+  const top = scored.filter((s) => s.score > 0).slice(0, 3);
+  return (top.length ? top : scored.slice(0, 3)).map((s) => s.t);
 }

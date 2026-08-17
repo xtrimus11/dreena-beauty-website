@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { NEW_PRODUCTS, PILLARS, RANGES, FACE_MAPPING_STEPS } from "@/data/dermalogica";
 import Footer from "@/components/Footer";
-import { LIVE_LINKS, WHATSAPP_URL } from "@/lib/site";
+import { WHATSAPP_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Dermalogica — d'reena beauty",
@@ -169,14 +170,12 @@ export default function DermalogicaPage() {
               reads your face zone by zone to see what&apos;s actually happening, then builds the
               treatment around it.
             </p>
-            <a
-              href={LIVE_LINKS.skinAnalysis}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/skin-analysis"
               className="mt-8 inline-block rounded-full bg-taupe-dark px-6 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-cream transition-opacity hover:opacity-90"
             >
               Start with the Skin Analysis
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-col gap-5">

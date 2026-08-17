@@ -1,5 +1,4 @@
 import MagneticButton from "./MagneticButton";
-import { LIVE_LINKS } from "@/lib/site";
 
 export default function Contact() {
   return (
@@ -17,9 +16,7 @@ export default function Contact() {
         </p>
 
         <MagneticButton
-          href={LIVE_LINKS.skinAnalysis}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/skin-analysis"
           className="mt-12 inline-block rounded-full bg-taupe-dark px-10 py-5 text-sm font-medium uppercase tracking-[0.14em] text-cream transition-transform"
         >
           Determine Your Skin

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CATEGORIES, TREATMENTS } from "@/data/allTreatments";
 import TreatmentCategorySection from "@/components/TreatmentCategorySection";
 import Footer from "@/components/Footer";
-import { LIVE_LINKS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Treatments — d'reena beauty",
@@ -22,14 +22,9 @@ export default function TreatmentsPage() {
         </h1>
         <p className="mx-auto mt-5 max-w-md text-balance text-base text-muted">
           Not sure where to start?{" "}
-          <a
-            href={LIVE_LINKS.skinAnalysis}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground underline underline-offset-4"
-          >
+          <Link href="/skin-analysis" className="text-foreground underline underline-offset-4">
             Take the Skin Analysis
-          </a>{" "}
+          </Link>{" "}
           for a recommendation based on your skin.
         </p>
       </div>

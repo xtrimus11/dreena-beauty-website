@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { POSTS, getPost, otherPosts } from "@/data/blog";
 import Footer from "@/components/Footer";
-import { LIVE_LINKS } from "@/lib/site";
 
 export function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }));
@@ -95,14 +94,12 @@ export default async function BlogPostPage({
               Take our 2-minute Skin Analysis for a personalised recommendation before you book.
             </p>
           </div>
-          <a
-            href={LIVE_LINKS.skinAnalysis}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/skin-analysis"
             className="shrink-0 rounded-full bg-taupe-dark px-6 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-cream transition-opacity hover:opacity-90"
           >
             Take the Skin Analysis
-          </a>
+          </Link>
         </div>
       </div>
 
