@@ -1,7 +1,7 @@
-// d'reena Journal — mirrors blog-data.js at the repo root, which the
-// scheduled publishing routine writes to. When that routine adds a new
-// post there, port it here too so it shows up on /blog. Same slugs,
-// titles, dates, images, credits and body copy — nothing paraphrased.
+// d'reena Journal — mirrors blog-data.js at the repo root. The scheduled
+// "d'reena Blog — Daily Publish" routine writes new posts to both files
+// directly (same slugs, titles, dates, images, credits and body copy —
+// nothing paraphrased), so this should normally already be in sync.
 export interface Post {
   slug: string;
   title: string;
@@ -19,6 +19,26 @@ export interface Post {
 }
 
 export const POSTS: Post[] = [
+  {
+    slug: "nanoinfusion-led-light-therapy-explained",
+    title: "Nanoinfusion and LED Light Therapy, Explained",
+    kicker: "Treatments Explained",
+    date: "2026-08-17",
+    cardStyle: "photo",
+    excerpt:
+      "Nanoinfusion and LED light therapy solve two completely different problems — getting actives in, and telling cells what to do once they're there — which is why we pair them instead of picking one.",
+    image:
+      "https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Look Studio on Unsplash",
+    imageCreditHref: "https://unsplash.com/@lookphoto",
+    body: [
+      "Nanoinfusion sounds like a marketing rebrand of microneedling, but the depth is the whole point of the difference. Traditional needling creates channels deep enough to trigger a wound-healing response on its own; nanoinfusion uses a device like the Dermalogica Pro Pen to create far shallower, hair's-width channels — too shallow to injure skin or require downtime, but enough to briefly open the stratum corneum's normal barrier function. That's the actual value: it's a delivery method, not a treatment in its own right. Actives applied in that window bypass the slow diffusion process they'd otherwise need to cross intact skin, landing where they can actually do something instead of evaporating off the surface.",
+      "LED light therapy works on a completely different mechanism — it isn't chemical at all, it's photobiomodulation. Red light in roughly the 630–700 nanometre range is absorbed by mitochondria inside skin cells, and that absorption is linked to increased ATP production and greater fibroblast activity — the cells responsible for making collagen. Blue light, closer to 415 nanometres, works differently again: it targets porphyrins, byproducts produced by the same bacteria implicated in acne, which is why blue-light protocols are more often paired with congested or breakout-prone skin than an anti-ageing goal.",
+      "Put together with a round of exfoliation first — clearing surface debris so the nanoinfusion channels aren't working against a build-up of dead skin cells — you get the exact sequence behind our PRO Lumin Fusion treatment: exfoliation stacking, nanoinfusion with the Dermalogica Pro Pen, then LED light therapy to close the session. Each step solves a separate problem — clearing the surface, opening a delivery pathway, then stimulating cell activity at the receiving end — rather than one mechanism doing all the work.",
+      "None of this is a single-session transformation. The luminosity boost is often visible immediately because of the exfoliation and infused actives, but the collagen-stimulating side of LED exposure builds the same way HIFU's does — gradually, over a course of sessions rather than one visit. It's also not the right starting point for every skin type; if your main concern is active breakouts or a compromised barrier, that changes which combination of steps actually helps.",
+      "That's exactly what a Skin Analysis is for before booking a course — matching the sequence to what your skin actually needs rather than the treatment that sounds most advanced.",
+    ],
+  },
   {
     slug: "oxygen-facial-explained",
     title: "What's Actually Happening During an Oxygen Facial",
