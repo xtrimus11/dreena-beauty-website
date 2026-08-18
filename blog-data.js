@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "bio-cell-treatment-explained",
+    title: "What's Actually Happening During a Bio Cell Treatment",
+    kicker: "Treatments Explained",
+    date: "2026-08-18",
+    cardStyle: "cream",
+    excerpt: "The freshwater sponge behind a Bio Cell Treatment isn't a gimmick ingredient — it's a genuine mechanical exfoliant, which is exactly why it behaves so differently from a chemical peel or a laser.",
+    heroPlaceholder: "Micro-resurfacing facial treatment for smooth, refreshed skin",
+    image: "https://images.unsplash.com/photo-1647004692483-c5d942fe1137?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Soheil Kmp on Unsplash",
+    imageCreditHref: "https://unsplash.com/@soheilkmp",
+    body: [
+      "\"Bio Cell\" tends to get filed under microdermabrasion in most people's minds, but the tool doing the actual work isn't a diamond-tip wand or a crystal spray — it's a freshwater sponge. Its skeleton is built from microscopic, needle-like structures called spicules, made of silica rather than the soft collagen fibres you'd find in a bath sponge. Ground into a fine paste and massaged over skin, those spicules are rigid and sharp enough to physically abrade the outermost layer of dead skin cells. It's mechanical exfoliation, not a chemical or thermal one — the distinction that explains almost everything else about how the treatment behaves.",
+      "That distinction is what separates it from the two resurfacing methods people usually compare it to. A chemical peel exfoliates by dissolving the bonds holding dead skin cells together, using an acid like glycolic or mandelic acid. Laser resurfacing works thermally — controlled heat damage that triggers a wound-healing response beneath the surface. Freshwater sponge micro-resurfacing does neither: there's no acid to buffer for, no heat to manage, just direct physical abrasion at the surface. That's a large part of why it carries such a high safety profile and doesn't leave skin dry the way an acid-based peel can — the mechanism itself doesn't strip lipids or generate the kind of thermal stress that leaves skin reactive afterward.",
+      "The \"drawing out impurities\" side of it comes from the same mechanical action. As the spicule paste is massaged over skin, it loosens the compacted debris and built-up dead cells sitting in and around pores, which is what lets a therapist properly extract congestion rather than leave it trapped under a layer of dulled surface skin. It's aiming at the same outcome a chemical peel or a laser is after — clearer, more even-toned skin — just reached through direct friction instead of a chemical or thermal reaction.",
+      "Because the exfoliation is superficial and non-chemical, it's one of the few resurfacing options broad enough to suit fine lines and old scarring, dullness, and acne-prone congestion within the same 90-minute session, which is reflected in our Bio Cell Treatment being built for all skin types rather than one specific concern the way, say, Pico Laser is aimed squarely at pigmentation.",
+      "Mechanical exfoliation isn't automatically the gentler or better starting point for every skin, though — depth, frequency, and what else your skin is already dealing with all change the picture. That's exactly what a Skin Analysis is for before booking a resurfacing course.",
+    ],
+  },
+  {
     slug: "nanoinfusion-led-light-therapy-explained",
     title: "Nanoinfusion and LED Light Therapy, Explained",
     kicker: "Treatments Explained",
