@@ -20,6 +20,24 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: "neurotouch-symmetry-serum-explained",
+    title: "NeuroTouch Symmetry Serum: What “Neuroscience-Powered” Actually Means",
+    kicker: "Ingredients",
+    date: "2026-08-19",
+    cardStyle: "photo",
+    excerpt:
+      "\"Neuroscience-powered\" sounds like marketing shorthand — here's what NeuroTouch Symmetry Serum's clinical numbers actually measure, and why its two headline claims aren't interchangeable.",
+    image: "/images/neurotouch.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
+    body: [
+      "NeuroTouch Symmetry Serum carries one of the more unusual taglines in the range we carry — \"facial sculpting skincare elevated by neuroscience\" — which sounds like it's promising something happening inside the brain. What it's actually pointing at is touch: facial skin carries an unusually dense network of sensory nerve endings, and how a product is applied — the technique, the pressure, the repetition — genuinely changes how skin responds to it, not just what's in the bottle. NeuroTouch is a sculpting oil built to be massaged in with a specific technique, with the goal of visibly restoring facial symmetry for more sculpted-looking skin.",
+      "The claim behind that outcome comes from independent clinical testing: 31 people, applying the serum twice a day for 8 weeks, with visibly restored facial symmetry as the measured result. That's a real efficacy study — a defined group, a set dosing protocol, a fixed timeframe — rather than a subjective before-and-after. Eight weeks matters here for the same reason it matters with most facial oils and massage-based actives: any visible change to how sculpted skin looks builds gradually with consistent, twice-daily use, not from a single application.",
+      "There's a second, different kind of claim attached to NeuroTouch, and it's worth telling the two apart. Alongside that 8-week efficacy study sits a separate one-day internal consumer-perception study of 56 subjects, applying the serum once, that found 100% agreement that touch can positively impact skin health. That's not a claim about what the serum did to skin structurally — it's a self-reported perception measurement, taken after a single application, about how the experience of touch felt. It's a legitimate data point, but it isn't interchangeable with the 8-week clinical result, and it's worth reading the fine print for exactly this reason whenever a product carries more than one \"clinically proven\" style claim.",
+      "As with the rest of the professional Dermalogica range we carry as an exclusive distributor, NeuroTouch Symmetry Serum is designed to be used consistently rather than as a single-use fix — and the massage technique behind its application is something a therapist can show you properly rather than guessing at pressure and direction from a bottle label. If you're not sure where a facial oil like this fits into your existing routine, that's exactly what a consultation or Skin Analysis is for.",
+    ],
+  },
+  {
     slug: "bio-cell-treatment-explained",
     title: "What's Actually Happening During a Bio Cell Treatment",
     kicker: "Treatments Explained",
