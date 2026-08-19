@@ -38,6 +38,12 @@ export default function SkinAnalysisQuiz() {
   const [customerName, setCustomerName] = useState("");
   const [customerContact, setCustomerContact] = useState("");
   const [photo, setPhoto] = useState<string | null>(null);
+  // The image actually saved to Supabase/local storage. For a file upload
+  // this is the same as `photo`; for a camera capture, `photo` is the
+  // tight, zoomed-on-face crop (just for the on-page preview) while this
+  // is the full, uncropped frame — so nothing outside the guide circle is
+  // lost from the actual analysis.
+  const [analysisPhoto, setAnalysisPhoto] = useState<string | null>(null);
   const [showCamera, setShowCamera] = useState(false);
   const canUseCamera = useSyncExternalStore(
     subscribeNoop,
@@ -54,7 +60,11 @@ export default function SkinAnalysisQuiz() {
   function handleFile(file: File | undefined) {
     if (!file || !file.type.startsWith("image/")) return;
     const reader = new FileReader();
-    reader.onload = () => setPhoto(reader.result as string);
+    reader.onload = () => {
+      const dataUrl = reader.result as string;
+      setPhoto(dataUrl);
+      setAnalysisPhoto(dataUrl);
+    };
     reader.readAsDataURL(file);
   }
 
@@ -78,9 +88,9 @@ export default function SkinAnalysisQuiz() {
       concerns: result.concerns,
       tags: result.tags,
     };
-    saveSubmissionLocally({ ...payload, photo });
+    saveSubmissionLocally({ ...payload, photo: analysisPhoto });
     try {
-      await submitAnalysis({ ...payload, photoDataUrl: photo });
+      await submitAnalysis({ ...payload, photoDataUrl: analysisPhoto });
     } catch (e) {
       console.error("[dreena] could not save analysis to Supabase — kept locally only", e);
     }
@@ -162,8 +172,9 @@ export default function SkinAnalysisQuiz() {
 
           {showCamera && (
             <CameraCapture
-              onCapture={(dataUrl) => {
-                setPhoto(dataUrl);
+              onCapture={(croppedDataUrl, fullDataUrl) => {
+                setPhoto(croppedDataUrl);
+                setAnalysisPhoto(fullDataUrl);
                 setShowCamera(false);
               }}
               onClose={() => setShowCamera(false)}
@@ -366,6 +377,8 @@ function ResultCard({
             </div>
             <Link
               href={`/treatments/${t.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="shrink-0 rounded-full border border-foreground/20 px-4 py-2 text-xs font-medium uppercase tracking-[0.1em] text-foreground transition-colors hover:bg-foreground hover:text-background"
             >
               View

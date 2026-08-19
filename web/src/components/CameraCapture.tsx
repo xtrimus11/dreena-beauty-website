@@ -12,7 +12,11 @@ export default function CameraCapture({
   onCapture,
   onClose,
 }: {
-  onCapture: (dataUrl: string) => void;
+  /** croppedDataUrl: tight, zoomed-on-face crop for the on-page preview.
+   *  fullDataUrl: the whole camera frame, uncropped — this is what should
+   *  actually be saved/analysed, since the tight crop can lose context
+   *  (jawline, hairline, neck) a therapist would want to see. */
+  onCapture: (croppedDataUrl: string, fullDataUrl: string) => void;
   onClose: () => void;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -97,20 +101,31 @@ export default function CameraCapture({
     const cropX = Math.min(Math.max(centerXNative - cropSize / 2, 0), video.videoWidth - cropSize);
     const cropY = Math.min(Math.max(centerYNative - cropSize / 2, 0), video.videoHeight - cropSize);
 
-    const canvas = document.createElement("canvas");
-    canvas.width = cropSize;
-    canvas.height = cropSize;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-    // Mirror horizontally so the saved photo matches what the customer saw
-    // in the selfie preview.
-    ctx.translate(canvas.width, 0);
-    ctx.scale(-1, 1);
-    ctx.drawImage(video, cropX, cropY, cropSize, cropSize, 0, 0, cropSize, cropSize);
+    // Cropped, zoomed-on-face version — used for the on-page preview only.
+    const cropCanvas = document.createElement("canvas");
+    cropCanvas.width = cropSize;
+    cropCanvas.height = cropSize;
+    const cropCtx = cropCanvas.getContext("2d");
+    if (!cropCtx) return;
+    cropCtx.translate(cropCanvas.width, 0);
+    cropCtx.scale(-1, 1);
+    cropCtx.drawImage(video, cropX, cropY, cropSize, cropSize, 0, 0, cropSize, cropSize);
+    const croppedDataUrl = cropCanvas.toDataURL("image/jpeg", 0.92);
 
-    const dataUrl = canvas.toDataURL("image/jpeg", 0.92);
+    // Full, uncropped frame — this is what actually gets saved for the
+    // analysis, so nothing outside the tight guide circle is lost.
+    const fullCanvas = document.createElement("canvas");
+    fullCanvas.width = video.videoWidth;
+    fullCanvas.height = video.videoHeight;
+    const fullCtx = fullCanvas.getContext("2d");
+    if (!fullCtx) return;
+    fullCtx.translate(fullCanvas.width, 0);
+    fullCtx.scale(-1, 1);
+    fullCtx.drawImage(video, 0, 0, fullCanvas.width, fullCanvas.height);
+    const fullDataUrl = fullCanvas.toDataURL("image/jpeg", 0.92);
+
     stopStream();
-    onCapture(dataUrl);
+    onCapture(croppedDataUrl, fullDataUrl);
   }
 
   function close() {
