@@ -82,7 +82,7 @@ export default function FounderHero() {
             className="mt-4 inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-sm font-medium text-foreground transition-colors hover:border-foreground"
           >
             <MessageCircle size={16} />
-            WhatsApp: +60 12-345 6789
+            WhatsApp: +60 16-213 0864
           </a>
 
           <div className="mt-16 flex flex-col items-start lg:items-end">

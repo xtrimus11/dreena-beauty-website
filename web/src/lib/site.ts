@@ -4,7 +4,7 @@
 // Analysis, About, Dermalogica, Blog, Contact) now lives here and links
 // internally.
 export const LIVE_SITE = "https://xtrimus11.github.io/dreena-beauty-website";
-export const WHATSAPP_URL = "https://wa.me/60123456789";
+export const WHATSAPP_URL = "https://wa.me/60162130864";
 
 export const LIVE_LINKS = {
   treatment: (slug: string) => `${LIVE_SITE}/TreatmentDetail.dc.html?t=${slug}`,

@@ -15,11 +15,13 @@ const LOCATIONS = [
   {
     name: "d'reena beauty centre",
     address: "Uptown Avenue, Seremban 2, Negeri Sembilan",
+    whatsappHref: "https://wa.me/60122192247",
     directionsHref: GOOGLE_MAPS_URL,
   },
   {
     name: "d'sensations beauty",
     address: "Taipan 2, Senawang, Negeri Sembilan",
+    whatsappHref: "https://wa.me/60189188664",
     directionsHref: null,
   },
 ];
@@ -85,7 +87,7 @@ export default function ContactPage() {
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href={WHATSAPP_URL}
+                href={loc.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-foreground/20 px-5 py-2.5 text-xs font-medium uppercase tracking-[0.1em] text-foreground transition-colors hover:bg-foreground hover:text-background"

@@ -12,7 +12,7 @@ const EXPLORE = [
 const VISIT = [
   { label: "Uptown Avenue, Seremban 2", href: "/contact", internal: true },
   { label: "Taipan 2, Senawang", href: "/contact", internal: true },
-  { label: "WhatsApp: +60 12-345 6789", href: WHATSAPP_URL, internal: false },
+  { label: "WhatsApp: +60 16-213 0864", href: WHATSAPP_URL, internal: false },
 ];
 
 export default function Footer() {
