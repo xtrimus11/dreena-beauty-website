@@ -14,13 +14,13 @@
 
 ## Pages
 
-- [Home](https://dreena.my/): Overview of the business, services, and real Google reviews.
-- [Treatments](https://dreena.my/treatments): 23 treatments across 5 skin categories — All Skin Types, Acne-Prone Skin, Aging Skin, Sensitive Skin, Pigmentation & Uneven Tone.
-- [Skin Analysis](https://dreena.my/skin-analysis): A 6-question quiz (optional photo upload) that recommends treatments based on the visitor's actual skin concerns.
-- [Dermalogica](https://dreena.my/dermalogica): d'reena beauty is an exclusive Dermalogica distributor in Seremban — professional product ranges and newly launched products.
-- [About](https://dreena.my/about): Founder Dareena's story and the business's history since 1987.
-- [Blog](https://dreena.my/blog): Educational articles on skincare ingredients and treatments — how they work, and which real d'reena treatment they relate to.
-- [Contact](https://dreena.my/contact): WhatsApp links and an enquiry form for both branches.
+- [Home](https://www.dreena.my/): Overview of the business, services, and real Google reviews.
+- [Treatments](https://www.dreena.my/treatments): 23 treatments across 5 skin categories — All Skin Types, Acne-Prone Skin, Aging Skin, Sensitive Skin, Pigmentation & Uneven Tone.
+- [Skin Analysis](https://www.dreena.my/skin-analysis): A 6-question quiz (optional photo upload) that recommends treatments based on the visitor's actual skin concerns.
+- [Dermalogica](https://www.dreena.my/dermalogica): d'reena beauty is an exclusive Dermalogica distributor in Seremban — professional product ranges and newly launched products.
+- [About](https://www.dreena.my/about): Founder Dareena's story and the business's history since 1987.
+- [Blog](https://www.dreena.my/blog): Educational articles on skincare ingredients and treatments — how they work, and which real d'reena treatment they relate to.
+- [Contact](https://www.dreena.my/contact): WhatsApp links and an enquiry form for both branches.
 
 ## Notes for AI assistants and search crawlers
 

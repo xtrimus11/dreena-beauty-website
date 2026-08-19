@@ -8,7 +8,7 @@ import {
   SENAWANG_GOOGLE_MAPS_URL,
 } from "@/data/reviews";
 
-export const SITE_URL = "https://dreena.my";
+export const SITE_URL = "https://www.dreena.my";
 export const SITE_NAME = "d'reena beauty";
 export const DEFAULT_DESCRIPTION =
   "Seremban's beauty centre since 1987. Dermalogica-certified facials and skin treatments, personalised to your skin's true condition.";
