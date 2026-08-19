@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Camera, ImagePlus } from "lucide-react";
 import { QUESTIONS, computeResult } from "@/data/skinAnalysis";
 import { recommendFor } from "@/data/allTreatments";
-import { WHATSAPP_URL } from "@/lib/site";
+import { WHATSAPP_URL, waLink } from "@/lib/site";
 import { submitAnalysis } from "@/lib/supabase";
 import { saveSubmissionLocally } from "@/lib/analysisStore";
 import CameraCapture from "./CameraCapture";
@@ -381,15 +381,15 @@ function ResultCard({
               Go Deeper
             </span>
             <h3 className="mt-2 text-lg font-medium tracking-tight text-foreground">
-              Get Your Full 12-D Skin Analysis
+              Free 12-D Skin Analysis (Worth RM98)
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-foreground/70">
-              This is a quick guide. For a detailed, professional 12-D skin analysis, book an
-              in-person consultation with your therapist.
+              This is a quick guide. Book a detailed, professional 12-D skin analysis with your
+              therapist in person — on us.
             </p>
           </div>
           <a
-            href={WHATSAPP_URL}
+            href={waLink("I would like to redeem my Free 12-D skin analysis")}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-5 inline-block w-fit rounded-full bg-taupe-dark px-5 py-2.5 text-xs font-medium uppercase tracking-[0.1em] text-cream transition-opacity hover:opacity-90"
@@ -411,7 +411,7 @@ function ResultCard({
             </p>
           </div>
           <a
-            href={WHATSAPP_URL}
+            href={waLink("I would like to redeem my 50% off first intensive treatment offer")}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-5 inline-block w-fit rounded-full bg-cream px-5 py-2.5 text-xs font-medium uppercase tracking-[0.1em] text-taupe-dark transition-opacity hover:opacity-90"
