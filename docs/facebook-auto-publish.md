@@ -49,40 +49,63 @@ people who don't have a role on it.
 
 ### 2. Get a long-lived Page access token
 
-1. Open the [Graph API Explorer](https://developers.facebook.com/tools/explorer/),
-   select your app in the top-right dropdown.
+A **User** token can't post to a Page — you need a **Page** token derived
+from it. The order matters: exchange the user token for a long-lived one
+*first*, then derive the Page token. A Page token inherits its lifetime from
+the user token it came from, so deriving it from the short-lived token gives
+you one that dies within the hour.
+
+1. Open the [Graph API Explorer](https://developers.facebook.com/tools/explorer/)
+   and select your app in the top-right dropdown.
 2. **Add permissions**: `pages_show_list`, `pages_read_engagement`,
-   `pages_manage_posts`. Click **Generate access token** and approve the
-   d'reena Page when prompted. You now have a short-lived *user* token.
-3. Exchange it for a long-lived (60-day) user token — paste this in a browser:
+   `pages_manage_posts`. Click **Generate access token** and make sure the
+   d'reena Page is ticked in the dialog. You now have a short-lived *user*
+   token.
+3. Run the helper script locally — it does the exchange, lists your Pages,
+   and checks each resulting token's type, lifetime and permissions:
 
-   ```
-   https://graph.facebook.com/v25.0/oauth/access_token
-     ?grant_type=fb_exchange_token
-     &client_id=<APP_ID>
-     &client_secret=<APP_SECRET>
-     &fb_exchange_token=<SHORT_LIVED_USER_TOKEN>
-   ```
-
-4. Use that long-lived user token to get the Page token:
-
-   ```
-   https://graph.facebook.com/v25.0/me/accounts?access_token=<LONG_LIVED_USER_TOKEN>
+   ```sh
+   FB_APP_ID=<app id> \
+   FB_APP_SECRET=<app secret> \
+   FB_USER_TOKEN=<the user token from step 2> \
+   node scripts/facebook-page-token.mjs
    ```
 
-   In the response, find the d'reena Page. Its `id` is `FB_PAGE_ID` and its
-   `access_token` is `FB_PAGE_ACCESS_TOKEN`.
+   It prints `FB_PAGE_ID` and `FB_PAGE_ACCESS_TOKEN` for each Page, and warns
+   if a token isn't permanent or is missing a permission. Run it on your own
+   machine, not in CI — it prints live credentials to the terminal. It writes
+   nothing to disk.
 
-5. Confirm the Page token doesn't expire — paste it into the
-   [Access Token Debugger](https://developers.facebook.com/tools/debug/accesstoken/).
-   **Expires** should read *Never*. If it shows a date, the user token you
-   used in step 4 was still the short-lived one; redo step 3.
+If you'd rather do it by hand, it's two browser requests:
+
+```
+https://graph.facebook.com/v25.0/oauth/access_token
+  ?grant_type=fb_exchange_token
+  &client_id=<APP_ID>
+  &client_secret=<APP_SECRET>
+  &fb_exchange_token=<SHORT_LIVED_USER_TOKEN>
+```
+
+then, with the `access_token` that comes back:
+
+```
+https://graph.facebook.com/v25.0/me/accounts?access_token=<LONG_LIVED_USER_TOKEN>
+```
+
+Find the d'reena Page in the response: its `id` is `FB_PAGE_ID` and its
+`access_token` is `FB_PAGE_ACCESS_TOKEN`. Check it in the
+[Access Token Debugger](https://developers.facebook.com/tools/debug/accesstoken/) —
+**Type** should be `Page` and **Expires** should read *Never*.
+
+If `/me/accounts` comes back with an empty `data` array, it's almost always
+one of: the token is missing `pages_show_list`, the Page wasn't ticked in the
+login dialog, or the account isn't actually a Page admin.
 
 A Page token derived from a long-lived user token has no expiry of its own,
 but it *is* invalidated if the account's password changes, the person's admin
 role on the Page is removed, or the app's access is revoked in Facebook
-settings. If posting suddenly starts failing, regenerate it by repeating
-steps 2–4.
+settings. If posting suddenly starts failing with an `OAuthException`, just
+re-run the helper script.
 
 ### 3. Add the secrets to GitHub
 
