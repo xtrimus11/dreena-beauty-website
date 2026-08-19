@@ -1,16 +1,36 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ImagePlus } from "lucide-react";
+import { Camera, ImagePlus } from "lucide-react";
 import { QUESTIONS, computeResult } from "@/data/skinAnalysis";
 import { recommendFor } from "@/data/allTreatments";
 import { WHATSAPP_URL } from "@/lib/site";
 import { submitAnalysis } from "@/lib/supabase";
 import { saveSubmissionLocally } from "@/lib/analysisStore";
+import CameraCapture from "./CameraCapture";
 
 const TOTAL = QUESTIONS.length;
+
+// Only offer the in-page camera capture on phones/tablets (touch as the
+// primary pointer) that actually have a camera API — desktop keeps the
+// plain file upload. This is a browser-only capability check, so it's read
+// via useSyncExternalStore rather than an effect: the value can never
+// change during the component's lifetime, so subscribe is a no-op, and
+// getServerSnapshot keeps SSR/hydration consistent (always false there).
+function subscribeNoop() {
+  return () => {};
+}
+function getCanUseCameraSnapshot() {
+  const isCoarsePointer = window.matchMedia?.("(pointer: coarse)").matches ?? false;
+  const hasTouch = navigator.maxTouchPoints > 0;
+  const hasCamera = Boolean(navigator.mediaDevices?.getUserMedia);
+  return isCoarsePointer && hasTouch && hasCamera;
+}
+function getCanUseCameraServerSnapshot() {
+  return false;
+}
 
 export default function SkinAnalysisQuiz() {
   const [step, setStep] = useState(0);
@@ -18,6 +38,12 @@ export default function SkinAnalysisQuiz() {
   const [customerName, setCustomerName] = useState("");
   const [customerContact, setCustomerContact] = useState("");
   const [photo, setPhoto] = useState<string | null>(null);
+  const [showCamera, setShowCamera] = useState(false);
+  const canUseCamera = useSyncExternalStore(
+    subscribeNoop,
+    getCanUseCameraSnapshot,
+    getCanUseCameraServerSnapshot
+  );
   const submittedRef = useRef(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -87,8 +113,8 @@ export default function SkinAnalysisQuiz() {
             Find your skin type &amp; treatment
           </h1>
           <p className="mx-auto mt-4 max-w-[46ch] text-sm leading-relaxed text-muted">
-            Upload a clear, makeup-free photo (optional) and answer 6 quick questions. We&apos;ll
-            give you a simple skin summary and our top treatment picks.
+            Upload a clear, makeup-free photo and answer 6 quick questions. We&apos;ll give you a
+            simple skin summary and our top treatment picks.
           </p>
 
           <input
@@ -100,7 +126,7 @@ export default function SkinAnalysisQuiz() {
           />
           <button
             type="button"
-            onClick={() => fileInputRef.current?.click()}
+            onClick={() => (canUseCamera ? setShowCamera(true) : fileInputRef.current?.click())}
             onDragOver={(e) => e.preventDefault()}
             onDrop={(e) => {
               e.preventDefault();
@@ -110,15 +136,39 @@ export default function SkinAnalysisQuiz() {
           >
             {photo ? (
               <Image src={photo} alt="Your uploaded photo" fill className="object-cover" />
+            ) : canUseCamera ? (
+              <span className="flex flex-col items-center gap-2 px-4 text-xs text-muted">
+                <Camera size={20} />
+                Take a Photo
+              </span>
             ) : (
               <span className="flex flex-col items-center gap-2 px-4 text-xs text-muted">
                 <ImagePlus size={20} />
                 Drop a selfie
-                <br />
-                (optional)
               </span>
             )}
           </button>
+
+          {canUseCamera && (
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="mx-auto mt-3 flex items-center justify-center gap-1.5 text-xs font-medium uppercase tracking-[0.1em] text-taupe-dark"
+            >
+              <ImagePlus size={14} />
+              Drop a Selfie
+            </button>
+          )}
+
+          {showCamera && (
+            <CameraCapture
+              onCapture={(dataUrl) => {
+                setPhoto(dataUrl);
+                setShowCamera(false);
+              }}
+              onClose={() => setShowCamera(false)}
+            />
+          )}
 
           <div className="mx-auto mt-7 flex max-w-[360px] flex-col gap-4 text-left">
             <div className="flex flex-col gap-1.5">
