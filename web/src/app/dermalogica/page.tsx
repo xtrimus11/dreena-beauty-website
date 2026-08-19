@@ -3,17 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { NEW_PRODUCTS, PILLARS, RANGES, FACE_MAPPING_STEPS } from "@/data/dermalogica";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { WHATSAPP_URL } from "@/lib/site";
+import { breadcrumbJsonLd } from "@/lib/seo";
+
+const TITLE = "Dermalogica";
+const DESCRIPTION =
+  "Exclusive Dermalogica distributor in Seremban — the professional skin care behind every treatment at d'reena beauty.";
 
 export const metadata: Metadata = {
-  title: "Dermalogica — d'reena beauty",
-  description:
-    "Exclusive Dermalogica distributor in Seremban — the professional skin care behind every treatment at d'reena beauty.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/dermalogica" },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: "/dermalogica" },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
 export default function DermalogicaPage() {
   return (
     <main>
+      <JsonLd
+        data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Dermalogica", path: "/dermalogica" }])}
+      />
       {/* Hero */}
       <section className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-6 pb-16 pt-40 md:grid-cols-[minmax(0,1fr)_420px] md:items-center md:gap-14 md:px-10 md:pt-48">
         <div>

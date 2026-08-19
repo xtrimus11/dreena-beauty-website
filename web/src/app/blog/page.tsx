@@ -2,16 +2,25 @@ import type { Metadata } from "next";
 import { POSTS } from "@/data/blog";
 import BlogGrid from "@/components/BlogGrid";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
+
+const TITLE = "The d'reena Journal";
+const DESCRIPTION =
+  "Notes from our therapists on the ingredients and treatments behind every facial — what they do, how they work, and why we choose them for your skin.";
 
 export const metadata: Metadata = {
-  title: "The d'reena Journal — d'reena beauty",
-  description:
-    "Notes from our therapists on the ingredients and treatments behind every facial — what they do, how they work, and why we choose them for your skin.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/blog" },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: "/blog" },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
 export default function BlogPage() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }])} />
       <div className="px-6 pb-8 pt-40 md:px-10 md:pt-48">
         <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
           The d&apos;reena Journal

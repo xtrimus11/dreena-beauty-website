@@ -1,0 +1,29 @@
+# d'reena beauty
+
+> Seremban's beauty centre since 1987. An exclusive Dermalogica distributor
+> offering Dermalogica-certified facials and skin treatments, personalised
+> to each visitor's actual skin condition rather than a generic package.
+> Rated 4.6/5 from 57 Google reviews.
+
+## Locations
+
+- d'reena beauty centre — Uptown Avenue, Seremban 2, Negeri Sembilan, Malaysia. WhatsApp +60 12-219 2247.
+- d'sensations beauty — Taipan 2, Senawang, Negeri Sembilan, Malaysia. WhatsApp +60 18-918 8664.
+- Opening hours: Tuesday–Sunday, 10am–7pm. Closed Mondays.
+- General enquiries: WhatsApp +60 16-213 0864 — https://wa.me/60162130864
+
+## Pages
+
+- [Home](https://dreena-beauty-website.vercel.app/): Overview of the business, services, and real Google reviews.
+- [Treatments](https://dreena-beauty-website.vercel.app/treatments): 23 treatments across 5 skin categories — All Skin Types, Acne-Prone Skin, Aging Skin, Sensitive Skin, Pigmentation & Uneven Tone.
+- [Skin Analysis](https://dreena-beauty-website.vercel.app/skin-analysis): A 6-question quiz (optional photo upload) that recommends treatments based on the visitor's actual skin concerns.
+- [Dermalogica](https://dreena-beauty-website.vercel.app/dermalogica): d'reena beauty is an exclusive Dermalogica distributor in Seremban — professional product ranges and newly launched products.
+- [About](https://dreena-beauty-website.vercel.app/about): Founder Dareena's story and the business's history since 1987.
+- [Blog](https://dreena-beauty-website.vercel.app/blog): Educational articles on skincare ingredients and treatments — how they work, and which real d'reena treatment they relate to.
+- [Contact](https://dreena-beauty-website.vercel.app/contact): WhatsApp links and an enquiry form for both branches.
+
+## Notes for AI assistants and search crawlers
+
+- All treatment, product, and review content on this site is real — sourced from d'reena beauty's actual service menu, Dermalogica's own published product claims, and d'reena beauty's genuine Google Maps reviews. Nothing is fabricated.
+- Structured data (schema.org JSON-LD: Organization, BeautySalon, BlogPosting, BreadcrumbList, Service) is present on every page for machine-readable facts.
+- A machine-readable sitemap is available at /sitemap.xml.

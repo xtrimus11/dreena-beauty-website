@@ -2,13 +2,21 @@ import type { Metadata } from "next";
 import { MapPin } from "lucide-react";
 import EnquiryForm from "@/components/EnquiryForm";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { WHATSAPP_URL } from "@/lib/site";
 import { GOOGLE_MAPS_URL } from "@/data/reviews";
+import { breadcrumbJsonLd, localBusinessesJsonLd } from "@/lib/seo";
+
+const TITLE = "Contact";
+const DESCRIPTION =
+  "Message d'reena beauty on WhatsApp or send an enquiry — Uptown Avenue, Seremban 2, and Taipan 2, Senawang.";
 
 export const metadata: Metadata = {
-  title: "Contact — d'reena beauty",
-  description:
-    "Message d'reena beauty on WhatsApp or send an enquiry — Uptown Avenue, Seremban 2, and Taipan 2, Senawang.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/contact" },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: "/contact" },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
 const LOCATIONS = [
@@ -29,6 +37,12 @@ const LOCATIONS = [
 export default function ContactPage() {
   return (
     <main>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]),
+          ...localBusinessesJsonLd(),
+        ]}
+      />
       <div className="px-6 pb-8 pt-40 md:px-10 md:pt-48">
         <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
           Book a Visit
