@@ -374,7 +374,54 @@ function ResultCard({
         ))}
       </div>
 
-      <div className="mt-8 flex items-center justify-between gap-3">
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="flex flex-col justify-between rounded-sm bg-champagne p-6">
+          <div>
+            <span className="text-xs font-medium uppercase tracking-[0.15em] text-taupe-dark">
+              Go Deeper
+            </span>
+            <h3 className="mt-2 text-lg font-medium tracking-tight text-foreground">
+              Get Your Full 12-D Skin Analysis
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-foreground/70">
+              This is a quick guide. For a detailed, professional 12-D skin analysis, book an
+              in-person consultation with your therapist.
+            </p>
+          </div>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-block w-fit rounded-full bg-taupe-dark px-5 py-2.5 text-xs font-medium uppercase tracking-[0.1em] text-cream transition-opacity hover:opacity-90"
+          >
+            Book My 12-D Analysis
+          </a>
+        </div>
+
+        <div className="flex flex-col justify-between rounded-sm bg-taupe-dark p-6 text-cream">
+          <div>
+            <span className="text-xs font-medium uppercase tracking-[0.15em] text-cream/70">
+              Limited Offer
+            </span>
+            <h3 className="mt-2 text-lg font-medium tracking-tight">
+              50% Off Your First Intensive Treatment
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-cream/80">
+              New to d&apos;reena? Message us to claim 50% off your first intensive treatment.
+            </p>
+          </div>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-block w-fit rounded-full bg-cream px-5 py-2.5 text-xs font-medium uppercase tracking-[0.1em] text-taupe-dark transition-opacity hover:opacity-90"
+          >
+            Claim 50% Off
+          </a>
+        </div>
+      </div>
+
+      <div className="mt-6 flex items-center justify-between gap-3">
         <button
           type="button"
           onClick={onRestart}

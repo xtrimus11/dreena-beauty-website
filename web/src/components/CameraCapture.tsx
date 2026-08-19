@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 
 // Full-screen selfie capture with a circular face guide in the upper-middle
-// region — everything outside the circle is darkened out, so the customer
-// can only really see (and frame their face within) the guide itself.
+// region — everything outside the circle is fully covered (not just
+// darkened), so the customer can only see the guide itself. The final
+// photo is cropped to that same guide region, so it comes out zoomed in on
+// just the face rather than the whole frame.
 export default function CameraCapture({
   onCapture,
   onClose,
@@ -14,6 +16,7 @@ export default function CameraCapture({
   onClose: () => void;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const circleRef = useRef<HTMLDivElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const [ready, setReady] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -24,7 +27,9 @@ export default function CameraCapture({
     async function start() {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: "user" },
+          // Ask for a large frame so the tight crop around the face guide
+          // still has good detail once we zoom into it.
+          video: { facingMode: "user", width: { ideal: 1920 }, height: { ideal: 1920 } },
           audio: false,
         });
         if (cancelled) {
@@ -57,17 +62,52 @@ export default function CameraCapture({
 
   function capture() {
     const video = videoRef.current;
-    if (!video || !video.videoWidth) return;
+    const circle = circleRef.current;
+    if (!video || !video.videoWidth || !circle) return;
+
+    // The video is rendered with object-cover, so it's scaled up and
+    // symmetrically cropped to fill its box — work out that scale/offset
+    // to map screen coordinates back to native video pixel coordinates.
+    const videoRect = video.getBoundingClientRect();
+    const circleRect = circle.getBoundingClientRect();
+    const scale = Math.max(videoRect.width / video.videoWidth, videoRect.height / video.videoHeight);
+    const renderedW = video.videoWidth * scale;
+    const renderedH = video.videoHeight * scale;
+    const offsetX = (renderedW - videoRect.width) / 2;
+    const offsetY = (renderedH - videoRect.height) / 2;
+
+    // Circle center, relative to the video box, in CSS px.
+    const centerXInBox = circleRect.left + circleRect.width / 2 - videoRect.left;
+    const centerYInBox = circleRect.top + circleRect.height / 2 - videoRect.top;
+    const radiusInBox = circleRect.width / 2;
+
+    // The video is mirrored on screen (scaleX(-1)) but drawImage always
+    // samples the raw, unmirrored frame — so flip the X coordinate back
+    // to find where the guide actually sits in that raw frame.
+    const mirroredCenterXInBox = videoRect.width - centerXInBox;
+
+    const centerXNative = (mirroredCenterXInBox + offsetX) / scale;
+    const centerYNative = (centerYInBox + offsetY) / scale;
+    const radiusNative = radiusInBox / scale;
+
+    // Crop a square around the guide circle with a little breathing room,
+    // clamped so it never reads outside the actual frame.
+    const padding = 1.15;
+    const cropSize = Math.min(radiusNative * 2 * padding, video.videoWidth, video.videoHeight);
+    const cropX = Math.min(Math.max(centerXNative - cropSize / 2, 0), video.videoWidth - cropSize);
+    const cropY = Math.min(Math.max(centerYNative - cropSize / 2, 0), video.videoHeight - cropSize);
+
     const canvas = document.createElement("canvas");
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+    canvas.width = cropSize;
+    canvas.height = cropSize;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     // Mirror horizontally so the saved photo matches what the customer saw
     // in the selfie preview.
     ctx.translate(canvas.width, 0);
     ctx.scale(-1, 1);
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(video, cropX, cropY, cropSize, cropSize, 0, 0, cropSize, cropSize);
+
     const dataUrl = canvas.toDataURL("image/jpeg", 0.92);
     stopStream();
     onCapture(dataUrl);
@@ -102,11 +142,13 @@ export default function CameraCapture({
             <p className="pointer-events-none absolute inset-x-0 top-[8%] text-center text-sm font-medium text-white/90">
               Center your face in the circle
             </p>
-            {/* The huge box-shadow spread paints over everything in this
-               overflow-hidden container except the circle itself. */}
+            {/* The huge box-shadow spread fully covers everything in this
+               overflow-hidden container except the circle itself — solid,
+               not see-through. */}
             <div
+              ref={circleRef}
               className="pointer-events-none absolute left-1/2 top-[16%] aspect-square w-[68vmin] max-w-[320px] -translate-x-1/2 rounded-full border-2 border-white/80"
-              style={{ boxShadow: "0 0 0 9999px rgba(0,0,0,0.72)" }}
+              style={{ boxShadow: "0 0 0 9999px #000" }}
             />
           </>
         )}
