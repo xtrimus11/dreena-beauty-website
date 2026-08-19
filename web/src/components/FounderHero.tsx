@@ -12,7 +12,13 @@ export default function FounderHero() {
         {/* Left — headline, CTA, rating */}
         <div className="flex flex-col items-start">
           <h1 className="text-balance text-4xl font-medium leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-[3.25rem]">
-            I design treatments that delight people.
+            We don&apos;t simply sell products
+            <br />
+            We build confidence
+            <br />
+            We create hope
+            <br />
+            We transform lives
           </h1>
 
           <a
