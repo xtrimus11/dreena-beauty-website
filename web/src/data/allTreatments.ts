@@ -289,6 +289,8 @@ const TREATMENT_PHOTO_OVERRIDES: Record<string, Photo> = {
   },
   "lumilift-elite": { src: "/images/treatments/lumilift-elite.jpg", credit: null, creditHref: null },
   hifu: { src: "/images/treatments/hifu.jpg", credit: null, creditHref: null },
+  "bio-cell": { src: "/images/treatments/bio-cell.jpg", credit: null, creditHref: null },
+  teenskin: { src: "/images/treatments/teenskin.jpg", credit: null, creditHref: null },
   "pico-laser": { src: "/images/treatments/pico-laser.jpg", credit: null, creditHref: null },
   "multivitamin-restore-rf": {
     src: "/images/treatments/multivitamin-restore-rf.jpg",
@@ -307,7 +309,7 @@ const TREATMENT_PHOTO_OVERRIDES: Record<string, Photo> = {
   "skin-boost": { src: "/images/treatments/skin-boost.jpg", credit: null, creditHref: null },
   environmental: { src: "/images/treatments/environmental.jpg", credit: null, creditHref: null },
   whiteglow: { src: "/images/treatments/whiteglow.jpg", credit: null, creditHref: null },
-  "pico-plus": { src: "/images/treatments/pico-plus.jpg", credit: null, creditHref: null },
+  "pico-plus": { src: "/images/treatments/pico-laser.jpg", credit: null, creditHref: null },
 };
 
 export function photoFor(t: TreatmentEntry): Photo {

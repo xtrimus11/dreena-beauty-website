@@ -16,6 +16,11 @@ export const GOOGLE_REVIEW_COUNT = 57;
 export const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/place/d'reena+beauty+-+Facial+%26+Skin+Treatment+Seremban./@2.6955073,101.9076264,17z/data=!4m8!3m7!1s0x31cde7cddcfc82d7:0xfdd6333a49c4e762!8m2!3d2.6955073!4d101.9102013!9m1!1b1!16s%2Fg%2F1vzqpsbs";
 
+// The Senawang branch (d'sensations beauty) has its own separate Google
+// Maps listing, under "DERMALOGICA d sensations".
+export const SENAWANG_GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/place/DERMALOGICA+d+sensations/@2.704046,101.9878711,17z/data=!3m1!4b1!4m6!3m5!1s0x31cde0b0c0076c5b:0xa65d245956e1c2d4!8m2!3d2.704046!4d101.990446!16s%2Fg%2F11c5355lf2";
+
 export const REVIEWS: Review[] = [
   {
     name: "fatin aqilah",

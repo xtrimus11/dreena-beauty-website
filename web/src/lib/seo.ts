@@ -1,7 +1,12 @@
 // Shared SEO constants and JSON-LD builders. Kept in one place so every
 // page's structured data agrees with itself (same site name, same URL,
 // same logo) instead of drifting apart over time.
-import { GOOGLE_MAPS_URL, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/data/reviews";
+import {
+  GOOGLE_MAPS_URL,
+  GOOGLE_RATING,
+  GOOGLE_REVIEW_COUNT,
+  SENAWANG_GOOGLE_MAPS_URL,
+} from "@/data/reviews";
 
 export const SITE_URL = "https://dreena-beauty-website.vercel.app";
 export const SITE_NAME = "d'reena beauty";
@@ -86,6 +91,7 @@ export function localBusinessesJsonLd() {
         opens: "10:00",
         closes: "19:00",
       },
+      sameAs: [SENAWANG_GOOGLE_MAPS_URL],
     },
   ];
 }

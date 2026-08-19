@@ -4,7 +4,7 @@ import EnquiryForm from "@/components/EnquiryForm";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { WHATSAPP_URL } from "@/lib/site";
-import { GOOGLE_MAPS_URL } from "@/data/reviews";
+import { GOOGLE_MAPS_URL, SENAWANG_GOOGLE_MAPS_URL } from "@/data/reviews";
 import { breadcrumbJsonLd, localBusinessesJsonLd } from "@/lib/seo";
 
 const TITLE = "Contact";
@@ -30,7 +30,7 @@ const LOCATIONS = [
     name: "d'sensations beauty",
     address: "Taipan 2, Senawang, Negeri Sembilan",
     whatsappHref: "https://wa.me/60189188664",
-    directionsHref: null,
+    directionsHref: SENAWANG_GOOGLE_MAPS_URL,
   },
 ];
 
