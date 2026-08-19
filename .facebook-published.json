@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "slug": "neurotouch-symmetry-serum-explained",
+      "url": "https://www.dreena.my/blog/neurotouch-symmetry-serum-explained",
+      "seeded": true,
+      "note": "Seeded when auto-publishing was set up, so switching it on didn't retroactively post an already-published article."
+    }
+  ]
+}

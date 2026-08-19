@@ -1,0 +1,61 @@
+name: Publish new blog post to Facebook
+
+# Fires after the daily "d'reena Blog — Daily Publish" routine pushes a new
+# post to main. The routine writes web/src/data/blog.ts; nothing else does,
+# so that path is the trigger.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/src/data/blog.ts"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Compose the post and log it without posting to Facebook"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+# One at a time — two runs racing would both see an empty state file and
+# double-post the same article.
+concurrency:
+  group: facebook-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Post the newest blog post
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: node scripts/facebook-publish.mjs
+
+      - name: Record what was posted
+        if: success()
+        run: |
+          if [ -z "$(git status --porcelain .facebook-published.json)" ]; then
+            echo "Nothing posted this run — no state change to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .facebook-published.json
+          git commit -m "Facebook: record published post"
+          # The blog routine may have pushed again while we waited for the
+          # deploy; rebase rather than fail the run.
+          git pull --rebase origin main
+          git push origin HEAD:main
