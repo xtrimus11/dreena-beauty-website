@@ -2,10 +2,11 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ImagePlus } from "lucide-react";
 import { QUESTIONS, computeResult } from "@/data/skinAnalysis";
 import { recommendFor } from "@/data/allTreatments";
-import { LIVE_LINKS, WHATSAPP_URL } from "@/lib/site";
+import { WHATSAPP_URL } from "@/lib/site";
 import { submitAnalysis } from "@/lib/supabase";
 import { saveSubmissionLocally } from "@/lib/analysisStore";
 
@@ -313,14 +314,12 @@ function ResultCard({
               <div className="text-base font-medium tracking-tight text-foreground">{t.name}</div>
               <p className="mt-1 max-w-[40ch] text-xs leading-relaxed text-muted">{t.summary}</p>
             </div>
-            <a
-              href={LIVE_LINKS.treatment(t.slug)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={`/treatments/${t.slug}`}
               className="shrink-0 rounded-full border border-foreground/20 px-4 py-2 text-xs font-medium uppercase tracking-[0.1em] text-foreground transition-colors hover:bg-foreground hover:text-background"
             >
               View
-            </a>
+            </Link>
           </div>
         ))}
       </div>

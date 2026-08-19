@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { POSTS } from "@/data/blog";
+import { ALL_DETAILS } from "@/data/treatmentDetail";
 import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -22,5 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  const treatmentRoutes: MetadataRoute.Sitemap = ALL_DETAILS.map((t) => ({
+    url: `${SITE_URL}/treatments/${t.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...blogRoutes, ...treatmentRoutes];
 }

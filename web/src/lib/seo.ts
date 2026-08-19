@@ -167,3 +167,20 @@ export function servicesJsonLd(treatments: { name: string; summary: string; cate
     })),
   };
 }
+
+/** Standalone Service schema for a single treatment's own detail page. */
+export function treatmentServiceJsonLd(t: { name: string; summary: string; category: string; slug: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: t.name,
+    description: t.summary,
+    category: t.category,
+    url: `${SITE_URL}/treatments/${t.slug}`,
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+    },
+    areaServed: "Seremban, Negeri Sembilan",
+  };
+}

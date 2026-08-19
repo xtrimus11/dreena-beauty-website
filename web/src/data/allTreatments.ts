@@ -3,8 +3,9 @@
 // and benefits; prices intentionally omitted — this page doesn't show
 // pricing). Category photos are the same credited Unsplash photos already
 // in use on the live site; a few treatments that already have a more
-// specific photo elsewhere in this app (ACR, HIFU, Pico Laser) use that
-// instead of the shared category photo, for a bit more visual variety.
+// specific photo elsewhere in this app (ACR, HIFU, Pico Laser, Exosome)
+// use that instead of the shared category photo, for a bit more visual
+// variety.
 export const CATEGORIES = [
   "All Skin Types",
   "Acne-Prone Skin",
@@ -65,13 +66,22 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Superficial-depth peel", "Re-textures and smooths", "Boosts skin's natural glow"],
   },
   {
-    concerns: ["aging", "dullness", "acne"],
-    slug: "bio-cell",
-    name: "Bio Cell Treatment",
+    concerns: ["aging", "dullness"],
+    slug: "exosome-mts",
+    name: "Exosome Treatment with MTS",
+    category: "All Skin Types",
+    duration: "120 min",
+    summary: "Microneedling opens micro-channels for exosomes to penetrate deep into the skin, delivering growth factors that accelerate repair and collagen renewal.",
+    benefits: ["Visibly firmer, brighter, more even-toned skin", "Reduces the look of fine lines", "Faster recovery than standalone facials"],
+  },
+  {
+    concerns: ["acne", "oily", "aging"],
+    slug: "acr-treatment",
+    name: "ACR Treatment",
     category: "All Skin Types",
     duration: "90 min",
-    summary: "Micro-resurfacing with freshwater sponge to exfoliate, draw out impurities and rejuvenate.",
-    benefits: ["Improves fine lines & scars", "Evens out skin tone", "Non-drying, high safety profile"],
+    summary: "Absolute Cell Reversal — accelerates skin metabolism to promote cell repair and renewal.",
+    benefits: ["Reduces acne & acne scars", "Controls sebum production", "Firming & lifting effect"],
   },
 
   {
@@ -93,13 +103,13 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Reduced pore size & fine lines", "Stimulates collagen growth", "Add Caviar ampoule + masque"],
   },
   {
-    concerns: ["acne", "oily", "aging"],
-    slug: "acr-treatment",
-    name: "ACR Treatment",
+    concerns: ["aging", "dullness", "acne"],
+    slug: "bio-cell",
+    name: "Bio Cell Treatment",
     category: "Acne-Prone Skin",
     duration: "90 min",
-    summary: "Absolute Cell Reversal — accelerates skin metabolism to promote cell repair and renewal.",
-    benefits: ["Reduces acne & acne scars", "Controls sebum production", "Firming & lifting effect"],
+    summary: "Micro-resurfacing with freshwater sponge to exfoliate, draw out impurities and rejuvenate.",
+    benefits: ["Improves fine lines & scars", "Evens out skin tone", "Non-drying, high safety profile"],
   },
   {
     concerns: ["acne", "oily"],
@@ -119,15 +129,6 @@ export const TREATMENTS: TreatmentEntry[] = [
     duration: "90 min",
     summary: "Caviar Essence Serum with ultrasound to rejuvenate, renew and repair mature skin.",
     benefits: ["Intensive firming effect", "Deep nourishment for mature skin", "Visibly smoother, denser feel"],
-  },
-  {
-    concerns: ["dullness", "dryness", "aging"],
-    slug: "glo2-facial",
-    name: "Glo2 Facial Treatment",
-    category: "Aging Skin",
-    duration: "120 min",
-    summary: "A breakthrough hydrating oxygen treatment for skin resurfacing and a renewed youthful glow.",
-    benefits: ["Skin plumping and hydrating", "Increased collagen", "Reduced appearance of wrinkles"],
   },
   {
     concerns: ["aging", "sensitivity"],
@@ -193,6 +194,15 @@ export const TREATMENTS: TreatmentEntry[] = [
     summary: "Targeted hydration and barrier repair to soothe rosacea, eczema and visible redness.",
     benefits: ["Reduces redness and reactivity", "Soothes rosacea, eczema and psoriasis", "Rebalances sensitive skin"],
   },
+  {
+    concerns: ["dullness", "dryness", "aging"],
+    slug: "glo2-facial",
+    name: "Glo2 Facial Treatment",
+    category: "Sensitive Skin",
+    duration: "120 min",
+    summary: "A breakthrough hydrating oxygen treatment for skin resurfacing and a renewed youthful glow.",
+    benefits: ["Skin plumping and hydrating", "Increased collagen", "Reduced appearance of wrinkles"],
+  },
 
   {
     concerns: ["pigmentation", "dullness"],
@@ -229,15 +239,6 @@ export const TREATMENTS: TreatmentEntry[] = [
     duration: "45 min",
     summary: "SnowLight Pico Laser lightens pigmentation and chloasma while firming and shrinking pores.",
     benefits: ["Lightens pigmentation & chloasma", "Improves acne scars", "Firms and lifts skin"],
-  },
-  {
-    concerns: ["pigmentation", "aging"],
-    slug: "skin360",
-    name: "Skin360 Photo Treatment",
-    category: "Pigmentation & Uneven Tone",
-    duration: "120 min",
-    summary: "High-intensity pulsed light improves tone, texture and superficial sun damage.",
-    benefits: ["Reduces age & sun spots", "Reduces acne and acne scars", "Minimal downtime"],
   },
 ];
 
@@ -286,6 +287,11 @@ const TREATMENT_PHOTO_OVERRIDES: Record<string, Photo> = {
     src: "https://images.unsplash.com/photo-1761718210089-ba3bb5ccb54f?q=80&w=1200&auto=format&fit=crop",
     credit: "Photo by kimia kazemi on Unsplash",
     creditHref: "https://unsplash.com/@kimick",
+  },
+  "exosome-mts": {
+    src: "https://images.unsplash.com/photo-1761819920857-7edc5e808fd3?q=80&w=1200&auto=format&fit=crop",
+    credit: "Photo by Corinne Sawers on Unsplash",
+    creditHref: "https://unsplash.com/@corinneclionagroup",
   },
   "lumilift-elite": { src: "/images/treatments/lumilift-elite.jpg", credit: null, creditHref: null },
   hifu: { src: "/images/treatments/hifu.jpg", credit: null, creditHref: null },

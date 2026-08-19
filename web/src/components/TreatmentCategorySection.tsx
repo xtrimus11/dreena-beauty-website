@@ -1,7 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { photoFor, type Category, type TreatmentEntry } from "@/data/allTreatments";
-import { LIVE_LINKS } from "@/lib/site";
 
 export default function TreatmentCategorySection({
   category,
@@ -25,12 +25,7 @@ export default function TreatmentCategorySection({
           const photo = photoFor(t);
           return (
             <div key={t.slug} className="flex flex-col">
-              <a
-                href={LIVE_LINKS.treatment(t.slug)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col"
-              >
+              <Link href={`/treatments/${t.slug}`} className="group flex flex-col">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-background-secondary">
                   <Image
                     src={photo.src}
@@ -59,7 +54,7 @@ export default function TreatmentCategorySection({
                     className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </span>
-              </a>
+              </Link>
 
               {photo.credit && photo.creditHref && (
                 <a

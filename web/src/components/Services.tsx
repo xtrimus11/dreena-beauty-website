@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { TREATMENTS } from "@/data/treatments";
-import { LIVE_LINKS } from "@/lib/site";
 
 export default function Services() {
   const [active, setActive] = useState(0);
@@ -25,10 +25,8 @@ export default function Services() {
           <ul className="mt-14 flex flex-col border-t border-border">
             {TREATMENTS.map((t, i) => (
               <li key={t.slug} className="border-b border-border">
-                <a
-                  href={LIVE_LINKS.treatment(t.slug)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={`/treatments/${t.slug}`}
                   onMouseEnter={() => setActive(i)}
                   className="group flex items-center justify-between gap-6 py-6"
                 >
@@ -51,7 +49,7 @@ export default function Services() {
                       active === i ? "translate-x-0 opacity-100" : "-translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
                     }`}
                   />
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
