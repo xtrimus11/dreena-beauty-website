@@ -102,9 +102,8 @@ export const TREATMENTS: Treatment[] = [
       "Firms pores & texture",
       "Zero downtime",
     ],
-    photo:
-      "https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1400&auto=format&fit=crop",
-    photoCredit: "Photo by Look Studio on Unsplash",
-    photoCreditHref: "https://unsplash.com/@lookphoto",
+    photo: "/images/treatments/pico-laser.jpg",
+    photoCredit: null,
+    photoCreditHref: null,
   },
 ];
