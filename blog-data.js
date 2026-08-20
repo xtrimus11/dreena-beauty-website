@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "caviar-restore-ultrasound-explained",
+    title: "How Caviar Restore Uses Ultrasound to Rejuvenate Mature Skin",
+    kicker: "Treatments Explained",
+    date: "2026-08-20",
+    cardStyle: "cream",
+    excerpt: "Caviar Restore's headline ingredient isn't actually the interesting part — the ultrasound delivering it is, and here's what each one is actually contributing to mature, moisture-depleted skin.",
+    heroPlaceholder: "Facial treatment for mature, aging skin",
+    image: "https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Look Studio on Unsplash",
+    imageCreditHref: "https://unsplash.com/@lookphoto",
+    body: [
+      "Caviar Restore sounds like it's built around a single luxury ingredient, but the more interesting part of the treatment isn't the caviar — it's the ultrasound doing the work of getting it into skin. Low-frequency ultrasound-assisted delivery, sometimes called sonophoresis, is a genuine, well-established technique: sound waves passed over skin create a gentle micro-vibration that temporarily loosens the tightly packed lipid structure of the stratum corneum, the skin's outermost barrier layer. That's a different job from the ultrasound covered elsewhere on this blog — HIFU converges high-intensity ultrasound at a single deep point to trigger a wound-healing response; Caviar Restore uses a much gentler, broader ultrasound pass across the surface purely to open a path for the serum underneath it.",
+      "The principle is the same one behind two other treatments we offer, just executed with a different tool. IONTO Stem Cell Treatment uses an electrical current (iontophoresis) to push actives past the surface; PRO Lumin Fusion uses nanoinfusion's hair's-width channels to do it mechanically. Ultrasound is a third route to the same destination — briefly increasing skin's permeability so a serum applied during the treatment actually reaches living tissue instead of sitting on top of dead surface cells and evaporating off. None of these methods change what the active ingredient does once it's in; they just solve the much more basic problem of getting it there at all.",
+      "What's actually being delivered in Caviar Restore is caviar essence serum, and caviar earns its place here less as a marketing flourish and more for its raw composition — it's naturally dense with lipids, amino acids and proteins, along with vitamins A, D, E and B12 and omega-3 fatty acids, all ingredients skin can genuinely use for replenishment. That composition is why it's positioned as a nourishing, firming ingredient for mature, moisture-depleted skin rather than an exfoliant or a resurfacing active — it isn't remodelling skin structurally the way retinol or a chemical peel does, it's restocking what skin has less of as it ages. Caviar peptides also show up in our LumiLift Elite treatment, but there they're paired with medical-grade retinol and HIFU + Ionto delivery for a more intensive, structural combination — a different treatment solving a different problem.",
+      "That combination — ultrasound-assisted penetration plus a lipid- and protein-rich serum — is why Caviar Restore Treatment is built specifically for aging and dryness concerns rather than acne or pigmentation. The 90-minute session is designed around an intensive firming effect and deep nourishment, with skin left visibly smoother and denser rather than resurfaced. It's a nourishment-and-delivery treatment, not a collagen-remodelling one, which matters when you're deciding what your skin actually needs next.",
+      "If what you're after is deeper structural change — genuine collagen remodelling rather than nourishment — that's a different starting point, closer to what HIFU or LumiLift Elite are built for. Matching the right treatment to what your skin is actually missing, rather than picking whichever sounds most advanced, is exactly what a Skin Analysis is for.",
+    ],
+  },
+  {
     slug: "neurotouch-symmetry-serum-explained",
     title: "NeuroTouch Symmetry Serum: What \"Neuroscience-Powered\" Actually Means",
     kicker: "Ingredients",
