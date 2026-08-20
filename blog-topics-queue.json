@@ -65,6 +65,33 @@
       "dermalogicaAsset": "assets/dermalogica/water-cream.jpg",
       "status": "proposed",
       "used": false
+    },
+    {
+      "date": "2026-08-24",
+      "title": "Multivitamin Restore with RF: Who It's Actually For (and What to Expect)",
+      "kicker": "Treatments Explained",
+      "angle": "Signature-offer format (per Glow Haus Collective's 'Pin #3' content framework): who it's for (dry, dull or aging skin wanting a real strength reset, not a light maintenance facial), the problem it solves (surface build-up plus slack tone, and why passive exfoliation alone plateaus), what actually happens across the 90-120 min session (Dermalogica Multivitamin Power Exfoliant, RF firming technology boosting penetration, 5x concentrated vitamin masque), a common objection/FAQ (how RF here differs from HIFU's deep collagen-triggering heat, since both are 'RF/ultrasound' sounding but do different jobs — cross-link the how-hifu-tightens-skin post), and the next step (Skin Analysis). Ground it in the real Multivitamin Restore with RF treatment.",
+      "photoSearchTerm": "vitamin facial mask treatment skincare",
+      "status": "proposed",
+      "used": false
+    },
+    {
+      "date": "2026-08-25",
+      "title": "Glo2 Facial Treatment: What to Expect From d'reena's Deepest Oxygen Facial",
+      "kicker": "Treatments Explained",
+      "angle": "Signature-offer format (per Glow Haus Collective's 'Pin #3' content framework): who it's for (dullness, dryness and aging skin wanting real resurfacing, not just an instant glow), the problem it solves (why hydration-only oxygen delivery plateaus once fine lines and dullness are the actual concern), what actually happens across the 120-minute session, a direct FAQ answering 'how is this different from your regular Oxygen Treatment?' (cross-link the oxygen-facial-explained post rather than re-explaining oxygen delivery from scratch), and the next step (Skin Analysis). Ground it in the real Glo2 Facial Treatment.",
+      "photoSearchTerm": "oxygen facial resurfacing treatment",
+      "status": "proposed",
+      "used": false
+    },
+    {
+      "date": "2026-08-26",
+      "title": "PRO Calm Treatment: What Actually Happens for Rosacea, Eczema and Reactive Skin",
+      "kicker": "Treatments Explained",
+      "angle": "Signature-offer format (per Glow Haus Collective's 'Pin #3' content framework): who it's for (rosacea, eczema, psoriasis and chronically reactive skin, not everyday sensitivity), the problem it solves (barrier repair vs. just masking redness), what actually happens across the 120-minute session, a direct, honest FAQ addressing the common fear that a facial will aggravate rosacea, and the next step (Skin Analysis). Ground it in the real PRO Calm Treatment and tie back to the ceramides/panthenol/glycerin mechanisms already explained in the skin-barrier-ingredients post.",
+      "photoSearchTerm": "calming facial sensitive skin treatment",
+      "status": "proposed",
+      "used": false
     }
   ]
 }
