@@ -101,6 +101,24 @@
       "photoSearchTerm": "amino acid serum skincare dropper",
       "status": "proposed",
       "used": false
+    },
+    {
+      "date": "2026-08-28",
+      "title": "What Declining Estrogen Actually Does to Skin",
+      "kicker": "Ingredients",
+      "angle": "User-provided source material (an aesthetics-industry explainer on perimenopausal/menopausal skin, IDI Community Lead-style). Explain that estrogen receptors are present throughout the skin (keratinocytes, fibroblasts, melanocytes, hair follicle cells) and estrogen partially controls collagen/elastin synthesis, so declining estrogen through perimenopause and menopause directly changes skin architecture — not just generic 'ageing'. Walk through the real, well-documented mechanism layer by layer: epidermis (reduced dermal blood flow contributing to thinning, slower turnover, dullness; reduced glycosaminoglycan/hyaluronic acid production leading to drier, more reactive skin and higher transepidermal water loss), pigmentation (hormonal fluctuation can increase pigmentation, while later melanocyte density decline paradoxically produces blotchier, less even tone), sebum (relatively more dominant androgens can trigger new hormonal breakouts in some women while others see sebum drop and dryness increase instead), and dermis (the best-documented change — meaningful collagen loss in the years following menopause, continuing at a slower ongoing rate afterward). When citing statistics from the source material (e.g. collagen loss percentages, melanocyte density decline, hot flush prevalence), hedge them as 'research broadly indicates' rather than stating them as precise clinical fact, since they haven't been independently re-verified for this piece. Do NOT mention HRT, hormone therapy, or anything positioning d'reena as treating hormonal imbalance — stay strictly at the skin level, which is what an aesthetics clinic can actually address. Where genuinely relevant, note that retinol (already covered in the retinol-explained post) and hyaluronic acid (hyaluronic-acid-explained post) are two of the better-evidenced actives for exactly the collagen and hydration losses described. End with the usual Skin Analysis CTA, framed as understanding what's actually changing before building a routine.",
+      "photoSearchTerm": "mature skin skincare mirror",
+      "status": "proposed",
+      "used": false
+    },
+    {
+      "date": "2026-08-29",
+      "title": "Building a Skin Routine Through Perimenopause and Menopause",
+      "kicker": "Treatments Explained",
+      "angle": "Follow-up to the estrogen/skin mechanism post (2026-08-28) — a practical treatment-roadmap piece matching real d'reena treatments to the actual skin changes of perimenopause/menopause, not generic anti-ageing advice. Structure around: barrier support first (Environmental Treatment and PRO Calm Treatment, already covered in skin-barrier-ingredients, for the ceramide/NMF loss and increased reactivity), collagen and renewal support (retinol-based LumiLift Elite, plus HIFU and ACR Treatment as collagen-stimulating options, tied to why loss of firmness often shows before visible wrinkling), pigmentation management without irritation (Vitamin C via PowerBright/ProBright, already covered in vitamin-c-benefits, and Pico Laser with ProRestore for more pronounced lentigines/blotchiness — note that gentler is often the better call on a thinner, more reactive barrier), and calming vascular reactivity (PRO Calm Treatment again, for the rosacea/redness that becomes more common alongside hot-flush-driven capillary stress). Only reference actives/ingredients d'reena's site actually verifies (retinol, vitamin C, niacinamide, hyaluronic acid, ceramides/panthenol/glycerin) — do not invent that d'reena carries azelaic acid, hexylresorcinol, tranexamic acid, or specific named peptides unless that's confirmed first. No HRT or hormonal-treatment claims — frame this strictly as adapting existing skin treatments to changing skin, which is within an aesthetics clinic's real scope. End with a Skin Analysis CTA, framed as the way to figure out where in this transition a given client's skin actually is.",
+      "photoSearchTerm": "mature woman skincare consultation",
+      "status": "proposed",
+      "used": false
     }
   ]
 }
