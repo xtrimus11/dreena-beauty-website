@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "peptides-explained",
+    title: "Peptides, Explained",
+    kicker: "Ingredients",
+    date: "2026-08-21",
+    cardStyle: "photo",
+    excerpt: "Peptides aren't a single ingredient the way vitamin C is — they're a whole class of amino acid messengers, and which kind is in the bottle changes what it's actually telling your skin to do.",
+    heroPlaceholder: "Peptide serum dropper skincare",
+    image: "https://images.unsplash.com/photo-1672062519629-abe610383152?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Denley Photography on Unsplash",
+    imageCreditHref: "https://unsplash.com/@denleyphotography",
+    body: [
+      "Peptides get marketed as if they're one ingredient, the same way vitamin C or niacinamide are, but that's not quite right. A peptide is simply a short chain of amino acids — shorter than a full protein, which is really just a much longer chain of the same building blocks. Collagen and elastin, the structural proteins that keep skin firm, are themselves made of amino acids linked together, and skin is constantly breaking small pieces off and rebuilding new ones as part of its normal turnover. What makes certain peptides useful in skincare isn't that they're foreign or exotic — it's that specific short sequences are recognisable to skin cells as signals, not just raw material.",
+      "The best-studied category is signal peptides, and the mechanism behind them is genuinely clever. When collagen in the deeper skin layers breaks down — from UV exposure, ageing, or normal wear — it leaves behind small collagen fragments rather than simply vanishing. Skin has evolved to read the presence of those fragments as a cue that damage has occurred, prompting fibroblasts (the cells that manufacture new collagen) to ramp up production and repair the area. Signal peptides work by mimicking those breakdown fragments closely enough that fibroblasts respond the same way, even though no actual damage has occurred — effectively borrowing skin's own repair signal to prompt new collagen synthesis. It's a different route to the same fibroblast-activation goal retinol reaches by binding retinoic acid receptors directly — same target cell, two different triggers.",
+      "Peptides aren't a single mechanism, though, which is worth knowing before assuming every peptide product does the same job. Carrier peptides work differently again — their role is to bind trace minerals like copper and shuttle them into skin, supporting the enzymatic processes involved in wound healing and collagen synthesis rather than signalling fibroblasts directly. Others, like the neuropeptides used in some anti-wrinkle serums, work by dampening the nerve signalling that triggers repeated muscle contraction, softening the look of expression lines rather than touching collagen at all. Reading which category a peptide falls into matters more than the word \"peptide\" appearing on the label.",
+      "This is exactly why caviar peptides show up in two of our treatments built for very different intensities. In Caviar Restore Treatment, they're delivered via gentle ultrasound-assisted penetration alongside the rest of caviar essence serum's lipid- and protein-rich composition, aimed at nourishing and firming mature, moisture-depleted skin. In LumiLift Elite, the same caviar peptides are paired with medical-grade retinol and driven in with HIFU + Ionto delivery for a more intensive, structural combination — retinol handling receptor-driven collagen signalling while HIFU triggers its own separate wound-healing response at depth, with the peptides contributing on top of both rather than carrying the treatment alone.",
+      "Peptides are also slow, cumulative actives rather than a same-day fix — new collagen synthesis takes weeks to become visible regardless of what prompted it, the same timeline that applies to retinol or HIFU. Whether a peptide-based product or treatment is the right next step, and at what intensity, depends on what your skin is actually short on — which is exactly what a Skin Analysis is for.",
+    ],
+  },
+  {
     slug: "caviar-restore-ultrasound-explained",
     title: "How Caviar Restore Uses Ultrasound to Rejuvenate Mature Skin",
     kicker: "Treatments Explained",
