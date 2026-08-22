@@ -20,6 +20,26 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: "teenskin-high-frequency-cold-hammer-explained",
+    title: "TeenSkin Treatment: What High Frequency and Cold Hammer Are Actually Doing",
+    kicker: "Treatments Explained",
+    date: "2026-08-22",
+    cardStyle: "cream",
+    excerpt:
+      "High frequency and cold hammer sound like serious equipment for a 45-minute teen facial, but one is a mild antibacterial and the other is pure thermal calming — and that restraint is exactly the point for still-developing skin.",
+    image:
+      "https://images.unsplash.com/photo-1761718210089-ba3bb5ccb54f?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by kimia kazemi on Unsplash",
+    imageCreditHref: "https://unsplash.com/@kimick",
+    body: [
+      "TeenSkin Treatment is built as a 45-minute, five-step facial for breakout-prone young skin, and it deliberately stops short of the more intensive interventions this blog usually covers — no chemical peel, no laser, no HIFU. The two finishing devices, high frequency and cold hammer, are also not actives in the way retinol or niacinamide are; they're purely electrical and thermal tools, and understanding what each one is actually doing explains why they're the right level of intervention for still-developing, teenage skin rather than an under-powered afterthought.",
+      "High frequency uses a Tesla coil to generate a low-level oscillating electrical current, which is passed over skin through a glass electrode. Run in direct mode — glass touching skin directly, the method typically used on breakout-prone areas — the current produces a small amount of ozone gas at the surface of the glass, and ozone has a genuine, mild germicidal effect on the bacteria implicated in acne. That's a different route to the same bacterial target LED blue light therapy addresses in our PRO Lumin Fusion treatment, which works instead by exciting the porphyrins those bacteria produce — two different mechanisms converging on the same acne-causing organism. High frequency also generates gentle surface warmth as the current passes through, which briefly increases local microcirculation, supporting the skin's own oxygen and nutrient supply at the surface it's applied to.",
+      "Cold hammer is the more literal of the two — it's a vapor device that produces a fine, cool mist, essentially the inverse of the hot steam used earlier in the same treatment to loosen surface debris before exfoliation. Cooling the skin constricts surface blood vessels (vasoconstriction), which is what calms visible redness and gives pores a temporarily tighter, less prominent appearance immediately afterward. It's a physical, thermal effect rather than a chemical one — no active ingredient is doing this part of the work, just a genuine temperature change at the skin's surface.",
+      "The order matters here in the same way it matters in every layered treatment on this blog: hot steam and exfoliation open the way to properly clean and clear the skin, high frequency's mild germicidal and oxygenating effect works on what that cleaning exposed, and cold hammer closes the session by calming what the warmer steps stirred up. None of it is aimed at remodelling collagen or resurfacing skin structurally — which is exactly appropriate here. Teenage skin is still developing and typically doesn't need, or tolerate well, the more intensive, structure-changing treatments built for adult concerns like fine lines or established scarring; TeenSkin is deliberately scaled to breakout management and skin hygiene rather than borrowing techniques meant for a different problem.",
+      "Persistent or more severe breakouts sometimes do need a stronger approach than a monthly maintenance facial can offer, and that's a different conversation from what TeenSkin is built for. Figuring out which category a given case of teenage acne actually falls into — and whether a gentler, consistent routine is enough — is exactly what a Skin Analysis is for.",
+    ],
+  },
+  {
     slug: "peptides-explained",
     title: "Peptides, Explained",
     kicker: "Ingredients",
