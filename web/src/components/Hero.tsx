@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
-
-const PHRASES = ["Dermalogica Certified", "40 Years of Trust", "Largest in Seremban"];
 
 function useTypingCycle(phrases: string[]) {
   const [index, setIndex] = useState(0);
@@ -11,7 +10,7 @@ function useTypingCycle(phrases: string[]) {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const current = phrases[index];
+    const current = phrases[index] ?? "";
     const typingSpeed = deleting ? 35 : 65;
     const holdAtFull = 1600;
     const holdAtEmpty = 300;
@@ -38,7 +37,9 @@ function useTypingCycle(phrases: string[]) {
 }
 
 export default function Hero() {
-  const typed = useTypingCycle(PHRASES);
+  const t = useTranslations("home.hero");
+  const phrases = [t("phrase1"), t("phrase2"), t("phrase3")];
+  const typed = useTypingCycle(phrases);
 
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-scrim text-cream">
@@ -71,11 +72,11 @@ export default function Hero() {
 
       <div className="relative z-20 flex flex-col items-center px-6 text-center">
         <span className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-cream/75">
-          Seremban&apos;s Beauty Centre Since 1987
+          {t("since")}
         </span>
 
         <h1 className="text-balance whitespace-nowrap text-[clamp(2.5rem,10vw,6.5rem)] font-medium leading-[0.95] tracking-tight text-cream">
-          Real Skin. Real Results.
+          {t("headline")}
         </h1>
 
         <div className="mt-8 flex h-8 items-center text-base font-medium uppercase tracking-[0.18em] text-champagne md:text-lg">
@@ -85,7 +86,7 @@ export default function Hero() {
       </div>
 
       <div className="absolute bottom-10 z-20 flex flex-col items-center gap-2 text-cream/60">
-        <span className="text-[10px] uppercase tracking-[0.25em]">Scroll</span>
+        <span className="text-[10px] uppercase tracking-[0.25em]">{t("scroll")}</span>
         <ChevronDown size={18} className="animate-bounce" />
       </div>
 

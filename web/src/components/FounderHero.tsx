@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { ArrowUpRight, MessageCircle, Star } from "lucide-react";
 import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_MAPS_URL } from "@/data/reviews";
 import { WHATSAPP_URL } from "@/lib/site";
@@ -6,19 +9,21 @@ import { WHATSAPP_URL } from "@/lib/site";
 const AVATAR_INITIALS = ["V", "K", "N"];
 
 export default function FounderHero() {
+  const t = useTranslations("about.founderHero");
+
   return (
     <section className="bg-portrait-bg px-6 pb-20 pt-40 md:px-10 md:pb-28 md:pt-48">
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 lg:grid-cols-[1fr_minmax(0,420px)_1fr] lg:items-center lg:gap-8">
         {/* Left — headline, CTA, rating */}
         <div className="flex flex-col items-start">
           <h1 className="text-balance text-4xl font-medium leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-[3.25rem]">
-            We don&apos;t simply sell products
+            {t("slogan1")}
             <br />
-            We build confidence
+            {t("slogan2")}
             <br />
-            We create hope
+            {t("slogan3")}
             <br />
-            We transform lives
+            {t("slogan4")}
           </h1>
 
           <a
@@ -27,7 +32,7 @@ export default function FounderHero() {
             rel="noopener noreferrer"
             className="group mt-8 inline-flex items-center gap-3"
           >
-            <span className="text-base font-medium text-foreground">Book a Call</span>
+            <span className="text-base font-medium text-foreground">{t("bookACall")}</span>
             <span className="flex h-8 w-8 items-center justify-center rounded-md bg-cream text-taupe-dark transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <ArrowUpRight size={16} />
             </span>
@@ -54,9 +59,9 @@ export default function FounderHero() {
               ))}
             </div>
             <p className="mt-2 text-sm text-foreground/60">
-              {GOOGLE_RATING} out of 5 based
+              {t("ratingLine", { rating: GOOGLE_RATING })}
               <br />
-              on {GOOGLE_REVIEW_COUNT} Google reviews
+              {t("ratingLine2", { count: GOOGLE_REVIEW_COUNT })}
             </p>
           </a>
         </div>
@@ -77,10 +82,7 @@ export default function FounderHero() {
 
         {/* Right — bio, contact, social proof */}
         <div className="flex flex-col items-start lg:items-end lg:text-right">
-          <p className="text-base text-foreground">
-            Hi! I&apos;m Dareena, founder of d&apos;reena beauty — Seremban&apos;s beauty centre
-            since 1987.
-          </p>
+          <p className="text-base text-foreground">{t("bio")}</p>
           <a
             href={WHATSAPP_URL}
             target="_blank"
@@ -88,7 +90,7 @@ export default function FounderHero() {
             className="mt-4 inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-sm font-medium text-foreground transition-colors hover:border-foreground"
           >
             <MessageCircle size={16} />
-            WhatsApp: +60 16-213 0864
+            {t("whatsapp")}
           </a>
 
           <div className="mt-16 flex flex-col items-start lg:items-end">
@@ -103,10 +105,9 @@ export default function FounderHero() {
               ))}
             </div>
             <p className="mt-4 max-w-[26ch] text-balance text-sm italic text-foreground/70">
-              &ldquo;Excellent service! I really appreciated their service and would definitely
-              come back again.&rdquo;
+              {t("reviewQuote")}
             </p>
-            <span className="mt-1 text-xs text-foreground/50">— Vinnie Leong, Google review</span>
+            <span className="mt-1 text-xs text-foreground/50">{t("reviewAttribution")}</span>
           </div>
         </div>
       </div>

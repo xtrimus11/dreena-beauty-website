@@ -1,0 +1,271 @@
+{
+  "nav": {
+    "treatments": "护理疗程",
+    "skinAnalysis": "皮肤分析",
+    "about": "关于我们",
+    "dermalogica": "Dermalogica",
+    "blog": "部落格",
+    "contact": "联系我们",
+    "whatsappUs": "WhatsApp 联系",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单"
+  },
+  "footer": {
+    "tagline": "d'reena beauty 是芙蓉本地的美容护肤集团，自1987年起提供个性化面部护理和护肤疗程。",
+    "explore": "探索",
+    "visit": "分店",
+    "aboutUs": "关于我们",
+    "copyright": "© 2026 d'reena beauty. 版权所有。"
+  },
+  "home": {
+    "hero": {
+      "since": "芙蓉美容中心，自1987年",
+      "headline": "真实肌肤，真实效果。",
+      "phrase1": "Dermalogica 认证",
+      "phrase2": "40年信誉",
+      "phrase3": "芙蓉最大规模",
+      "scroll": "向下滚动"
+    },
+    "services": {
+      "kicker": "我们的专长",
+      "heading": "用效果说话的护理疗程。"
+    },
+    "reviews": {
+      "kicker": "顾客评价",
+      "heading": "芙蓉顾客怎么说。",
+      "ratingLine": "Google 评分 {rating}，共 {count} 则评价"
+    },
+    "insights": {
+      "kicker": "专业知识",
+      "heading": "d'reena 部落格",
+      "viewAll": "查看所有文章"
+    },
+    "contactCta": {
+      "heading": "了解你的肌肤",
+      "body": "上传照片并回答几个简单问题——两分钟内获得肌肤分析摘要和专属护理疗程推荐。",
+      "button": "测试你的肌肤"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "关于我们",
+      "description": "认识 Dareena，d'reena beauty 自1987年起的创办人，以及第二代传承人 Shaun 与 Elaine，致力教育顾客并革新我们的护理疗程。"
+    },
+    "founderHero": {
+      "slogan1": "我们卖的不只是产品",
+      "slogan2": "我们建立自信",
+      "slogan3": "我们创造希望",
+      "slogan4": "我们改变人生",
+      "bookACall": "预约咨询",
+      "ratingLine": "Google 评分 {rating} / 5",
+      "ratingLine2": "共 {count} 则评价",
+      "bio": "你好！我是 Dareena，d'reena beauty 的创办人——芙蓉美容中心，自1987年起。",
+      "whatsapp": "WhatsApp: +60 16-213 0864",
+      "reviewQuote": "\"Excellent service! I really appreciated their service and would definitely come back again.\"",
+      "reviewAttribution": "— Vinnie Leong，Google 评价"
+    },
+    "secondGen": {
+      "kicker": "第二代传承",
+      "heading": "Shaun & Elaine",
+      "body": "d'reena beauty 的第二代——专注于教育每一位顾客真正了解自己的肌肤需求，并不断以最新、最先进的科技革新我们的护理疗程。"
+    },
+    "vision": {
+      "kicker": "我们的愿景",
+      "manifesto": "我们相信护肤不该千篇一律。每一项护理疗程都从了解你肌肤的真实状况开始——不是单一套路，而是根据你的具体需求量身打造的方案。四十年来，这意味着真材实料的科技、真实的效果，以及来自芙蓉最大规模 Dermalogica 认证美容中心的真诚关怀。",
+      "marquee": "真实肌肤护理。真实效果。"
+    }
+  },
+  "contact": {
+    "kicker": "预约到访",
+    "heading": "让我们解决你的肌肤问题。",
+    "subheading": "透过 WhatsApp 联系我们获得最快回复，或在下方留言，我们会在一天内回复你。",
+    "form": {
+      "name": "姓名",
+      "namePlaceholder": "你的姓名",
+      "phone": "电话 / WhatsApp",
+      "phonePlaceholder": "例如：012-345 6789",
+      "interest": "感兴趣的疗程",
+      "interestPlaceholder": "例如：SkinBoost Treatment",
+      "message": "留言",
+      "messagePlaceholder": "告诉我们你的肌肤状况或希望预约的日期",
+      "submit": "通过 WhatsApp 发送",
+      "whatsappGreeting": "你好 d'reena，我想咨询一下。",
+      "whatsappName": "姓名",
+      "whatsappPhone": "电话/WhatsApp",
+      "whatsappInterest": "感兴趣的疗程",
+      "whatsappMessage": "留言"
+    },
+    "chatCard": {
+      "kicker": "想直接聊聊？",
+      "heading": "WhatsApp 最快捷",
+      "body": "我们的团队通常会在营业时间内几分钟内回复。",
+      "button": "在 WhatsApp 上聊聊",
+      "openingHours": "营业时间",
+      "hoursLine": "周二至周日，上午10点至晚上7点 · 周一休息"
+    },
+    "branches": {
+      "whatsappBranch": "WhatsApp 联系此分店",
+      "getDirections": "获取路线"
+    }
+  },
+  "skinAnalysis": {
+    "meta": {
+      "title": "皮肤分析",
+      "description": "找出你的肤质与适合的疗程——上传照片（选填）并回答6个简单问题，获取专属建议。"
+    },
+    "intro": {
+      "kicker": "皮肤分析",
+      "heading": "找出你的肤质与适合的疗程",
+      "body": "上传一张清晰、素颜的照片，回答6个简单问题。我们将为你提供肌肤分析摘要和专属护理疗程推荐。",
+      "dropSelfie": "上传自拍照",
+      "takePhoto": "拍照",
+      "nameLabel": "你的姓名",
+      "namePlaceholder": "例如：美玲",
+      "contactLabel": "电话 / WhatsApp（选填）",
+      "contactPlaceholder": "例如：012-345 6789",
+      "start": "开始分析",
+      "consent": "继续即表示你同意 d'reena beauty 保留你的照片、姓名和回答，以便为你提供此建议并跟进你的到访。"
+    },
+    "camera": {
+      "instruction": "请将脸部对准圆圈中央",
+      "error": "无法访问你的相机——你可以改为上传照片。",
+      "close": "关闭",
+      "closeCamera": "关闭相机",
+      "takePhoto": "拍照"
+    },
+    "question": {
+      "progress": "第 {step} 题，共 {total} 题",
+      "back": "上一步",
+      "next": "下一步",
+      "seeResults": "查看我的结果"
+    },
+    "questions": {
+      "feel": {
+        "title": "到了中午，你的皮肤感觉如何？",
+        "options": {
+          "dry": "紧绷或干燥，有时会脱皮",
+          "oily": "整张脸都油光满面",
+          "combo": "只有T字部位（额头、鼻子、下巴）出油",
+          "normal": "舒适且状态平衡"
+        }
+      },
+      "pores": {
+        "title": "你会怎么形容你的毛孔？",
+        "options": {
+          "fine": "几乎看不见",
+          "medium": "鼻子和下巴周围较明显",
+          "large": "整张脸的毛孔都很明显"
+        }
+      },
+      "breakouts": {
+        "title": "你会长痘痘或粉刺吗？",
+        "options": {
+          "rare": "很少",
+          "occasional": "偶尔会",
+          "frequent": "经常会"
+        }
+      },
+      "tone": {
+        "title": "有黑斑、晒斑或肤色不均的情况吗？",
+        "options": {
+          "none": "没有注意到",
+          "some": "有一些，偶尔出现",
+          "noticeable": "有，而且相当明显"
+        }
+      },
+      "lines": {
+        "title": "细纹或肌肤松弛的情况如何？",
+        "options": {
+          "none": "还没有",
+          "starting": "刚开始注意到",
+          "visible": "已经很明显了"
+        }
+      },
+      "reactive": {
+        "title": "你的肌肤容易敏感或产生刺激反应吗？",
+        "options": {
+          "rare": "很少",
+          "sometimes": "有时候会",
+          "often": "是的，经常会"
+        }
+      }
+    },
+    "results": {
+      "kicker": "你的肌肤摘要",
+      "skinTypeLabel": "{type}肌肤",
+      "recommendedHeading": "为你推荐的护理疗程",
+      "view": "查看",
+      "goDeeperKicker": "深入了解",
+      "goDeeperHeading": "免费12-D专业皮肤分析（价值RM98）",
+      "goDeeperBody": "这只是一个简单的初步分析。欢迎亲临门店，由治疗师为你进行详细、专业的12-D皮肤分析——完全免费。",
+      "goDeeperButton": "预约我的12-D皮肤分析",
+      "goDeeperWhatsapp": "我想兑换免费的12-D皮肤分析",
+      "offerKicker": "限时优惠",
+      "offerHeading": "首次强效护理疗程享5折优惠",
+      "offerBody": "第一次光顾 d'reena？私讯我们，即可兑换首次强效护理疗程5折优惠。",
+      "offerButton": "领取5折优惠",
+      "offerWhatsapp": "我想兑换首次强效护理疗程的5折优惠",
+      "retake": "重新测试",
+      "bookWhatsapp": "通过 WhatsApp 预约",
+      "disclaimer": "此结果仅根据你的回答提供简单参考，并非医学诊断。你的治疗师将在咨询时为你确认最合适的方案。",
+      "skinTypes": {
+        "Dry": "干性",
+        "Oily": "油性",
+        "Combination": "混合性",
+        "Normal": "中性"
+      },
+      "blurbs": {
+        "Dry": "你的肌肤容易感到紧绷，还会脱皮——需要深层且持久的保湿护理。",
+        "Oily": "你的肌肤会分泌较多油脂，尤其是白天时段——控油平衡是关键。",
+        "Combination": "你的T字部位偏油，两颊则偏干——护理时需要同时兼顾这两种状态。",
+        "Normal": "你的肌肤状态日常相当平衡——重点在于维持并提升肌肤光泽。"
+      },
+      "tags": {
+        "Dryness": "干燥",
+        "Oiliness": "出油",
+        "Breakouts": "痘痘困扰",
+        "Uneven tone": "肤色不均",
+        "Fine lines": "细纹",
+        "Sensitivity": "敏感",
+        "Dullness": "暗沉"
+      }
+    }
+  },
+  "treatmentsHome": {
+    "exosome-mts": {
+      "name": "MTS外泌体护理疗程",
+      "tagline": "新一代皮肤护理",
+      "category": "所有肤质",
+      "duration": "120分钟",
+      "summary": "微针护理打开肌肤微通道，让外泌体深入渗透，输送生长因子，加速修复与胶原蛋白再生。"
+    },
+    "acr-treatment": {
+      "name": "ACR细胞焕活护理疗程",
+      "tagline": "适合痘痘肌",
+      "category": "痘痘肌",
+      "duration": "90分钟",
+      "summary": "Absolute Cell Reversal 细胞逆龄科技——加速肌肤新陈代谢，促进细胞修复与再生。"
+    },
+    "hifu": {
+      "name": "HIFU 聚焦超声波拉提",
+      "tagline": "紧致提拉",
+      "category": "熟龄肌",
+      "duration": "60至90分钟",
+      "summary": "高强度聚焦超声波（HIFU）无需手术，即可提拉紧致脸部、颈部及眼周肌肤。"
+    },
+    "diode-hair-removal": {
+      "name": "三波长半导体激光脱毛",
+      "tagline": "永久脱毛",
+      "category": "所有肤质与发质",
+      "duration": "30至120分钟",
+      "summary": "三波长半导体激光技术，一次疗程同时结合三种波长，精准针对不同深度的毛囊。"
+    },
+    "pico-laser": {
+      "name": "SnowLight 皮秒激光配合 ProRestore",
+      "tagline": "适合色素沉淀与痘痘肌",
+      "category": "色素与肤色不均",
+      "duration": "30至50分钟",
+      "summary": "SnowLight 皮秒激光淡化色素沉淀与黄褐斑，同时紧致肌肤、缩小毛孔。"
+    }
+  }
+}

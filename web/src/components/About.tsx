@@ -1,25 +1,31 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
-const MANIFESTO =
-  "We believe skin care should never be generic. Every treatment starts with understanding your skin's true condition — not a one-size routine, but a plan built around your specific concerns. For forty years that has meant real technology, real results, and real care, from Seremban's largest Dermalogica-certified beauty centre.";
-
 export default function About() {
+  const t = useTranslations("about.vision");
+  const locale = useLocale();
   const textRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     if (!textRef.current) return;
 
-    const split = new SplitType(textRef.current, { types: "words" });
+    // Chinese has no whitespace between words, so splitting by "words"
+    // would treat the whole sentence as one unit — split by character
+    // there instead for a comparable stagger effect.
+    const split = new SplitType(textRef.current, {
+      types: locale === "zh" ? "chars" : "words",
+    });
+    const units = locale === "zh" ? split.chars : split.words;
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        split.words,
+        units,
         { opacity: 0.15 },
         {
           opacity: 1,
@@ -39,19 +45,19 @@ export default function About() {
       ctx.revert();
       split.revert();
     };
-  }, []);
+  }, [locale]);
 
   return (
     <section className="border-t border-border bg-background">
       <div className="mx-auto max-w-5xl px-6 py-32 md:px-10 md:py-48">
         <span className="mb-10 block text-xs font-medium uppercase tracking-[0.25em] text-muted">
-          Our Vision
+          {t("kicker")}
         </span>
         <p
           ref={textRef}
           className="text-balance text-3xl font-medium leading-[1.3] tracking-tight text-foreground md:text-5xl"
         >
-          {MANIFESTO}
+          {t("manifesto")}
         </p>
       </div>
 
@@ -62,7 +68,7 @@ export default function About() {
               key={i}
               className="whitespace-nowrap text-5xl font-medium uppercase tracking-tight text-taupe-dark md:text-7xl"
             >
-              Real Skin Care. Real Results.&nbsp;
+              {t("marquee")}&nbsp;
               <span className="mx-8 inline-block text-taupe">✦</span>
             </span>
           ))}

@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function SecondGenFounders() {
+  const t = useTranslations("about.secondGen");
+
   return (
     <section className="border-t border-border bg-background px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 lg:grid-cols-[1fr_minmax(0,560px)] lg:items-center lg:gap-16">
@@ -16,16 +21,12 @@ export default function SecondGenFounders() {
 
         <div className="lg:order-1">
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-taupe-dark">
-            The Next Generation
+            {t("kicker")}
           </span>
           <h2 className="mt-4 text-balance text-3xl font-medium leading-[1.1] tracking-tight text-foreground md:text-4xl">
-            Shaun &amp; Elaine
+            {t("heading")}
           </h2>
-          <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-muted">
-            The second generation at d&apos;reena beauty — focused on educating every customer on
-            what their skin actually needs, and continually reinventing our treatment menu with
-            the latest, most advanced technology available.
-          </p>
+          <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-muted">{t("body")}</p>
         </div>
       </div>
     </section>

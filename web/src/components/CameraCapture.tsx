@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { X } from "lucide-react";
 
 // Full-screen selfie capture with a circular face guide in the upper-middle
@@ -19,11 +20,12 @@ export default function CameraCapture({
   onCapture: (croppedDataUrl: string, fullDataUrl: string) => void;
   onClose: () => void;
 }) {
+  const t = useTranslations("skinAnalysis.camera");
   const videoRef = useRef<HTMLVideoElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const [ready, setReady] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -48,7 +50,7 @@ export default function CameraCapture({
         setReady(true);
       } catch (e) {
         console.error("[dreena] camera access failed", e);
-        setError("Couldn't access your camera — you can upload a photo instead.");
+        setError(true);
       }
     }
 
@@ -138,7 +140,7 @@ export default function CameraCapture({
       <button
         type="button"
         onClick={close}
-        aria-label="Close camera"
+        aria-label={t("closeCamera")}
         className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 text-white"
       >
         <X size={20} />
@@ -155,7 +157,7 @@ export default function CameraCapture({
         {!error && (
           <>
             <p className="pointer-events-none absolute inset-x-0 top-[8%] text-center text-sm font-medium text-white/90">
-              Center your face in the circle
+              {t("instruction")}
             </p>
             {/* The huge box-shadow spread fully covers everything in this
                overflow-hidden container except the circle itself — solid,
@@ -170,13 +172,13 @@ export default function CameraCapture({
 
         {error && (
           <div className="absolute inset-x-6 top-1/2 -translate-y-1/2 rounded-sm bg-cream p-6 text-center">
-            <p className="text-sm text-foreground/85">{error}</p>
+            <p className="text-sm text-foreground/85">{t("error")}</p>
             <button
               type="button"
               onClick={close}
               className="mt-4 rounded-full bg-taupe-dark px-6 py-2.5 text-xs font-medium uppercase tracking-[0.1em] text-cream"
             >
-              Close
+              {t("close")}
             </button>
           </div>
         )}
@@ -188,7 +190,7 @@ export default function CameraCapture({
             type="button"
             onClick={capture}
             disabled={!ready}
-            aria-label="Take photo"
+            aria-label={t("takePhoto")}
             className="flex h-16 w-16 items-center justify-center rounded-full border-4 border-white bg-white/20 disabled:opacity-40"
           >
             <span className="h-12 w-12 rounded-full bg-white" />

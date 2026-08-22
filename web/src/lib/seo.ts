@@ -19,6 +19,24 @@ export const DEFAULT_OG_IMAGE = {
   alt: "d'reena beauty",
 };
 
+/**
+ * hreflang + canonical for one of the four multilingual pages. `path` is
+ * the unprefixed path ("/", "/about", "/contact", "/skin-analysis").
+ * English has no prefix; zh/ms do.
+ */
+export function localizedAlternates(path: string, locale: string) {
+  const withLocale = (l: string) => (l === "en" ? path : `/${l}${path === "/" ? "" : path}`);
+  return {
+    canonical: withLocale(locale),
+    languages: {
+      en: withLocale("en"),
+      zh: withLocale("zh"),
+      ms: withLocale("ms"),
+      "x-default": withLocale("en"),
+    },
+  };
+}
+
 /** Brand-level Organization — sitewide, rendered once in the root layout. */
 export function organizationJsonLd() {
   return {

@@ -1,0 +1,271 @@
+{
+  "nav": {
+    "treatments": "Rawatan",
+    "skinAnalysis": "Analisis Kulit",
+    "about": "Tentang Kami",
+    "dermalogica": "Dermalogica",
+    "blog": "Blog",
+    "contact": "Hubungi Kami",
+    "whatsappUs": "WhatsApp Kami",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu"
+  },
+  "footer": {
+    "tagline": "Kumpulan ahli estetik kecantikan tempatan di Seremban, menyediakan rawatan fasial dan penjagaan kulit yang diperibadikan sejak 1987.",
+    "explore": "Terokai",
+    "visit": "Lawati",
+    "aboutUs": "Tentang Kami",
+    "copyright": "© 2026 d'reena beauty. Hak cipta terpelihara."
+  },
+  "home": {
+    "hero": {
+      "since": "Pusat Kecantikan Seremban Sejak 1987",
+      "headline": "Kulit Sebenar. Hasil Sebenar.",
+      "phrase1": "Bertauliah Dermalogica",
+      "phrase2": "40 Tahun Dipercayai",
+      "phrase3": "Terbesar di Seremban",
+      "scroll": "Tatal"
+    },
+    "services": {
+      "kicker": "Kepakaran Kami",
+      "heading": "Rawatan yang membuktikan hasilnya."
+    },
+    "reviews": {
+      "kicker": "Ulasan Pelanggan",
+      "heading": "Apa kata Seremban tentang kami.",
+      "ratingLine": "{rating} daripada {count} ulasan Google"
+    },
+    "insights": {
+      "kicker": "Perkongsian",
+      "heading": "Jurnal d'reena",
+      "viewAll": "Lihat semua artikel"
+    },
+    "contactCta": {
+      "heading": "Mari Fahami Kulit Anda",
+      "body": "Kongsikan foto dan jawab beberapa soalan ringkas — dapatkan ringkasan kulit yang mudah difahami serta cadangan rawatan anda dalam masa kurang dua minit.",
+      "button": "Tentukan Jenis Kulit Anda"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Tentang Kami",
+      "description": "Kenali Dareena, pengasas d'reena beauty sejak 1987, serta Shaun & Elaine, generasi kedua yang mendidik pelanggan dan memperbaharui rawatan kami."
+    },
+    "founderHero": {
+      "slogan1": "Kami bukan sekadar menjual produk",
+      "slogan2": "Kami membina keyakinan",
+      "slogan3": "Kami mencipta harapan",
+      "slogan4": "Kami mengubah kehidupan",
+      "bookACall": "Tempah Panggilan",
+      "ratingLine": "{rating} daripada 5 berdasarkan",
+      "ratingLine2": "{count} ulasan Google",
+      "bio": "Hai! Saya Dareena, pengasas d'reena beauty — pusat kecantikan Seremban sejak 1987.",
+      "whatsapp": "WhatsApp: +60 16-213 0864",
+      "reviewQuote": "\"Excellent service! I really appreciated their service and would definitely come back again.\"",
+      "reviewAttribution": "— Vinnie Leong, ulasan Google"
+    },
+    "secondGen": {
+      "kicker": "Generasi Seterusnya",
+      "heading": "Shaun & Elaine",
+      "body": "Generasi kedua di d'reena beauty — memberi tumpuan untuk mendidik setiap pelanggan tentang apa yang benar-benar diperlukan kulit mereka, serta terus memperbaharui senarai rawatan kami dengan teknologi terkini yang paling canggih."
+    },
+    "vision": {
+      "kicker": "Visi Kami",
+      "manifesto": "Kami percaya penjagaan kulit tidak sepatutnya generik. Setiap rawatan bermula dengan memahami keadaan sebenar kulit anda — bukan satu rutin untuk semua, tetapi satu pelan yang dibina khusus untuk keperluan anda. Selama empat puluh tahun, itulah maksud teknologi sebenar, hasil sebenar, dan penjagaan sebenar, daripada pusat kecantikan bertauliah Dermalogica terbesar di Seremban.",
+      "marquee": "Penjagaan Kulit Sebenar. Hasil Sebenar."
+    }
+  },
+  "contact": {
+    "kicker": "Tempah Lawatan",
+    "heading": "Mari selesaikan masalah kulit anda.",
+    "subheading": "Hubungi kami di WhatsApp untuk balasan terpantas, atau hantar pertanyaan di bawah dan kami akan membalas dalam masa sehari.",
+    "form": {
+      "name": "Nama",
+      "namePlaceholder": "Nama anda",
+      "phone": "Telefon / WhatsApp",
+      "phonePlaceholder": "cth. 012-345 6789",
+      "interest": "Berminat dengan",
+      "interestPlaceholder": "cth. SkinBoost Treatment",
+      "message": "Mesej",
+      "messagePlaceholder": "Beritahu kami tentang kulit anda atau tarikh yang anda mahu",
+      "submit": "Hantar melalui WhatsApp",
+      "whatsappGreeting": "Hai d'reena, saya ingin membuat pertanyaan.",
+      "whatsappName": "Nama",
+      "whatsappPhone": "Telefon/WhatsApp",
+      "whatsappInterest": "Berminat dengan",
+      "whatsappMessage": "Mesej"
+    },
+    "chatCard": {
+      "kicker": "Lebih suka berbual?",
+      "heading": "WhatsApp lebih pantas",
+      "body": "Pasukan kami biasanya membalas dalam masa beberapa minit semasa waktu operasi.",
+      "button": "Berbual di WhatsApp",
+      "openingHours": "Waktu Operasi",
+      "hoursLine": "Selasa – Ahad, 10 pagi – 7 malam · Tutup pada hari Isnin"
+    },
+    "branches": {
+      "whatsappBranch": "WhatsApp Cawangan Ini",
+      "getDirections": "Dapatkan Arah"
+    }
+  },
+  "skinAnalysis": {
+    "meta": {
+      "title": "Analisis Kulit",
+      "description": "Kenali jenis kulit dan rawatan anda — muat naik foto (pilihan) dan jawab 6 soalan ringkas untuk cadangan yang diperibadikan."
+    },
+    "intro": {
+      "kicker": "Analisis Kulit",
+      "heading": "Kenali jenis kulit & rawatan anda",
+      "body": "Muat naik foto yang jelas dan bersih daripada solek, serta jawab 6 soalan ringkas. Kami akan berikan ringkasan kulit yang mudah difahami serta cadangan rawatan terbaik untuk anda.",
+      "dropSelfie": "Muat naik swafoto",
+      "takePhoto": "Ambil Gambar",
+      "nameLabel": "Nama anda",
+      "namePlaceholder": "cth. Mei Ling",
+      "contactLabel": "Telefon / WhatsApp (pilihan)",
+      "contactPlaceholder": "cth. 012-345 6789",
+      "start": "Mulakan Analisis",
+      "consent": "Dengan meneruskan, anda bersetuju d'reena beauty boleh menyimpan foto, nama dan jawapan anda untuk memberikan cadangan ini dan menghubungi anda mengenai lawatan anda."
+    },
+    "camera": {
+      "instruction": "Letakkan wajah anda di tengah bulatan",
+      "error": "Tidak dapat mengakses kamera anda — anda boleh muat naik foto sebagai gantinya.",
+      "close": "Tutup",
+      "closeCamera": "Tutup kamera",
+      "takePhoto": "Ambil gambar"
+    },
+    "question": {
+      "progress": "Soalan {step} daripada {total}",
+      "back": "Kembali",
+      "next": "Seterusnya",
+      "seeResults": "Lihat Keputusan Saya"
+    },
+    "questions": {
+      "feel": {
+        "title": "Bagaimana rasa kulit anda menjelang tengah hari?",
+        "options": {
+          "dry": "Ketat atau kering, kadangkala mengelupas",
+          "oily": "Berminyak di seluruh wajah",
+          "combo": "Berminyak hanya di zon-T",
+          "normal": "Selesa dan seimbang"
+        }
+      },
+      "pores": {
+        "title": "Bagaimana anda menggambarkan liang pori anda?",
+        "options": {
+          "fine": "Hampir tidak kelihatan",
+          "medium": "Kelihatan di sekitar hidung dan dagu",
+          "large": "Kelihatan di seluruh wajah saya"
+        }
+      },
+      "breakouts": {
+        "title": "Adakah anda mengalami masalah jerawat?",
+        "options": {
+          "rare": "Jarang",
+          "occasional": "Kadang-kadang",
+          "frequent": "Kerap"
+        }
+      },
+      "tone": {
+        "title": "Ada sebarang kesan gelap, kesan matahari atau warna kulit tidak sekata?",
+        "options": {
+          "none": "Tiada yang saya perasan",
+          "some": "Ada sedikit, di sana sini",
+          "noticeable": "Ya, agak ketara"
+        }
+      },
+      "lines": {
+        "title": "Bagaimana pula dengan garisan halus atau kulit kendur?",
+        "options": {
+          "none": "Belum lagi",
+          "starting": "Baru mula perasan",
+          "visible": "Sudah kelihatan jelas bagi saya"
+        }
+      },
+      "reactive": {
+        "title": "Adakah kulit anda mudah teriritasi atau bereaksi?",
+        "options": {
+          "rare": "Jarang",
+          "sometimes": "Kadang-kadang",
+          "often": "Ya, kerap"
+        }
+      }
+    },
+    "results": {
+      "kicker": "Ringkasan Kulit Anda",
+      "skinTypeLabel": "Kulit {type}",
+      "recommendedHeading": "Rawatan yang disyorkan untuk anda",
+      "view": "Lihat",
+      "goDeeperKicker": "Terokai Lebih Lanjut",
+      "goDeeperHeading": "Analisis Kulit Profesional 12-D Percuma (Bernilai RM98)",
+      "goDeeperBody": "Ini hanyalah panduan ringkas. Tempah temu janji secara peribadi untuk analisis kulit 12-D profesional yang terperinci bersama ahli terapi anda — percuma untuk anda.",
+      "goDeeperButton": "Tempah Analisis 12-D Saya",
+      "goDeeperWhatsapp": "Saya ingin menebus Analisis Kulit 12-D Percuma saya",
+      "offerKicker": "Tawaran Terhad",
+      "offerHeading": "Diskaun 50% untuk Rawatan Intensif Pertama Anda",
+      "offerBody": "Baru dengan d'reena? Hubungi kami untuk menebus diskaun 50% untuk rawatan intensif pertama anda.",
+      "offerButton": "Tebus Diskaun 50%",
+      "offerWhatsapp": "Saya ingin menebus tawaran diskaun 50% untuk rawatan intensif pertama saya",
+      "retake": "Buat Semula Analisis",
+      "bookWhatsapp": "Tempah di WhatsApp",
+      "disclaimer": "Ini adalah panduan ringkas berdasarkan jawapan anda, bukan diagnosis perubatan. Ahli terapi anda akan mengesahkan pelan terbaik semasa konsultasi.",
+      "skinTypes": {
+        "Dry": "Kering",
+        "Oily": "Berminyak",
+        "Combination": "Kombinasi",
+        "Normal": "Normal"
+      },
+      "blurbs": {
+        "Dry": "Kulit anda cenderung terasa ketat dan boleh mengelupas — ia memerlukan kelembapan yang mendalam dan berpanjangan.",
+        "Oily": "Kulit anda menghasilkan lebih banyak minyak, terutamanya sepanjang hari — mengimbangi ini adalah kunci utama.",
+        "Combination": "Zon-T anda lebih berminyak manakala pipi lebih kering — rawatan perlu menangani kedua-duanya.",
+        "Normal": "Kulit anda agak seimbang setiap hari — fokusnya adalah untuk mengekalkan dan meningkatkan lagi seri kulit anda."
+      },
+      "tags": {
+        "Dryness": "Kekeringan",
+        "Oiliness": "Berminyak",
+        "Breakouts": "Jerawat",
+        "Uneven tone": "Warna kulit tidak sekata",
+        "Fine lines": "Garisan halus",
+        "Sensitivity": "Sensitiviti",
+        "Dullness": "Kusam"
+      }
+    }
+  },
+  "treatmentsHome": {
+    "exosome-mts": {
+      "name": "Rawatan Exosome dengan MTS",
+      "tagline": "Rawatan Kulit Generasi Baharu",
+      "category": "Semua Jenis Kulit",
+      "duration": "120 minit",
+      "summary": "Microneedling membuka saluran mikro untuk exosome meresap jauh ke dalam kulit, menghantar faktor pertumbuhan yang mempercepatkan pemulihan dan penjanaan kolagen."
+    },
+    "acr-treatment": {
+      "name": "Rawatan ACR",
+      "tagline": "Untuk Kulit Berjerawat",
+      "category": "Kulit Berjerawat",
+      "duration": "90 minit",
+      "summary": "Absolute Cell Reversal — mempercepatkan metabolisme kulit untuk menggalakkan pembaikan dan penjanaan semula sel."
+    },
+    "hifu": {
+      "name": "HIFU",
+      "tagline": "Mengetat & Mengencangkan",
+      "category": "Kulit Berusia",
+      "duration": "60–90 minit",
+      "summary": "High Intensity Focused Ultrasound mengangkat dan mengetatkan wajah, leher dan mata tanpa pembedahan."
+    },
+    "diode-hair-removal": {
+      "name": "Laser Diod Tiga Gelombang",
+      "tagline": "Penyingkiran Rambut Kekal",
+      "category": "Semua Jenis Kulit & Rambut",
+      "duration": "30–120 minit",
+      "summary": "Laser diod tiga gelombang menggabungkan tiga gelombang berkuasa dalam satu sesi untuk menyasarkan folikel rambut pada kedalaman berbeza serentak."
+    },
+    "pico-laser": {
+      "name": "Pico Laser dengan ProRestore",
+      "tagline": "Untuk Pigmentasi dan Kulit Berjerawat",
+      "category": "Pigmentasi & Warna Kulit Tidak Sekata",
+      "duration": "30–50 minit",
+      "summary": "SnowLight Pico Laser mencerahkan pigmentasi dan kloasma sambil mengetatkan dan mengecilkan liang pori."
+    }
+  }
+}

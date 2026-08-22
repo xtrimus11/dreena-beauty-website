@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ArrowUpRight } from "lucide-react";
 import { POSTS } from "@/data/blog";
@@ -18,6 +19,7 @@ function formatDate(iso: string) {
 }
 
 export default function Insights() {
+  const t = useTranslations("home.insights");
   const [hovered, setHovered] = useState<string | null>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
@@ -52,17 +54,17 @@ export default function Insights() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
-            Insights
+            {t("kicker")}
           </span>
           <h2 className="mt-4 max-w-2xl text-balance text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl">
-            The <span className="uppercase">d&apos;reena</span> Journal
+            {t("heading")}
           </h2>
         </div>
         <Link
           href="/blog"
           className="group flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.14em] text-taupe-dark"
         >
-          View all posts
+          {t("viewAll")}
           <ArrowUpRight
             size={14}
             className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

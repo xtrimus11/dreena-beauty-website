@@ -2,10 +2,13 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import GrainOverlay from "@/components/GrainOverlay";
-import Navbar from "@/components/Navbar";
 import JsonLd from "@/components/JsonLd";
 import { DEFAULT_DESCRIPTION, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL, organizationJsonLd } from "@/lib/seo";
 
+// True root layout — shared by every route, translated or not. Navbar
+// lives in the two nested group layouts instead (see (default)/layout.tsx
+// and [locale]/layout.tsx), since only one of them needs to be
+// locale-aware.
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -66,10 +69,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body className="antialiased">
         <GrainOverlay />
-        <SmoothScroll>
-          <Navbar />
-          {children}
-        </SmoothScroll>
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

@@ -3,6 +3,7 @@
 import { useRef, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Camera, ImagePlus } from "lucide-react";
 import { QUESTIONS, computeResult } from "@/data/skinAnalysis";
 import { recommendFor } from "@/data/allTreatments";
@@ -33,6 +34,7 @@ function getCanUseCameraServerSnapshot() {
 }
 
 export default function SkinAnalysisQuiz() {
+  const t = useTranslations("skinAnalysis.intro");
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [customerName, setCustomerName] = useState("");
@@ -117,14 +119,13 @@ export default function SkinAnalysisQuiz() {
       {isIntro && (
         <div className="rounded-sm bg-background-secondary p-8 text-center md:p-12">
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-taupe-dark">
-            Skin Analysis
+            {t("kicker")}
           </span>
           <h1 className="mt-3 text-balance text-3xl font-medium leading-[1.1] tracking-tight md:text-4xl">
-            Find your skin type &amp; treatment
+            {t("heading")}
           </h1>
           <p className="mx-auto mt-4 max-w-[46ch] text-sm leading-relaxed text-muted">
-            Upload a clear, makeup-free photo and answer 6 quick questions. We&apos;ll give you a
-            simple skin summary and our top treatment picks.
+            {t("body")}
           </p>
 
           <input
@@ -149,12 +150,12 @@ export default function SkinAnalysisQuiz() {
             ) : canUseCamera ? (
               <span className="flex flex-col items-center gap-2 px-4 text-xs text-muted">
                 <Camera size={20} />
-                Take a Photo
+                {t("takePhoto")}
               </span>
             ) : (
               <span className="flex flex-col items-center gap-2 px-4 text-xs text-muted">
                 <ImagePlus size={20} />
-                Drop a selfie
+                {t("dropSelfie")}
               </span>
             )}
           </button>
@@ -166,7 +167,7 @@ export default function SkinAnalysisQuiz() {
               className="mx-auto mt-3 flex items-center justify-center gap-1.5 text-xs font-medium uppercase tracking-[0.1em] text-taupe-dark"
             >
               <ImagePlus size={14} />
-              Drop a Selfie
+              {t("dropSelfie")}
             </button>
           )}
 
@@ -184,13 +185,13 @@ export default function SkinAnalysisQuiz() {
           <div className="mx-auto mt-7 flex max-w-[360px] flex-col gap-4 text-left">
             <div className="flex flex-col gap-1.5">
               <label htmlFor="a-name" className="text-xs font-medium uppercase tracking-[0.1em] text-muted">
-                Your name
+                {t("nameLabel")}
               </label>
               <input
                 id="a-name"
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
-                placeholder="e.g. Mei Ling"
+                placeholder={t("namePlaceholder")}
                 className="rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-taupe-dark"
               />
             </div>
@@ -199,13 +200,13 @@ export default function SkinAnalysisQuiz() {
                 htmlFor="a-contact"
                 className="text-xs font-medium uppercase tracking-[0.1em] text-muted"
               >
-                Phone / WhatsApp (optional)
+                {t("contactLabel")}
               </label>
               <input
                 id="a-contact"
                 value={customerContact}
                 onChange={(e) => setCustomerContact(e.target.value)}
-                placeholder="e.g. 012-345 6789"
+                placeholder={t("contactPlaceholder")}
                 className="rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-taupe-dark"
               />
             </div>
@@ -217,12 +218,11 @@ export default function SkinAnalysisQuiz() {
             onClick={start}
             className="mt-7 rounded-full bg-taupe-dark px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-cream transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
           >
-            Start the Analysis
+            {t("start")}
           </button>
 
           <p className="mx-auto mt-5 max-w-[44ch] text-xs leading-relaxed text-muted/80">
-            By continuing, you agree d&apos;reena beauty may keep your photo, name and answers on
-            file to give you this recommendation and follow up about your visit.
+            {t("consent")}
           </p>
         </div>
       )}
@@ -238,13 +238,7 @@ export default function SkinAnalysisQuiz() {
         />
       )}
 
-      {isResult && (
-        <ResultCard
-          answers={answers}
-          photo={photo}
-          onRestart={restart}
-        />
-      )}
+      {isResult && <ResultCard answers={answers} photo={photo} onRestart={restart} />}
     </div>
   );
 }
@@ -264,6 +258,7 @@ function QuestionCard({
   onBack: () => void;
   onNext: () => void;
 }) {
+  const t = useTranslations("skinAnalysis");
   const question = QUESTIONS[step - 1];
   const selectedValue = answers[question.key];
   const progress = Math.round((step / (total + 1)) * 100);
@@ -271,7 +266,7 @@ function QuestionCard({
   return (
     <div className="rounded-sm bg-background-secondary p-8 md:p-12">
       <p className="text-xs font-medium uppercase tracking-[0.1em] text-taupe-dark">
-        Question {step} of {total}
+        {t("question.progress", { step, total })}
       </p>
       <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-champagne">
         <div
@@ -281,7 +276,7 @@ function QuestionCard({
       </div>
 
       <h2 className="mt-6 text-balance text-2xl font-medium leading-snug tracking-tight text-foreground">
-        {question.title}
+        {t(`questions.${question.key}.title`)}
       </h2>
 
       <div className="mt-6 flex flex-col gap-2.5">
@@ -303,7 +298,9 @@ function QuestionCard({
                 onChange={() => onSelect(question.key, opt.value)}
                 className="accent-[var(--taupe-dark)]"
               />
-              <span className="text-sm text-foreground">{opt.label}</span>
+              <span className="text-sm text-foreground">
+                {t(`questions.${question.key}.options.${opt.value}`)}
+              </span>
             </label>
           );
         })}
@@ -315,7 +312,7 @@ function QuestionCard({
           onClick={onBack}
           className="text-sm font-medium uppercase tracking-[0.1em] text-muted transition-colors hover:text-foreground"
         >
-          Back
+          {t("question.back")}
         </button>
         <button
           type="button"
@@ -323,7 +320,7 @@ function QuestionCard({
           onClick={onNext}
           className="rounded-full bg-taupe-dark px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-cream transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
         >
-          {step === total ? "See My Results" : "Next"}
+          {step === total ? t("question.seeResults") : t("question.next")}
         </button>
       </div>
     </div>
@@ -338,18 +335,21 @@ function ResultCard({
   photo: string | null;
   onRestart: () => void;
 }) {
+  const t = useTranslations("skinAnalysis.results");
   const result = computeResult(answers);
   const recommended = recommendFor(result.concerns);
 
   return (
     <div className="rounded-sm bg-background-secondary p-8 md:p-12">
       <span className="text-xs font-medium uppercase tracking-[0.25em] text-taupe-dark">
-        Your Skin Summary
+        {t("kicker")}
       </span>
       <div className="mt-4 inline-block rounded-full bg-champagne px-4 py-2 text-sm font-medium text-taupe-dark">
-        {result.skinType} Skin
+        {t("skinTypeLabel", { type: t(`skinTypes.${result.skinType}`) })}
       </div>
-      <p className="mt-4 text-base leading-relaxed text-foreground/85">{result.blurb}</p>
+      <p className="mt-4 text-base leading-relaxed text-foreground/85">
+        {t(`blurbs.${result.skinType}`)}
+      </p>
 
       <div className="mt-4 flex flex-wrap gap-2">
         {result.tags.map((tag) => (
@@ -357,31 +357,31 @@ function ResultCard({
             key={tag}
             className="rounded-full border border-border-strong px-3.5 py-1.5 text-xs font-medium text-foreground/70"
           >
-            {tag}
+            {t(`tags.${tag}`)}
           </span>
         ))}
       </div>
 
       <h3 className="mt-8 text-lg font-medium tracking-tight text-foreground">
-        Recommended treatments for you
+        {t("recommendedHeading")}
       </h3>
       <div className="mt-4 flex flex-col gap-3">
-        {recommended.map((t) => (
+        {recommended.map((rt) => (
           <div
-            key={t.slug}
+            key={rt.slug}
             className="flex items-center justify-between gap-4 rounded-sm bg-background px-5 py-4"
           >
             <div>
-              <div className="text-base font-medium tracking-tight text-foreground">{t.name}</div>
-              <p className="mt-1 max-w-[40ch] text-xs leading-relaxed text-muted">{t.summary}</p>
+              <div className="text-base font-medium tracking-tight text-foreground">{rt.name}</div>
+              <p className="mt-1 max-w-[40ch] text-xs leading-relaxed text-muted">{rt.summary}</p>
             </div>
             <Link
-              href={`/treatments/${t.slug}`}
+              href={`/treatments/${rt.slug}`}
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 rounded-full border border-foreground/20 px-4 py-2 text-xs font-medium uppercase tracking-[0.1em] text-foreground transition-colors hover:bg-foreground hover:text-background"
             >
-              View
+              {t("view")}
             </Link>
           </div>
         ))}
@@ -391,45 +391,38 @@ function ResultCard({
         <div className="flex flex-col justify-between rounded-sm bg-champagne p-6">
           <div>
             <span className="text-xs font-medium uppercase tracking-[0.15em] text-taupe-dark">
-              Go Deeper
+              {t("goDeeperKicker")}
             </span>
             <h3 className="mt-2 text-lg font-medium tracking-tight text-foreground">
-              Free 12-D Skin Analysis (Worth RM98)
+              {t("goDeeperHeading")}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-foreground/70">
-              This is a quick guide. Book a detailed, professional 12-D skin analysis with your
-              therapist in person — on us.
-            </p>
+            <p className="mt-2 text-sm leading-relaxed text-foreground/70">{t("goDeeperBody")}</p>
           </div>
           <a
-            href={waLink("I would like to redeem my Free 12-D skin analysis")}
+            href={waLink(t("goDeeperWhatsapp"))}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-5 inline-block w-fit rounded-full bg-taupe-dark px-5 py-2.5 text-xs font-medium uppercase tracking-[0.1em] text-cream transition-opacity hover:opacity-90"
           >
-            Book My 12-D Analysis
+            {t("goDeeperButton")}
           </a>
         </div>
 
         <div className="flex flex-col justify-between rounded-sm bg-taupe-dark p-6 text-cream">
           <div>
             <span className="text-xs font-medium uppercase tracking-[0.15em] text-cream/70">
-              Limited Offer
+              {t("offerKicker")}
             </span>
-            <h3 className="mt-2 text-lg font-medium tracking-tight">
-              50% Off Your First Intensive Treatment
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-cream/80">
-              New to d&apos;reena? Message us to claim 50% off your first intensive treatment.
-            </p>
+            <h3 className="mt-2 text-lg font-medium tracking-tight">{t("offerHeading")}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-cream/80">{t("offerBody")}</p>
           </div>
           <a
-            href={waLink("I would like to redeem my 50% off first intensive treatment offer")}
+            href={waLink(t("offerWhatsapp"))}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-5 inline-block w-fit rounded-full bg-cream px-5 py-2.5 text-xs font-medium uppercase tracking-[0.1em] text-taupe-dark transition-opacity hover:opacity-90"
           >
-            Claim 50% Off
+            {t("offerButton")}
           </a>
         </div>
       </div>
@@ -440,7 +433,7 @@ function ResultCard({
           onClick={onRestart}
           className="text-sm font-medium uppercase tracking-[0.1em] text-muted transition-colors hover:text-foreground"
         >
-          Retake Analysis
+          {t("retake")}
         </button>
         <a
           href={WHATSAPP_URL}
@@ -448,14 +441,11 @@ function ResultCard({
           rel="noopener noreferrer"
           className="rounded-full bg-taupe-dark px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-cream transition-opacity hover:opacity-90"
         >
-          Book on WhatsApp
+          {t("bookWhatsapp")}
         </a>
       </div>
 
-      <p className="mt-6 text-xs text-muted/70">
-        This is a simple guide based on your answers, not a medical diagnosis. Your therapist
-        will confirm the best plan at consultation.
-      </p>
+      <p className="mt-6 text-xs text-muted/70">{t("disclaimer")}</p>
     </div>
   );
 }

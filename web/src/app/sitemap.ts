@@ -16,6 +16,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
   ];
 
+  // The four multilingual pages, in Mandarin and Bahasa Malaysia.
+  const localizedPaths = ["/", "/skin-analysis", "/about", "/contact"];
+  const localizedRoutes: MetadataRoute.Sitemap = ["zh", "ms"].flatMap((locale) =>
+    localizedPaths.map((path) => ({
+      url: `${SITE_URL}/${locale}${path === "/" ? "" : path}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: path === "/" ? 0.9 : 0.7,
+    }))
+  );
+
   const blogRoutes: MetadataRoute.Sitemap = POSTS.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
     lastModified: new Date(post.date),
@@ -30,5 +41,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes, ...treatmentRoutes];
+  return [...staticRoutes, ...localizedRoutes, ...blogRoutes, ...treatmentRoutes];
 }

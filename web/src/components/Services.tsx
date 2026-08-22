@@ -2,31 +2,48 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import NextLink from "next/link";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { TREATMENTS } from "@/data/treatments";
 
+// Photo/slug/credit come from data/treatments.ts (unchanged); display text
+// (name, tagline, category, duration, summary) is overlaid from messages so
+// it's translated. Treatment detail pages themselves aren't translated, so
+// the "View Treatment" destination stays a plain, unprefixed link.
 export default function Services() {
+  const t = useTranslations("treatmentsHome");
+  const tHome = useTranslations("home.services");
   const [active, setActive] = useState(0);
-  const current = TREATMENTS[active];
+
+  const items = TREATMENTS.map((item) => ({
+    ...item,
+    name: t(`${item.slug}.name`),
+    tagline: t(`${item.slug}.tagline`),
+    category: t(`${item.slug}.category`),
+    duration: t(`${item.slug}.duration`),
+    summary: t(`${item.slug}.summary`),
+  }));
+
+  const current = items[active];
 
   return (
     <section className="border-t border-border bg-background px-6 py-28 md:px-10 md:py-40">
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-16 md:grid-cols-12">
         <div className="md:col-span-5">
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
-            Our Expertise
+            {tHome("kicker")}
           </span>
           <h2 className="mt-4 text-balance text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl">
-            The treatments that prove it.
+            {tHome("heading")}
           </h2>
 
           <ul className="mt-14 flex flex-col border-t border-border">
-            {TREATMENTS.map((t, i) => (
-              <li key={t.slug} className="border-b border-border">
-                <Link
-                  href={`/treatments/${t.slug}`}
+            {items.map((item, i) => (
+              <li key={item.slug} className="border-b border-border">
+                <NextLink
+                  href={`/treatments/${item.slug}`}
                   onMouseEnter={() => setActive(i)}
                   className="group flex items-center justify-between gap-6 py-6"
                 >
@@ -38,10 +55,10 @@ export default function Services() {
                           active === i ? "text-foreground" : "text-muted group-hover:text-foreground"
                         }`}
                       >
-                        {t.name}
+                        {item.name}
                       </span>
                     </div>
-                    <p className="mt-1.5 pl-10 text-sm text-muted">{t.tagline}</p>
+                    <p className="mt-1.5 pl-10 text-sm text-muted">{item.tagline}</p>
                   </div>
                   <ArrowUpRight
                     size={20}
@@ -49,7 +66,7 @@ export default function Services() {
                       active === i ? "translate-x-0 opacity-100" : "-translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
                     }`}
                   />
-                </Link>
+                </NextLink>
               </li>
             ))}
           </ul>

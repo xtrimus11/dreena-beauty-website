@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Star } from "lucide-react";
 import { REVIEWS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_MAPS_URL, type Review } from "@/data/reviews";
@@ -61,15 +62,16 @@ function ReviewCard({ review, index }: { review: Review; index: number }) {
 }
 
 export default function Reviews() {
+  const t = useTranslations("home.reviews");
   return (
     <section className="border-t border-border bg-background">
       <div className="flex flex-col gap-6 px-6 pt-28 md:flex-row md:items-end md:justify-between md:px-10 md:pt-40">
         <div>
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
-            Customer Reviews
+            {t("kicker")}
           </span>
           <h2 className="mt-4 max-w-2xl text-balance text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl">
-            What Seremban says about us.
+            {t("heading")}
           </h2>
         </div>
         <a
@@ -79,9 +81,7 @@ export default function Reviews() {
           className="group flex items-center gap-3 text-sm text-foreground/80 transition-colors hover:text-foreground"
         >
           <StarRow rating={Math.round(GOOGLE_RATING)} />
-          <span>
-            {GOOGLE_RATING} from {GOOGLE_REVIEW_COUNT} Google reviews
-          </span>
+          <span>{t("ratingLine", { rating: GOOGLE_RATING, count: GOOGLE_REVIEW_COUNT })}</span>
         </a>
       </div>
 

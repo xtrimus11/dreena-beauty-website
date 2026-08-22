@@ -1,23 +1,29 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { MapPin } from "lucide-react";
 import EnquiryForm from "@/components/EnquiryForm";
-import Footer from "@/components/Footer";
+import FooterTranslated from "@/components/FooterTranslated";
 import JsonLd from "@/components/JsonLd";
 import { WHATSAPP_URL } from "@/lib/site";
 import { GOOGLE_MAPS_URL, SENAWANG_GOOGLE_MAPS_URL } from "@/data/reviews";
-import { breadcrumbJsonLd, localBusinessesJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, localBusinessesJsonLd, localizedAlternates } from "@/lib/seo";
 
-const TITLE = "Contact";
-const DESCRIPTION =
-  "Message d'reena beauty on WhatsApp or send an enquiry — Uptown Avenue, Seremban 2, and Taipan 2, Senawang.";
-
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  alternates: { canonical: "/contact" },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: "/contact" },
-  twitter: { title: TITLE, description: DESCRIPTION },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+  const alternates = localizedAlternates("/contact", locale);
+  return {
+    title: t("heading"),
+    description: t("subheading"),
+    alternates,
+    openGraph: { title: t("heading"), description: t("subheading"), url: alternates.canonical },
+    twitter: { title: t("heading"), description: t("subheading") },
+  };
+}
 
 const LOCATIONS = [
   {
@@ -34,7 +40,9 @@ const LOCATIONS = [
   },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const t = await getTranslations("contact");
+
   return (
     <main>
       <JsonLd
@@ -45,15 +53,12 @@ export default function ContactPage() {
       />
       <div className="px-6 pb-8 pt-40 md:px-10 md:pt-48">
         <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
-          Book a Visit
+          {t("kicker")}
         </span>
         <h1 className="mt-4 max-w-2xl text-balance text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl">
-          Let&apos;s get your skin sorted.
+          {t("heading")}
         </h1>
-        <p className="mt-5 max-w-md text-balance text-base text-muted">
-          Message us on WhatsApp for the fastest reply, or send an enquiry below and we&apos;ll
-          get back to you within a day.
-        </p>
+        <p className="mt-5 max-w-md text-balance text-base text-muted">{t("subheading")}</p>
       </div>
 
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-6 px-6 py-12 md:grid-cols-2 md:px-10">
@@ -62,29 +67,27 @@ export default function ContactPage() {
         <div className="flex flex-col justify-between rounded-sm bg-champagne p-8">
           <div>
             <span className="text-xs font-medium uppercase tracking-[0.15em] text-taupe-dark">
-              Prefer to chat?
+              {t("chatCard.kicker")}
             </span>
             <h2 className="mt-3 text-2xl font-medium tracking-tight text-foreground">
-              WhatsApp is fastest
+              {t("chatCard.heading")}
             </h2>
-            <p className="mt-3 text-sm text-foreground/70">
-              Our team usually replies within minutes during opening hours.
-            </p>
+            <p className="mt-3 text-sm text-foreground/70">{t("chatCard.body")}</p>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-block rounded-full bg-taupe-dark px-6 py-3 text-sm font-medium uppercase tracking-[0.12em] text-cream transition-opacity hover:opacity-90"
             >
-              Chat on WhatsApp
+              {t("chatCard.button")}
             </a>
           </div>
 
           <div className="mt-10 border-t border-foreground/10 pt-6 text-sm text-foreground/70">
             <span className="block text-xs font-medium uppercase tracking-[0.15em] text-taupe-dark">
-              Opening Hours
+              {t("chatCard.openingHours")}
             </span>
-            <p className="mt-2">Tue – Sun, 10am – 7pm · Closed Mondays</p>
+            <p className="mt-2">{t("chatCard.hoursLine")}</p>
           </div>
         </div>
       </div>
@@ -106,7 +109,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="rounded-full border border-foreground/20 px-5 py-2.5 text-xs font-medium uppercase tracking-[0.1em] text-foreground transition-colors hover:bg-foreground hover:text-background"
               >
-                WhatsApp This Branch
+                {t("branches.whatsappBranch")}
               </a>
               {loc.directionsHref && (
                 <a
@@ -115,7 +118,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="rounded-full border border-foreground/20 px-5 py-2.5 text-xs font-medium uppercase tracking-[0.1em] text-foreground transition-colors hover:bg-foreground hover:text-background"
                 >
-                  Get Directions
+                  {t("branches.getDirections")}
                 </a>
               )}
             </div>
@@ -123,7 +126,7 @@ export default function ContactPage() {
         ))}
       </div>
 
-      <Footer />
+      <FooterTranslated />
     </main>
   );
 }

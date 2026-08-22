@@ -1,0 +1,271 @@
+{
+  "nav": {
+    "treatments": "Treatments",
+    "skinAnalysis": "Skin Analysis",
+    "about": "About",
+    "dermalogica": "Dermalogica",
+    "blog": "Blog",
+    "contact": "Contact",
+    "whatsappUs": "WhatsApp Us",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "tagline": "Your local beauty aesthetician group in Seremban, providing personalised facial and skincare treatments since 1987.",
+    "explore": "Explore",
+    "visit": "Visit",
+    "aboutUs": "About Us",
+    "copyright": "© 2026 d'reena beauty. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "since": "Seremban's Beauty Centre Since 1987",
+      "headline": "Real Skin. Real Results.",
+      "phrase1": "Dermalogica Certified",
+      "phrase2": "40 Years of Trust",
+      "phrase3": "Largest in Seremban",
+      "scroll": "Scroll"
+    },
+    "services": {
+      "kicker": "Our Expertise",
+      "heading": "The treatments that prove it."
+    },
+    "reviews": {
+      "kicker": "Customer Reviews",
+      "heading": "What Seremban says about us.",
+      "ratingLine": "{rating} from {count} Google reviews"
+    },
+    "insights": {
+      "kicker": "Insights",
+      "heading": "The d'reena Journal",
+      "viewAll": "View all posts"
+    },
+    "contactCta": {
+      "heading": "Let's Understand Your Skin",
+      "body": "Share a photo and answer a few quick questions — get a simple skin summary and your recommended treatments in under two minutes.",
+      "button": "Determine Your Skin"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About",
+      "description": "Meet Dareena, founder of d'reena beauty since 1987, and Shaun & Elaine, the second generation educating customers and reinventing our treatments."
+    },
+    "founderHero": {
+      "slogan1": "We don't simply sell products",
+      "slogan2": "We build confidence",
+      "slogan3": "We create hope",
+      "slogan4": "We transform lives",
+      "bookACall": "Book a Call",
+      "ratingLine": "{rating} out of 5 based",
+      "ratingLine2": "on {count} Google reviews",
+      "bio": "Hi! I'm Dareena, founder of d'reena beauty — Seremban's beauty centre since 1987.",
+      "whatsapp": "WhatsApp: +60 16-213 0864",
+      "reviewQuote": "\"Excellent service! I really appreciated their service and would definitely come back again.\"",
+      "reviewAttribution": "— Vinnie Leong, Google review"
+    },
+    "secondGen": {
+      "kicker": "The Next Generation",
+      "heading": "Shaun & Elaine",
+      "body": "The second generation at d'reena beauty — focused on educating every customer on what their skin actually needs, and continually reinventing our treatment menu with the latest, most advanced technology available."
+    },
+    "vision": {
+      "kicker": "Our Vision",
+      "manifesto": "We believe skin care should never be generic. Every treatment starts with understanding your skin's true condition — not a one-size routine, but a plan built around your specific concerns. For forty years that has meant real technology, real results, and real care, from Seremban's largest Dermalogica-certified beauty centre.",
+      "marquee": "Real Skin Care. Real Results."
+    }
+  },
+  "contact": {
+    "kicker": "Book a Visit",
+    "heading": "Let's get your skin sorted.",
+    "subheading": "Message us on WhatsApp for the fastest reply, or send an enquiry below and we'll get back to you within a day.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "phone": "Phone / WhatsApp",
+      "phonePlaceholder": "e.g. 012-345 6789",
+      "interest": "Interested in",
+      "interestPlaceholder": "e.g. SkinBoost Treatment",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your skin or preferred date",
+      "submit": "Send via WhatsApp",
+      "whatsappGreeting": "Hi d'reena, I'd like to make an enquiry.",
+      "whatsappName": "Name",
+      "whatsappPhone": "Phone/WhatsApp",
+      "whatsappInterest": "Interested in",
+      "whatsappMessage": "Message"
+    },
+    "chatCard": {
+      "kicker": "Prefer to chat?",
+      "heading": "WhatsApp is fastest",
+      "body": "Our team usually replies within minutes during opening hours.",
+      "button": "Chat on WhatsApp",
+      "openingHours": "Opening Hours",
+      "hoursLine": "Tue – Sun, 10am – 7pm · Closed Mondays"
+    },
+    "branches": {
+      "whatsappBranch": "WhatsApp This Branch",
+      "getDirections": "Get Directions"
+    }
+  },
+  "skinAnalysis": {
+    "meta": {
+      "title": "Skin Analysis",
+      "description": "Find your skin type and treatment — upload a photo (optional) and answer 6 quick questions for a personalised recommendation."
+    },
+    "intro": {
+      "kicker": "Skin Analysis",
+      "heading": "Find your skin type & treatment",
+      "body": "Upload a clear, makeup-free photo and answer 6 quick questions. We'll give you a simple skin summary and our top treatment picks.",
+      "dropSelfie": "Drop a selfie",
+      "takePhoto": "Take a Photo",
+      "nameLabel": "Your name",
+      "namePlaceholder": "e.g. Mei Ling",
+      "contactLabel": "Phone / WhatsApp (optional)",
+      "contactPlaceholder": "e.g. 012-345 6789",
+      "start": "Start the Analysis",
+      "consent": "By continuing, you agree d'reena beauty may keep your photo, name and answers on file to give you this recommendation and follow up about your visit."
+    },
+    "camera": {
+      "instruction": "Center your face in the circle",
+      "error": "Couldn't access your camera — you can upload a photo instead.",
+      "close": "Close",
+      "closeCamera": "Close camera",
+      "takePhoto": "Take photo"
+    },
+    "question": {
+      "progress": "Question {step} of {total}",
+      "back": "Back",
+      "next": "Next",
+      "seeResults": "See My Results"
+    },
+    "questions": {
+      "feel": {
+        "title": "How does your skin feel by midday?",
+        "options": {
+          "dry": "Tight or dry, sometimes flaky",
+          "oily": "Shiny all over",
+          "combo": "Shiny only around the T-zone",
+          "normal": "Comfortable and balanced"
+        }
+      },
+      "pores": {
+        "title": "How would you describe your pores?",
+        "options": {
+          "fine": "Barely visible",
+          "medium": "Visible around the nose and chin",
+          "large": "Visible all over my face"
+        }
+      },
+      "breakouts": {
+        "title": "Do you experience breakouts?",
+        "options": {
+          "rare": "Rarely",
+          "occasional": "Occasionally",
+          "frequent": "Frequently"
+        }
+      },
+      "tone": {
+        "title": "Any dark spots, sun spots or uneven tone?",
+        "options": {
+          "none": "None that I notice",
+          "some": "A few, here and there",
+          "noticeable": "Yes, quite noticeable"
+        }
+      },
+      "lines": {
+        "title": "How about fine lines or loss of firmness?",
+        "options": {
+          "none": "None yet",
+          "starting": "Just starting to notice",
+          "visible": "Visible to me"
+        }
+      },
+      "reactive": {
+        "title": "Is your skin easily irritated or reactive?",
+        "options": {
+          "rare": "Rarely",
+          "sometimes": "Sometimes",
+          "often": "Yes, often"
+        }
+      }
+    },
+    "results": {
+      "kicker": "Your Skin Summary",
+      "skinTypeLabel": "{type} Skin",
+      "recommendedHeading": "Recommended treatments for you",
+      "view": "View",
+      "goDeeperKicker": "Go Deeper",
+      "goDeeperHeading": "Free 12-D Skin Analysis (Worth RM98)",
+      "goDeeperBody": "This is a quick guide. Book a detailed, professional 12-D skin analysis with your therapist in person — on us.",
+      "goDeeperButton": "Book My 12-D Analysis",
+      "goDeeperWhatsapp": "I would like to redeem my Free 12-D skin analysis",
+      "offerKicker": "Limited Offer",
+      "offerHeading": "50% Off Your First Intensive Treatment",
+      "offerBody": "New to d'reena? Message us to claim 50% off your first intensive treatment.",
+      "offerButton": "Claim 50% Off",
+      "offerWhatsapp": "I would like to redeem my 50% off first intensive treatment offer",
+      "retake": "Retake Analysis",
+      "bookWhatsapp": "Book on WhatsApp",
+      "disclaimer": "This is a simple guide based on your answers, not a medical diagnosis. Your therapist will confirm the best plan at consultation.",
+      "skinTypes": {
+        "Dry": "Dry",
+        "Oily": "Oily",
+        "Combination": "Combination",
+        "Normal": "Normal"
+      },
+      "blurbs": {
+        "Dry": "Your skin tends to feel tight and can flake — it's craving deep, lasting hydration.",
+        "Oily": "Your skin produces extra oil, especially through the day — balancing that is key.",
+        "Combination": "Your T-zone runs oilier while cheeks stay drier — treatments should address both.",
+        "Normal": "Your skin is fairly balanced day to day — the focus is on maintaining and boosting its glow."
+      },
+      "tags": {
+        "Dryness": "Dryness",
+        "Oiliness": "Oiliness",
+        "Breakouts": "Breakouts",
+        "Uneven tone": "Uneven tone",
+        "Fine lines": "Fine lines",
+        "Sensitivity": "Sensitivity",
+        "Dullness": "Dullness"
+      }
+    }
+  },
+  "treatmentsHome": {
+    "exosome-mts": {
+      "name": "Exosome Treatment with MTS",
+      "tagline": "Next Generation Skin Treatment",
+      "category": "All Skin Types",
+      "duration": "120 min",
+      "summary": "Microneedling opens micro-channels for exosomes to penetrate deep into the skin, delivering growth factors that accelerate repair and collagen renewal."
+    },
+    "acr-treatment": {
+      "name": "ACR Treatment",
+      "tagline": "For Acne Skin",
+      "category": "Acne-Prone Skin",
+      "duration": "90 min",
+      "summary": "Absolute Cell Reversal — accelerates skin metabolism to promote cell repair and renewal."
+    },
+    "hifu": {
+      "name": "HIFU",
+      "tagline": "Firms & Tightens",
+      "category": "Aging Skin",
+      "duration": "60–90 min",
+      "summary": "High Intensity Focused Ultrasound lifts and tightens face, neck and eyes with no surgery."
+    },
+    "diode-hair-removal": {
+      "name": "Triple Wavelength Diode Laser",
+      "tagline": "Permanent Hair Removal",
+      "category": "All Skin & Hair Types",
+      "duration": "30–120 min",
+      "summary": "Triple-wavelength diode laser combines three powerful wavelengths in one session to target hair follicles at different depths simultaneously."
+    },
+    "pico-laser": {
+      "name": "Pico Laser with ProRestore",
+      "tagline": "For Pigmentation and Acne Skin",
+      "category": "Pigmentation & Uneven Tone",
+      "duration": "30–50 min",
+      "summary": "SnowLight Pico Laser lightens pigmentation and chloasma while firming and shrinking pores."
+    }
+  }
+}
