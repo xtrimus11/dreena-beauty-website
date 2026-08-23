@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "pro-collagen-banking-water-cream-explained",
+    title: "Pro-Collagen Banking Water Cream: The Science Behind \"+44% Collagen\"",
+    kicker: "Ingredients",
+    date: "2026-08-23",
+    cardStyle: "photo",
+    excerpt: "The \"+44% collagen\" and \"+56% elastin\" numbers behind Pro-Collagen Banking Water Cream are real, but they're an in-vitro lab result — a different, earlier kind of evidence from the on-skin study backing its fine-line claim, and worth telling apart before deciding what the number actually promises.",
+    heroPlaceholder: "Pro-Collagen Banking Water Cream, a plumping and preserving hydrator",
+    image: "assets/dermalogica/water-cream.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
+    body: [
+      "Pro-Collagen Banking Water Cream is the newest arrival in the Dermalogica range we carry as an exclusive distributor, and its tagline — \"invest in skin's future\" — is doing a specific job: distinguishing it from a moisturiser that only plumps skin for the few hours after you apply it. The two headline numbers behind that claim are that it's clinically proven to boost collagen by 44% and elastin by 56%, tested in vitro against untreated skin. Those are genuinely striking figures, and they're also the kind of number that's easy to misread if you don't know what \"in vitro\" actually means in this context.",
+      "In vitro testing means the collagen and elastin increases were measured in a lab setting — skin cells, or a cultured skin model, treated directly with the formula and compared against untreated cells, not a change measured on a volunteer's actual face. It's a legitimate and commonly used first step for understanding what a formula does to living cells' collagen- and elastin-producing machinery, similar in spirit to how the peptide research covered in an earlier post identifies which sequences fibroblasts respond to before that finding is packaged into a finished product. What in vitro testing doesn't tell you is how much of that effect survives contact with intact human skin, penetration, and everything else real-world use adds — which is exactly why a separate, second study matters here.",
+      "That second study is the one actually run on people: an independent clinical study of 31 subjects, applying the cream twice a day for 8 weeks, with expert assessment finding visibly reduced fine lines and wrinkles in as little as 3 days. This is the more directly relevant number if what you care about is what the product does on real skin rather than in a dish — and it's worth reading the two claims as complementary rather than interchangeable, the same distinction worth making with any product carrying more than one \"clinically proven\" style claim on its packaging.",
+      "The \"banking\" language in the name is also doing real work: skin's own collagen and elastin production naturally declines with age, the same decline covered in this blog's piece on hyaluronic acid, which is part of why mature skin loses its plump, springy quality even before visible lines appear. A water cream built around supporting those two structural proteins is aimed at that underlying decline rather than only the surface symptom — moisture held at the surface, the humectant mechanism behind glycerin and hyaluronic acid covered in earlier posts, still matters and still shows up fast, but it's a different job from what the collagen and elastin claims here are about.",
+      "None of this replaces the more established, clinically proven routes to genuine collagen remodelling we offer in-clinic — HIFU's wound-healing response or retinol's direct receptor signalling, both covered elsewhere on this blog, have a longer research track record for that specific outcome. Pro-Collagen Banking Water Cream is a daily-use hydrator with a genuine structural claim behind it, not a replacement for those treatments, and where it fits into an existing routine — and what your skin's own collagen and elastin needs actually look like — is exactly what a Skin Analysis is for.",
+    ],
+  },
+  {
     slug: "teenskin-high-frequency-cold-hammer-explained",
     title: "TeenSkin Treatment: What High Frequency and Cold Hammer Are Actually Doing",
     kicker: "Treatments Explained",
