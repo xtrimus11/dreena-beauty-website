@@ -16,8 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
   ];
 
-  // The four multilingual pages, in Mandarin and Bahasa Malaysia.
-  const localizedPaths = ["/", "/skin-analysis", "/about", "/contact"];
+  // The six multilingual pages, in Mandarin and Bahasa Malaysia.
+  const localizedPaths = ["/", "/skin-analysis", "/about", "/contact", "/treatments", "/dermalogica"];
   const localizedRoutes: MetadataRoute.Sitemap = ["zh", "ms"].flatMap((locale) =>
     localizedPaths.map((path) => ({
       url: `${SITE_URL}/${locale}${path === "/" ? "" : path}`,

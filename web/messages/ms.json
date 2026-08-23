@@ -267,5 +267,225 @@
       "duration": "30–50 minit",
       "summary": "SnowLight Pico Laser mencerahkan pigmentasi dan kloasma sambil mengetatkan dan mengecilkan liang pori."
     }
+  },
+  "treatmentsPage": {
+    "meta": {
+      "title": "Rawatan",
+      "description": "{count} rawatan disusun mengikut jenis kulit — rawatan fasial bertauliah Dermalogica dan teknologi termaju untuk setiap masalah kulit."
+    },
+    "kicker": "Rawatan",
+    "heading": "{count} rawatan, disusun mengikut jenis kulit.",
+    "notSure": "Tidak pasti di mana nak mula?",
+    "takeSkinAnalysis": "Buat Analisis Kulit",
+    "forRecommendation": "untuk cadangan berdasarkan kulit anda.",
+    "categories": {
+      "All Skin Types": "Semua Jenis Kulit",
+      "Acne-Prone Skin": "Kulit Berjerawat",
+      "Aging Skin": "Kulit Berusia",
+      "Sensitive Skin": "Kulit Sensitif",
+      "Pigmentation & Uneven Tone": "Pigmentasi & Warna Kulit Tidak Sekata"
+    },
+    "items": {
+      "teenskin": {
+        "name": "Rawatan TeenSkin",
+        "duration": "45 minit",
+        "benefits": ["Penyingkiran solek + pembersihan berganda", "Penyahkulitan dengan wap panas/sejuk", "Kesudahan frekuensi tinggi & tukul sejuk"]
+      },
+      "skin-boost": {
+        "name": "Rawatan SkinBoost",
+        "duration": "90 minit",
+        "benefits": ["Pilih Menenangkan, Menyucikan atau Melembapkan", "Sesuai untuk tekanan cuaca atau pencemaran", "Menenangkan dan menyegarkan serta-merta"]
+      },
+      "multivitamin-restore-rf": {
+        "name": "Multivitamin Restore dengan RF",
+        "duration": "90–120 minit",
+        "benefits": ["Penyahkulitan kekuatan maksimum", "Teknologi RF meningkatkan penyerapan", "Masker vitamin tertumpu 5x"]
+      },
+      "revive-glow": {
+        "name": "Rawatan Revive Glow",
+        "duration": "75 minit",
+        "benefits": ["Pengelupasan kedalaman cetek", "Membentuk semula tekstur dan melicinkan", "Meningkatkan seri semula jadi kulit"]
+      },
+      "exosome-mts": {
+        "name": "Rawatan Exosome dengan MTS",
+        "duration": "120 minit",
+        "benefits": ["Kulit lebih kental, cerah dan warna lebih sekata", "Mengurangkan garisan halus", "Pemulihan lebih pantas berbanding fasial biasa"]
+      },
+      "acr-treatment": {
+        "name": "Rawatan ACR",
+        "duration": "90 minit",
+        "benefits": ["Mengurangkan jerawat & parut jerawat", "Mengawal penghasilan sebum", "Kesan pengetatan & pengangkatan"]
+      },
+      "clear-matt": {
+        "name": "Rawatan Clear-Matt",
+        "duration": "60 minit",
+        "benefits": ["Mengawal penghasilan sebum", "Larutan GlowFix + pengeluaran komedo", "Sesuai untuk jerawat peringkat awal"]
+      },
+      "pico-plus": {
+        "name": "Pico Plus - Rawatan Laser & Cahaya",
+        "duration": "30–50 minit",
+        "benefits": ["Mengurangkan saiz liang pori & garisan halus", "Merangsang pertumbuhan kolagen", "Tambah ampoule Caviar + masker"]
+      },
+      "bio-cell": {
+        "name": "Rawatan Bio Cell",
+        "duration": "90 minit",
+        "benefits": ["Memperbaiki garisan halus & parut", "Menyekatakan warna kulit", "Tidak mengeringkan, profil keselamatan tinggi"]
+      },
+      "proclear": {
+        "name": "Rawatan Kulit ProClear",
+        "duration": "90 minit",
+        "benefits": ["Pelembutan dan pengeluaran liang pori mendalam", "Menenangkan kemerahan dan keradangan", "Memperbaiki tekstur dan kelembapan"]
+      },
+      "caviar-restore": {
+        "name": "Rawatan Caviar Restore",
+        "duration": "90 minit",
+        "benefits": ["Kesan pengetatan intensif", "Pemakanan mendalam untuk kulit berusia", "Rasa lebih licin dan padat"]
+      },
+      "ionto-stem-cell": {
+        "name": "Rawatan Sel Stem IONTO",
+        "duration": "120 minit",
+        "benefits": ["Merangsang kolagen & elastin", "Mencerahkan dan menyekatakan warna kulit", "Melembapkan dan melicinkan secara mendalam"]
+      },
+      "hifu": {
+        "name": "HIFU",
+        "duration": "60–90 minit",
+        "benefits": ["Mengangkat dan mengetatkan secara jelas", "Merangsang penghasilan kolagen mendalam", "Tiada tempoh pemulihan, tiada pembedahan"]
+      },
+      "lumilift-elite": {
+        "name": "LumiLift Elite",
+        "duration": "120 minit",
+        "benefits": ["Peremajaan struktur", "Peningkatan seri serta-merta", "Hasil pengangkatan jangka panjang"]
+      },
+      "pro-lumin-fusion": {
+        "name": "PRO Lumin Fusion",
+        "duration": "120 minit",
+        "benefits": ["Meningkatkan seri kulit", "Melicinkan garisan halus dan kedutan", "Mendedahkan kulit bercahaya serta-merta"]
+      },
+      "environmental": {
+        "name": "Rawatan Environmental",
+        "duration": "120 minit",
+        "benefits": ["Mengukuhkan penghadang kulit", "Menenangkan kulit terdedah eczema", "Menenangkan kulit reaktif"]
+      },
+      "oxygen": {
+        "name": "Rawatan Oksigen",
+        "duration": "120 minit",
+        "benefits": ["Peningkatan seri serta-merta", "Melembapkan secara mendalam", "Meningkatkan keanjalan kulit"]
+      },
+      "pro-calm": {
+        "name": "Rawatan PRO Calm",
+        "duration": "120 minit",
+        "benefits": ["Mengurangkan kemerahan dan reaktiviti", "Menenangkan rosasea, eczema dan psoriasis", "Mengimbangi semula kulit sensitif"]
+      },
+      "glo2-facial": {
+        "name": "Rawatan Fasial Glo2",
+        "duration": "120 minit",
+        "benefits": ["Kulit lebih kental dan lembap", "Peningkatan kolagen", "Pengurangan penampilan kedutan"]
+      },
+      "whiteglow": {
+        "name": "Rawatan WhiteGlow",
+        "duration": "120 minit",
+        "benefits": ["Pencerahan kulit serta-merta", "Pencerahan tanpa kekeringan", "Rupa wajah bercahaya dan cerah"]
+      },
+      "probright": {
+        "name": "Rawatan Kulit ProBright dengan ProRestore",
+        "duration": "60 minit",
+        "benefits": ["Pengurangan kesan gelap", "Warna kulit lebih cerah dan sekata", "Memulihkan penghadang kulit dengan ProRestore"]
+      },
+      "hollywood-peel": {
+        "name": "Rawatan Hollywood Peel",
+        "duration": "120 minit",
+        "benefits": ["Memperbaiki warna, tekstur & keanjalan", "Mengecilkan liang pori", "Mengurangkan kemerahan akibat jerawat"]
+      },
+      "pico-laser": {
+        "name": "Pico Laser dengan ProRestore",
+        "duration": "30–50 minit",
+        "benefits": ["Mencerahkan pigmentasi & kloasma", "Memperbaiki parut jerawat", "Mengetat dan mengangkat kulit"]
+      }
+    }
+  },
+  "dermalogicaPage": {
+    "meta": {
+      "title": "Dermalogica",
+      "description": "Pengedar eksklusif Dermalogica di Seremban — penjagaan kulit profesional di sebalik setiap rawatan di d'reena beauty."
+    },
+    "hero": {
+      "kicker": "Pengedar Eksklusif Dermalogica",
+      "heading": "Penjagaan kulit profesional di sebalik setiap rawatan",
+      "body": "Setiap fasial di d'reena dibina atas asas Dermalogica — jenama kesihatan kulit gred profesional yang dipercayai oleh ahli terapi di seluruh dunia. Sebagai pengedar eksklusif, kami membawa keseluruhan rangkaian profesional berserta latihan yang berkaitan, supaya apa yang menyentuh kulit anda adalah preskripsi, bukan tekaan.",
+      "tag1": "Pengedar eksklusif",
+      "tag2": "Ahli terapi bertauliah",
+      "tag3": "Formula profesional sahaja"
+    },
+    "newIn": {
+      "kicker": "Ketibaan Baharu",
+      "heading": "Baru tiba di d'reena",
+      "body": "Penambahan terbaru pada rangkaian profesional — tanya ahli terapi anda untuk menggabungkannya ke dalam rawatan atau rutin di rumah anda seterusnya.",
+      "newBadge": "Baharu"
+    },
+    "products": {
+      "futurecode-booster": {
+        "tagline": "Pembetulan kerosakan + serum jangka hayat",
+        "description": "Diilhamkan oleh prinsip biohacking — menyokong jangka hayat kulit dengan meningkatkan pemulihan semula jadi dan membantu mengurangkan tanda-tanda kerosakan berkaitan DNA yang kelihatan: garisan yang semakin dalam, tekstur kasar dan perubahan warna."
+      },
+      "neurotouch": {
+        "tagline": "Minyak pengukiran berkuasa neurosains",
+        "description": "Penjagaan kulit pengukiran wajah yang dipertingkat dengan neurosains — terbukti secara klinikal dapat memulihkan simetri wajah secara ketara untuk rupa kulit yang lebih terukir dalam tempoh 8 minggu."
+      },
+      "water-cream": {
+        "tagline": "Pelembap yang mengembungkan + memelihara",
+        "description": "Terbukti secara klinikal meningkatkan kolagen sebanyak 44% dan elastin sebanyak 56%, dengan garisan halus dan kedutan berkurangan secara ketara dalam masa serendah 3 hari."
+      }
+    },
+    "why": {
+      "kicker": "Kenapa Dermalogica",
+      "heading": "Kesihatan kulit, bukan kosmetik",
+      "body": "Dermalogica merumuskan untuk kesihatan kulit dan bukannya kesan kosmetik segera — itulah sebabnya ia menjadi teras kepada menu rawatan profesional dan bukannya rak runcit."
+    },
+    "pillars": [
+      {
+        "kicker": "Formulasi",
+        "title": "Tiada bahan mengiritasi, mengikut reka bentuk",
+        "body": "Bebas daripada haruman dan pewarna tiruan, serta bahan mengiritasi biasa yang secara senyap mengekalkan kulit sensitif menjadi reaktif."
+      },
+      {
+        "kicker": "Pendidikan",
+        "title": "Dipimpin ahli terapi, sentiasa",
+        "body": "Rangkaian profesional hanya tersedia melalui ahli terapi terlatih — pasukan kami bertauliah dan dilatih semula seiring evolusi formula."
+      },
+      {
+        "kicker": "Hasil",
+        "title": "Preskripsi untuk kulit anda",
+        "body": "Produk dipilih mengikut kulit, mengikut setiap lawatan — rawatan dan rutin di rumah anda berfungsi sebagai satu pelan, bukan dua."
+      }
+    ],
+    "ranges": {
+      "kicker": "Rangkaian Profesional",
+      "heading": "Apa yang kami gunakan",
+      "body": "Pengenalan ringkas dan bukannya katalog — ahli terapi anda akan memilih produk yang tepat semasa konsultasi."
+    },
+    "rangeItems": {
+      "Daily Skin Health": "Teras harian — pembersih, penyahkulit, pelembap dan SPF yang membentuk asas hampir setiap rutin yang kami preskripsikan.",
+      "Active Clearing": "Untuk kulit mudah berjerawat dan tersumbat, termasuk jerawat dewasa yang turut menunjukkan tanda-tanda awal penuaan.",
+      "PowerBright": "Pencerahan bersasar untuk pigmentasi, kesan gelap dan warna kulit tidak sekata — teras kepada rawatan pencerahan kami.",
+      "UltraCalming": "Pembaikan penghadang dan kelegaan untuk kulit sensitif, reaktif dan mudah kemerahan.",
+      "AGE Smart & Retinol": "Bahan aktif pengetatan, pelicinan dan penyokong kolagen untuk kulit yang menunjukkan garisan, kelonggaran dan kehilangan kepadatan.",
+      "Professional-only": "Penyahkulit, masker dan penggalak berkekuatan bilik rawatan yang tidak pernah dijual untuk kegunaan di rumah — sebab utama fasial profesional mengatasi rutin di rumah."
+    },
+    "faceMapping": {
+      "kicker": "Pemetaan Wajah",
+      "heading": "Kulit anda, dibaca zon demi zon",
+      "body": "Setiap rawatan bermula dengan analisis Pemetaan Wajah Dermalogica — ahli terapi anda membaca wajah anda zon demi zon untuk melihat apa yang sebenarnya berlaku, kemudian membina rawatan berdasarkannya.",
+      "cta": "Mula dengan Analisis Kulit",
+      "steps": [
+        "Analisis zon demi zon keadaan sebenar kulit anda.",
+        "Rawatan dipilih dan diselaraskan pada hari tersebut.",
+        "Rutin di rumah dipreskripsikan untuk mengekalkan hasil."
+      ]
+    },
+    "shop": {
+      "heading": "Beli-belah rangkaian di pusat kami",
+      "body": "Sebagai pengedar eksklusif, kami menstok rangkaian profesional di pusat Seremban kami. Hubungi kami untuk semakan ketersediaan, atau minta ahli terapi anda mempreskripsikan pada lawatan seterusnya anda.",
+      "cta": "Tanya Tentang Produk"
+    }
   }
 }

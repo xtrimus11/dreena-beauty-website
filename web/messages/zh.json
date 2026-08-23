@@ -267,5 +267,225 @@
       "duration": "30至50分钟",
       "summary": "SnowLight 皮秒激光淡化色素沉淀与黄褐斑，同时紧致肌肤、缩小毛孔。"
     }
+  },
+  "treatmentsPage": {
+    "meta": {
+      "title": "护理疗程",
+      "description": "{count}项依肤质分类的护理疗程——Dermalogica认证面部护理与先进科技，满足各种肌肤问题。"
+    },
+    "kicker": "护理疗程",
+    "heading": "{count}项护理疗程，依肤质分类。",
+    "notSure": "不确定从何开始？",
+    "takeSkinAnalysis": "进行皮肤分析",
+    "forRecommendation": "根据你的肌肤状况获得建议。",
+    "categories": {
+      "All Skin Types": "所有肤质",
+      "Acne-Prone Skin": "痘痘肌",
+      "Aging Skin": "熟龄肌",
+      "Sensitive Skin": "敏感肌",
+      "Pigmentation & Uneven Tone": "色素与肤色不均"
+    },
+    "items": {
+      "teenskin": {
+        "name": "TeenSkin 青少年护理疗程",
+        "duration": "45分钟",
+        "benefits": ["卸妆 + 双重洁面", "冷热蒸汽去角质", "高频仪与冷喷收尾"]
+      },
+      "skin-boost": {
+        "name": "SkinBoost 焕活护理疗程",
+        "duration": "90分钟",
+        "benefits": ["可选舒缓、净化或保湿", "适合应对天气或污染压力", "即时舒缓、焕新肌肤"]
+      },
+      "multivitamin-restore-rf": {
+        "name": "复合维他命RF修护护理疗程",
+        "duration": "90至120分钟",
+        "benefits": ["高效强度去角质", "RF科技加强渗透", "5倍浓缩维他命面膜"]
+      },
+      "revive-glow": {
+        "name": "Revive Glow 焕采护理疗程",
+        "duration": "75分钟",
+        "benefits": ["表层深度换肤", "重塑肌肤纹理", "提升肌肤天然光泽"]
+      },
+      "exosome-mts": {
+        "name": "MTS外泌体护理疗程",
+        "duration": "120分钟",
+        "benefits": ["肌肤更紧致、更亮泽、肤色更均匀", "减少细纹外观", "比单纯护理疗程恢复更快"]
+      },
+      "acr-treatment": {
+        "name": "ACR细胞焕活护理疗程",
+        "duration": "90分钟",
+        "benefits": ["减少痘痘与痘疤", "控制皮脂分泌", "紧致提拉效果"]
+      },
+      "clear-matt": {
+        "name": "Clear-Matt 净透控油护理疗程",
+        "duration": "60分钟",
+        "benefits": ["控制皮脂分泌", "GlowFix焕肤液 + 清除粉刺", "适合初期痘痘肌"]
+      },
+      "pico-plus": {
+        "name": "Pico Plus 激光光疗护理疗程",
+        "duration": "30至50分钟",
+        "benefits": ["缩小毛孔、减少细纹", "刺激胶原蛋白增生", "加购鱼子酱安瓶 + 面膜"]
+      },
+      "bio-cell": {
+        "name": "Bio Cell 生物细胞焕活护理疗程",
+        "duration": "90分钟",
+        "benefits": ["改善细纹与疤痕", "均匀肤色", "不干燥，高安全性"]
+      },
+      "proclear": {
+        "name": "ProClear 净痘护理疗程",
+        "duration": "90分钟",
+        "benefits": ["深层软化毛孔并清除粉刺", "舒缓泛红与发炎", "改善肌肤纹理与保湿度"]
+      },
+      "caviar-restore": {
+        "name": "鱼子酱修护护理疗程",
+        "duration": "90分钟",
+        "benefits": ["强效紧致效果", "深层滋养熟龄肌肤", "肌肤明显更细致紧实"]
+      },
+      "ionto-stem-cell": {
+        "name": "IONTO 干细胞导入护理疗程",
+        "duration": "120分钟",
+        "benefits": ["刺激胶原蛋白与弹力蛋白增生", "提亮并均匀肤色", "深层保湿、抚平肌肤"]
+      },
+      "hifu": {
+        "name": "HIFU 聚焦超声波拉提",
+        "duration": "60至90分钟",
+        "benefits": ["明显提拉紧致", "刺激深层胶原蛋白增生", "无需恢复期，无需手术"]
+      },
+      "lumilift-elite": {
+        "name": "LumiLift Elite 极光紧肤护理疗程",
+        "duration": "120分钟",
+        "benefits": ["结构性肌肤焕活", "即时提亮光泽", "长效紧致效果"]
+      },
+      "pro-lumin-fusion": {
+        "name": "PRO Lumin Fusion 光感导入护理疗程",
+        "duration": "120分钟",
+        "benefits": ["提升肌肤光泽度", "抚平细纹与皱纹", "即时展现透亮肌肤"]
+      },
+      "environmental": {
+        "name": "环境防护护理疗程",
+        "duration": "120分钟",
+        "benefits": ["强化肌肤屏障", "舒缓湿疹型肌肤", "镇静敏感肌肤"]
+      },
+      "oxygen": {
+        "name": "氧气护理疗程",
+        "duration": "120分钟",
+        "benefits": ["即时提亮肌肤", "深层保湿", "改善肌肤弹性"]
+      },
+      "pro-calm": {
+        "name": "PRO Calm 舒缓护理疗程",
+        "duration": "120分钟",
+        "benefits": ["减少泛红与敏感反应", "舒缓玫瑰痤疮、湿疹与牛皮癣", "重新平衡敏感肌肤"]
+      },
+      "glo2-facial": {
+        "name": "Glo2 氧气焕肤护理疗程",
+        "duration": "120分钟",
+        "benefits": ["肌肤饱满保湿", "增加胶原蛋白", "减少细纹外观"]
+      },
+      "whiteglow": {
+        "name": "WhiteGlow 亮白护理疗程",
+        "duration": "120分钟",
+        "benefits": ["即时亮白肌肤", "亮白不干燥", "肌肤透亮有光泽"]
+      },
+      "probright": {
+        "name": "ProBright 亮采护理疗程配合 ProRestore",
+        "duration": "60分钟",
+        "benefits": ["减少黑斑", "肤色更明亮均匀", "以ProRestore修护肌肤屏障"]
+      },
+      "hollywood-peel": {
+        "name": "好莱坞焕肤护理疗程",
+        "duration": "120分钟",
+        "benefits": ["改善肤色、纹理与弹性", "收缩毛孔", "减少痘痘引起的泛红"]
+      },
+      "pico-laser": {
+        "name": "SnowLight 皮秒激光配合 ProRestore",
+        "duration": "30至50分钟",
+        "benefits": ["淡化色素沉淀与黄褐斑", "改善痘疤", "紧致提拉肌肤"]
+      }
+    }
+  },
+  "dermalogicaPage": {
+    "meta": {
+      "title": "Dermalogica",
+      "description": "独家 Dermalogica 代理商，位于芙蓉——d'reena beauty 每项护理疗程背后的专业护肤品牌。"
+    },
+    "hero": {
+      "kicker": "独家 Dermalogica 代理商",
+      "heading": "每项护理疗程背后的专业护肤品牌",
+      "body": "d'reena 的每项面部护理都以 Dermalogica 为基础——这是全球治疗师信赖的专业级肌肤健康品牌。作为独家代理商，我们提供完整的专业系列产品及相关培训，确保用在你肌肤上的产品都是经过专业判断，而非随意猜测。",
+      "tag1": "独家代理商",
+      "tag2": "认证治疗师",
+      "tag3": "专业级配方"
+    },
+    "newIn": {
+      "kicker": "新品上市",
+      "heading": "d'reena 全新引进",
+      "body": "专业系列最新产品——欢迎向你的治疗师咨询，将其加入下次护理疗程或日常保养程序。",
+      "newBadge": "新品"
+    },
+    "products": {
+      "futurecode-booster": {
+        "tagline": "损伤修复 + 抗老精华",
+        "description": "灵感源自生物黑客理念——透过增强肌肤天然修复力，支持肌肤长效健康，并有助减少DNA相关损伤的可见迹象：加深的细纹、粗糙纹理与色素沉淀。"
+      },
+      "neurotouch": {
+        "tagline": "神经科学动力雕塑精华油",
+        "description": "结合神经科学的脸部雕塑护肤——临床证实持续使用8周后，能明显恢复脸部对称，呈现更立体的轮廓感。"
+      },
+      "water-cream": {
+        "tagline": "饱满保湿 + 抗老锁水",
+        "description": "临床证实可提升胶原蛋白44%、弹力蛋白56%，短短3天内即可明显减少细纹与皱纹。"
+      }
+    },
+    "why": {
+      "kicker": "为什么选择 Dermalogica",
+      "heading": "肌肤健康，而非表面美容",
+      "body": "Dermalogica 的配方以肌肤健康为核心，而非追求短暂的美容效果——这正是它成为专业护理疗程核心，而非零售货架商品的原因。"
+    },
+    "pillars": [
+      {
+        "kicker": "配方理念",
+        "title": "从源头杜绝刺激成分",
+        "body": "不含人工香精与色素，也不含常见的刺激成分，避免敏感肌悄悄受到刺激。"
+      },
+      {
+        "kicker": "专业培训",
+        "title": "始终由专业治疗师主导",
+        "body": "专业系列产品仅透过受训治疗师提供——我们的团队持续接受认证与再培训，紧跟配方更新。"
+      },
+      {
+        "kicker": "真实效果",
+        "title": "为你的肌肤量身开处方",
+        "body": "每次到访都根据你的肌肤状况选择产品——护理疗程与居家保养程序合而为一，而非各自为政。"
+      }
+    ],
+    "ranges": {
+      "kicker": "专业系列产品",
+      "heading": "我们使用的产品系列",
+      "body": "这只是简单介绍，并非完整目录——你的治疗师会在咨询时为你选定确切产品。"
+    },
+    "rangeItems": {
+      "Daily Skin Health": "日常护肤的核心——洁面、去角质、保湿和防晒产品，构成我们几乎每套处方的基础。",
+      "Active Clearing": "适合易长痘、毛孔阻塞的肌肤，包括同时出现初期老化迹象的成人痘痘肌。",
+      "PowerBright": "针对色素沉淀、黑斑与肤色不均的强效亮白系列——是我们亮白护理疗程的核心。",
+      "UltraCalming": "为敏感、易反应及易泛红的肌肤提供屏障修复与舒缓。",
+      "AGE Smart & Retinol": "针对出现细纹、松弛与肌肤密度流失的紧致、抚纹与支持胶原蛋白生成的活性成分。",
+      "Professional-only": "疗程室专用强度的去角质产品、面膜与加强精华，从不对外零售——这正是专业护理疗程效果胜于居家保养的原因。"
+    },
+    "faceMapping": {
+      "kicker": "面部分区检测",
+      "heading": "逐区解读你的肌肤",
+      "body": "每项护理疗程都从 Dermalogica 面部分区分析开始——你的治疗师会逐区解读你的肌肤真实状况，并据此为你打造护理疗程方案。",
+      "cta": "从皮肤分析开始",
+      "steps": [
+        "逐区分析你肌肤的真实状况。",
+        "当天即选定并调整护理疗程内容。",
+        "为你开具居家保养处方，维持护理效果。"
+      ]
+    },
+    "shop": {
+      "heading": "门店选购专业系列",
+      "body": "作为独家代理商，我们在芙蓉中心备有完整专业系列产品。欢迎私讯查询库存，或在下次到访时请治疗师为你开具处方。",
+      "cta": "咨询产品详情"
+    }
   }
 }

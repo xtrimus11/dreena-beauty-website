@@ -9,21 +9,20 @@ import { Link } from "@/i18n/navigation";
 import { WHATSAPP_URL } from "@/lib/site";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-// Same as Navbar.tsx, but for the four translated pages: labels come from
-// messages, and links to the three untranslated pages (Treatments,
-// Dermalogica, Blog) use plain next/link with a plain href — those pages
-// have no locale prefix — while Skin Analysis/About/Contact use the
-// locale-aware Link so the current language carries over.
+// Same as Navbar.tsx, but for the six translated pages: labels come from
+// messages, and the link to Blog (still untranslated) uses plain next/link
+// with a plain href — that page has no locale prefix — while everything
+// else uses the locale-aware Link so the current language carries over.
 export default function NavbarTranslated() {
   const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   const LINKS = [
-    { label: t("treatments"), href: "/treatments", localized: false },
+    { label: t("treatments"), href: "/treatments", localized: true },
     { label: t("skinAnalysis"), href: "/skin-analysis", localized: true },
     { label: t("about"), href: "/about", localized: true },
-    { label: t("dermalogica"), href: "/dermalogica", localized: false },
+    { label: t("dermalogica"), href: "/dermalogica", localized: true },
     { label: t("blog"), href: "/blog", localized: false },
     { label: t("contact"), href: "/contact", localized: true },
   ];

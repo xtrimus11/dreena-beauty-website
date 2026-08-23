@@ -267,5 +267,225 @@
       "duration": "30–50 min",
       "summary": "SnowLight Pico Laser lightens pigmentation and chloasma while firming and shrinking pores."
     }
+  },
+  "treatmentsPage": {
+    "meta": {
+      "title": "Treatments",
+      "description": "{count} treatments organised by skin type — Dermalogica-certified facials and advanced technology for every skin concern."
+    },
+    "kicker": "Treatments",
+    "heading": "{count} treatments, organised by skin type.",
+    "notSure": "Not sure where to start?",
+    "takeSkinAnalysis": "Take the Skin Analysis",
+    "forRecommendation": "for a recommendation based on your skin.",
+    "categories": {
+      "All Skin Types": "All Skin Types",
+      "Acne-Prone Skin": "Acne-Prone Skin",
+      "Aging Skin": "Aging Skin",
+      "Sensitive Skin": "Sensitive Skin",
+      "Pigmentation & Uneven Tone": "Pigmentation & Uneven Tone"
+    },
+    "items": {
+      "teenskin": {
+        "name": "TeenSkin Treatment",
+        "duration": "45 min",
+        "benefits": ["Make-up removal + double cleanse", "Exfoliation with hot/cold steam", "High frequency & cold hammer finish"]
+      },
+      "skin-boost": {
+        "name": "SkinBoost Treatment",
+        "duration": "90 min",
+        "benefits": ["Choose Soothing, Purifying or Hydrating", "Great for weather or pollution stress", "Calms and refreshes on the spot"]
+      },
+      "multivitamin-restore-rf": {
+        "name": "Multivitamin Restore with RF",
+        "duration": "90–120 min",
+        "benefits": ["Maximum-strength exfoliation", "RF technology boosts penetration", "5x concentrated vitamin masque"]
+      },
+      "revive-glow": {
+        "name": "Revive Glow Treatment",
+        "duration": "75 min",
+        "benefits": ["Superficial-depth peel", "Re-textures and smooths", "Boosts skin's natural glow"]
+      },
+      "exosome-mts": {
+        "name": "Exosome Treatment with MTS",
+        "duration": "120 min",
+        "benefits": ["Visibly firmer, brighter, more even-toned skin", "Reduces the look of fine lines", "Faster recovery than standalone facials"]
+      },
+      "acr-treatment": {
+        "name": "ACR Treatment",
+        "duration": "90 min",
+        "benefits": ["Reduces acne & acne scars", "Controls sebum production", "Firming & lifting effect"]
+      },
+      "clear-matt": {
+        "name": "Clear-Matt Treatment",
+        "duration": "60 min",
+        "benefits": ["Controls sebum production", "GlowFix solution + extraction", "Great for stage-1 acne"]
+      },
+      "pico-plus": {
+        "name": "Pico Plus - Laser & Light Treatment",
+        "duration": "30–50 min",
+        "benefits": ["Reduced pore size & fine lines", "Stimulates collagen growth", "Add Caviar ampoule + masque"]
+      },
+      "bio-cell": {
+        "name": "Bio Cell Treatment",
+        "duration": "90 min",
+        "benefits": ["Improves fine lines & scars", "Evens out skin tone", "Non-drying, high safety profile"]
+      },
+      "proclear": {
+        "name": "ProClear Skin Treatment",
+        "duration": "90 min",
+        "benefits": ["Deep pore softening & extraction", "Calms redness and inflammation", "Improves texture and hydration"]
+      },
+      "caviar-restore": {
+        "name": "Caviar Restore Treatment",
+        "duration": "90 min",
+        "benefits": ["Intensive firming effect", "Deep nourishment for mature skin", "Visibly smoother, denser feel"]
+      },
+      "ionto-stem-cell": {
+        "name": "IONTO Stem Cell Treatment",
+        "duration": "120 min",
+        "benefits": ["Stimulates collagen & elastin", "Brightens and evens skin tone", "Deeply hydrates and smooths"]
+      },
+      "hifu": {
+        "name": "HIFU - Ultratherapy",
+        "duration": "60–90 min",
+        "benefits": ["Lifts and tightens visibly", "Stimulates deep collagen production", "No downtime, no surgery"]
+      },
+      "lumilift-elite": {
+        "name": "LumiLift Elite",
+        "duration": "120 min",
+        "benefits": ["Structural rejuvenation", "Instant luminosity boost", "Long-term lifting results"]
+      },
+      "pro-lumin-fusion": {
+        "name": "PRO Lumin Fusion",
+        "duration": "120 min",
+        "benefits": ["Improves skin luminosity", "Smooths fine lines and wrinkles", "Instantly reveals radiant skin"]
+      },
+      "environmental": {
+        "name": "Environmental Treatment",
+        "duration": "120 min",
+        "benefits": ["Strengthens the skin barrier", "Soothes eczema-prone skin", "Calms reactive skin"]
+      },
+      "oxygen": {
+        "name": "Oxygen Treatment",
+        "duration": "120 min",
+        "benefits": ["Instant radiance boost", "Deeply hydrating", "Improves elasticity"]
+      },
+      "pro-calm": {
+        "name": "PRO Calm Treatment",
+        "duration": "120 min",
+        "benefits": ["Reduces redness and reactivity", "Soothes rosacea, eczema and psoriasis", "Rebalances sensitive skin"]
+      },
+      "glo2-facial": {
+        "name": "Glo2 Facial Treatment",
+        "duration": "120 min",
+        "benefits": ["Skin plumping and hydrating", "Increased collagen", "Reduced appearance of wrinkles"]
+      },
+      "whiteglow": {
+        "name": "WhiteGlow Treatment",
+        "duration": "120 min",
+        "benefits": ["Instant skin lightening", "Brightening without dryness", "Luminous, glowing complexion"]
+      },
+      "probright": {
+        "name": "ProBright Skin Treatment with ProRestore",
+        "duration": "60 min",
+        "benefits": ["Reduced dark spots", "Brighter, more even skin tone", "Restores skin barrier with ProRestore"]
+      },
+      "hollywood-peel": {
+        "name": "Hollywood Peel Treatment",
+        "duration": "120 min",
+        "benefits": ["Improves tone, texture & elasticity", "Shrinks pores", "Reduces redness from acne"]
+      },
+      "pico-laser": {
+        "name": "Pico Laser with ProRestore",
+        "duration": "45 min",
+        "benefits": ["Lightens pigmentation & chloasma", "Improves acne scars", "Firms and lifts skin"]
+      }
+    }
+  },
+  "dermalogicaPage": {
+    "meta": {
+      "title": "Dermalogica",
+      "description": "Exclusive Dermalogica distributor in Seremban — the professional skin care behind every treatment at d'reena beauty."
+    },
+    "hero": {
+      "kicker": "Exclusive Dermalogica Distributor",
+      "heading": "The professional skin care behind every treatment",
+      "body": "Every facial at d'reena is built on Dermalogica — the professional-grade skin health brand trusted by therapists worldwide. As an exclusive distributor, we carry the full professional range and the training that goes with it, so what touches your skin is prescribed, not guessed.",
+      "tag1": "Exclusive distributor",
+      "tag2": "Certified therapists",
+      "tag3": "Professional-only formulas"
+    },
+    "newIn": {
+      "kicker": "New In",
+      "heading": "Just landed at d'reena",
+      "body": "The newest additions to the professional range — ask your therapist to work these into your next treatment or home routine.",
+      "newBadge": "New"
+    },
+    "products": {
+      "futurecode-booster": {
+        "tagline": "Damage correction + longevity serum",
+        "description": "Inspired by biohacking principles — supports skin's longevity by enhancing natural repair and helping reduce visible signs of DNA-related damage: deepening lines, coarse texture and discolouration."
+      },
+      "neurotouch": {
+        "tagline": "Neuroscience-powered sculpting oil",
+        "description": "Facial sculpting skincare elevated by neuroscience — clinically shown to visibly restore facial symmetry for more sculpted-looking skin over an 8-week course."
+      },
+      "water-cream": {
+        "tagline": "Plumping + preserving hydrator",
+        "description": "Clinically proven to boost collagen by 44% and elastin by 56%, with visibly reduced fine lines and wrinkles in as little as 3 days."
+      }
+    },
+    "why": {
+      "kicker": "Why Dermalogica",
+      "heading": "Skin health, not cosmetics",
+      "body": "Dermalogica formulates for skin health rather than quick cosmetic effect — which is why it sits at the centre of a professional treatment menu rather than a retail shelf."
+    },
+    "pillars": [
+      {
+        "kicker": "Formulation",
+        "title": "No irritants, by design",
+        "body": "Free from artificial fragrance and colour, and the common irritants that quietly keep sensitive skin reactive."
+      },
+      {
+        "kicker": "Education",
+        "title": "Therapist-led, always",
+        "body": "The professional range is only available through trained therapists — our team is certified and re-trained as formulas evolve."
+      },
+      {
+        "kicker": "Results",
+        "title": "Prescribed to your skin",
+        "body": "Products are selected per skin, per visit — your treatment and your home routine work as one plan, not two."
+      }
+    ],
+    "ranges": {
+      "kicker": "The Professional Ranges",
+      "heading": "What we work with",
+      "body": "A short introduction rather than a catalogue — your therapist selects the exact products at consultation."
+    },
+    "rangeItems": {
+      "Daily Skin Health": "The everyday core — cleansers, exfoliants, moisturisers and SPF that form the base of almost every routine we prescribe.",
+      "Active Clearing": "For breakout-prone and congested skin, including adult acne that also shows early signs of ageing.",
+      "PowerBright": "Targeted brightening for pigmentation, dark spots and uneven tone — the backbone of our brightening treatments.",
+      "UltraCalming": "Barrier repair and relief for sensitive, reactive and redness-prone skin.",
+      "AGE Smart & Retinol": "Firming, smoothing and collagen-supporting actives for skin showing lines, laxity and loss of density.",
+      "Professional-only": "Treatment-room strength exfoliants, masques and boosters that are never sold for home use — the reason a professional facial outperforms a home routine."
+    },
+    "faceMapping": {
+      "kicker": "Face Mapping",
+      "heading": "Your skin, read zone by zone",
+      "body": "Every treatment starts with a Dermalogica Face Mapping analysis — your therapist reads your face zone by zone to see what's actually happening, then builds the treatment around it.",
+      "cta": "Start with the Skin Analysis",
+      "steps": [
+        "Zone-by-zone analysis of your skin's real condition.",
+        "Treatment selected and adjusted on the day.",
+        "A home routine prescribed to hold the result."
+      ]
+    },
+    "shop": {
+      "heading": "Shop the range in-house",
+      "body": "As an exclusive distributor we stock the professional range at our Seremban centre. Message us for availability, or ask your therapist to prescribe at your next visit.",
+      "cta": "Ask About Products"
+    }
   }
 }

@@ -5,17 +5,17 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { WHATSAPP_URL } from "@/lib/site";
 
-// Same as Footer.tsx, but for the four translated pages — same
+// Same as Footer.tsx, but for the six translated pages — same
 // localized-vs-plain link split as NavbarTranslated.
 export default function FooterTranslated() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
 
   const EXPLORE = [
-    { label: nav("treatments"), href: "/treatments", localized: false },
+    { label: nav("treatments"), href: "/treatments", localized: true },
     { label: nav("skinAnalysis"), href: "/skin-analysis", localized: true },
     { label: t("aboutUs"), href: "/about", localized: true },
-    { label: nav("dermalogica"), href: "/dermalogica", localized: false },
+    { label: nav("dermalogica"), href: "/dermalogica", localized: true },
     { label: nav("blog"), href: "/blog", localized: false },
   ];
 

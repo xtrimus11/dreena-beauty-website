@@ -1,25 +1,35 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { NEW_PRODUCTS, PILLARS, RANGES, FACE_MAPPING_STEPS } from "@/data/dermalogica";
-import Footer from "@/components/Footer";
+import { getTranslations } from "next-intl/server";
+import { NEW_PRODUCTS, RANGES } from "@/data/dermalogica";
+import FooterTranslated from "@/components/FooterTranslated";
 import JsonLd from "@/components/JsonLd";
+import { Link } from "@/i18n/navigation";
 import { WHATSAPP_URL } from "@/lib/site";
-import { breadcrumbJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, localizedAlternates } from "@/lib/seo";
 
-const TITLE = "Dermalogica";
-const DESCRIPTION =
-  "Exclusive Dermalogica distributor in Seremban — the professional skin care behind every treatment at d'reena beauty.";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "dermalogicaPage.meta" });
+  const alternates = localizedAlternates("/dermalogica", locale);
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates,
+    openGraph: { title: t("title"), description: t("description"), url: alternates.canonical },
+    twitter: { title: t("title"), description: t("description") },
+  };
+}
 
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  alternates: { canonical: "/dermalogica" },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: "/dermalogica" },
-  twitter: { title: TITLE, description: DESCRIPTION },
-};
+export default async function DermalogicaPage() {
+  const t = await getTranslations("dermalogicaPage");
+  const pillars = t.raw("pillars") as { kicker: string; title: string; body: string }[];
+  const faceMappingSteps = t.raw("faceMapping.steps") as string[];
 
-export default function DermalogicaPage() {
   return (
     <main>
       <JsonLd
@@ -29,28 +39,21 @@ export default function DermalogicaPage() {
       <section className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-6 pb-16 pt-40 md:grid-cols-[minmax(0,1fr)_420px] md:items-center md:gap-14 md:px-10 md:pt-48">
         <div>
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
-            Exclusive Dermalogica Distributor
+            {t("hero.kicker")}
           </span>
           <h1 className="mt-4 text-balance text-4xl font-medium leading-[1.08] tracking-tight md:text-5xl">
-            The professional skin care behind every treatment
+            {t("hero.heading")}
           </h1>
-          <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-muted">
-            Every facial at d&apos;reena is built on Dermalogica — the professional-grade skin
-            health brand trusted by therapists worldwide. As an exclusive distributor, we carry
-            the full professional range and the training that goes with it, so what touches your
-            skin is prescribed, not guessed.
-          </p>
+          <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-muted">{t("hero.body")}</p>
           <div className="mt-6 flex flex-wrap gap-2">
-            {["Exclusive distributor", "Certified therapists", "Professional-only formulas"].map(
-              (tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-border-strong px-4 py-2 text-xs font-medium text-foreground/70"
-                >
-                  {tag}
-                </span>
-              )
-            )}
+            {[t("hero.tag1"), t("hero.tag2"), t("hero.tag3")].map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-border-strong px-4 py-2 text-xs font-medium text-foreground/70"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
 
@@ -70,15 +73,12 @@ export default function DermalogicaPage() {
       <section className="border-t border-border px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1600px]">
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
-            New In
+            {t("newIn.kicker")}
           </span>
           <h2 className="mt-4 text-balance text-3xl font-medium leading-[1.1] tracking-tight md:text-4xl">
-            Just landed at d&apos;reena
+            {t("newIn.heading")}
           </h2>
-          <p className="mt-4 max-w-[60ch] text-base text-muted">
-            The newest additions to the professional range — ask your therapist to work these
-            into your next treatment or home routine.
-          </p>
+          <p className="mt-4 max-w-[60ch] text-base text-muted">{t("newIn.body")}</p>
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
             {NEW_PRODUCTS.map((p) => (
@@ -94,13 +94,17 @@ export default function DermalogicaPage() {
                 </div>
                 <div className="flex flex-col gap-1.5 p-6">
                   <span className="w-fit rounded-full bg-taupe-dark px-3 py-1 text-[10px] font-medium uppercase tracking-[0.1em] text-cream">
-                    New
+                    {t("newIn.newBadge")}
                   </span>
                   <h3 className="mt-2 text-lg font-medium tracking-tight text-foreground">
                     {p.name}
                   </h3>
-                  <span className="text-xs font-medium text-taupe-dark">{p.tagline}</span>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{p.description}</p>
+                  <span className="text-xs font-medium text-taupe-dark">
+                    {t(`products.${p.slug}.tagline`)}
+                  </span>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                    {t(`products.${p.slug}.description`)}
+                  </p>
                 </div>
               </div>
             ))}
@@ -112,19 +116,15 @@ export default function DermalogicaPage() {
       <section className="border-t border-border px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1600px]">
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
-            Why Dermalogica
+            {t("why.kicker")}
           </span>
           <h2 className="mt-4 text-balance text-3xl font-medium leading-[1.1] tracking-tight md:text-4xl">
-            Skin health, not cosmetics
+            {t("why.heading")}
           </h2>
-          <p className="mt-4 max-w-[60ch] text-base text-muted">
-            Dermalogica formulates for skin health rather than quick cosmetic effect — which is
-            why it sits at the centre of a professional treatment menu rather than a retail
-            shelf.
-          </p>
+          <p className="mt-4 max-w-[60ch] text-base text-muted">{t("why.body")}</p>
 
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {PILLARS.map((pillar) => (
+            {pillars.map((pillar) => (
               <div key={pillar.title} className="flex flex-col gap-2 border-t border-border pt-6">
                 <span className="text-xs font-medium uppercase tracking-[0.1em] text-taupe-dark">
                   {pillar.kicker}
@@ -143,15 +143,12 @@ export default function DermalogicaPage() {
       <section className="border-t border-border px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1600px]">
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
-            The Professional Ranges
+            {t("ranges.kicker")}
           </span>
           <h2 className="mt-4 text-balance text-3xl font-medium leading-[1.1] tracking-tight md:text-4xl">
-            What we work with
+            {t("ranges.heading")}
           </h2>
-          <p className="mt-4 max-w-[60ch] text-base text-muted">
-            A short introduction rather than a catalogue — your therapist selects the exact
-            products at consultation.
-          </p>
+          <p className="mt-4 max-w-[60ch] text-base text-muted">{t("ranges.body")}</p>
 
           <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {RANGES.map((range) => (
@@ -159,7 +156,9 @@ export default function DermalogicaPage() {
                 <h3 className="text-base font-medium tracking-tight text-foreground">
                   {range.name}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{range.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {t(`rangeItems.${range.name}`)}
+                </p>
               </div>
             ))}
           </div>
@@ -171,26 +170,24 @@ export default function DermalogicaPage() {
         <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 rounded-sm bg-champagne p-8 md:grid-cols-[minmax(0,1fr)_360px] md:items-center md:p-14">
           <div>
             <span className="text-xs font-medium uppercase tracking-[0.25em] text-taupe-dark">
-              Face Mapping
+              {t("faceMapping.kicker")}
             </span>
             <h2 className="mt-4 text-balance text-3xl font-medium leading-[1.1] tracking-tight text-foreground md:text-4xl">
-              Your skin, read zone by zone
+              {t("faceMapping.heading")}
             </h2>
             <p className="mt-4 max-w-[48ch] text-base text-foreground/70">
-              Every treatment starts with a Dermalogica Face Mapping analysis — your therapist
-              reads your face zone by zone to see what&apos;s actually happening, then builds the
-              treatment around it.
+              {t("faceMapping.body")}
             </p>
             <Link
               href="/skin-analysis"
               className="mt-8 inline-block rounded-full bg-taupe-dark px-6 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-cream transition-opacity hover:opacity-90"
             >
-              Start with the Skin Analysis
+              {t("faceMapping.cta")}
             </Link>
           </div>
 
           <div className="flex flex-col gap-5">
-            {FACE_MAPPING_STEPS.map((step, i) => (
+            {faceMappingSteps.map((step, i) => (
               <div key={step} className="flex items-start gap-4">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-taupe-dark text-sm font-medium text-cream">
                   {i + 1}
@@ -207,12 +204,9 @@ export default function DermalogicaPage() {
         <div className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-6 rounded-sm border border-border p-8 md:flex-row md:items-center md:p-12">
           <div>
             <h3 className="text-xl font-medium tracking-tight text-foreground">
-              Shop the range in-house
+              {t("shop.heading")}
             </h3>
-            <p className="mt-2 max-w-[46ch] text-sm text-muted">
-              As an exclusive distributor we stock the professional range at our Seremban centre.
-              Message us for availability, or ask your therapist to prescribe at your next visit.
-            </p>
+            <p className="mt-2 max-w-[46ch] text-sm text-muted">{t("shop.body")}</p>
           </div>
           <a
             href={WHATSAPP_URL}
@@ -220,12 +214,12 @@ export default function DermalogicaPage() {
             rel="noopener noreferrer"
             className="shrink-0 rounded-full bg-taupe-dark px-6 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-cream transition-opacity hover:opacity-90"
           >
-            Ask About Products
+            {t("shop.cta")}
           </a>
         </div>
       </section>
 
-      <Footer />
+      <FooterTranslated />
     </main>
   );
 }

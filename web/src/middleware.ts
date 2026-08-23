@@ -5,10 +5,12 @@ const intlMiddleware = createMiddleware(routing);
 
 export default intlMiddleware;
 
-// Scoped to ONLY the four translated paths (and their /zh, /ms variants).
-// Everything else — /treatments, /dermalogica, /blog, individual treatment
-// pages, robots.txt, sitemap.xml, llms.txt, static assets — never touches
-// this middleware at all, so they're completely unaffected.
+// Scoped to ONLY the six translated paths (and their /zh, /ms variants).
+// Note "/treatments" (the listing page) is here but "/treatments/[slug]"
+// deliberately isn't — individual treatment pages stay English-only, so
+// they're excluded and fall through to the (default) group untouched.
+// Blog, robots.txt, sitemap.xml, llms.txt, static assets are likewise
+// never touched by this middleware.
 export const config = {
   matcher: [
     "/",
@@ -19,5 +21,9 @@ export const config = {
     "/(zh|ms)/contact",
     "/skin-analysis",
     "/(zh|ms)/skin-analysis",
+    "/treatments",
+    "/(zh|ms)/treatments",
+    "/dermalogica",
+    "/(zh|ms)/dermalogica",
   ],
 };
