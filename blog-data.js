@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "multivitamin-restore-rf-explained",
+    title: "Multivitamin Restore with RF: Who It's Actually For (and What to Expect)",
+    kicker: "Treatments Explained",
+    date: "2026-08-24",
+    cardStyle: "cream",
+    excerpt: "RF and HIFU both get described in the same breath as \"heat treatments that tighten skin,\" but they're solving different problems at different depths — here's what's actually happening during a Multivitamin Restore with RF session, and who it's actually built for.",
+    heroPlaceholder: "Vitamin masque facial treatment for dry, dull or aging skin",
+    image: "https://images.unsplash.com/photo-1603401712778-ab0575182f12?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by xandro Vandewalle on Unsplash",
+    imageCreditHref: "https://unsplash.com/@xandrovandewalle",
+    body: [
+      "Multivitamin Restore with RF sits in an odd spot on our menu — the name promises both a resurfacing treatment and a machine-assisted one, and it's genuinely both, which is exactly why it isn't the right pick for skin that just needs upkeep. It's built for dry, dull or visibly aging skin that's plateaued on a gentler routine — the kind of skin where a monthly maintenance facial keeps things pleasant but stops moving the needle, because passive exfoliation alone eventually runs out of surface build-up worth removing. The 90–120 minute session is deliberately a strength reset rather than a light refresh, and understanding what each of its three real components — Dermalogica's Multivitamin Power Exfoliant, RF technology, and a 5x concentrated vitamin masque — is actually doing explains why.",
+      "The first step, Dermalogica's Multivitamin Power Exfoliant, is described on our menu as maximum-strength exfoliation, and that's a meaningful distinction from the gentler acids covered elsewhere on this blog — where a Revive Glow-style peel is calibrated to be tolerable on a regular cadence, this is built to clear a genuinely built-up layer of dulled, dead surface cells in one pass, the kind that accumulates on skin that's been getting by on passive care. That's the surface problem solved. The RF (radiofrequency) step that follows solves a different one: RF works by passing an electrical current through skin, which meets natural tissue resistance and generates heat. That heat is what boosts penetration for what comes next, and it also causes existing collagen fibres to contract, which is what gives RF treatments their characteristic immediate, temporary tightening sensation.",
+      "That sequencing — exfoliate, then apply RF-driven heat — is deliberate: it's timed to open the door right before the session's final step, a 5x concentrated vitamin masque. Antioxidant vitamins like A, C and E, the same class covered in our earlier piece on vitamin C, do real work neutralising oxidative stress and supporting skin's own repair processes, but only if they actually reach living tissue rather than sitting on top of freshly-exfoliated but still-barrier-intact skin. Applying the masque at the point in the session where skin is both freshly resurfaced and temporarily more receptive from the RF step is what lets that concentrated vitamin dose actually do something, rather than mostly evaporating off the surface.",
+      "The RF step is also worth telling apart from HIFU, since both get described in shorthand as \"heat treatments that tighten skin,\" and that shorthand hides a real difference in what each is doing. HIFU, covered in an earlier post on this blog, converges high-intensity focused ultrasound at a single precise depth — the SMAS layer — creating tiny points of heat that trigger a genuine wound-healing response, with new collagen building gradually over two to three months. The RF used in Multivitamin Restore works at a shallower, broader level: it's aimed at boosting penetration and giving an immediate, temporary firmness from collagen fibre contraction, not converging energy deep enough to trigger that same longer-term rebuilding response. Both are legitimate, well-established technologies — they're just solving different problems, which is why we don't offer one as a substitute for the other.",
+      "Because the exfoliation step here is genuinely stronger than most of what's in our regular facial menu, Multivitamin Restore with RF isn't the treatment to book on a whim if your skin is already reactive, compromised, or new to actives — that's a case where a gentler starting point, like the barrier-focused Environmental Treatment or PRO Calm Treatment covered elsewhere on this blog, usually makes more sense first. Whether your skin is actually ready for a strength reset like this one, or would do better easing in, is exactly what a Skin Analysis is for.",
+    ],
+  },
+  {
     slug: "pro-collagen-banking-water-cream-explained",
     title: "Pro-Collagen Banking Water Cream: The Science Behind \"+44% Collagen\"",
     kicker: "Ingredients",
