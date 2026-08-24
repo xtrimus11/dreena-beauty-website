@@ -12,6 +12,33 @@
     },
     {
       "date": "2026-08-25",
+      "title": "Creatine for Skin? What the Research Actually Shows",
+      "kicker": "Ingredients",
+      "angle": "User-added topic. Explain creatine's role in cellular energy metabolism — skin cells rely on ATP for repair and renewal, and creatine supports the phosphocreatine system that regenerates it — then summarize what topical creatine research suggests about fibroblast activity and collagen synthesis. Be explicit this is emerging, topical-specific evidence, not proof oral creatine supplementation firms skin or reduces wrinkles — the skin evidence is much stronger for topical application than oral intake, and oral creatine's well-established benefits are for muscle performance, not skin. No d'reena product currently contains creatine, so don't fabricate a tie-in to a specific treatment or product — write this as general ingredient education in the same voice as the niacinamide/hyaluronic-acid posts. Fine to mention in passing that collagen-synthesis-focused treatments like HIFU or ACR Treatment address the same broad goal through an entirely different (proven) mechanism — don't imply they use creatine.",
+      "photoSearchTerm": "amino acid serum skincare dropper",
+      "status": "confirmed",
+      "used": false
+    },
+    {
+      "date": "2026-08-26",
+      "title": "What Declining Estrogen Actually Does to Skin",
+      "kicker": "Ingredients",
+      "angle": "User-added topic (source material on perimenopausal/menopausal skin). Explain that estrogen receptors are present throughout skin (keratinocytes, fibroblasts, melanocytes, hair follicle cells) and estrogen partially controls collagen/elastin synthesis, so declining estrogen through perimenopause and menopause directly changes skin architecture — not just generic 'ageing'. Walk through the mechanism layer by layer: epidermis (reduced dermal blood flow contributing to thinning, slower turnover, dullness; reduced glycosaminoglycan/hyaluronic acid production leading to drier, more reactive skin and higher transepidermal water loss), pigmentation (hormonal fluctuation can increase pigmentation, while later melanocyte density decline paradoxically produces blotchier, less even tone), sebum (relatively more dominant androgens can trigger new hormonal breakouts in some women while others see sebum drop and dryness increase instead), and dermis (the best-documented change — meaningful collagen loss in the years following menopause, continuing at a slower ongoing rate afterward). Hedge any cited statistics (collagen loss percentages, melanocyte density decline, hot flush prevalence) as 'research broadly indicates' rather than precise clinical fact, since they haven't been independently re-verified for this piece. Do NOT mention HRT, hormone therapy, or anything positioning d'reena as treating hormonal imbalance — stay strictly at the skin level, which is what an aesthetics clinic can actually address. Where relevant, note retinol (retinol-explained post) and hyaluronic acid (hyaluronic-acid-explained post) are two of the better-evidenced actives for the collagen and hydration losses described. End with the usual Skin Analysis CTA, framed as understanding what's actually changing before building a routine.",
+      "photoSearchTerm": "mature skin skincare mirror",
+      "status": "confirmed",
+      "used": false
+    },
+    {
+      "date": "2026-08-27",
+      "title": "Building a Skin Routine Through Perimenopause and Menopause",
+      "kicker": "Treatments Explained",
+      "angle": "User-added topic — follow-up to the estrogen/skin mechanism post (2026-08-26). A practical treatment-roadmap piece matching real d'reena treatments to the actual skin changes of perimenopause/menopause, not generic anti-ageing advice. Structure around: barrier support first (Environmental Treatment and PRO Calm Treatment, already covered in skin-barrier-ingredients, for ceramide/NMF loss and increased reactivity), collagen and renewal support (retinol-based LumiLift Elite, plus HIFU and ACR Treatment as collagen-stimulating options, tied to why loss of firmness often shows before visible wrinkling), pigmentation management without irritation (Vitamin C via PowerBright/ProBright, already covered in vitamin-c-benefits, and Pico Laser with ProRestore for more pronounced blotchiness — note gentler is often the better call on a thinner, more reactive barrier), and calming vascular reactivity (PRO Calm Treatment again, for redness that becomes more common alongside hot-flush-driven capillary stress). Only reference actives/ingredients d'reena's site actually verifies (retinol, vitamin C, niacinamide, hyaluronic acid, ceramides/panthenol/glycerin) — do not invent that d'reena carries azelaic acid, hexylresorcinol, tranexamic acid, or specific named peptides unless confirmed first. No HRT or hormonal-treatment claims — frame this strictly as adapting existing skin treatments to changing skin. End with a Skin Analysis CTA, framed as the way to figure out where in this transition a given client's skin actually is.",
+      "photoSearchTerm": "mature woman skincare consultation",
+      "status": "confirmed",
+      "used": false
+    },
+    {
+      "date": "2026-08-28",
       "title": "Hexylresorcinol, Explained",
       "kicker": "Ingredients",
       "angle": "Explain hexylresorcinol as a tyrosinase-inhibiting brightening ingredient with a different route to fading pigment than vitamin C, grounded in ProBright Skin Treatment's electrical infusion of Vitamin C, Niacinamide and Hexylresorcinol.",
@@ -20,7 +47,7 @@
       "used": false
     },
     {
-      "date": "2026-08-26",
+      "date": "2026-08-29",
       "title": "Revive Glow Treatment: Why We Layer Glycolic and Mandelic Acid Together",
       "kicker": "Treatments Explained",
       "angle": "Explain how glycolic acid's small molecular size drives fast, deeper exfoliation while mandelic acid's larger molecule penetrates more slowly for a gentler effect, and why combining both in the VITAL Peeling facial broadens who it suits.",
@@ -29,38 +56,11 @@
       "used": false
     },
     {
-      "date": "2026-08-27",
+      "date": "2026-08-30",
       "title": "Stem Cell Extracts in Skincare: What They Actually Do",
       "kicker": "Ingredients",
       "angle": "Demystify what 'stem cell' means on a skincare label — plant-derived extracts rich in antioxidants and growth-factor-like compounds that support skin's own repair signalling, not literal stem cells — grounded in IONTO Stem Cell Treatment's iontophoresis delivery.",
       "photoSearchTerm": "botanical skincare serum ingredient",
-      "status": "proposed",
-      "used": false
-    },
-    {
-      "date": "2026-08-28",
-      "title": "ACR Treatment: What \"Absolute Cell Reversal\" Actually Means",
-      "kicker": "Treatments Explained",
-      "angle": "Explain what accelerating skin's metabolism actually involves — faster cell turnover supporting acne and scar repair alongside sebum regulation and a firming effect — grounded in the real ACR Treatment.",
-      "photoSearchTerm": "facial treatment skin renewal clinic",
-      "status": "proposed",
-      "used": false
-    },
-    {
-      "date": "2026-08-29",
-      "title": "ProClear Skin Treatment: Why Pore-Softening Comes Before Extraction",
-      "kicker": "Treatments Explained",
-      "angle": "Explain why properly softening compacted debris in pores before extraction matters for clearing congestion without trauma, and how anti-bacterial actives afterward help prevent recolonisation, grounded in ProClear Skin Treatment.",
-      "photoSearchTerm": "pore extraction facial treatment clinic",
-      "status": "proposed",
-      "used": false
-    },
-    {
-      "date": "2026-08-30",
-      "title": "Clear-Matt Treatment: How a Soft Peel Controls Oil Without Overdrying",
-      "kicker": "Treatments Explained",
-      "angle": "Explain how a soft (superficial) peel combined with dermal layering and the GlowFix solution controls sebum and clears stage-1 acne congestion without stripping skin the way a harsher peel can.",
-      "photoSearchTerm": "oily skin facial treatment mattifying",
       "status": "proposed",
       "used": false
     }
