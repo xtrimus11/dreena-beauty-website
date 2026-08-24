@@ -28,10 +28,9 @@ export const POSTS: Post[] = [
     cardStyle: "cream",
     excerpt:
       "RF and HIFU both get described in the same breath as \"heat treatments that tighten skin,\" but they're solving different problems at different depths — here's what's actually happening during a Multivitamin Restore with RF session, and who it's actually built for.",
-    image:
-      "https://images.unsplash.com/photo-1603401712778-ab0575182f12?q=80&w=1400&auto=format&fit=crop",
-    imageCredit: "Photo by xandro Vandewalle on Unsplash",
-    imageCreditHref: "https://unsplash.com/@xandrovandewalle",
+    image: "/images/multivitamin-restore-rf.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
     body: [
       "Multivitamin Restore with RF sits in an odd spot on our menu — the name promises both a resurfacing treatment and a machine-assisted one, and it's genuinely both, which is exactly why it isn't the right pick for skin that just needs upkeep. It's built for dry, dull or visibly aging skin that's plateaued on a gentler routine — the kind of skin where a monthly maintenance facial keeps things pleasant but stops moving the needle, because passive exfoliation alone eventually runs out of surface build-up worth removing. The 90–120 minute session is deliberately a strength reset rather than a light refresh, and understanding what each of its three real components — Dermalogica's Multivitamin Power Exfoliant, RF technology, and a 5x concentrated vitamin masque — is actually doing explains why.",
       "The first step, Dermalogica's Multivitamin Power Exfoliant, is described on our menu as maximum-strength exfoliation, and that's a meaningful distinction from the gentler acids covered elsewhere on this blog — where a Revive Glow-style peel is calibrated to be tolerable on a regular cadence, this is built to clear a genuinely built-up layer of dulled, dead surface cells in one pass, the kind that accumulates on skin that's been getting by on passive care. That's the surface problem solved. The RF (radiofrequency) step that follows solves a different one: RF works by passing an electrical current through skin, which meets natural tissue resistance and generates heat. That heat is what boosts penetration for what comes next, and it also causes existing collagen fibres to contract, which is what gives RF treatments their characteristic immediate, temporary tightening sensation.",
