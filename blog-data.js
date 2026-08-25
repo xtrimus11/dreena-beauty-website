@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "creatine-for-skin-explained",
+    title: "Creatine for Skin? What the Research Actually Shows",
+    kicker: "Ingredients",
+    date: "2026-08-25",
+    cardStyle: "photo",
+    excerpt: "Creatine's reputation is built on decades of muscle-performance research, but a newer, much smaller body of evidence looks at what it does applied directly to skin — and the two aren't the same claim, even though they share an ingredient name.",
+    heroPlaceholder: "Amino acid serum dropper skincare",
+    image: "https://images.unsplash.com/photo-1672062519629-abe610383152?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Denley Photography on Unsplash",
+    imageCreditHref: "https://unsplash.com/@denleyphotography",
+    body: [
+      "Creatine is a naturally occurring compound made from amino acids, and its role in the body comes down to one thing: energy. Cells run on ATP (adenosine triphosphate), the molecule every cellular process spends to get work done, and skin cells are no exception — keratinocytes shedding and rebuilding through normal turnover, fibroblasts synthesising new collagen, any kind of repair after UV or mechanical stress, all of it draws on the same ATP supply. Creatine's job is to help regenerate that supply quickly: it combines with phosphate to form phosphocreatine, a fast-access energy reserve that can hand off a phosphate group to spent ADP and turn it back into usable ATP almost immediately, rather than waiting on the slower metabolic pathways that normally replenish it.",
+      "That phosphocreatine system is extremely well established in one context — muscle physiology, where it's the reason creatine supplementation is one of the most researched and reliably effective aids to short bursts of high-intensity effort. Skin cells rely on the same basic ATP economy, which is the logic behind looking at creatine as a skincare ingredient at all: cells that are better resourced for energy-intensive repair work should, in theory, do that work more effectively. It's a reasonable hypothesis, but a hypothesis about muscle tissue doesn't automatically transfer to skin — which is exactly why it needs its own, separate evidence.",
+      "That separate evidence does exist, but it's a much thinner file than most of the actives covered on this blog. A handful of published studies on topical creatine — sometimes formulated alongside folic acid — have reported measurable effects on skin, including increased fibroblast protein synthesis in lab settings and improvements in surface firmness or a reduction in under-eye puffiness in small cosmetic trials. That's genuinely interesting, and it's a plausible outcome given the mechanism, but these are smaller studies with less independent replication behind them than the research supporting retinol's receptor-driven collagen signalling or vitamin C's antioxidant and pigment-inhibiting effects, both covered elsewhere on this blog. Emerging is the accurate word for where this evidence currently sits, not established.",
+      "It's also worth being precise about which route the evidence actually covers, because oral and topical creatine aren't interchangeable claims. Oral creatine supplementation has a long, solid research track record — but that track record is for muscle strength and athletic performance, not for skin. The skin-specific findings come from topical application, applied directly to the area, and there's no good evidence that taking creatine as a supplement does anything for skin firmness or the appearance of lines. If a claim about creatine and skin doesn't specify topical, it's worth treating that gap as a red flag rather than an oversight.",
+      "No product in our range currently contains creatine, so this one is general ingredient education rather than a lead-in to a specific product or treatment. If the underlying goal is more collagen synthesis or faster cell renewal, we already offer routes there with a much longer, better-established evidence base — HIFU's wound-healing response and ACR Treatment's accelerated skin metabolism both work toward that same broad outcome through mechanisms that have nothing to do with creatine. Where an emerging ingredient like this might genuinely fit into a routine, versus where a more proven option makes more sense, is exactly what a Skin Analysis is for.",
+    ],
+  },
+  {
     slug: "multivitamin-restore-rf-explained",
     title: "Multivitamin Restore with RF: Who It's Actually For (and What to Expect)",
     kicker: "Treatments Explained",
