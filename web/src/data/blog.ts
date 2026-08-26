@@ -20,6 +20,26 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: "estrogen-decline-skin-explained",
+    title: "What Declining Estrogen Actually Does to Skin",
+    kicker: "Ingredients",
+    date: "2026-08-26",
+    cardStyle: "cream",
+    excerpt:
+      "Estrogen receptors sit throughout skin's own cells, so its decline through perimenopause and menopause changes skin's actual architecture, layer by layer, rather than just registering as a vague marker of getting older.",
+    image:
+      "https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Look Studio on Unsplash",
+    imageCreditHref: "https://unsplash.com/@lookphoto",
+    body: [
+      "Estrogen doesn't only act on reproductive tissue — skin carries its own dense network of estrogen receptors, expressed in keratinocytes, fibroblasts, melanocytes, and the cells that make up hair follicles. Because those receptors sit inside so many of skin's core cell types, estrogen has a direct hand in processes usually filed under generic \"ageing\", including, in part, the synthesis of collagen and elastin, the two structural proteins responsible for skin's firmness and bounce. That's the reason the skin changes that show up through perimenopause and menopause aren't simply the passage of time speeding up; they track a specific, measurable hormonal shift, with mechanisms that can be traced layer by layer through skin's actual architecture.",
+      "At the epidermis, declining estrogen is linked to reduced dermal blood flow, which research broadly indicates contributes to visible thinning, slower cell turnover, and the duller look mature skin is often described as having — less nutrient and oxygen supply reaching the tissue responsible for constantly replacing itself. Estrogen also supports skin's own production of glycosaminoglycans, the sugar-based molecules (hyaluronic acid among them) that hold water in skin's surface layers. As that production declines, skin tends to hold less water on its own, which shows up as both persistent dryness and a barrier that reacts more easily to products it previously tolerated, alongside a measurable rise in transepidermal water loss — water escaping through the surface faster than it should.",
+      "Pigmentation moves in two different, sometimes contradictory directions across this transition. Hormonal fluctuation during perimenopause itself can increase pigment production, which is part of why blotchiness or new dark patches sometimes appear before menopause is complete. Later, research broadly indicates that melanocyte density — the actual population of pigment-producing cells in skin — declines, which sounds like it should mean less pigmentation overall but instead tends to produce a more uneven, patchier tone, since the melanocytes that remain aren't necessarily distributed evenly across the face.",
+      "Sebum production follows a similarly non-uniform path, because estrogen's decline changes the ratio between estrogen and androgens rather than removing hormonal activity from skin altogether. In some women, androgens become relatively more dominant, which can trigger new hormonal breakouts well past the age most people associate with acne. In others, overall sebum output simply drops, compounding the dryness already coming from reduced glycosaminoglycan production. Both are real, opposite-looking outcomes of the same underlying hormonal shift, which is part of why a one-size-fits-all routine tends to underperform through this transition.",
+      "The dermis carries the best-documented change of all: research broadly indicates a meaningful loss of collagen in the years immediately following menopause, continuing afterward at a slower, ongoing rate rather than stopping outright. That's a direct hit to the same structural protein retinol works to rebuild by binding retinoic acid receptors and signalling fibroblasts to produce more of it, covered in our earlier piece on retinol — and it's also why hyaluronic acid's water-holding capacity, covered in our piece on that ingredient, becomes more relevant rather than less as skin's own glycosaminoglycan production declines. None of this is something a routine built around vague \"ageing\" assumptions is likely to target correctly, since what's actually changing is a specific set of hormonally-driven mechanisms rather than one uniform decline. Understanding which of these layers your own skin is actually showing signs in — thinning, pigmentation, breakouts or dryness, loss of firmness — is exactly what a Skin Analysis is for.",
+    ],
+  },
+  {
     slug: "creatine-for-skin-explained",
     title: "Creatine for Skin? What the Research Actually Shows",
     kicker: "Ingredients",
