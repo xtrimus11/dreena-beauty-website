@@ -15,9 +15,9 @@ export const BLOG_POSTS = [
     cardStyle: "cream",
     excerpt: "Estrogen receptors sit throughout skin's own cells, so its decline through perimenopause and menopause changes skin's actual architecture, layer by layer, rather than just registering as a vague marker of getting older.",
     heroPlaceholder: "Close-up of mature skin during a skincare routine",
-    image: "https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1400&auto=format&fit=crop",
-    imageCredit: "Photo by Look Studio on Unsplash",
-    imageCreditHref: "https://unsplash.com/@lookphoto",
+    image: "assets/blog/estrogen-decline-skin.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
     body: [
       "Estrogen doesn't only act on reproductive tissue — skin carries its own dense network of estrogen receptors, expressed in keratinocytes, fibroblasts, melanocytes, and the cells that make up hair follicles. Because those receptors sit inside so many of skin's core cell types, estrogen has a direct hand in processes usually filed under generic \"ageing\", including, in part, the synthesis of collagen and elastin, the two structural proteins responsible for skin's firmness and bounce. That's the reason the skin changes that show up through perimenopause and menopause aren't simply the passage of time speeding up; they track a specific, measurable hormonal shift, with mechanisms that can be traced layer by layer through skin's actual architecture.",
       "At the epidermis, declining estrogen is linked to reduced dermal blood flow, which research broadly indicates contributes to visible thinning, slower cell turnover, and the duller look mature skin is often described as having — less nutrient and oxygen supply reaching the tissue responsible for constantly replacing itself. Estrogen also supports skin's own production of glycosaminoglycans, the sugar-based molecules (hyaluronic acid among them) that hold water in skin's surface layers. As that production declines, skin tends to hold less water on its own, which shows up as both persistent dryness and a barrier that reacts more easily to products it previously tolerated, alongside a measurable rise in transepidermal water loss — water escaping through the surface faster than it should.",
