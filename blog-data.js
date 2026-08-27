@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "perimenopause-menopause-skin-routine-explained",
+    title: "Building a Skin Routine Through Perimenopause and Menopause",
+    kicker: "Treatments Explained",
+    date: "2026-08-27",
+    cardStyle: "photo",
+    excerpt: "Perimenopausal and menopausal skin isn't managed well by one generic anti-ageing routine — it usually needs barrier repair, collagen-focused treatments and pigmentation management sequenced against whichever of those specific changes shows up first.",
+    heroPlaceholder: "Skincare consultation for mature, transitioning skin",
+    image: "https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Look Studio on Unsplash",
+    imageCreditHref: "https://unsplash.com/@lookphoto",
+    body: [
+      "Our earlier piece on what declining estrogen actually does to skin covered the mechanism — receptors sitting throughout skin's own cell types, and a set of changes that show up differently depending on which layer you're looking at: epidermal thinning and water loss, pigment that goes patchier rather than simply fading, sebum that swings in either direction, and a documented drop in collagen concentrated in the years around menopause itself. Knowing that mechanism matters because it changes what an actual routine should be built around during this transition — not one \"anti-ageing\" product or treatment, but a sequence matched to whichever of those specific changes shows up first, since skin at this stage is usually managing more than one of them at once.",
+      "Barrier support usually needs to come first, not last, because a thinner, less water-retentive barrier is the reason skin becomes more reactive to the same actives it tolerated fine a few years earlier — a routine that jumps straight to acids or retinoids on top of that compromised barrier tends to backfire before it helps. This is the same logic behind our Environmental Treatment and PRO Calm Treatment, covered in an earlier piece on the barrier trio of ceramides, panthenol and glycerin: ceramides refill the gaps between cells that a slower glycosaminoglycan supply leaves under-filled, panthenol calms the visible redness and reactivity that comes with a barrier under more day-to-day stress, and glycerin holds onto whatever moisture skin can still produce on its own. Building barrier tolerance first is what makes the more active steps that follow actually work, rather than something skin has to fight through.",
+      "Firmness loss is usually the next thing worth booking for, because the dermis is where the most well-documented change happens — research broadly indicates a meaningful drop in collagen concentrated in the years immediately following menopause, and that loss shows up as reduced structural support before it shows up as an actual line, since a visible line is what follows once the underlying support has already thinned. That's the reasoning behind reaching for LumiLift Elite's retinol-and-HIFU-plus-Ionto combination, or HIFU - Ultratherapy and ACR Treatment on their own, rather than a lighter maintenance facial at this stage — retinol's direct receptor signalling, covered in our retinol piece, and HIFU's wound-healing response both work on the same structural protein that's declining, through mechanisms that don't depend on estrogen being present to function.",
+      "Pigmentation at this stage tends to move in two directions rather than one — hormonal fluctuation through perimenopause itself can raise pigment production in places, while later, an actual decline in melanocyte density tends to leave tone patchier rather than genuinely lighter, which is a different problem from the more even hyperpigmentation vitamin C's tyrosinase-inhibiting effect handles well on its own, covered in our piece on that ingredient. Vitamin C and niacinamide delivered through ProBright Skin Treatment with ProRestore are usually the first line here, precisely because they don't ask much of a barrier that's already working harder than it used to; Pico Laser with ProRestore is the better fit for pigmentation that's more established or pronounced, but on skin that's also thinner and more reactive, the gentler route is worth trying first rather than defaulting to the most intensive option available.",
+      "Redness and visible flushing also become more common through this transition, alongside the vascular changes that come with hot flushes, and that's a second, separate reason PRO Calm Treatment tends to come up again in this routine beyond its role in barrier repair — its job here is calming reactive capillaries rather than treating pigment or firmness at all. None of this is a fixed sequence every client needs in the same order; which of these changes your own skin is furthest along in — barrier, firmness, pigmentation or reactivity — is exactly what a Skin Analysis is for before building a routine around it.",
+    ],
+  },
+  {
     slug: "estrogen-decline-skin-explained",
     title: "What Declining Estrogen Actually Does to Skin",
     kicker: "Ingredients",
