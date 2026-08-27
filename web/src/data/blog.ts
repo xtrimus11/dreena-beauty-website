@@ -27,10 +27,9 @@ export const POSTS: Post[] = [
     cardStyle: "photo",
     excerpt:
       "Perimenopausal and menopausal skin isn't managed well by one generic anti-ageing routine — it usually needs barrier repair, collagen-focused treatments and pigmentation management sequenced against whichever of those specific changes shows up first.",
-    image:
-      "https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1400&auto=format&fit=crop",
-    imageCredit: "Photo by Look Studio on Unsplash",
-    imageCreditHref: "https://unsplash.com/@lookphoto",
+    image: "/images/perimenopause-menopause-skin-routine.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
     body: [
       "Our earlier piece on what declining estrogen actually does to skin covered the mechanism — receptors sitting throughout skin's own cell types, and a set of changes that show up differently depending on which layer you're looking at: epidermal thinning and water loss, pigment that goes patchier rather than simply fading, sebum that swings in either direction, and a documented drop in collagen concentrated in the years around menopause itself. Knowing that mechanism matters because it changes what an actual routine should be built around during this transition — not one \"anti-ageing\" product or treatment, but a sequence matched to whichever of those specific changes shows up first, since skin at this stage is usually managing more than one of them at once.",
       "Barrier support usually needs to come first, not last, because a thinner, less water-retentive barrier is the reason skin becomes more reactive to the same actives it tolerated fine a few years earlier — a routine that jumps straight to acids or retinoids on top of that compromised barrier tends to backfire before it helps. This is the same logic behind our Environmental Treatment and PRO Calm Treatment, covered in an earlier piece on the barrier trio of ceramides, panthenol and glycerin: ceramides refill the gaps between cells that a slower glycosaminoglycan supply leaves under-filled, panthenol calms the visible redness and reactivity that comes with a barrier under more day-to-day stress, and glycerin holds onto whatever moisture skin can still produce on its own. Building barrier tolerance first is what makes the more active steps that follow actually work, rather than something skin has to fight through.",
