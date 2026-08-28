@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "hexylresorcinol-explained",
+    title: "Hexylresorcinol, Explained",
+    kicker: "Ingredients",
+    date: "2026-08-28",
+    cardStyle: "cream",
+    excerpt: "Hexylresorcinol fades pigment through a genuinely different route from vitamin C or niacinamide — binding directly to the copper at tyrosinase's active site rather than working further down the same pathway — which is why ProBright Skin Treatment with ProRestore layers all three instead of relying on one.",
+    heroPlaceholder: "Brightening treatment session for pigmentation and uneven skin tone",
+    image: "https://images.unsplash.com/photo-1555820585-c5ae44394b79?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Sunny Ng on Unsplash",
+    imageCreditHref: "https://unsplash.com/@sunnysmng",
+    body: [
+      "Hexylresorcinol doesn't come up as often as vitamin C or niacinamide in general skincare conversation, but it's the third active named directly in ProBright Skin Treatment with ProRestore's electrical infusion of Vitamin C, Niacinamide and Hexylresorcinol — and it isn't there as a filler ingredient stacked on top of two better-known ones. It's a phenolic compound from the same broad chemical family as resorcinol, and its job in that combination is specific: fading existing pigment by acting directly on the enzyme responsible for making it, rather than by any of the routes vitamin C or niacinamide use to reach a similar-looking result.",
+      "Melanin production runs through a single rate-limiting enzyme, tyrosinase, which needs a copper ion sitting in its active site to catalyse the first steps of converting the amino acid tyrosine into the pigment that eventually darkens skin. Hexylresorcinol is understood to work by binding that copper ion directly, effectively disabling the enzyme's active site rather than competing with its usual substrate for space on it. That's a more direct block than most established brighteners manage — it's stopping melanin production at its source, upstream of nearly every other pigment-fading mechanism this blog has covered.",
+      "That's genuinely different from how vitamin C fades pigment, even though the two get grouped together as \"brightening actives.\" Vitamin C, covered in an earlier piece on this blog, is a mild tyrosinase inhibitor too, but its bigger contribution to fading pigment is antioxidant: it reduces oxidised intermediates further down the same pathway back to a colourless state, working after some pigment has already started forming rather than blocking the enzyme outright. Hexylresorcinol and vitamin C are aimed at the same outcome from two points on the same pathway, which is exactly why ProBright layers them together rather than picking one over the other.",
+      "Niacinamide, the third active in that same treatment, works at a different point in the process again — as covered in our niacinamide piece, it doesn't touch the tyrosinase enzyme at all, it interrupts the transfer of already-made melanin from melanocytes into the surrounding skin cells that carry it to the visible surface. Between the three actives, ProBright Skin Treatment is addressing pigment at three genuinely separate stages — production, oxidation, and transfer — rather than three variations on the same mechanism, which is the actual reasoning behind combining them in one session instead of relying on any single one.",
+      "Getting all three past the surface is the other half of the treatment, which is why ProBright delivers them by electrical infusion rather than topical application alone — the same basic principle behind iontophoresis-based treatments like IONTO Stem Cell Treatment, covered elsewhere on this blog: an active only helps as much as it actually reaches living skin, and passive application often falls well short of that. The ProRestore step that follows is what keeps that infusion from leaving skin dry or reactive afterward, the same job it does when paired with Pico Laser. Hexylresorcinol also carries some antioxidant activity of its own, offering a degree of protection against the oxidative stress that helps drive new pigment formation in the first place — a secondary benefit rather than the main reason it's in the formula. Whether pigment showing up on your own skin is better addressed at this production-and-transfer stage, or needs a more intensive route like Pico Laser with ProRestore, covered in an earlier piece on this blog, is exactly what a Skin Analysis is for.",
+    ],
+  },
+  {
     slug: "perimenopause-menopause-skin-routine-explained",
     title: "Building a Skin Routine Through Perimenopause and Menopause",
     kicker: "Treatments Explained",
