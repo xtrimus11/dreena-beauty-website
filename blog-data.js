@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "revive-glow-treatment-explained",
+    title: "Revive Glow Treatment: Why We Layer Glycolic and Mandelic Acid Together",
+    kicker: "Treatments Explained",
+    date: "2026-08-29",
+    cardStyle: "photo",
+    excerpt: "Glycolic and mandelic acid are both AHAs doing the same basic job, but their molecule size changes how fast and how deep each one works — which is exactly why Revive Glow layers them instead of picking one.",
+    heroPlaceholder: "Superficial chemical peel facial for re-textured, glowing skin",
+    image: "https://images.unsplash.com/photo-1647004692483-c5d942fe1137?q=80&w=1400&auto=format&fit=crop",
+    imageCredit: "Photo by Soheil Kmp on Unsplash",
+    imageCreditHref: "https://unsplash.com/@soheilkmp",
+    body: [
+      "Revive Glow is built around what our menu calls a VITAL Peeling facial, and the name undersells how much is actually happening in that one step: it's not a single acid, it's two, glycolic and mandelic, layered together on purpose. Both belong to the same family — alpha hydroxy acids (AHAs) — and both work the same way a chemical peel is described elsewhere on this blog: dissolving the bonds holding dead, dulled surface cells together so they shed faster than skin's own turnover cycle would manage alone. If they're doing the same basic job, the reason to use two rather than one comes down to a much smaller detail: molecule size.",
+      "Glycolic acid is the smallest molecule in the AHA family, derived from sugar cane. That small size is exactly what makes it so effective — it penetrates the skin barrier quickly and reaches deeper into the epidermis than most other AHAs, which is why it's the most studied and widely used acid for visible resurfacing and glow. The trade-off is that speed and depth also mean a stronger, faster irritation response on skin that isn't ready for it, particularly skin that's reactive, sensitised, or new to acids.",
+      "Mandelic acid, derived from bitter almonds, is a noticeably larger molecule, and that size difference changes its behaviour rather than just its origin. Because it's bigger, it diffuses into skin more slowly and more evenly, spreading its effect out instead of front-loading it. That slower penetration means a gentler, more even-tempered exfoliation with less risk of the inflammatory response that can trigger post-inflammatory pigmentation — which is why mandelic acid is generally considered a safer AHA choice for more reactive skin or skin with more melanin, where a fast-acting acid is more likely to leave a mark behind rather than just resurface one.",
+      "Layering the two together in Revive Glow is what lets the treatment sit in our 'All Skin Types' category rather than being restricted the way a glycolic-only peel at a comparable strength usually is: mandelic acid buffers the pace of the combination while glycolic still supplies the deeper resurfacing effect, so the peel reaches a genuinely superficial depth without depending on one fast, aggressive acid to get there alone. It's a different route to a re-textured, glowing result than the mechanical exfoliation covered in our piece on Bio Cell Treatment — that one abrades dead cells away with a freshwater sponge and no acid at all, while Revive Glow dissolves the bonds between them chemically, and which approach suits a given skin better depends on exactly the kind of dullness or dryness it's actually dealing with.",
+      "Even a superficial-depth peel isn't automatically the right starting point for every skin, and how it's layered with anything else already in a routine matters more than most people assume. That's exactly what a Skin Analysis is for before booking Revive Glow or any acid-based treatment.",
+    ],
+  },
+  {
     slug: "hexylresorcinol-explained",
     title: "Hexylresorcinol, Explained",
     kicker: "Ingredients",
