@@ -63,6 +63,26 @@
       "photoSearchTerm": "botanical skincare serum ingredient",
       "status": "published",
       "used": true
+    },
+    {
+      "date": "2026-08-31",
+      "title": "Too Much, Too Often: What Over-Treating Actually Does to Your Skin",
+      "kicker": "Ingredients",
+      "angle": "User-provided source material (an aesthetics-industry explainer on barrier-first skin health). Part 1 of 2. Explain why the most common problem walking into a clinic now is not under-treated skin but OVER-treated skin, and what that physically looks like. Ground it in the real mechanism: the barrier is a lipid matrix holding corneocytes together, and stacking exfoliating acids, retinoids, vitamin C, scrubs and at-home devices strips those lipids faster than the skin can rebuild them — so transepidermal water loss rises, irritation compounds, and the actives that were supposed to help stop being tolerated. Walk through the real signs of a compromised barrier: stinging or tightness after products that used to be fine, persistent redness, dehydration that moisturiser doesn't fix, breakouts, slower healing, and increased sensitivity. Make the key counter-intuitive point plainly: these are signs the skin needs LESS input, not a stronger product. Do NOT re-explain what ceramides, panthenol and glycerin do — that's already covered in the skin-barrier-ingredients post; cross-link it instead. Cross-link retinol-explained and vitamin-c-benefits when noting that these are good actives being used at the wrong frequency, not bad ingredients — be careful not to discourage their use outright. Write it in the usual educational, no-fluff voice: this is original writing informed by the source, NOT a summary, paraphrase or reproduction of it, and do not name or quote the source article, its author or the platform it was posted on. Do not disparage other clinics, brands or specific products, and do not imply clients are foolish — the framing is that skincare information is more available than ever and routines have quietly got more aggressive. End pointing to Skin Analysis as the way to find out whether the barrier is actually the issue before changing anything.",
+      "photoSearchTerm": "skincare products bathroom shelf routine",
+      "status": "confirmed",
+      "used": false,
+      "source": "user"
+    },
+    {
+      "date": "2026-09-01",
+      "title": "Repair Is the Strategy, Not the Setback",
+      "kicker": "Treatments Explained",
+      "angle": "User-provided source material (an aesthetics-industry explainer on barrier-first skin health). Part 2 of 2, following the over-treatment post (2026-08-31). Tackle the single biggest misconception head-on: that pausing to repair the barrier means delaying results. Explain why the opposite is usually true — a functioning barrier holds hydration, runs lower baseline inflammation, recovers between treatments faster, and tolerates active ingredients better, so corrective work built on a repaired barrier reaches its potential instead of stalling or backfiring. Use the foundation-before-renovation idea in your own words. Ground the practical half in the two real d'reena treatments that do this job: Environmental Treatment (120 min, a protective barrier-repair facial that strengthens the barrier, soothes eczema-prone skin and calms reactive skin) and PRO Calm Treatment (120 min, targeted hydration and barrier repair for rosacea, eczema and visible redness). Note honestly that the strengthening route is often the slower-sounding recommendation and the one clients resist, and that consistency beats intensity. Be careful with scope: describe these as calming and barrier-supporting facials, staying within the benefits treatments-data.js actually lists — do NOT claim they treat, cure or medically manage rosacea, eczema or psoriasis. Cross-link the skin-barrier-ingredients post for the ingredient mechanisms rather than repeating them, and Part 1 for the signs of over-treatment. This is original writing informed by the source, NOT a summary or reproduction of it; do not name or quote the source article, its author or the platform. End with the Skin Analysis CTA, framed as establishing where the barrier actually stands before committing to a corrective plan.",
+      "photoSearchTerm": "calming facial treatment clinic sensitive skin",
+      "status": "confirmed",
+      "used": false,
+      "source": "user"
     }
   ]
 }
