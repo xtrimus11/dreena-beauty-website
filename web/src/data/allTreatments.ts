@@ -306,6 +306,7 @@ const TREATMENT_PHOTO_OVERRIDES: Record<string, Photo> = {
   hifu: { src: "/images/treatments/hifu.jpg", credit: null, creditHref: null },
   "bio-cell": { src: "/images/treatments/bio-cell.jpg", credit: null, creditHref: null },
   teenskin: { src: "/images/treatments/teenskin.jpg", credit: null, creditHref: null },
+  dermashot: { src: "/images/treatments/dermashot.jpg", credit: null, creditHref: null },
   "pico-laser": { src: "/images/treatments/pico-laser.jpg", credit: null, creditHref: null },
   "multivitamin-restore-rf": {
     src: "/images/treatments/multivitamin-restore-rf.jpg",
