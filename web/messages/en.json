@@ -311,6 +311,11 @@
         "duration": "120 min",
         "benefits": ["Visibly firmer, brighter, more even-toned skin", "Reduces the look of fine lines", "Faster recovery than standalone facials"]
       },
+      "dermashot": {
+        "name": "Dermashot Treatment",
+        "duration": "120 min",
+        "benefits": ["Choose Whitening, Redensifying, Global Anti-Age or Firming Lift", "Microneedling + EMS drives exosomes deep", "Course of 4–6, every 2–4 weeks"]
+      },
       "acr-treatment": {
         "name": "ACR Treatment",
         "duration": "90 min",

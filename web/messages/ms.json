@@ -311,6 +311,11 @@
         "duration": "120 minit",
         "benefits": ["Kulit lebih kental, cerah dan warna lebih sekata", "Mengurangkan garisan halus", "Pemulihan lebih pantas berbanding fasial biasa"]
       },
+      "dermashot": {
+        "name": "Rawatan Dermashot",
+        "duration": "120 minit",
+        "benefits": ["Pilih Whitening, Redensifying, Global Anti-Age atau Firming Lift", "Microneedling + EMS menghantar exosome jauh ke dalam kulit", "Kursus 4–6 sesi, setiap 2–4 minggu"]
+      },
       "acr-treatment": {
         "name": "Rawatan ACR",
         "duration": "90 minit",

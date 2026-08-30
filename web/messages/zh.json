@@ -311,6 +311,11 @@
         "duration": "120分钟",
         "benefits": ["肌肤更紧致、更亮泽、肤色更均匀", "减少细纹外观", "比单纯护理疗程恢复更快"]
       },
+      "dermashot": {
+        "name": "Dermashot 外泌体护理疗程",
+        "duration": "120分钟",
+        "benefits": ["可选择 Whitening、Redensifying、Global Anti-Age 或 Firming Lift", "微针配合EMS深层导入外泌体", "疗程4至6次，每2至4周一次"]
+      },
       "acr-treatment": {
         "name": "ACR细胞焕活护理疗程",
         "duration": "90分钟",

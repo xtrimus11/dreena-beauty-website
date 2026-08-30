@@ -75,6 +75,15 @@ export const TREATMENTS: TreatmentEntry[] = [
     benefits: ["Visibly firmer, brighter, more even-toned skin", "Reduces the look of fine lines", "Faster recovery than standalone facials"],
   },
   {
+    concerns: ["aging", "pigmentation", "dryness"],
+    slug: "dermashot",
+    name: "Dermashot Treatment",
+    category: "All Skin Types",
+    duration: "120 min",
+    summary: "1.6 billion Selvert Med Biotech exosomes per session, driven deep with microneedling + EMS, with your choice of booster to target your result.",
+    benefits: ["Choose Whitening, Redensifying, Global Anti-Age or Firming Lift", "Microneedling + EMS drives exosomes deep", "Course of 4–6, every 2–4 weeks"],
+  },
+  {
     concerns: ["acne", "oily", "aging"],
     slug: "acr-treatment",
     name: "ACR Treatment",
