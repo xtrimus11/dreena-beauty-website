@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "stem-cell-extracts-skincare-explained",
+    title: "Stem Cell Extracts in Skincare: What They Actually Do",
+    kicker: "Ingredients",
+    date: "2026-08-30",
+    cardStyle: "cream",
+    excerpt: "\"Stem cell\" on a serum label isn't promising human cell transplants — it's almost always a cultured plant extract, and what it's actually contributing is protective, antioxidant-rich chemistry rather than literal new cells.",
+    heroPlaceholder: "Botanical stem cell serum dropper on a clean skincare surface",
+    image: "assets/blog/stem-cell-extracts-skincare-explained.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
+    body: [
+      "\"Stem cell\" on a skincare label sounds like it's promising something far more advanced than a serum could actually deliver, and that's mostly because the phrase is doing more marketing work than scientific work. In the products that use the term correctly, what's inside the bottle isn't harvested human or animal stem cells — it's plant stem cell extract, typically cultured in a lab from a small piece of tissue taken from species like Swiss apple, edelweiss, or grape, rather than pulled from a fully grown plant at all.",
+      "Plant stem cells sit in a plant's meristem tissue and, like their human counterparts, are undifferentiated — capable of becoming any part of the plant as it grows, rather than being committed to one job. What makes them useful to formulators isn't that undifferentiated status itself, though; it's the concentrated cocktail of polyphenols, antioxidant compounds and phytonutrients those cells produce to protect themselves against the environmental stress they're exposed to in culture — UV, cold, oxidative pressure. That protective chemistry is what actually ends up in the extract, and it's the property being borrowed for skin, not any capacity for the cells themselves to become something else.",
+      "It's worth being direct about what doesn't happen next: a plant cell cannot integrate into human tissue, graft onto skin, or become a human skin cell, and no topical product — regardless of what's on the label — is doing anything resembling stem cell therapy in the clinical sense. What the research on these plant extracts actually looks at is narrower and more indirect: early cell-culture studies suggest some of these compounds carry antioxidant and growth-factor-like signalling activity that can help protect skin's own stem cell population, which resides in the basal layer of the epidermis, from oxidative damage, and may support fibroblasts in their ongoing collagen output. That's a real, if still-emerging, mechanism — just a considerably more modest one than the name on the bottle implies.",
+      "This is exactly the category IONTO Stem Cell Treatment is built around: iontophoresis is used to infuse potent stem cell extracts deep into skin, and that delivery method matters because these plant-derived compounds are complex molecules that don't cross the stratum corneum well left to passive application alone. Driving them in with an electrical current, the same basic principle behind ProBright's electrical infusion covered elsewhere on this blog, is what gets a meaningful dose to living tissue rather than most of it evaporating off the surface — which is part of why the treatment is positioned around brightening, tightening and repair rather than as a light maintenance facial.",
+      "None of this replaces the more established, longer-studied routes to genuine collagen remodelling covered elsewhere on this blog — HIFU's wound-healing response or retinol's direct receptor signalling both have a deeper evidence base for that specific outcome. Plant stem cell extracts are a legitimate, protective addition to a routine rather than a substitute for those mechanisms, and whether IONTO Stem Cell Treatment or a more structural option actually matches what your skin needs is exactly what a Skin Analysis is for.",
+    ],
+  },
+  {
     slug: "revive-glow-treatment-explained",
     title: "Revive Glow Treatment: Why We Layer Glycolic and Mandelic Acid Together",
     kicker: "Treatments Explained",
