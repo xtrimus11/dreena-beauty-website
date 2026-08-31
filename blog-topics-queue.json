@@ -1,69 +1,6 @@
 {
-  "weekOf": "2026-08-24",
+  "weekOf": "2026-08-31",
   "topics": [
-    {
-      "date": "2026-08-24",
-      "title": "Multivitamin Restore with RF: Who It's Actually For (and What to Expect)",
-      "kicker": "Treatments Explained",
-      "angle": "Explain the three real components of the session (Multivitamin Power Exfoliant, RF-driven heat, 5x vitamin masque) and how RF here differs from HIFU's deeper collagen-triggering heat.",
-      "photoSearchTerm": "vitamin facial mask treatment skincare",
-      "status": "published",
-      "used": true
-    },
-    {
-      "date": "2026-08-25",
-      "title": "Creatine for Skin? What the Research Actually Shows",
-      "kicker": "Ingredients",
-      "angle": "User-added topic. Explain creatine's role in cellular energy metabolism — skin cells rely on ATP for repair and renewal, and creatine supports the phosphocreatine system that regenerates it — then summarize what topical creatine research suggests about fibroblast activity and collagen synthesis. Be explicit this is emerging, topical-specific evidence, not proof oral creatine supplementation firms skin or reduces wrinkles — the skin evidence is much stronger for topical application than oral intake, and oral creatine's well-established benefits are for muscle performance, not skin. No d'reena product currently contains creatine, so don't fabricate a tie-in to a specific treatment or product — write this as general ingredient education in the same voice as the niacinamide/hyaluronic-acid posts. Fine to mention in passing that collagen-synthesis-focused treatments like HIFU or ACR Treatment address the same broad goal through an entirely different (proven) mechanism — don't imply they use creatine.",
-      "photoSearchTerm": "amino acid serum skincare dropper",
-      "status": "published",
-      "used": true
-    },
-    {
-      "date": "2026-08-26",
-      "title": "What Declining Estrogen Actually Does to Skin",
-      "kicker": "Ingredients",
-      "angle": "User-added topic (source material on perimenopausal/menopausal skin). Explain that estrogen receptors are present throughout skin (keratinocytes, fibroblasts, melanocytes, hair follicle cells) and estrogen partially controls collagen/elastin synthesis, so declining estrogen through perimenopause and menopause directly changes skin architecture — not just generic 'ageing'. Walk through the mechanism layer by layer: epidermis (reduced dermal blood flow contributing to thinning, slower turnover, dullness; reduced glycosaminoglycan/hyaluronic acid production leading to drier, more reactive skin and higher transepidermal water loss), pigmentation (hormonal fluctuation can increase pigmentation, while later melanocyte density decline paradoxically produces blotchier, less even tone), sebum (relatively more dominant androgens can trigger new hormonal breakouts in some women while others see sebum drop and dryness increase instead), and dermis (the best-documented change — meaningful collagen loss in the years following menopause, continuing at a slower ongoing rate afterward). Hedge any cited statistics (collagen loss percentages, melanocyte density decline, hot flush prevalence) as 'research broadly indicates' rather than precise clinical fact, since they haven't been independently re-verified for this piece. Do NOT mention HRT, hormone therapy, or anything positioning d'reena as treating hormonal imbalance — stay strictly at the skin level, which is what an aesthetics clinic can actually address. Where relevant, note retinol (retinol-explained post) and hyaluronic acid (hyaluronic-acid-explained post) are two of the better-evidenced actives for the collagen and hydration losses described. End with the usual Skin Analysis CTA, framed as understanding what's actually changing before building a routine.",
-      "photoSearchTerm": "mature skin skincare mirror",
-      "status": "published",
-      "used": true
-    },
-    {
-      "date": "2026-08-27",
-      "title": "Building a Skin Routine Through Perimenopause and Menopause",
-      "kicker": "Treatments Explained",
-      "angle": "User-added topic — follow-up to the estrogen/skin mechanism post (2026-08-26). A practical treatment-roadmap piece matching real d'reena treatments to the actual skin changes of perimenopause/menopause, not generic anti-ageing advice. Structure around: barrier support first (Environmental Treatment and PRO Calm Treatment, already covered in skin-barrier-ingredients, for ceramide/NMF loss and increased reactivity), collagen and renewal support (retinol-based LumiLift Elite, plus HIFU and ACR Treatment as collagen-stimulating options, tied to why loss of firmness often shows before visible wrinkling), pigmentation management without irritation (Vitamin C via PowerBright/ProBright, already covered in vitamin-c-benefits, and Pico Laser with ProRestore for more pronounced blotchiness — note gentler is often the better call on a thinner, more reactive barrier), and calming vascular reactivity (PRO Calm Treatment again, for redness that becomes more common alongside hot-flush-driven capillary stress). Only reference actives/ingredients d'reena's site actually verifies (retinol, vitamin C, niacinamide, hyaluronic acid, ceramides/panthenol/glycerin) — do not invent that d'reena carries azelaic acid, hexylresorcinol, tranexamic acid, or specific named peptides unless confirmed first. No HRT or hormonal-treatment claims — frame this strictly as adapting existing skin treatments to changing skin. End with a Skin Analysis CTA, framed as the way to figure out where in this transition a given client's skin actually is.",
-      "photoSearchTerm": "mature woman skincare consultation",
-      "status": "published",
-      "used": true
-    },
-    {
-      "date": "2026-08-28",
-      "title": "Hexylresorcinol, Explained",
-      "kicker": "Ingredients",
-      "angle": "Explain hexylresorcinol as a tyrosinase-inhibiting brightening ingredient with a different route to fading pigment than vitamin C, grounded in ProBright Skin Treatment's electrical infusion of Vitamin C, Niacinamide and Hexylresorcinol.",
-      "photoSearchTerm": "brightening serum skincare pigmentation",
-      "status": "published",
-      "used": true
-    },
-    {
-      "date": "2026-08-29",
-      "title": "Revive Glow Treatment: Why We Layer Glycolic and Mandelic Acid Together",
-      "kicker": "Treatments Explained",
-      "angle": "Explain how glycolic acid's small molecular size drives fast, deeper exfoliation while mandelic acid's larger molecule penetrates more slowly for a gentler effect, and why combining both in the VITAL Peeling facial broadens who it suits.",
-      "photoSearchTerm": "acid peel exfoliation skincare glow",
-      "status": "published",
-      "used": true
-    },
-    {
-      "date": "2026-08-30",
-      "title": "Stem Cell Extracts in Skincare: What They Actually Do",
-      "kicker": "Ingredients",
-      "angle": "Demystify what 'stem cell' means on a skincare label — plant-derived extracts rich in antioxidants and growth-factor-like compounds that support skin's own repair signalling, not literal stem cells — grounded in IONTO Stem Cell Treatment's iontophoresis delivery.",
-      "photoSearchTerm": "botanical skincare serum ingredient",
-      "status": "published",
-      "used": true
-    },
     {
       "date": "2026-08-31",
       "title": "Too Much, Too Often: What Over-Treating Actually Does to Your Skin",
@@ -104,6 +41,33 @@
       "status": "confirmed",
       "used": false,
       "source": "user"
+    },
+    {
+      "date": "2026-09-04",
+      "title": "Dermashot Treatment: What EMS Adds to Microneedling-Delivered Exosomes",
+      "kicker": "Treatments Explained",
+      "angle": "Explain how Dermashot Treatment pairs microneedling with EMS (electrical muscle stimulation) to drive Selvert Med Biotech exosomes deeper than microneedling alone would, why the four booster choices (Whitening, Redensifying, Global Anti-Age, Firming Lift) let the same delivery mechanism target different concerns for different clients, and why the recommended course of 4-6 sessions every 2-4 weeks reflects a cumulative approach rather than a one-off facial. Cross-link the 2026-09-02 post's explanation of microneedling as a controlled micro-injury the skin repairs, rather than re-explaining that principle, and keep this treatment clearly distinct from Exosome Treatment with MTS (a separate, simpler microneedling-plus-exosome treatment) rather than conflating the two.",
+      "photoSearchTerm": "microneedling exosome facial treatment",
+      "status": "proposed",
+      "used": false
+    },
+    {
+      "date": "2026-09-05",
+      "title": "Freshwater Sponge Spicules: The Ingredient Behind Micro-Resurfacing",
+      "kicker": "Ingredients",
+      "angle": "Explain what freshwater sponge extract actually is on an ingredient label — the ground skeletal structure of freshwater sponges, made of microscopic silica-based spicules — and how those spicules create controlled, gentle micro-abrasion at the skin's surface that prompts natural cell turnover and mild collagen stimulation, as a physical (rather than chemical/acid-based) route to resurfacing. Ground it in Bio Cell Treatment's micro-resurfacing step, and cross-link the existing Bio Cell treatment post (2026-08-18) for the full treatment rundown rather than repeating it.",
+      "photoSearchTerm": "sea sponge natural exfoliation texture",
+      "status": "proposed",
+      "used": false
+    },
+    {
+      "date": "2026-09-06",
+      "title": "Pico Plus: Why We Pair Pico Laser With OPT Light",
+      "kicker": "Treatments Explained",
+      "angle": "Explain the two-part mechanism behind Pico Plus - Laser & Light Treatment: pico laser's ultra-short pulses fragmenting pigment and scar tissue into particles the body clears away, combined with OPT (optical pulse technology) broad-spectrum light that targets redness and the bacteria linked to breakouts, and why that combination is positioned for acne-prone skin dealing with scarring and pigmentation together rather than pigmentation alone. Cross-link the existing Pico Laser and pigmentation post (2026-07-29) for the pico mechanism itself instead of re-explaining it, and mention the optional Caviar ampoule + masque add-on as a genuine extra rather than a core claim.",
+      "photoSearchTerm": "laser facial treatment technology skincare",
+      "status": "proposed",
+      "used": false
     }
   ]
 }
