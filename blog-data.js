@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "over-treated-skin-explained",
+    title: "Too Much, Too Often: What Over-Treating Actually Does to Your Skin",
+    kicker: "Ingredients",
+    date: "2026-08-31",
+    cardStyle: "photo",
+    excerpt: "The most common problem walking through our door lately isn't neglect — it's a barrier stripped faster than it can rebuild by acids, retinoids, vitamin C and scrubs all stacked into the same week.",
+    heroPlaceholder: "Skincare bottles and droppers crowded together on a bathroom shelf",
+    image: "assets/blog/over-treated-skin-explained.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
+    body: [
+      "For years, the assumption behind most skincare advice was that people weren't doing enough — too little cleansing, no sunscreen, nothing active in the routine at all. That's shifted. Skincare information is more available now than it's ever been, and it's pushed the average routine in the opposite direction: a chemical exfoliant most mornings, a retinol most nights, a vitamin C serum layered in somewhere between, a physical scrub on top when skin looks dull, and increasingly an at-home device — a dermaroller, an LED mask, a gua sha routine — stacked on all of it. None of those steps is the problem in isolation. The problem is what happens when several of them run at once, every day, with no gap built in for skin to actually recover.",
+      "The skin barrier — the outermost layer, the stratum corneum — isn't a passive wrapper; it's a genuine physical structure, corneocytes (flattened, dead skin cells) held together by a lipid matrix of ceramides, fatty acids and cholesterol, the same mortar-and-bricks arrangement covered in an earlier piece on this blog's barrier ingredients. That matrix is what keeps water in and irritants out, and it isn't fixed in place — it's constantly being broken down and rebuilt as part of skin's normal turnover. Acids and retinoids work, in part, precisely because they accelerate that turnover or dissolve the bonds holding old cells together; that's a legitimate and often desirable effect on its own. The trouble is that rebuilding the lipid matrix takes time skin doesn't get when several disruptive steps run back-to-back with no recovery day between them — the matrix gets stripped faster than skin can lay new lipids down, and the deficit compounds rather than closing.",
+      "That compounding deficit is what shows up as transepidermal water loss — water escaping through the surface faster than it should, because there's less intact lipid matrix left to hold it in. It's also why products that used to sit on skin without issue suddenly don't: stinging or tightness after a serum that was fine a month ago, redness that lingers rather than settling within the hour, breakouts appearing on skin that wasn't previously acne-prone, slower healing after even a minor treatment, and a persistent tight, dehydrated feeling that a heavier moisturiser doesn't actually resolve — because the issue isn't a lack of moisturiser sitting on top, it's the leak underneath it.",
+      "The counter-intuitive part is what most routines get wrong next: those signs generally mean skin needs less input, not a stronger product to push through them. That's not a case against actives themselves — retinol and vitamin C, both covered in earlier pieces on this blog, remain two of the best-evidenced ingredients in skincare, and the goal here isn't to talk anyone out of using them. The far more common issue is frequency and stacking rather than the ingredient itself: the same acid or retinol that works well used two or three times a week, with room either side of it, can be exactly what tips a barrier over when it's also carrying a scrub, a device and a second active on the same days.",
+      "None of this is really about doing less skincare in the sense of caring less about it — it's about matching what's actually being applied to what a given barrier can currently handle, since that capacity changes with weather, stress, and whatever else is already in a routine. Working out whether skin is genuinely barrier-compromised right now, rather than guessing from symptoms alone, is exactly what a Skin Analysis with us is for before changing anything else in a routine.",
+    ],
+  },
+  {
     slug: "stem-cell-extracts-skincare-explained",
     title: "Stem Cell Extracts in Skincare: What They Actually Do",
     kicker: "Ingredients",
