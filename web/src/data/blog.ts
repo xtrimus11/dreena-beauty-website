@@ -20,6 +20,25 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: "repair-is-the-strategy-explained",
+    title: "Repair Is the Strategy, Not the Setback",
+    kicker: "Treatments Explained",
+    date: "2026-09-01",
+    cardStyle: "cream",
+    excerpt:
+      "The biggest misconception about a compromised barrier is that pausing to repair it delays results — in practice, a functioning barrier is what lets any corrective treatment that follows actually hold instead of stalling or backfiring.",
+    image: "/images/repair-is-the-strategy-explained.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
+    body: [
+      "Part one of this series covered what over-treated skin actually looks like — a barrier stripped faster than it can rebuild by acids, retinoids and vitamin C all stacked into the same week. The natural next question is what to actually do about it, and that's where most routines stall: pausing an active-heavy routine to let the barrier repair feels like giving something up, a delay standing between now and whatever result the skin was working toward in the first place. That framing has it backwards. Repair isn't the interruption to a corrective plan — it's the part of the plan that decides whether the rest of it actually works.",
+      "A functioning barrier isn't a passive holding pattern; it's what everything else in a routine or a treatment plan is built on top of. It's what keeps water sitting in skin rather than escaping through it as transepidermal water loss, which is why a repaired barrier holds hydration from a treatment or a product measurably longer than a compromised one does. It's also what keeps baseline inflammation low — a barrier that's constantly running a low-grade irritation response has less capacity left over to mount the more useful, targeted response a corrective treatment is actually trying to provoke. And it's what determines how quickly skin recovers between sessions, since a course of treatments depends on skin being genuinely ready to receive the next one rather than still working through the last. None of that is optional groundwork sitting before the real work starts — it's the condition the real work depends on to reach its potential instead of stalling, or backfiring into more sensitivity than existed to begin with.",
+      "This is exactly the job Environmental Treatment and PRO Calm Treatment are built around, rather than being maintenance facials clients graduate away from once the more exciting corrective treatments start. Environmental Treatment is a 120-minute session built to strengthen the barrier directly, soothing eczema-prone skin and calming general reactivity — the same ceramide, panthenol and glycerin trio covered in an earlier piece on this blog's barrier ingredients, delivered here as a dedicated repair session rather than a quick add-on step. PRO Calm Treatment runs the same 120 minutes toward a more targeted brief: hydration and barrier repair aimed at rosacea, eczema and psoriasis, calming redness and rebalancing reactive skin rather than diagnosing or medically managing any of those conditions — that's a doctor's job, not ours, and anything that looks more medical than cosmetic gets referred rather than treated here.",
+      "The strengthening route is, admittedly, the slower-sounding recommendation, and it's often the one clients resist — a barrier-repair facial doesn't come with the same visible before-and-after as a peel or a machine-assisted session, so it can read as time spent not moving forward. In practice it's closer to the opposite: consistency at this stage does more than intensity does, because a barrier that's been calmed and strengthened between sessions is what lets a subsequent corrective treatment actually hold, rather than triggering the same stinging, lingering redness and slow healing that part one described on skin that wasn't ready for it.",
+      "None of this is a fixed prescription — how much repair a given barrier actually needs, and how long that takes, is different for skin that's chronically reactive than for skin that's simply been over-exfoliated for a few weeks. Establishing where the barrier actually stands, rather than guessing from how skin currently feels, is exactly what a Skin Analysis with us is for before committing to a corrective plan.",
+    ],
+  },
+  {
     slug: "over-treated-skin-explained",
     title:
       "Too Much, Too Often: What Over-Treating Actually Does to Your Skin",
