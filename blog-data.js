@@ -8,6 +8,25 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "dermashot-treatment-ems-exosomes-explained",
+    title: "Dermashot Treatment: What EMS Adds to Microneedling-Delivered Exosomes",
+    kicker: "Treatments Explained",
+    date: "2026-09-04",
+    cardStyle: "photo",
+    excerpt: "Dermashot Treatment layers EMS on top of microneedling to drive 1.6 billion exosomes per session deeper than the needles alone would reach, with a choice of four boosters and a structured course built to compound over several sessions.",
+    heroPlaceholder: "Microneedling and EMS exosome facial treatment in progress",
+    image: "assets/blog/dermashot-treatment-ems-exosomes-explained.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
+    body: [
+      "Dermashot Treatment sits next to Exosome Treatment with MTS on our menu, and the two are easy to mix up, because both start from the same premise covered in an earlier piece on this blog: microneedling opens a grid of micro-channels the skin then has to repair, and that controlled injury is what lets whatever's applied afterward penetrate further than it could through intact skin alone. Exosome Treatment with MTS stops there — microneedling, then exosomes applied into the channels it opened. Dermashot adds a second delivery mechanism on top of the first: EMS, electrical muscle stimulation, run alongside the microneedling step, and 1.6 billion Selvert Med Biotech exosomes per session driven through the combination of the two rather than through the needling alone.",
+      "EMS works by passing a low-level electrical current through the treatment area, which causes the underlying muscle to contract. In a fitness context that contraction is the whole point; here, it's being used for what that repeated muscle movement does to everything sitting in the tissue above it — it acts as a second driving force, working the exosome formula further into skin than the micro-channels alone would manage once the needling stops and the channels start to narrow again. Microneedling gets the exosomes in the door; EMS is what keeps pushing them further down the hall rather than letting them settle at whatever depth the needles happened to reach.",
+      "That combined delivery step is also why Dermashot can offer a choice rather than one fixed result. The microneedling-plus-EMS mechanism is essentially concern-agnostic — it's an infrastructure for driving a formula deeper, not a treatment aimed at one specific outcome — which is what lets the same session carry four different boosters: Whitening, Redensifying, Global Anti-Age, or Firming Lift. What actually determines the result a client walks out with is which of those four gets loaded into that delivery mechanism, matched to whichever concern is the priority for that particular skin, rather than the depth or method of delivery changing session to session.",
+      "The recommended course — 4 to 6 sessions, spaced every 2 to 4 weeks — reflects the same logic that shows up across most of the genuinely structural treatments on our menu rather than anything specific to exosomes on their own: growth-factor signalling compounds with repetition in a way a single session can't replicate, the same reason HIFU's collagen remodelling is described as building gradually over two to three months rather than appearing after one visit. Booking Dermashot as a one-off facial misreads what it's actually built to do; the course is where the cumulative effect of repeated, deep-delivered growth-factor signalling actually shows up.",
+      "None of this makes Exosome Treatment with MTS the lesser option — it's a simpler, still genuinely effective route to the same broad category of benefit, and a reasonable place to start for skin that hasn't had microneedling-based treatment before. Dermashot is the more structured, more targeted version of the same underlying idea, built for a client who already knows which specific concern they're addressing and wants the added driving force of EMS behind it. Which of the two actually fits a given skin, and which booster it should be paired with, is exactly what a Skin Analysis with us is for.",
+    ],
+  },
+  {
     slug: "10-step-skincare-ritual-explained",
     title: "The 10-Step Ritual Isn't New — and You Probably Don't Need All 10",
     kicker: "Ingredients",
