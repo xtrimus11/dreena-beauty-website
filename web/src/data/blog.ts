@@ -20,6 +20,26 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: "freshwater-sponge-spicules-explained",
+    title:
+      "Freshwater Sponge Spicules: The Ingredient Behind Micro-Resurfacing",
+    kicker: "Ingredients",
+    date: "2026-09-05",
+    cardStyle: "cream",
+    excerpt:
+      "Freshwater sponge extract isn't a soft, spongy ingredient at all — it's ground silica spicules rigid enough to physically abrade skin, and that same friction is what nudges cell turnover and collagen activity along without a drop of acid involved.",
+    image: "/images/freshwater-sponge-spicules-explained.jpg",
+    imageCredit: null,
+    imageCreditHref: null,
+    body: [
+      "\"Freshwater sponge\" on an ingredient list reads like it should be soft, the way the sponge sitting in a shower caddy is soft, and that's almost exactly backwards. What actually goes into the jar is the ground skeletal structure of the sponge — not the living tissue, the internal scaffolding it builds to hold its own body together. That scaffolding is made of spicules: microscopic, needle-like structures built from silica, the same category of mineral behind glass and sand, rather than the soft protein networks that give a bath sponge its squeeze. Ground into a fine powder or paste, what's left is rigid and sharp at a microscopic scale, which is the entire reason the ingredient does anything to skin at all.",
+      "That rigidity is what turns a simple massage step into an active form of exfoliation. Each spicule behaves less like a grain of sand sanding a surface evenly and more like an enormous number of individually fine points, so when the paste is worked across skin, it isn't abrading in one uniform pass so much as creating thousands of tiny, superficial points of physical disruption across the outermost layer of dead cells. That's a genuinely different route to resurfacing than a chemical exfoliant takes. An acid like glycolic or mandelic works by dissolving the bonds holding dead cells together, a chemical reaction that has to be buffered for pH and tolerance; freshwater sponge does the equivalent job through direct friction, with no acid, no pH curve, and no chemical reaction to manage on skin that's already sensitive to one.",
+      "The part that makes it more than a simple polish is what skin does in response to that disruption. Even superficial mechanical injury reads to skin as a cue to work faster: it speeds up shedding and replacement of surface cells beyond its normal turnover pace, which is most of what shows up immediately as smoother, more even texture. With repeated sessions, that same mild disruption is also understood to nudge fibroblasts — the cells responsible for producing collagen — into somewhat higher activity, the same broad logic behind why a controlled injury prompts a repair response that shows up across more intensive treatments on our menu, just working here at a far shallower, gentler scale than something like microneedling. It's a modest effect rather than a dramatic one, but it's the reason repeated sessions read as more than repeated dead-skin removal.",
+      "That non-chemical route is exactly what Bio Cell Treatment is built around, and it's why the treatment carries such a high safety profile with none of the dryness a comparable acid-based peel can leave behind — there's no lipid-stripping chemical reaction happening underneath the friction, just direct physical contact. Our earlier piece on what's actually happening during a Bio Cell Treatment covers the full 90-minute session in detail, so this one stays with the ingredient itself: a genuinely simple mineral structure doing a more sophisticated job than its plain name on a label suggests.",
+      "Whether that gentler, physical route suits a given skin better than a chemical peel, or the two would actually work well as complementary steps in the same routine, isn't something to guess from an ingredient list — that's exactly what a Skin Analysis with us is for.",
+    ],
+  },
+  {
     slug: "dermashot-treatment-ems-exosomes-explained",
     title:
       "Dermashot Treatment: What EMS Adds to Microneedling-Delivered Exosomes",
