@@ -15,23 +15,28 @@ begin;
 --
 -- auth_user_id / credentials are set up separately — see db/README.md.
 --
--- TODO: full legal names and emails are still placeholders; correct them here
--- rather than in the UI.
+-- Full names come from the STAFF rows in the Dec-2025 customer export, which
+-- the old system kept alongside its customers. Joe, Maggie, Venice and Eunice
+-- are not in that file — they joined after it was taken — so their full names
+-- are still first names only. Correct them here, not in the UI.
+--
+-- `initials` stays as the shop writes it by hand (CT for Christal, SLY for
+-- Sally), which is not always derived from the name.
 
 insert into staff (display_name, full_name, initials, role, colour, is_freelancer, column_mode, performs_all_treatments, sort_order) values
-  ('Jodie',    'Jodie',    'JD',  'therapist', '#B45309', false, 'always',      true,  10),
-  ('Joe',      'Joe',      'JOE', 'therapist', '#7C3AED', false, 'always',      true,  20),
-  ('Christal', 'Christal', 'CT',  'therapist', '#4D7C0F', false, 'always',      true,  30),
-  ('Sally',    'Sally',    'SLY', 'therapist', '#0F766E', false, 'always',      true,  40),
-  ('Maggie',   'Maggie',   'MG',  'therapist', '#BE185D', false, 'always',      true,  50),
-  ('Venice',   'Venice',   'VN',  'therapist', '#0369A1', false, 'always',      true,  60),
+  ('Jodie',    'Jodie Ong',     'JD',  'therapist', '#B45309', false, 'always'     , true,  10),
+  ('Joe',      'Joe',           'JOE', 'therapist', '#7C3AED', false, 'always'     , true,  20),
+  ('Christal', 'Christal Ling', 'CT',  'therapist', '#4D7C0F', false, 'always'     , true,  30),
+  ('Sally',    'Sally Yip',     'SLY', 'therapist', '#0F766E', false, 'always'     , true,  40),
+  ('Maggie',   'Maggie',        'MG',  'therapist', '#BE185D', false, 'always'     , true,  50),
+  ('Venice',   'Venice',        'VN',  'therapist', '#0369A1', false, 'always'     , true,  60),
   -- Manager. Runs the shop and does eyebag treatment.
-  ('Shaun',    'Shaun',    'SH',  'manager',   '#1F2937', false, 'when_booked', false, 70),
+  ('Shaun',    'Shaun',         'SH',  'manager',   '#1F2937', false, 'when_booked', false, 70),
   -- Owner. Does tattoo, not often.
-  ('Dareena',  'Dareena',  'DR',  'admin',     '#9D174D', false, 'when_booked', false, 80),
+  ('Dareena',  'Dareena Tan',   'DR',  'admin',     '#9D174D', false, 'when_booked', false, 80),
   -- Freelancer, comes in for eyelash perming only. Not on the shop roster,
   -- so roster checks are skipped for her.
-  ('Eunice',   'Eunice',   'EU',  'therapist', '#A16207', true,  'when_booked', false, 90)
+  ('Eunice',   'Eunice',        'EU',  'therapist', '#A16207', true , 'when_booked', false, 90)
 on conflict (display_name) do nothing;
 
 -- Opening hours --------------------------------------------------------------
