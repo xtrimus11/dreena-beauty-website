@@ -1,0 +1,67 @@
+# Runs the staff diary on the Synology NAS.
+#
+# DSM 7 -> Container Manager -> Project -> Create, pointing at this folder.
+#
+# Both images are multi-arch, so this works on an Intel Synology (DS220+,
+# DS923+, ...) and on an ARM one (DS220j, DS223, ...). Check yours under
+# Control Panel -> Info Center before you start: an ARM NAS with 512MB-1GB of
+# RAM will struggle to run Postgres and Next.js together, and the app should
+# then be built elsewhere and only Postgres kept here.
+#
+# BEFORE FIRST RUN
+#   1. Give the NAS a fixed LAN IP (Control Panel -> Network -> Network
+#      Interface -> Edit -> Manual). Staff bookmark that address; if DHCP
+#      changes it, every tablet breaks.
+#   2. Create /volume1/docker/dreena/ and put a .env file next to this one.
+#   3. Do NOT forward port 5432 anywhere. Postgres is LAN-only, deliberately.
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: dreena
+      POSTGRES_USER: dreena
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      # Postgres logs and timestamps in shop time, so the logs read the way
+      # the day did.
+      TZ: Asia/Kuala_Lumpur
+    volumes:
+      - /volume1/docker/dreena/pgdata:/var/lib/postgresql/data
+      # Applied in filename order on an empty data directory only. Re-running
+      # migrations later is a manual psql job.
+      - ../db/migrations:/docker-entrypoint-initdb.d/1-migrations:ro
+      - ../db/seed:/docker-entrypoint-initdb.d/2-seed:ro
+    # Bound to the LAN interface, not 0.0.0.0, and never published to the
+    # internet. Remove this block entirely once you no longer need psql from
+    # your laptop — the app reaches the database over the compose network.
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dreena -d dreena"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      TZ: Asia/Kuala_Lumpur
+      DREENA_DB_URL: postgres://dreena:${POSTGRES_PASSWORD}@db:5432/dreena
+      # Staff reach the NAS over plain http on the LAN, so the session cookie
+      # cannot be Secure-only. Unset this if you put TLS in front.
+      DREENA_LAN_HTTP: "1"
+    ports:
+      - "3000:3000"
+
+# NOT IN USE — see README.md in this folder. If you ever do self-host,
+# 0002_rls.sql must be moved out of db/migrations first: it depends on
+# Supabase's auth.uid() and will abort the init on a plain Postgres. You will
+# also need to replace Supabase Auth with local sign-in.
