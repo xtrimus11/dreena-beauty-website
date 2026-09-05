@@ -17,8 +17,7 @@ import {
   getTurnStandings,
 } from "@/lib/appointments/queries";
 import { turnOrder } from "@/lib/appointments/rotation";
-import { SHOP_TIMEZONE, shopDate, shopInstant, shopWeekday } from "@/lib/appointments/time";
-import type { Weekday } from "@/lib/appointments/types";
+import { SHOP_TIMEZONE, shopDate } from "@/lib/appointments/time";
 
 export const dynamic = "force-dynamic"; // the diary is never cacheable
 

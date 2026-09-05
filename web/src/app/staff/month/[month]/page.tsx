@@ -8,7 +8,6 @@ import { shopDate } from "@/lib/appointments/time";
 export const dynamic = "force-dynamic";
 
 const MONTH_PATTERN = /^\d{4}-\d{2}$/;
-const DAY = 86_400_000;
 
 function shiftMonth(month: string, by: number): string {
   const [y, m] = month.split("-").map(Number);

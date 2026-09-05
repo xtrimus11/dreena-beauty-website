@@ -32,20 +32,29 @@ export default async function BookingPage({ params }: { params: Promise<{ id: st
 
   // Anyone already occupied at this booking's time cannot take it, so the
   // turn board here reflects that slot rather than "right now".
-  const start = new Date(booking.guests[0]?.startsAt ?? Date.now());
-  const end = new Date(booking.guests[booking.guests.length - 1]?.endsAt ?? Date.now());
-  const busyStaffIds = dayBookings
-    .flatMap((b) => b.guests)
-    .filter(
-      (g) =>
-        g.appointmentId !== booking.id &&
-        g.therapistId &&
-        g.status !== "cancelled" &&
-        g.status !== "no_show" &&
-        new Date(g.startsAt) < end &&
-        start < new Date(g.endsAt),
-    )
-    .map((g) => g.therapistId as string);
+  //
+  // The window comes from the booking's own guests — no clock reading. A
+  // booking always has at least one guest (create_booking enforces it), but
+  // if it somehow had none there is no window to compare against and nobody
+  // is busy, which is what the empty array says.
+  const first = booking.guests[0];
+  const last = booking.guests[booking.guests.length - 1];
+
+  const busyStaffIds =
+    first && last
+      ? dayBookings
+          .flatMap((b) => b.guests)
+          .filter(
+            (g) =>
+              g.appointmentId !== booking.id &&
+              g.therapistId &&
+              g.status !== "cancelled" &&
+              g.status !== "no_show" &&
+              g.startsAt < last.endsAt &&
+              first.startsAt < g.endsAt,
+          )
+          .map((g) => g.therapistId as string)
+      : [];
 
   const order = turnOrder({
     standings,
