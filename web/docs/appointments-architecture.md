@@ -64,14 +64,15 @@ One codebase, three behaviours, decided by viewport width:
 
 | Width | Device | Behaviour |
 |---|---|---|
-| `< 768px` | Phone | **View only.** Pick one therapist, read their day. No create, no edit, no drag. |
+| `< 768px` | Phone | Agenda view — pick one therapist, read their day — **plus taking and editing bookings**. Only the slot grid is withheld: six columns of half-hour boxes cannot be tapped accurately at this width. |
 | `768–1279px` | Tablet | Full editing. Day sheet plus the turn board stacked. |
 | `>= 1280px` | Desktop | Full editing. Sheet and turn board side by side. |
 
-The phone restriction is enforced two ways, both cosmetic rather than secure:
-a server-side check on the `User-Agent` for the initial redirect, and a
-client-side width guard that swaps the editing UI for the read-only agenda.
-See the note in `db/README.md` — this is ergonomics, not a permission.
+Phones were originally read-only, on the reasoning that mis-tapping a booking
+on a 5-inch screen loses a customer's slot. The shop overruled that: therapists
+carry phones, not tablets, and a booking they cannot take is a booking that
+goes back on paper. Only the slot grid stays desktop-only now, because that is
+a genuine precision problem rather than a caution.
 
 ## Data model
 

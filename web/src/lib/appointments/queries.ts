@@ -94,7 +94,8 @@ export async function getDay(date: string): Promise<AppointmentWithGuests[]> {
                               ( id, customer_code, customer_type, full_name, phone ) ),
        customer:customers!appointment_guests_customer_id_fkey
          ( id, customer_code, customer_type, full_name, phone,
-           preferred_therapist_id, preferred_therapist_strict ),
+           preferred_therapist_strict,
+           customer_preferred_therapists ( staff_id, rank ) ),
        treatment:treatments ( id, slug, code, name, duration_minutes, duration_is_flexible ),
        therapist:staff ( id, display_name, initials, colour )`,
     )
@@ -162,7 +163,7 @@ export async function getDay(date: string): Promise<AppointmentWithGuests[]> {
             customerCode: customer.customer_code ?? null,
             fullName: customer.full_name,
             phone: customer.phone ?? null,
-            preferredTherapistId: customer.preferred_therapist_id ?? null,
+            preferredTherapistIds: preferenceIds(customer),
             preferredTherapistStrict: customer.preferred_therapist_strict ?? false,
           }
         : null,
@@ -185,11 +186,11 @@ export async function getDay(date: string): Promise<AppointmentWithGuests[]> {
             colour: therapist.colour,
           }
         : null,
-      // Flagged only when a preference exists and was not honoured.
+      // Flagged only when preferences exist and none of them was honoured.
       preferenceMismatch:
-        !!customer?.preferred_therapist_id &&
+        preferenceIds(customer).length > 0 &&
         !!row.therapist_id &&
-        customer.preferred_therapist_id !== row.therapist_id,
+        !preferenceIds(customer).includes(row.therapist_id),
     };
 
     byAppointment.get(appt.id)!.guests.push(guest);
@@ -267,6 +268,14 @@ export async function getStandardSlots(weekday: Weekday): Promise<StandardSlot[]
 }
 
 // Helpers ---------------------------------------------------------------------
+
+/** Preference ids in the customer's own rank order — first choice first.
+ *  A to-many embed always arrives as an array, empty when there are none. */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function preferenceIds(customer: any): string[] {
+  const rows = (customer?.customer_preferred_therapists ?? []) as { staff_id: string; rank: number }[];
+  return [...rows].sort((a, b) => a.rank - b.rank).map((r) => r.staff_id);
+}
 
 /** PostgREST types a to-one embed as an array in some versions. Normalise. */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -351,7 +360,7 @@ export async function searchCustomers(query: string, limit = 12) {
   const { data, error } = await supabase
     .from("customers")
     .select(
-      "id, customer_code, customer_type, full_name, phone, preferred_therapist_id, preferred_therapist_strict, primary_contact_id, notes",
+      "id, customer_code, customer_type, full_name, phone, preferred_therapist_strict, primary_contact_id, notes, customer_preferred_therapists ( staff_id, rank )",
     )
     .eq("is_active", true)
     .or(`full_name.ilike.%${safe}%,phone.ilike.%${safe}%,customer_code.ilike.%${safe}%`)
@@ -366,7 +375,7 @@ export async function searchCustomers(query: string, limit = 12) {
     customerType: r.customer_type as "course" | "walk_in",
     fullName: r.full_name as string,
     phone: (r.phone as string | null) ?? null,
-    preferredTherapistId: (r.preferred_therapist_id as string | null) ?? null,
+    preferredTherapistIds: preferenceIds(r),
     preferredTherapistStrict: Boolean(r.preferred_therapist_strict),
     primaryContactId: (r.primary_contact_id as string | null) ?? null,
     notes: (r.notes as string | null) ?? null,
@@ -622,6 +631,7 @@ export async function searchBookings(query: string): Promise<FoundCustomer[]> {
   // A reference is unambiguous, so it short-circuits the name search.
   const byReference = /^DR-[0-9A-Z]{4,8}$/i.test(q);
   let customerIds: string[] = [];
+  let matched: Awaited<ReturnType<typeof searchCustomers>> = [];
 
   if (byReference) {
     const { data, error } = await supabase
@@ -631,9 +641,8 @@ export async function searchBookings(query: string): Promise<FoundCustomer[]> {
     if (error) throw new Error(`Search failed: ${error.message}`);
     customerIds = (data ?? []).map((r) => r.contact_customer_id as string);
   } else {
-    const matches = await searchCustomers(q, 25);
-    customerIds = matches.map((m) => m.id);
-    if (customerIds.length === 0) return [];
+    matched = await searchCustomers(q, 25);
+    customerIds = matched.map((m) => m.id);
   }
   if (customerIds.length === 0) return [];
 
@@ -654,6 +663,23 @@ export async function searchBookings(query: string): Promise<FoundCustomer[]> {
   if (error) throw new Error(`Search failed: ${error.message}`);
 
   const byCustomer = new Map<string, FoundCustomer>();
+
+  // Seed with everyone who matched, before looking at bookings at all. Building
+  // the map only from booking rows meant a customer with none never appeared —
+  // and most of the 3,500 imported customers have none yet, so searching for a
+  // real regular answered "nothing found".
+  for (const m of matched) {
+    byCustomer.set(m.id, {
+      id: m.id,
+      customerCode: m.customerCode,
+      customerType: m.customerType,
+      fullName: m.fullName,
+      phone: m.phone,
+      notes: m.notes,
+      upcoming: [],
+      past: [],
+    });
+  }
 
   for (const row of data ?? []) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -702,4 +728,40 @@ export async function searchBookings(query: string): Promise<FoundCustomer[]> {
   return [...byCustomer.values()].sort(
     (a, b) => (b.upcoming.length > 0 ? 1 : 0) - (a.upcoming.length > 0 ? 1 : 0),
   );
+}
+
+export interface Departure {
+  guestId: string;
+  appointmentId: string;
+  customerName: string;
+  customerCode: string | null;
+  kind: "cancelled" | "moved";
+  originalTime: string;
+  movedTo: string | null;
+  reason: string | null;
+  actor: string | null;
+  happenedAt: string | null;
+}
+
+/** What left this day — cancelled, or moved to another date. The sheet cannot
+ *  show either: a cancelled booking is hidden, and a moved one now belongs to
+ *  a different day. Reads day_departures() (0015). */
+export async function getDayDepartures(date: string): Promise<Departure[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase.rpc("day_departures", { target_date: date });
+  if (error) throw new Error(`Could not load the day's changes: ${error.message}`);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return ((data ?? []) as any[]).map((r) => ({
+    guestId: r.guest_id as string,
+    appointmentId: r.appointment_id as string,
+    customerName: (r.customer_name as string) ?? "Guest",
+    customerCode: (r.customer_code as string | null) ?? null,
+    kind: r.kind as "cancelled" | "moved",
+    originalTime: r.original_time as string,
+    movedTo: (r.moved_to as string | null) ?? null,
+    reason: (r.reason as string | null) ?? null,
+    actor: (r.actor as string | null) ?? null,
+    happenedAt: (r.happened_at as string | null) ?? null,
+  }));
 }

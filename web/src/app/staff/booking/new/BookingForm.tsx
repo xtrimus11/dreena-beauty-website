@@ -6,6 +6,7 @@ import {
   createBooking,
   createWalkInAction,
   searchCustomersAction,
+  setPreferredTherapists,
   type NewGuestPayload,
 } from "@/lib/appointments/actions";
 import { shopInstant } from "@/lib/appointments/time";
@@ -37,13 +38,17 @@ const SOURCES: { value: BookingSource; label: string }[] = [
   { value: "referral", label: "Referral" },
 ];
 
+/** A facial is two hours, and that is most of what the shop books. Anything
+ *  shorter is the exception the therapist shortens by hand. */
+const DEFAULT_MINUTES = 120;
+
 let seq = 0;
 const newMember = (therapistId = ""): PartyMember => ({
   key: `m${seq++}`,
   customer: null,
   relationship: "",
   treatmentId: "",
-  durationMinutes: 30,
+  durationMinutes: DEFAULT_MINUTES,
   therapistId,
   notes: "",
 });
@@ -90,6 +95,10 @@ export default function BookingForm({
   const [notes, setNotes] = useState("");
   const [party, setParty] = useState<PartyMember[]>([newMember(initialTherapistId)]);
   const [error, setError] = useState<string | null>(null);
+  /** Preferred therapists being edited for the contact customer. Saved with
+   *  the booking so it applies to every future one. */
+  const [prefs, setPrefs] = useState<string[]>([]);
+  const [prefsOpen, setPrefsOpen] = useState(false);
 
   const nextUp = turnOrder.find((c) => c.unavailable === null);
   // Only today's turn order means anything; a week out it is guesswork.
@@ -111,6 +120,8 @@ export default function BookingForm({
 
   function pickContact(c: Customer) {
     setContact(c);
+    setPrefs(c.preferredTherapistIds ?? []);
+    setPrefsOpen(false);
     setResults([]);
     setQuery("");
     // The person who booked is the first person being treated, unless staff
@@ -144,7 +155,7 @@ export default function BookingForm({
         customerType: "walk_in",
         fullName: trimmed,
         phone: phone.trim() || null,
-        preferredTherapistId: null,
+        preferredTherapistIds: [],
         preferredTherapistStrict: false,
         primaryContactId: null,
         notes: null,
@@ -155,6 +166,13 @@ export default function BookingForm({
     }
   }
 
+
+  /** Up to three, kept in the order they were tapped — that order is the
+   *  customer's ranking, and the booking screen honours it. */
+  function togglePref(id: string) {
+    setPrefs((p) => (p.includes(id) ? p.filter((x) => x !== id) : p.length >= 3 ? p : [...p, id]));
+  }
+
   function update(key: string, patch: Partial<PartyMember>) {
     setParty((p) => p.map((m) => (m.key === key ? { ...m, ...patch } : m)));
   }
@@ -162,8 +180,8 @@ export default function BookingForm({
   function pickTreatment(key: string, treatmentId: string) {
     const t = treatments.find((x) => x.id === treatmentId);
     // No treatment chosen is normal — the shop books a name into a slot and
-    // often nothing more. One 30-minute slot is the default length.
-    update(key, { treatmentId, durationMinutes: t?.durationMinutes ?? 30 });
+    // often nothing more, in which case it is a two-hour facial by default.
+    update(key, { treatmentId, durationMinutes: t?.durationMinutes ?? DEFAULT_MINUTES });
   }
 
   /** Who may perform this treatment. Decided by the explicit flag on each
@@ -192,7 +210,7 @@ export default function BookingForm({
         treatmentId: m.treatmentId || null,
         therapistId: m.therapistId || null,
         startsAt: shopInstant(date, time).toISOString(),
-        durationMinutes: m.durationMinutes || 30,
+        durationMinutes: m.durationMinutes || DEFAULT_MINUTES,
         notes: m.notes.trim() || undefined,
       });
     }
@@ -205,6 +223,19 @@ export default function BookingForm({
         guests,
       });
       if (!res.ok) return setError(res.error ?? "Could not save the booking.");
+
+      // Preferences are a property of the customer, not the booking, so a
+      // failure here must not lose the booking that already saved.
+      const changed =
+        prefs.length !== (contact.preferredTherapistIds ?? []).length ||
+        prefs.some((id, i) => id !== contact.preferredTherapistIds?.[i]);
+      if (changed) {
+        const pref = await setPreferredTherapists(contact.id, prefs);
+        if (!pref.ok) {
+          setError(`Booking saved, but the preferred therapists did not: ${pref.error}`);
+          return;
+        }
+      }
       router.push(`/staff/day/${date}`);
       router.refresh();
     });
@@ -216,7 +247,7 @@ export default function BookingForm({
       <section className="rounded-xl border border-[rgba(10,10,10,0.1)] bg-white p-4">
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-[#8e8e8e]">Customer</h2>
 
-        {contact ? (
+        {contact && (
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-baseline gap-2">
               {contact.customerCode && (
@@ -234,7 +265,64 @@ export default function BookingForm({
               Change
             </button>
           </div>
-        ) : (
+        )}
+
+        {/* Preferred therapists — saved on the customer, so they apply to
+            every future booking, not just this one. */}
+        {contact && (
+          <div className="mt-3 border-t border-[rgba(10,10,10,0.08)] pt-3">
+            <button
+              onClick={() => setPrefsOpen((v) => !v)}
+              className="flex w-full items-center justify-between gap-2 text-left"
+            >
+              <span className="text-[11px] font-semibold uppercase tracking-wide text-[#8e8e8e]">
+                Preferred therapists
+              </span>
+              <span className="text-[13px] text-[#5a5a5a]">
+                {prefs.length === 0
+                  ? "None — takes whoever is next"
+                  : prefs
+                      .map((id) => staff.find((x) => x.id === id)?.displayName)
+                      .filter(Boolean)
+                      .join(", ")}
+                <span className="ml-1.5 text-[#8a6f4f] underline">{prefsOpen ? "close" : "edit"}</span>
+              </span>
+            </button>
+
+            {prefsOpen && (
+              <div className="mt-2">
+                <div className="flex flex-wrap gap-1.5">
+                  {staff
+                    .filter((x) => x.performsAllTreatments)
+                    .map((x) => {
+                      const at = prefs.indexOf(x.id);
+                      return (
+                        <button
+                          key={x.id}
+                          onClick={() => togglePref(x.id)}
+                          disabled={at === -1 && prefs.length >= 3}
+                          className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm disabled:opacity-40 ${
+                            at >= 0
+                              ? "border-[#0a0a0a] bg-[#0a0a0a] font-semibold text-white"
+                              : "border-[rgba(10,10,10,0.16)] bg-white"
+                          }`}
+                        >
+                          {at >= 0 && <span className="text-[11px] opacity-70">{at + 1}</span>}
+                          {x.displayName}
+                        </button>
+                      );
+                    })}
+                </div>
+                <p className="mt-1.5 text-[12px] text-[#8e8e8e]">
+                  Up to three, in the order you tap them — first tapped is first
+                  choice. Saved to the customer for every future booking.
+                </p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {!contact && (
           <>
             <input
               value={query}
@@ -272,7 +360,7 @@ export default function BookingForm({
                 <p className="text-sm font-medium">
                   Nobody found — add them as a walk-in?
                 </p>
-                <div className="mt-2 grid grid-cols-2 gap-2">
+                <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
                   <input
                     value={newWalkIn.fullName || query}
                     onChange={(e) => setNewWalkIn({ ...newWalkIn, fullName: e.target.value })}
@@ -471,10 +559,14 @@ export default function BookingForm({
                   />
                 </div>
 
-                {m.customer?.preferredTherapistId && !m.therapistId && (
+                {m.customer && m.customer.preferredTherapistIds.length > 0 && !m.therapistId && (
                   <p className="mt-1.5 text-[12px] text-[#8a6f4f]">
-                    This customer has a preferred therapist
-                    {m.customer.preferredTherapistStrict ? " (strict)" : ""} — pick them rather than
+                    Prefers{" "}
+                    {m.customer.preferredTherapistIds
+                      .map((id) => staff.find((x) => x.id === id)?.displayName)
+                      .filter(Boolean)
+                      .join(", ")}
+                    {m.customer.preferredTherapistStrict ? " (strict)" : ""} — pick one rather than
                     leaving it to the turn order.
                   </p>
                 )}

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import DayGrid from "./DayGrid";
 import DayBoard from "./DayBoard";
 import DateStrip, { BATCH, shiftBatch } from "./DateStrip";
+import Departures from "./Departures";
 import DayAgenda from "./DayAgenda";
 import TurnBoard from "./TurnBoard";
 import SignOutButton from "./SignOutButton";
@@ -13,6 +14,7 @@ import {
   getDayHours,
   getDayTimeOff,
   getBookableStaff,
+  getDayDepartures,
   getRosteredStaffIds,
   getTurnStandings,
 } from "@/lib/appointments/queries";
@@ -40,7 +42,8 @@ export default async function DayPage({
   // query — '2026-13-45' would otherwise become a confusing empty day.
   if (!DATE_PATTERN.test(date) || Number.isNaN(Date.parse(`${date}T00:00:00Z`))) notFound();
 
-  const [staff, columns, bookings, hours, offToday, standings, rosteredIds, bookable] = await Promise.all([
+  const [staff, columns, bookings, hours, offToday, standings, rosteredIds, bookable, departures] =
+    await Promise.all([
     getCurrentStaff(),
     getDayColumns(date),
     getDay(date),
@@ -49,6 +52,7 @@ export default async function DayPage({
     getTurnStandings(date),
     getRosteredStaffIds(date),
     getBookableStaff(),
+    getDayDepartures(date),
   ]);
 
   // "Busy" for the turn board means right now, not at some point today — the
@@ -123,10 +127,9 @@ export default async function DayPage({
           </div>
 
           <div className="flex items-center gap-3 text-sm text-[#8e8e8e]">
-            {/* Hidden on phones: the diary is read-only there. */}
             <Link
               href={`/staff/booking/new?date=${date}`}
-              className="hidden rounded-lg bg-[#0a0a0a] px-3 py-1.5 text-sm font-semibold text-white md:inline-block"
+              className="rounded-lg bg-[#0a0a0a] px-3 py-1.5 text-sm font-semibold text-white"
             >
               New booking
             </Link>
@@ -224,6 +227,8 @@ export default async function DayPage({
             selectedTherapistId={t ?? null}
             offToday={offToday}
           />
+
+          <Departures departures={departures} />
         </>
       )}
     </main>

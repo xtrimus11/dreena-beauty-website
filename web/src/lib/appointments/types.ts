@@ -96,8 +96,10 @@ export interface Customer {
   /** Set on a family member; points at the account holder. */
   primaryContactId: string | null;
   relationship: string | null;
-  preferredTherapistId: string | null;
-  /** true = do not book anyone else without asking the customer first. */
+  /** Up to three therapists this customer is happy with, first choice first.
+   *  Empty for about half of customers, who take whoever the turn order says. */
+  preferredTherapistIds: string[];
+  /** true = do not book outside that list without asking the customer. */
   preferredTherapistStrict: boolean;
   notes: string | null;
   isActive: boolean;
@@ -195,7 +197,7 @@ export interface ResolvedGuest extends AppointmentGuest {
   /** Null for an unnamed family member. */
   customer: Pick<
     Customer,
-    "id" | "customerCode" | "fullName" | "phone" | "preferredTherapistId" | "preferredTherapistStrict"
+    "id" | "customerCode" | "fullName" | "phone" | "preferredTherapistIds" | "preferredTherapistStrict"
   > | null;
   /** null when the treatment was not recorded. */
   treatment: Pick<Treatment, "id" | "slug" | "code" | "name" | "durationMinutes"> | null;

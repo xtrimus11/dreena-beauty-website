@@ -49,14 +49,11 @@ export default async function NewBookingPage({
       </Link>
       <h1 className="mt-3 text-xl font-semibold tracking-tight md:text-2xl">New booking</h1>
 
-      {/* Editing is tablet and desktop only. On a phone the diary is
-          read-only: mis-tapping a booking on a 5-inch screen is how a
-          customer loses their slot. */}
-      <p className="mt-4 rounded-lg bg-[#f1efe9] px-3 py-2.5 text-[13px] text-[#5a5a5a] md:hidden">
-        Bookings can&rsquo;t be taken on a phone. Use a tablet or the PC.
-      </p>
-
-      <div className="hidden md:block">
+      {/* Bookings can be taken on a phone. The form is a single column and
+          the controls are tap-sized; only the day GRID stays desktop-only,
+          because six columns of half-hour slots cannot be tapped accurately
+          on a 5-inch screen. */}
+      <div>
         <BookingForm
           date={date}
           initialTime={time ?? slots[0]?.startsAt ?? hours.opensAt}

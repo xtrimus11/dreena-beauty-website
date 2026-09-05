@@ -95,9 +95,10 @@ export function nextUp(context: RotationContext): TurnCandidate | null {
 /**
  * The therapist to suggest for one booking.
  *
- * A saved preference wins over the rotation — that is the point of saving it.
- * A `strict` preference is never silently overridden; the booking screen makes
- * staff choose rather than quietly assigning someone else.
+ * Saved preferences win over the rotation — that is the point of saving them.
+ * They are tried in the customer's own rank order, so a second choice is only
+ * reached once the first cannot take it. A `strict` preference is never
+ * silently overridden; the booking screen makes staff choose instead.
  */
 export interface Suggestion {
   staffId: string | null;
@@ -109,27 +110,35 @@ export interface Suggestion {
 }
 
 export function suggestTherapist(
-  customer: { preferredTherapistId: string | null; preferredTherapistStrict: boolean },
+  customer: { preferredTherapistIds: string[]; preferredTherapistStrict: boolean },
   context: RotationContext,
 ): Suggestion {
-  if (customer.preferredTherapistId) {
-    const preferred = turnOrder(context).find((c) => c.staffId === customer.preferredTherapistId);
+  if (customer.preferredTherapistIds.length > 0) {
+    const order = turnOrder(context);
 
-    if (preferred && preferred.unavailable === null) {
-      return {
-        staffId: preferred.staffId,
-        basis: "preference",
-        preferenceUnavailable: null,
-        needsDecision: false,
-      };
+    // Walk the list in the customer's own order of preference, not the turn
+    // order — second choice means second choice.
+    for (const id of customer.preferredTherapistIds) {
+      const candidate = order.find((c) => c.staffId === id);
+      if (candidate && candidate.unavailable === null) {
+        return {
+          staffId: candidate.staffId,
+          basis: "preference",
+          preferenceUnavailable: null,
+          needsDecision: false,
+        };
+      }
     }
 
-    // Preference exists but is unavailable. A strict preference stops here.
+    // Nobody on the list can take it. Report why the first choice could not,
+    // since that is the one staff will mention to the customer.
+    const first = order.find((c) => c.staffId === customer.preferredTherapistIds[0]);
+
     if (customer.preferredTherapistStrict) {
       return {
         staffId: null,
         basis: "none",
-        preferenceUnavailable: preferred?.unavailable ?? "not_rostered",
+        preferenceUnavailable: first?.unavailable ?? "not_rostered",
         needsDecision: true,
       };
     }
@@ -138,7 +147,7 @@ export function suggestTherapist(
     return {
       staffId: fallback?.staffId ?? null,
       basis: fallback ? "rotation" : "none",
-      preferenceUnavailable: preferred?.unavailable ?? "not_rostered",
+      preferenceUnavailable: first?.unavailable ?? "not_rostered",
       needsDecision: false,
     };
   }

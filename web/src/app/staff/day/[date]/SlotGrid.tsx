@@ -1,6 +1,6 @@
 "use client";
 
-import { minutesFromMidnight, shopTime } from "@/lib/appointments/time";
+import { formatForStaff, minutesFromMidnight, shopTime } from "@/lib/appointments/time";
 import type { AppointmentWithGuests, ResolvedGuest } from "@/lib/appointments/types";
 
 const SLOT_MINUTES = 30;
@@ -17,6 +17,9 @@ const ROWS = 2;
 export interface SlotEntry {
   guest: ResolvedGuest;
   booking: AppointmentWithGuests;
+  /** True in the rows a long booking runs through after its first. Those
+   *  rows are occupied — they show the name faintly and cannot be booked. */
+  continuation?: boolean;
 }
 
 export default function SlotGrid({
@@ -42,15 +45,27 @@ export default function SlotGrid({
   const end = minutesFromMidnight(closesAt);
   const specialists = new Set(specialistIds);
 
+  // A two-hour facial starting at 10:00 fills 10:00 through 11:30. Bucketing
+  // only by start time left those rows looking free, which is how a customer
+  // gets booked on top of one.
   const bySlot = new Map<number, SlotEntry[]>();
+  // Column index -> the last slot it is occupied until, so a continuation
+  // stays in the same column as the booking it belongs to.
   for (const booking of bookings) {
     for (const guest of booking.guests) {
       if (guest.status === "cancelled") continue;
-      const mins = minutesFromMidnight(shopTime(guest.startsAt));
-      const slot = Math.floor((mins - start) / SLOT_MINUTES) * SLOT_MINUTES + start;
-      const list = bySlot.get(slot) ?? [];
-      list.push({ guest, booking });
-      bySlot.set(slot, list);
+      const from = minutesFromMidnight(shopTime(guest.startsAt));
+      const to = minutesFromMidnight(shopTime(guest.endsAt));
+      const firstSlot = Math.floor((from - start) / SLOT_MINUTES) * SLOT_MINUTES + start;
+      // Half-open: a booking ending exactly on a boundary does not occupy the
+      // slot beginning there.
+      const lastSlot = Math.ceil((to - start) / SLOT_MINUTES) * SLOT_MINUTES + start - SLOT_MINUTES;
+
+      for (let m = firstSlot; m <= lastSlot; m += SLOT_MINUTES) {
+        const list = bySlot.get(m) ?? [];
+        list.push({ guest, booking, continuation: m !== firstSlot });
+        bySlot.set(m, list);
+      }
     }
   }
 
@@ -81,8 +96,8 @@ export default function SlotGrid({
         </thead>
         <tbody>
           {slots.map((m) => {
-            const entries = (bySlot.get(m) ?? []).sort((a, b) =>
-              a.guest.startsAt.localeCompare(b.guest.startsAt),
+            const entries = (bySlot.get(m) ?? []).sort(
+              (a, b) => a.guest.startsAt.localeCompare(b.guest.startsAt) || a.guest.id.localeCompare(b.guest.id),
             );
 
             // Specialist bookings go in the fourth column; everyone else
@@ -205,9 +220,26 @@ function Box({
   // The customer replied to the day-before WhatsApp. Everything past
   // 'confirmed' in the flow implies it too — someone who has arrived plainly
   // confirmed — so the mark stays on rather than disappearing at check-in.
-  const confirmed = guest.status === "confirmed" || arrived;
+  const confirmed = guest.status === "confirmed";
   // An unnamed family member is shown by their relationship.
   const who = guest.customer?.fullName ?? (guest.relationship ? `+ ${guest.relationship}` : "Guest");
+
+  if (entry.continuation) {
+    // Occupied by a booking that began earlier. Still tappable — it is the
+    // same booking — but visibly not a fresh slot.
+    return (
+      <td className={`${border} p-0 align-top`}>
+        <button
+          onClick={() => onSelect(entry)}
+          style={{ background: tint }}
+          className="h-9 w-full min-w-[8rem] truncate px-2 text-left text-[11px] italic leading-9 text-[#8e8e8e] hover:brightness-95"
+          title={`${who} — continues from ${formatForStaff(guest.startsAt)}`}
+        >
+          ↑ {who}
+        </button>
+      </td>
+    );
+  }
 
   return (
     <td className={`${border} p-0 align-top`}>
@@ -221,7 +253,16 @@ function Box({
           .filter(Boolean)
           .join(" · ")}
       >
-        {confirmed && (
+        {/* C while it is only confirmed; once they walk in the badge says so,
+          because "arrived" is the more useful fact at that point. */}
+      {arrived ? (
+        <span
+          className="pointer-events-none absolute right-1 top-0.5 rounded bg-[#0f766e] px-1 text-[9px] font-bold uppercase leading-[1.4] tracking-wide text-white"
+          aria-label="Arrived"
+        >
+          Arrived
+        </span>
+      ) : confirmed ? (
         <span
           className="pointer-events-none absolute right-1 top-0.5 text-[11px] font-bold leading-none text-[#dc2626]"
           title="Confirmed by WhatsApp"
@@ -229,13 +270,8 @@ function Box({
         >
           C
         </span>
-      )}
-      <span className="flex items-baseline gap-1 truncate pr-3 text-[13px]">
-          {arrived && (
-            <span className="shrink-0 text-[#0f766e]" aria-label="Arrived">
-              ●
-            </span>
-          )}
+      ) : null}
+      <span className={`flex items-baseline gap-1 truncate text-[13px] ${arrived ? "pr-12" : "pr-3"}`}>
           <span className={`truncate ${guest.customer ? "font-medium" : "italic text-[#5a5a5a]"}`}>{who}</span>
           {guest.treatment && (
             <span className="shrink-0 truncate text-[11px] text-[#5a5a5a]">({guest.treatment.name})</span>

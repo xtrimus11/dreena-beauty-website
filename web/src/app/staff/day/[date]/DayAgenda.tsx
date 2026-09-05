@@ -126,9 +126,12 @@ export default function DayAgenda({ date, columns, bookings, selectedTherapistId
         </ul>
       )}
 
-      <p className="mt-6 rounded-lg bg-[#f1efe9] px-3 py-2.5 text-[13px] text-[#5a5a5a]">
-        View only on phone. Use a tablet or the PC to make or change a booking.
-      </p>
+      <Link
+        href={`/staff/booking/new?date=${date}`}
+        className="mt-5 block rounded-lg bg-[#0a0a0a] px-4 py-3 text-center text-sm font-semibold text-white"
+      >
+        New booking
+      </Link>
     </div>
   );
 }

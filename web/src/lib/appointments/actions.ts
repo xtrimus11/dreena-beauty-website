@@ -332,3 +332,27 @@ export async function createWalkInAction(input: {
   if (error) return { ok: false, error: toMessage(error, "Could not save the customer.") };
   return { ok: true, customerId: data.id as string, customerCode: data.customer_code as string };
 }
+
+/** Saves a customer's preferred therapists, first choice first. Replaces the
+ *  whole list — three is the cap, enforced by the rank constraint. */
+export async function setPreferredTherapists(
+  customerId: string,
+  staffIds: string[],
+): Promise<ActionResult> {
+  const supabase = await createClient();
+  const ids = [...new Set(staffIds.filter(Boolean))].slice(0, 3);
+
+  const { error: clearError } = await supabase
+    .from("customer_preferred_therapists")
+    .delete()
+    .eq("customer_id", customerId);
+  if (clearError) return { ok: false, error: toMessage(clearError, "Could not update preferences.") };
+
+  if (ids.length > 0) {
+    const { error } = await supabase.from("customer_preferred_therapists").insert(
+      ids.map((staffId, i) => ({ customer_id: customerId, staff_id: staffId, rank: i + 1 })),
+    );
+    if (error) return { ok: false, error: toMessage(error, "Could not save preferences.") };
+  }
+  return { ok: true };
+}
